@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزش متون تخصصی حسابداری صنعتی (Costing Systems) - نسخه جامع واژگان</title>
+    <title>برنامه آموزشی جامع زبان تخصصی حسابداری (هفته اول و دوم)</title>
     <style>
         :root {
             --primary: #1e3a8a;
@@ -43,7 +43,7 @@
             padding: 32px 24px;
             border-radius: 20px;
             box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             text-align: center;
         }
 
@@ -108,8 +108,52 @@
             background-color: #dc2626;
         }
 
+        /* Navigation Bar for Weeks */
+        .weeks-nav {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+            justify-content: center;
+        }
+
+        .week-btn {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 12px 28px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .week-btn:hover {
+            border-color: var(--primary-light);
+            background-color: #f8faff;
+        }
+
+        .week-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+        }
+
+        .week-pane {
+            display: none;
+        }
+
+        .week-pane.active {
+            display: block;
+        }
+
+        /* Section Headings */
         .section-header {
-            margin: 40px 0 20px 0;
+            margin: 35px 0 18px 0;
             padding-bottom: 12px;
             border-bottom: 3px solid #cbd5e1;
             display: flex;
@@ -419,6 +463,9 @@
                 flex-direction: column;
                 width: 100%;
             }
+            .weeks-nav {
+                flex-direction: column;
+            }
             .english-box {
                 font-size: 15px;
             }
@@ -432,8 +479,8 @@
 
 <div class="container">
     <header>
-        <h1>آموزش تعاملی متون تخصصی حسابداری صنعتی (Costing Systems)</h1>
-        <p>متن کامل صفحات ۱۶۳، ۱۶۴ و ۱۶۵ به همراه تمامی واژگان مهم هر جمله، مترادف‌ها، تلفظ صوتی با لهجه آرام انگلیسی و برگردان دقیق فارسی</p>
+        <h1>برنامه آموزشی هفتگی زبان تخصصی حسابداری</h1>
+        <p>سیستم تعاملی مطالعه متون، تلفظ آوایی فارسی، گوینده صوتی انگلیسی با لهجه بریتانیایی و بانک جامع واژگان همراه با مترادف‌ها</p>
         
         <div class="controls-bar">
             <div class="control-group">
@@ -452,19 +499,1274 @@
         </div>
     </header>
 
-    <div id="contentArea"></div>
+    <!-- Navigation Tabs for Weeks -->
+    <div class="weeks-nav">
+        <button class="week-btn active" id="btn-week1" onclick="switchWeek(1)">
+            📘 هفته اول (مؤسسات بازرگانی، درآمدها و فروش)
+        </button>
+        <button class="week-btn" id="btn-week2" onclick="switchWeek(2)">
+            📗 هفته دوم (تخفیفات، بهای تمام‌شده و سیستم‌های بهایابی)
+        </button>
+    </div>
+
+    <!-- WEEK 1 CONTENT PANE -->
+    <div id="pane-week1" class="week-pane active">
+        <div id="week1ContentArea"></div>
+    </div>
+
+    <!-- WEEK 2 CONTENT PANE -->
+    <div id="pane-week2" class="week-pane">
+        <div id="week2ContentArea"></div>
+    </div>
 </div>
 
 <div id="toast">در حال خواندن...</div>
 
 <script>
-const sectionsData = [
+// ==================== WEEK 1 DATA (Images 1000043047.jpg & 1000043048.jpg) ====================
+const week1Data = [
     {
-        title: "بخش ۱: مبانی و اهداف سیستم‌های بهایابی (Costing Systems)",
-        badge: "صفحه ۱۶۳ کتاب",
+        title: "بخش ۱: مؤسسات بازرگانی، خرده‌فروشان و عمده‌فروشان (Merchandising Enterprises)",
+        badge: "درس ۹ - صفحه اول",
         sentences: [
             {
                 id: 1,
+                en: "In the previous lesson, the accounting cycle was described for service enterprises.",
+                pronunciation: "این دِ پْریویِس لِسِن، دی اِکانْتینگ سایْکِل واز دیسْکْرایبْد فور سِرْویس اِنْتِرپْرایزِز.",
+                translation: "در درس گذشته، چرخه حسابداری برای مؤسسات خدماتی تشریح گردید.",
+                words: [
+                    {
+                        en: "Accounting cycle",
+                        pron: "اِکانْتینگ سایْکِل",
+                        fa: "چرخه حسابداری، دوره عملیات مالی",
+                        synonyms: [
+                            { en: "Accounting process", pron: "اِکانْتینگ پراسِس", fa: "فرایند حسابداری" },
+                            { en: "Financial cycle", pron: "فاینَنشال سایْکِل", fa: "چرخه مالی" }
+                        ]
+                    },
+                    {
+                        en: "Service enterprises",
+                        pron: "سِرْویس اِنْتِرپْرایزِز",
+                        fa: "مؤسسات خدماتی",
+                        synonyms: [
+                            { en: "Service firms", pron: "سِرْویس فِرمز", fa: "شرکت‌های خدماتی" },
+                            { en: "Service companies", pron: "سِرْویس کامْپَنیز", fa: "بنگاه‌های ارائه‌دهنده خدمت" }
+                        ]
+                    },
+                    {
+                        en: "Described",
+                        pron: "دیسْکْرایبْد",
+                        fa: "تشریح‌شده، بیان‌شده",
+                        synonyms: [
+                            { en: "Explained", pron: "اِکْسْپْلِینْد", fa: "توضیح داده شده" },
+                            { en: "Outlined", pron: "آوت‌لاینْد", fa: "ترسیم‌شده، مشخص‌شده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                en: "These businesses have one thing in common—they charge a fee for the services they perform.",
+                pronunciation: "دیز بیزینسِز هَو وان ثینگ این کامِن—دِی چارْج اِ فی فور دِ سِرْویسِز دِی پِرفورم.",
+                translation: "این کسب‌وکارها یک ویژگی مشترک دارند—آن‌ها در ازای خدماتی که ارائه می‌دهند کارمزد (حق‌الزحمه) دریافت می‌کنند.",
+                words: [
+                    {
+                        en: "In common",
+                        pron: "این کامِن",
+                        fa: "مشترک، دارای وجه اشتراک",
+                        synonyms: [
+                            { en: "Shared", pron: "شِرد", fa: "اشتراکی، همگانی" },
+                            { en: "Mutual", pron: "میوچوال", fa: "متقابل، دوجانبه" }
+                        ]
+                    },
+                    {
+                        en: "Charge a fee",
+                        pron: "چارْج اِ فی",
+                        fa: "کارمزد و هزینه دریافت کردن",
+                        synonyms: [
+                            { en: "Levy a fee", pron: "لِوی اِ فی", fa: "وضع کردن کارمزد" },
+                            { en: "Bill a rate", pron: "بیل اِ رِیت", fa: "صورت‌حساب کردن نرخ خدمات" }
+                        ]
+                    },
+                    {
+                        en: "Perform",
+                        pron: "پِرفورم",
+                        fa: "انجام دادن، ارائه کردن خدمات",
+                        synonyms: [
+                            { en: "Render", pron: "رِنْدِر", fa: "ارائه دادن خدمت" },
+                            { en: "Execute", pron: "اِکْسِکیوت", fa: "به مرحله اجرا درآوردن" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 3,
+                en: "In this lesson, another type of enterprises called merchandising or trading concerns will be covered.",
+                pronunciation: "این دیس لِسِن، اَنادِر تایپ آو اِنْتِرپْرایزِز کالْد مِرچِندایزینگ اور تْرِیدینگ کانسِرْنز ویل بی کاوِرد.",
+                translation: "در این درس، نوع دیگری از بنگاه‌ها تحت عنوان مؤسسات بازرگانی یا تجاری مورد بررسی قرار خواهد گرفت.",
+                words: [
+                    {
+                        en: "Trading concerns",
+                        pron: "تْرِیدینگ کانسِرْنز",
+                        fa: "بنگاه‌ها و مؤسسات تجاری",
+                        synonyms: [
+                            { en: "Commercial businesses", pron: "کامِرشال بیزینسِز", fa: "کسب‌وکارهای بازرگانی" },
+                            { en: "Trade firms", pron: "تْرِید فِرمز", fa: "شرکت‌های تجاری" }
+                        ]
+                    },
+                    {
+                        en: "Merchandising",
+                        pron: "مِرچِندایزینگ",
+                        fa: "بازرگانی کالا، خرید و فروش کالا",
+                        synonyms: [
+                            { en: "Commercial trading", pron: "کامِرشال تْرِیدینگ", fa: "تجارت بازرگانی" },
+                            { en: "Commodity dealing", pron: "کامودِتی دیلینگ", fa: "دادوستد کالا" }
+                        ]
+                    },
+                    {
+                        en: "Covered",
+                        pron: "کاوِرد",
+                        fa: "مورد بحث و بررسی قرار گرفته",
+                        synonyms: [
+                            { en: "Discussed", pron: "دیسْکاسْد", fa: "بحث‌شده" },
+                            { en: "Examined", pron: "ایگْزامیند", fa: "بررسی‌شده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 4,
+                en: "Merchandising enterprises buy and sell goods instead of performing services to earn profit.",
+                pronunciation: "مِرچِندایزینگ اِنْتِرپْرایزِز بای اَند سِل گودز اینْسْتِد آو پِرفورمینگ سِرْویسِز تو اِرن پْرافیت.",
+                translation: "مؤسسات بازرگانی به جای ارائه خدمات، برای کسب سود اقدام به خرید و فروش کالا می‌نمایند.",
+                words: [
+                    {
+                        en: "Buy and sell",
+                        pron: "بای اَند سِل",
+                        fa: "خرید و فروش کردن",
+                        synonyms: [
+                            { en: "Trade", pron: "تْرِید", fa: "دادوستد کردن" },
+                            { en: "Deal in goods", pron: "دیل این گودز", fa: "معامله کالا کردن" }
+                        ]
+                    },
+                    {
+                        en: "Earn profit",
+                        pron: "اِرن پْرافیت",
+                        fa: "کسب سود کردن",
+                        synonyms: [
+                            { en: "Generate income", pron: "جِنِرِیت اینْکام", fa: "درآمدزایی کردن" },
+                            { en: "Make gain", pron: "مِیک گِین", fa: "منفعت بردن" }
+                        ]
+                    },
+                    {
+                        en: "Instead of",
+                        pron: "اینْسْتِد آو",
+                        fa: "به جای، در عوض",
+                        synonyms: [
+                            { en: "In place of", pron: "این پْلِیس آو", fa: "به جای" },
+                            { en: "Rather than", pron: "رَذِر دَن", fa: "به جای اینکه" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 5,
+                en: "Merchandising companies that purchase and sell directly to customers are called retailers.",
+                pronunciation: "مِرچِندایزینگ کامْپَنیز دَت پِرچِس اَند سِل دایْرِکْتْلی تو کاسْتومِرز آر کالْد ریتِیلِرز.",
+                translation: "شرکت‌های بازرگانی که کالا را خریداری کرده و مستقیماً به مشتریان نهایی می‌فروشند، خرده‌فروشان نامیده می‌شوند.",
+                words: [
+                    {
+                        en: "Retailers",
+                        pron: "ریتِیلِرز",
+                        fa: "خرده‌فروشان",
+                        synonyms: [
+                            { en: "Shopkeepers", pron: "شاپ‌کیپِرز", fa: "مغازه‌داران، دکانداران" },
+                            { en: "Merchants", pron: "مِرچِنتس", fa: "کاسبان، فروشندگان خرد" }
+                        ]
+                    },
+                    {
+                        en: "Directly",
+                        pron: "دایْرِکْتْلی",
+                        fa: "مستقیماً، بی‌واسطه",
+                        synonyms: [
+                            { en: "Straight", pron: "اِسْتْرِیت", fa: "مستقیم" },
+                            { en: "Without middlemen", pron: "ویذآوت میدِل‌مِن", fa: "بدون واسطه" }
+                        ]
+                    },
+                    {
+                        en: "Purchase",
+                        pron: "پِرچِس",
+                        fa: "خریداری کردن، خرید",
+                        synonyms: [
+                            { en: "Buy", pron: "بای", fa: "خریدن" },
+                            { en: "Acquire", pron: "اَکْوایِر", fa: "به دست آوردن، تملک کردن" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 6,
+                en: "In contrast, those that sell to retailers are known as wholesalers.",
+                pronunciation: "این کانْتْراسْت، دُوز دَت سِل تو ریتِیلِرز آر نُون اَز هُولْسِیلِرز.",
+                translation: "در مقابل، آن‌هایی که کالا را به خرده‌فروشان می‌فروشند، به عنوان عمده‌فروشان شناخته می‌شوند.",
+                words: [
+                    {
+                        en: "Wholesalers",
+                        pron: "هُولْسِیلِرز",
+                        fa: "عمده‌‌فروشان، پخش‌کنندگان عمده",
+                        synonyms: [
+                            { en: "Distributors", pron: "دیستْریبیوتِرز", fa: "توزیع‌کنندگان" },
+                            { en: "Bulk sellers", pron: "بالْک سِلِرز", fa: "فروشندگان کلی و فله‌ای" }
+                        ]
+                    },
+                    {
+                        en: "In contrast",
+                        pron: "این کانْتْراسْت",
+                        fa: "در مقایسه، در نقطه مقابل",
+                        synonyms: [
+                            { en: "Conversely", pron: "کانْوِرسْلی", fa: "برعکس، بر خلاف آن" },
+                            { en: "On the other hand", pron: "آن دی اَذِر هَنْد", fa: "از سوی دیگر" }
+                        ]
+                    },
+                    {
+                        en: "Known as",
+                        pron: "نُون اَز",
+                        fa: "شناخته‌شده به عنوان",
+                        synonyms: [
+                            { en: "Referred to as", pron: "ریفِرد تو اَز", fa: "نامیده شده به عنوان" },
+                            { en: "Designated as", pron: "دِزیگْنِیتِد اَز", fa: "لقب‌یافته به عنوان" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۲: درآمدها و هزینه‌ها در شرکت‌های بازرگانی (Revenues and Expenses)",
+        badge: "درس ۹ - صفحه دوم",
+        sentences: [
+            {
+                id: 7,
+                en: "The accounting cycle and the steps therein for a merchandising company are the same as for a service enterprise.",
+                pronunciation: "دی اِکانْتینگ سایْکِل اَند دِ اِسْتِپْس دِرین فور اِ مِرچِندایزینگ کامْپَنی آر دِ سِیم اَز فور اِ سِرْویس اِنْتِرپْرایز.",
+                translation: "چرخه حسابداری و مراحل موجود در آن برای یک شرکت بازرگانی، همانند یک مؤسسه خدماتی است.",
+                words: [
+                    {
+                        en: "Steps therein",
+                        pron: "اِسْتِپْس دِرین",
+                        fa: "مراحل و گام‌های درون آن",
+                        synonyms: [
+                            { en: "Stages within", pron: "اِسْتِیجِز ویذین", fa: "مراحل داخلی" },
+                            { en: "Internal procedures", pron: "اینْتِرنال پْرُسیجِرز", fa: "روال‌های درون‌سیستمی" }
+                        ]
+                    },
+                    {
+                        en: "The same as",
+                        pron: "دِ سِیم اَز",
+                        fa: "مشابه، یکسان با",
+                        synonyms: [
+                            { en: "Identical to", pron: "آیدِنْتیکال تو", fa: "همسان با" },
+                            { en: "Equivalent to", pron: "ایکْویوالِنت تو", fa: "معادل با" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 8,
+                en: "Accordingly, measuring net income for a merchandising company is conceptually the same as for a service one.",
+                pronunciation: "اِکوردینگْلی، مِژِرینگ نِت اینْکام فور اِ مِرچِندایزینگ کامْپَنی ایز کانسِپْچوالی دِ سِیم اَز فور اِ سِرْویس وان.",
+                translation: "بر این اساس، اندازه‌گیری سود خالص برای یک شرکت بازرگانی از نظر مفهومی همانند یک شرکت خدماتی است.",
+                words: [
+                    {
+                        en: "Accordingly",
+                        pron: "اِکوردینگْلی",
+                        fa: "بر این اساس، بنا بر این",
+                        synonyms: [
+                            { en: "Consequently", pron: "کانْسیکْوِنتْلی", fa: "در نتیجه" },
+                            { en: "Therefore", pron: "دِرْفور", fa: "از این رو" }
+                        ]
+                    },
+                    {
+                        en: "Conceptually",
+                        pron: "کانسِپْچوالی",
+                        fa: "از نظر مفهومی و تئوریک",
+                        synonyms: [
+                            { en: "Theoretically", pron: "ثیورِتیکالی", fa: "از حیث نظری" },
+                            { en: "In principle", pron: "این پْرینْسیپِل", fa: "در اصول و بنیاد" }
+                        ]
+                    },
+                    {
+                        en: "Measuring",
+                        pron: "مِژِرینگ",
+                        fa: "اندازه‌گیری، محاسبه کمی",
+                        synonyms: [
+                            { en: "Calculating", pron: "کالْکیولِیتینگ", fa: "حساب کردن" },
+                            { en: "Quantifying", pron: "کوانْتیفایینگ", fa: "کمی‌سازی نمودن" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 9,
+                en: "In a merchandising company the primary source of revenue is the sale of merchandise, often referred to as sales revenue or simply sales.",
+                pronunciation: "این اِ مِرچِندایزینگ کامْپَنی دِ پْرایمِری سُورس آو رِوِنیو ایز دِ سِیل آو مِرچِندایز، آوفِن ریفِرد تو اَز سِیلز رِوِنیو اور سیمْپْلی سِیلز.",
+                translation: "در یک شرکت بازرگانی منبع اصلی درآمد، فروش کالا است که اغلب «درآمد فروش» یا صرفاً «فروش» نامیده می‌شود.",
+                words: [
+                    {
+                        en: "Primary source",
+                        pron: "پْرایمِری سُورس",
+                        fa: "منبع اصلی، سرچشمه بنیادین",
+                        synonyms: [
+                            { en: "Main origin", pron: "مِین اُریجین", fa: "خاستگاه عمده" },
+                            { en: "Principal base", pron: "پْرینْسیپِل بِیس", fa: "پایه بنیادین" }
+                        ]
+                    },
+                    {
+                        en: "Sales revenue",
+                        pron: "سِیلز رِوِنیو",
+                        fa: "درآمد حاصل از فروش",
+                        synonyms: [
+                            { en: "Gross sales", pron: "گْرُوس سِیلز", fa: "فروش ناخالص" },
+                            { en: "Sales turnover", pron: "سِیلز تِرن‌اُوِر", fa: "گردش مالی فروش" }
+                        ]
+                    },
+                    {
+                        en: "Simply",
+                        pron: "سیمْپْلی",
+                        fa: "صرفاً، به سادگی",
+                        synonyms: [
+                            { en: "Merely", pron: "میرْلی", fa: "فقط" },
+                            { en: "Just", pron: "جاسْت", fa: "تنها" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 10,
+                en: "Unlike a service enterprise, expenses for a merchandising enterprise are divided into two categories: 1) cost of goods sold, and 2) operating expenses.",
+                pronunciation: "آنْلایک اِ سِرْویس اِنْتِرپْرایز، اِکْسْپِنسِز فور اِ مِرچِندایزینگ اِنْتِرپْرایز آر دیوایْدِد اینْتو تو کاتِگوریز: ۱) کاسْتْ آو گودز سُولد، اَند ۲) آپِرِیتینگ اِکْسْپِنسِز.",
+                translation: "برخلاف یک مؤسسه خدماتی، هزینه‌ها برای یک مؤسسه بازرگانی به دو دسته تقسیم می‌شوند: ۱) بهای تمام‌شده کالای فروش‌رفته، و ۲) هزینه‌های عملیاتی.",
+                words: [
+                    {
+                        en: "Unlike",
+                        pron: "آنْلایک",
+                        fa: "برخلاف، برعکس",
+                        synonyms: [
+                            { en: "Contrary to", pron: "کانْتْرِری تو", fa: "مغایر با" },
+                            { en: "As opposed to", pron: "اَز اَپُوزْد تو", fa: "در مقایسه متضاد با" }
+                        ]
+                    },
+                    {
+                        en: "Divided into",
+                        pron: "دیوایْدِد اینْتو",
+                        fa: "تقسیم‌شده به",
+                        synonyms: [
+                            { en: "Categorized into", pron: "کاتِگورایزْد اینْتو", fa: "دسته‌بندی‌شده به" },
+                            { en: "Split into", pron: "اِسْپْلیت اینْتو", fa: "انشعاب‌یافته به" }
+                        ]
+                    },
+                    {
+                        en: "Operating expenses",
+                        pron: "آپِرِیتینگ اِکْسْپِنسِز",
+                        fa: "هزینه‌های عملیاتی جاری",
+                        synonyms: [
+                            { en: "Running costs", pron: "رانینگ کاسْتس", fa: "مخارج جاری فعالیت" },
+                            { en: "Operational outlays", pron: "آپِرِیشِنال آوت‌لِیز", fa: "پرداخت‌های عملیاتی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 11,
+                en: "This lesson focuses primarily on accounting for sales transactions and on calculating cost of goods sold because the operating expenses of a merchandising company include many of the expenses found in a service enterprise.",
+                pronunciation: "دیس لِسِن فُوکَسِز پْرایمِریلی آن اِکانْتینگ فور سِیلز تْرَنْزَکْشِنز اَند آن کالْکیولِیتینگ کاسْتْ آو گودز سُولد بیکاز دی آپِرِیتینگ اِکْسْپِنسِز آو اِ مِرچِندایزینگ کامْپَنی اینْکْلود مِنی آو دی اِکْسْپِنسِز فاوْنْد این اِ سِرْویس اِنْتِرپْرایز.",
+                translation: "این درس عمدتاً بر حسابداری معاملات فروش و محاسبه بهای تمام‌شده کالای فروش‌رفته تمرکز دارد، زیرا هزینه‌های عملیاتی یک شرکت بازرگانی شامل بسیاری از همان هزینه‌های موجود در یک مؤسسه خدماتی است.",
+                words: [
+                    {
+                        en: "Primarily",
+                        pron: "پْرایمِریلی",
+                        fa: "عمدتاً، در وهله نخست",
+                        synonyms: [
+                            { en: "Mainly", pron: "مِینْلی", fa: "اصولاً، اکثراً" },
+                            { en: "Chiefly", pron: "چیفْلی", fa: "به‌ویژه، اصالتاً" }
+                        ]
+                    },
+                    {
+                        en: "Calculating",
+                        pron: "کالْکیولِیتینگ",
+                        fa: "محاسبه کردن، برآورد ریاضی",
+                        synonyms: [
+                            { en: "Computing", pron: "کامْپیوتینگ", fa: "محاسبه کردن" },
+                            { en: "Reckoning", pron: "رِکِنینگ", fa: "حساب‌کتاب نمودن" }
+                        ]
+                    },
+                    {
+                        en: "Include",
+                        pron: "اینْکْلود",
+                        fa: "شامل بودن، در بر داشتن",
+                        synonyms: [
+                            { en: "Encompass", pron: "اِنْکامْپَس", fa: "پوشش دادن، فرا گرفتن" },
+                            { en: "Comprise", pron: "کامْپْرایز", fa: "متشکل بودن از" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۳: شناخت و ثبت درآمد فروش (Sales Revenue)",
+        badge: "ادامه درس ۹ - صفحه دوم",
+        sentences: [
+            {
+                id: 12,
+                en: "According to the revenue recognition principle, sales revenue is recorded when earned.",
+                pronunciation: "اِکوردینگ تو دِ رِوِنیو رِکاگْنیشِن پْرینْسیپِل، سِیلز رِوِنیو ایز رِکوردِد وِن اِرنْد.",
+                translation: "بر اساس اصل تحقق (شناخت) درآمد، درآمد فروش زمانی ثبت می‌شود که تحقق یافته باشد (کسب شده باشد).",
+                words: [
+                    {
+                        en: "Revenue recognition",
+                        pron: "رِوِنیو رِکاگْنیشِن",
+                        fa: "شناخت و تحقق درآمد",
+                        synonyms: [
+                            { en: "Revenue realization", pron: "رِوِنیو ریالایْزِیشِن", fa: "تحقق درآمد" },
+                            { en: "Income recording", pron: "اینْکام رِکوردینگ", fa: "ثبت سود و درآمد" }
+                        ]
+                    },
+                    {
+                        en: "Earned",
+                        pron: "اِرنْد",
+                        fa: "تحقق‌یافته، کسب‌شده",
+                        synonyms: [
+                            { en: "Realized", pron: "ریالایْزد", fa: "تحقق‌یافته قطعی" },
+                            { en: "Accrued", pron: "اَکْرود", fa: "عایدشده، تعهدی‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Principle",
+                        pron: "پْرینْسیپِل",
+                        fa: "اصل، قاعده حسابداری",
+                        synonyms: [
+                            { en: "Doctrine", pron: "داکْتْرین", fa: "آموزه، اصل نظری" },
+                            { en: "Standard", pron: "اِسْتاندارد", fa: "ضابطه و معیار" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 13,
+                en: "That is, when the goods are transferred from the seller to the buyer.",
+                pronunciation: "دَت ایز، وِن دِ گودز آر تْرَنْسْفِرد فرام دِ سِلِر تو دِ بایِر.",
+                translation: "بدین معنا که، هنگامی که کالاها از فروشنده به خریدار منتقل می‌شوند.",
+                words: [
+                    {
+                        en: "Transferred",
+                        pron: "تْرَنْسْفِرد",
+                        fa: "انتقال‌یافته، واگذارشده",
+                        synonyms: [
+                            { en: "Conveyed", pron: "کانْوِید", fa: "منتقل‌شده سندی" },
+                            { en: "Delivered", pron: "دیلیوِرد", fa: "تحویل‌داده‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Seller",
+                        pron: "سِلِر",
+                        fa: "فروشنده",
+                        synonyms: [
+                            { en: "Vendor", pron: "وِنْدُر", fa: "فروشنده، عرضه‌کننده" },
+                            { en: "Supplier", pron: "ساپْلایِر", fa: "تأمین‌کننده" }
+                        ]
+                    },
+                    {
+                        en: "Buyer",
+                        pron: "بایِر",
+                        fa: "خریدار",
+                        synonyms: [
+                            { en: "Purchaser", pron: "پِرچِسِر", fa: "خریدار، طرف خرید" },
+                            { en: "Client", pron: "کْلایِنت", fa: "مشتری" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 14,
+                en: "At this point, the sale transaction is completed and the sale price is established.",
+                pronunciation: "اَت دیس پُویْنْت، دِ سِیل تْرَنْزَکْشِن ایز کامْپْلیتِد اَند دِ سِیل پْرایس ایز اِسْتابْلیشْد.",
+                translation: "در این مقطع زمانی، معامله فروش تکمیل شده و قیمت فروش تثبیت (قطعی) می‌گردد.",
+                words: [
+                    {
+                        en: "Completed",
+                        pron: "کامْپْلیتِد",
+                        fa: "تکمیل‌شده، نهایی‌شده",
+                        synonyms: [
+                            { en: "Finalized", pron: "فاینالایْزد", fa: "نهایی‌شده" },
+                            { en: "Concluded", pron: "کانْکْلودِد", fa: "منعقدشده و پایان‌یافته" }
+                        ]
+                    },
+                    {
+                        en: "Established",
+                        pron: "اِسْتابْلیشْد",
+                        fa: "تثبیت‌شده، مقررگردیده",
+                        synonyms: [
+                            { en: "Determined", pron: "دیتِرمینْد", fa: "مشخص‌شده" },
+                            { en: "Settled", pron: "سِتِلْد", fa: "مقرر و قطعی‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Sale price",
+                        pron: "سِیل پْرایس",
+                        fa: "قیمت فروش توافق‌شده",
+                        synonyms: [
+                            { en: "Selling price", pron: "سِلینگ پْرایس", fa: "نرخ عرضه" },
+                            { en: "Agreed value", pron: "اَگْرید وَلیو", fa: "ارزش مورد توافق" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 15,
+                en: "To record a sale transaction, an asset account is debited and the revenue account, Sales, is credited for the same amount.",
+                pronunciation: "تو رِکورد اِ سِیل تْرَنْزَکْشِن، اَن اَسِت اِکانْت ایز دِبیتِد اَند دِ رِوِنیو اِکانْت، سِیلز، ایز کْرِدیتِد فور دِ سِیم اَماوْنت.",
+                translation: "برای ثبت رویداد مالی فروش، یک حساب دارایی بدهکار شده و حساب درآمدِ «فروش» به همان مبلغ بستانکار می‌گردد.",
+                words: [
+                    {
+                        en: "Asset account",
+                        pron: "اَسِت اِکانْت",
+                        fa: "حساب دارایی",
+                        synonyms: [
+                            { en: "Resource account", pron: "ریسورس اِکانْت", fa: "حساب منابع مالی" },
+                            { en: "Balance sheet asset item", pron: "بالانس شیت اَسِت آیتم", fa: "قلم دارایی ترازنامه" }
+                        ]
+                    },
+                    {
+                        en: "Credited",
+                        pron: "کْرِدیتِد",
+                        fa: "بستانکارشده در دفاتر",
+                        synonyms: [
+                            { en: "Recognized as credit", pron: "رِکاگْنایزد اَز کْرِدیت", fa: "به‌عنوان بستانکار ثبت‌شده" },
+                            { en: "Logged in credit column", pron: "لاگْد این کْرِدیت کالِم", fa: "در ستون بستانکار درج‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Same amount",
+                        pron: "سِیم اَماوْنت",
+                        fa: "مبلغ مساوی و یکسان",
+                        synonyms: [
+                            { en: "Equal sum", pron: "ایکْوال سام", fa: "مبلغ برابر" },
+                            { en: "Identical value", pron: "آیدِنْتیکال وَلیو", fa: "ارزش همسان" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 16,
+                en: "If the sale is made for cash, the Cash account is debited and in case of credit sales, the Accounts Receivable is debited.",
+                pronunciation: "ایْف دِ سِیل ایز مِید فور کَش، دِ کَش اِکانْت ایز دِبیتِد اَند این کِیس آو کْرِدیت سِیلز، دی اِکانْتس ریسیوابِل ایز دِبیتِد.",
+                translation: "چنانچه فروش به‌صورت نقدی انجام شود حساب «موجودی نقد/صندوق» بدهکار می‌شود و در صورت فروش نسیه، حساب «حساب‌های دریافتنی» بدهکار می‌گردد.",
+                words: [
+                    {
+                        en: "Accounts receivable",
+                        pron: "اِکانْتس ریسیوابِل",
+                        fa: "حساب‌های دریافتنی، مطالبات تجاری",
+                        synonyms: [
+                            { en: "Trade debtors", pron: "تْرِید دِتِرز", fa: "بدهکاران تجاری" },
+                            { en: "Receivables", pron: "ریسیوابِلز", fa: "مطالبات قابل وصول" }
+                        ]
+                    },
+                    {
+                        en: "In case of",
+                        pron: "این کِیس آو",
+                        fa: "در صورت، در هنگام وقوع",
+                        synonyms: [
+                            { en: "In the event of", pron: "این دی ایوِنت آو", fa: "در صورت رخ دادن" },
+                            { en: "In circumstances of", pron: "این سِرکِمْسْتَنسِز آو", fa: "در شرایطِ" }
+                        ]
+                    },
+                    {
+                        en: "Cash account",
+                        pron: "کَش اِکانْت",
+                        fa: "حساب وجوه نقد، صندوق و بانک",
+                        synonyms: [
+                            { en: "Liquid funds", pron: "لیکْوید فاندز", fa: "وجوه نقدینه" },
+                            { en: "Cash balance", pron: "کَش بالانْس", fa: "مانده نقدینگی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 17,
+                en: "For credit sales, the amount due may not be collected until the next period.",
+                pronunciation: "فور کْرِدیت سِیلز، دی اَماوْنت دیو مِی نات بی کالِکْتِد آنْتیل دِ نِکْسْت پیریاد.",
+                translation: "در فروش‌های اعتباری (نسیه)، ممکن است مبلغ سررسیدشده تا دوره مالی بعدی وصول نگردد.",
+                words: [
+                    {
+                        en: "Amount due",
+                        pron: "اَماوْنت دیو",
+                        fa: "مبلغ سررسیدشده، بدهی پرداختنی",
+                        synonyms: [
+                            { en: "Outstanding sum", pron: "آوت‌استَنْدینگ سام", fa: "مبلغ تصفیه‌نشده" },
+                            { en: "Payable debt", pron: "پِیِبِل دِت", fa: "دین قابل پرداخت" }
+                        ]
+                    },
+                    {
+                        en: "Collected",
+                        pron: "کالِکْتِد",
+                        fa: "وصول‌شده، دریافت‌شده",
+                        synonyms: [
+                            { en: "Recovered", pron: "ریکاوِرد", fa: "وصول‌شده، بازیابی‌شده" },
+                            { en: "Received in cash", pron: "ریسیوْد این کَش", fa: "به‌نقد دریافت‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Next period",
+                        pron: "نِکْسْت پیریاد",
+                        fa: "دوره مالی آتی",
+                        synonyms: [
+                            { en: "Subsequent term", pron: "سابْسیکْوِنت تِرم", fa: "دوره بعدی" },
+                            { en: "Following fiscal cycle", pron: "فالویینگ فیسْکال سایْکِل", fa: "چرخه مالی بعد" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 18,
+                en: "Therefore, the sales revenue earned during a particular period may be significantly different from the cash collected from sales during the same period.",
+                pronunciation: "دِرْفور، دِ سِیلز رِوِنیو اِرنْد دیورینگ اِ پارتیکیولار پیریاد مِی بی سیگْنیفیکَنْتْلی دیفِرِنت فرام دِ کَش کالِکْتِد فرام سِیلز دیورینگ دِ سِیم پیریاد.",
+                translation: "بنابراین، درآمد فروش تحقق‌یافته در طی یک دوره خاص ممکن است تفاوت چشمگیری با وجه نقد وصول‌شده از فروش در طول همان دوره داشته باشد.",
+                words: [
+                    {
+                        en: "Significantly",
+                        pron: "سیگْنیفیکَنْتْلی",
+                        fa: "به‌طور چشمگیر، به میزان قابل توجه",
+                        synonyms: [
+                            { en: "Substantially", pron: "سابْسْتَنشِلی", fa: "به‌طرز اساسی" },
+                            { en: "Considerably", pron: "کانْسیدِرابْلی", fa: "به‌نحو چشمگیری" }
+                        ]
+                    },
+                    {
+                        en: "Cash collected",
+                        pron: "کَش کالِکْتِد",
+                        fa: "نقدینگی وصول‌شده",
+                        synonyms: [
+                            { en: "Cash receipts", pron: "کَش ریسیپْتس", fa: "دریافت‌های نقدی" },
+                            { en: "Collected inflows", pron: "کالِکْتِد اینْ‌فْلُوز", fa: "جریان‌های ورودی نقد" }
+                        ]
+                    },
+                    {
+                        en: "During",
+                        pron: "دیورینگ",
+                        fa: "در طول، در اثنای",
+                        synonyms: [
+                            { en: "Throughout", pron: "ثْروآوت", fa: "در سرتاسر" },
+                            { en: "In the course of", pron: "این دِ کُورس آو", fa: "در جریانِ" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۴: مقدمه برگشت از فروش (Sales Returns)",
+        badge: "پایین درس ۹ - صفحه دوم",
+        sentences: [
+            {
+                id: 19,
+                en: "In some cases that goods sold are damaged or defective, of inferior quality, or not in accord with the customer's specifications, the customer may return the goods to the seller for credit if the sale was made on credit, or for a cash refund, if the sale was originally made in cash.",
+                pronunciation: "این سام کِیسِز دَت گودز سُولد آر دَمِجْد اور دیفِکْتیو، آو اینْفیریِر کوالیتی، اور نات این اَکورد ویذ دِ کاسْتومِرز اِسْپِسیفیکِیشِنز، دِ کاسْتومِر مِی ریتِرن دِ گودز تو دِ سِلِر فور کْرِدیت ایْف دِ سِیل واز مِید آن کْرِدیت، اور فور اِ کَش ریفاند، ایْف دِ سِیل واز اُریجینالی مِید این کَش.",
+                translation: "در مواردی که کالاهای فروخته‌شده آسیب‌دیده یا معیوب، با کیفیت نازل یا نامنطبق با مشخصات سفارش مشتری باشند، مشتری می‌تواند در صورت خرید نسیه کالاها را برای دریافت بستانکاری، یا در صورت خرید نقدی برای استرداد وجه نقد، به فروشنده پس بدهد.",
+                words: [
+                    {
+                        en: "Defective",
+                        pron: "دیفِکْتیو",
+                        fa: "معیوب، دارای نقص فنی",
+                        synonyms: [
+                            { en: "Faulty", pron: "فالْتی", fa: "دارای ایراد، ناقص" },
+                            { en: "Flawed", pron: "فْلاد", fa: "دارای عیب و نقص" }
+                        ]
+                    },
+                    {
+                        en: "Damaged",
+                        pron: "دَمِجْد",
+                        fa: "آسیب‌دیده، خسارت‌دیده",
+                        synonyms: [
+                            { en: "Impaired", pron: "ایمْپِرد", fa: "صدمه‌دیده" },
+                            { en: "Battered", pron: "بَتِرد", fa: "ضربه و آسیب‌خورده" }
+                        ]
+                    },
+                    {
+                        en: "Cash refund",
+                        pron: "کَش ریفاند",
+                        fa: "استرداد وجه نقد، بازپرداخت پول",
+                        synonyms: [
+                            { en: "Money-back rebate", pron: "مانی بَک ریبِیت", fa: "پس دادن پول نقد" },
+                            { en: "Cash reimbursement", pron: "کَش ری‌ایمْبِرسْمِنت", fa: "جبران نقدی خسارت" }
+                        ]
+                    },
+                    {
+                        en: "In accord with",
+                        pron: "این اَکورد ویذ",
+                        fa: "منطبق با، مطابق با",
+                        synonyms: [
+                            { en: "In line with", pron: "این لاین ویذ", fa: "هماهنگ با" },
+                            { en: "Consistent with", pron: "کانْسیسْتِنت ویذ", fa: "سازگار با" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 20,
+                en: "This transaction is known as sales returns.",
+                pronunciation: "دیس تْرَنْزَکْشِن ایز نُون اَز سِیلز ریتِرنز.",
+                translation: "این رویداد مالی به عنوان «برگشت از فروش» شناخته می‌شود.",
+                words: [
+                    {
+                        en: "Sales returns",
+                        pron: "سِیلز ریتِرنز",
+                        fa: "برگشت از فروش، کالای مرجوعی مشتری",
+                        synonyms: [
+                            { en: "Returned merchandise", pron: "ریتِرنْد مِرچِندایز", fa: "کالاهای برگشتی" },
+                            { en: "Customer returns", pron: "کاسْتومِر ریتِرنز", fa: "مرجوعی‌های مشتریان" }
+                        ]
+                    },
+                    {
+                        en: "Transaction",
+                        pron: "تْرَنْزَکْشِن",
+                        fa: "رویداد مالی، معامله",
+                        synonyms: [
+                            { en: "Accounting deal", pron: "اِکانْتینگ دیل", fa: "معامله حسابداری" },
+                            { en: "Financial event", pron: "فاینَنشال ایوِنت", fa: "رویداد مالی دفتری" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+// ==================== WEEK 2 DATA (Pages 127 and 163-165) ====================
+const week2Data = [
+    {
+        title: "بخش ۱: برگشت از فروش و تخفیفات (Sales Returns and Allowances)",
+        badge: "درس ۹ - صفحه ۱۲۷ کتاب",
+        sentences: [
+            {
+                id: 21,
+                en: "As an alternative, the customer may be satisfied with keeping the merchandise if a deduction from the selling price is granted by the seller.",
+                pronunciation: "اَز اَن آلْتِرْنِتیو، دِ کاسْتومِر مِی بی سَتِیسْفاید ویذ کیپینگ دِ مِرچِندایز ایْف اِ دیداکْشِن فرام دِ سِلینگ پْرایس ایز گْرَنْتِد بای دِ سِلِر.",
+                translation: "به عنوان یک راهکار جایگزین، چنانچه کسر و تخفیفی از قیمت فروش توسط فروشنده اعطا گردد، مشتری ممکن است به نگه داشتن کالا رضایت دهد.",
+                words: [
+                    {
+                        en: "Alternative",
+                        pron: "آلْتِرْنِتیو",
+                        fa: "راهکار جایگزین، گزینه دیگر",
+                        synonyms: [
+                            { en: "Option", pron: "آپْشِن", fa: "گزینه، انتخاب" },
+                            { en: "Substitute", pron: "سابْسْتیتیوت", fa: "جانشین، بدیل" }
+                        ]
+                    },
+                    {
+                        en: "Merchandise",
+                        pron: "مِرچِندایز",
+                        fa: "کالا، اجناس تجاری",
+                        synonyms: [
+                            { en: "Goods", pron: "گودز", fa: "کالاها" },
+                            { en: "Commodities", pron: "کامودِتیز", fa: "اقلام بازرگانی" }
+                        ]
+                    },
+                    {
+                        en: "Deduction",
+                        pron: "دیداکْشِن",
+                        fa: "کسر، تخفیف در مبلغ",
+                        synonyms: [
+                            { en: "Reduction", pron: "ریدَکْشِن", fa: "کاهش، تقلیل" },
+                            { en: "Discount", pron: "دیسْکانْت", fa: "تخفیف قیمتی" }
+                        ]
+                    },
+                    {
+                        en: "Granted",
+                        pron: "گْرَنْتِد",
+                        fa: "اعطاشده، موافقت‌شده",
+                        synonyms: [
+                            { en: "Awarded", pron: "اِوارْدِد", fa: "اعطاشده" },
+                            { en: "Allowed", pron: "اَلاود", fa: "پذیرفته‌شده، مجاز" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 22,
+                en: "This transaction is known as sales allowances.",
+                pronunciation: "دیس تْرَنْزَکْشِن ایز نُون اَز سِیلز اَلاوِنْسِز.",
+                translation: "این رویداد مالی (معامله) تحت عنوان «تخفیفات و کسورات فروش» شناخته می‌شود.",
+                words: [
+                    {
+                        en: "Transaction",
+                        pron: "تْرَنْزَکْشِن",
+                        fa: "رویداد مالی، معامله",
+                        synonyms: [
+                            { en: "Financial event", pron: "فاینَنشال ایوِنت", fa: "واقعه مالی" },
+                            { en: "Deal", pron: "دیل", fa: "دادوستد، معامله" }
+                        ]
+                    },
+                    {
+                        en: "Sales allowances",
+                        pron: "سِیلز اَلاوِنْسِز",
+                        fa: "تخفیفات و کسورات فروش",
+                        synonyms: [
+                            { en: "Price concessions", pron: "پْرایس کانْسِشِنز", fa: "ارفاق و تخفیف قیمت" },
+                            { en: "Sales rebates", pron: "سِیلز ریبِیتس", fa: "برگشت بخشی از بهای فروش" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 23,
+                en: "Because the reason for granting a discount to the buyer is the poor quality of goods sold, sales returns and sales allowances are usually combined into one contra revenue account, called sales returns and allowances.",
+                pronunciation: "بیکاز دِ ریزِن فور گْرَنْْتینگ اِ دیسْکانْت تو دِ بایِر ایز دِ پور کوالیتی آو گودز سُولد، سِیلز ریتِرنز اَند سِیلز اَلاوِنْسِز آر یُوژوالی کامْباینْد اینْتو وان کانتْرا رِوِنیو اِکانْت، کالْد سِیلز ریتِرنز اَند اَلاوِنْسِز.",
+                translation: "از آنجا که دلیل اعطای تخفیف به خریدار، کیفیت نامطلوب کالای فروخته‌شده است، معمولاً برگشت از فروش و تخفیفات فروش در یک حساب کاهنده درآمد (حساب مقابل درآمد) تحت عنوان «برگشت از فروش و تخفیفات» تجمیع و ترکیب می‌شوند.",
+                words: [
+                    {
+                        en: "Contra revenue",
+                        pron: "کانتْرا رِوِنیو",
+                        fa: "کاهنده درآمد، حساب مقابل درآمد",
+                        synonyms: [
+                            { en: "Revenue offset", pron: "رِوِنیو آفْسِت", fa: "تعدیل‌کننده درآمد" },
+                            { en: "Deductive revenue", pron: "دیداکْتیو رِوِنیو", fa: "درآمد کسری" }
+                        ]
+                    },
+                    {
+                        en: "Combined",
+                        pron: "کامْباینْد",
+                        fa: "ادغام‌شده، ترکیب‌شده",
+                        synonyms: [
+                            { en: "Merged", pron: "مِرجْد", fa: "یکی‌شده، ادغام‌شده" },
+                            { en: "Consolidated", pron: "کانْسالیدِیتِد", fa: "تجمیع‌شده، یکپارچه" }
+                        ]
+                    },
+                    {
+                        en: "Poor quality",
+                        pron: "پور کوالیتی",
+                        fa: "کیفیت نامطلوب، کیفیت پایین",
+                        synonyms: [
+                            { en: "Substandard", pron: "ساب‌اِسْتاندارد", fa: "غیراستاندارد، نامرغوب" },
+                            { en: "Inferior grade", pron: "اینْفیریِر گْرِید", fa: "درجه کیفی پایین" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 24,
+                en: "A credit memorandum is issued by the seller at the time such a transaction occurs to inform customer that a credit has been made to his or her account receivable for a sales return or allowance.",
+                pronunciation: "اِ کْرِدیت مِمورَنْدِم ایز ایشود بای دِ سِلِر اَت دِ تایم ساچ اِ تْرَنْزَکْشِن اِکِرز تو اینْفورم کاسْتومِر دَت اِ کْرِدیت هَز بین مِید تو هیز اور هِر اِکانْت ریسیوابِل فور اِ سِیلز ریتِرن اور اَلاوِنس.",
+                translation: "در زمان وقوع چنین معامله‌ای، یک «اعلامیه بستانکار» توسط فروشنده صادر می‌گردد تا به مشتری اطلاع داده شود که حساب دریافتنی وی به سبب برگشت از فروش یا تخفیف، بستانکار شده است.",
+                words: [
+                    {
+                        en: "Credit memorandum",
+                        pron: "کْرِدیت مِمورَنْدِم",
+                        fa: "اعلامیه بستانکار، برگه بستانکاری",
+                        synonyms: [
+                            { en: "Credit note", pron: "کْرِدیت نُوت", fa: "سند بستانکاری" },
+                            { en: "Credit voucher", pron: "کْرِدیت واوْچِر", fa: "سند حسابداری بستانکار" }
+                        ]
+                    },
+                    {
+                        en: "Issued",
+                        pron: "ایشود",
+                        fa: "صادرشده، صادر گردیده",
+                        synonyms: [
+                            { en: "Released", pron: "ریلیسْد", fa: "منتشرشده، ارائه‌شده" },
+                            { en: "Dispatched", pron: "دیسْپَچْد", fa: "ارسال و ابلاغ‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Account receivable",
+                        pron: "اِکانْت ریسیوابِل",
+                        fa: "حساب دریافتنی، مطالبات تجاری",
+                        synonyms: [
+                            { en: "Receivable claim", pron: "ریسیوابِل کْلِیم", fa: "طلب قابل وصول" },
+                            { en: "Customer debt", pron: "کاسْتومِر دِت", fa: "بدهی مشتری به شرکت" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 25,
+                en: "The original copy of the credit memo is sent to the customer, whereas the seller uses another copy to record transaction.",
+                pronunciation: "دِ اُریجینال کاپی آو دِ کْرِدیت مِمُو ایز سِنْت تو دِ کاسْتومِر، وِراَز دِ سِلِر یوزِز اَنادِر کاپی تو رِکورد تْرَنْزَکْشِن.",
+                translation: "نسخه اصلی اعلامیه بستانکار برای مشتری ارسال می‌شود، در حالی که فروشنده از نسخه‌ای دیگر برای ثبت رویداد مالی در دفاتر استفاده می‌کند.",
+                words: [
+                    {
+                        en: "Original copy",
+                        pron: "اُریجینال کاپی",
+                        fa: "نسخه اصلی، برگه نخست",
+                        synonyms: [
+                            { en: "Primary draft", pron: "پْرایمِری دْرَفْت", fa: "نسخه نخستین" },
+                            { en: "Master copy", pron: "مَسْتِر کاپی", fa: "نسخه پایه و اصلی" }
+                        ]
+                    },
+                    {
+                        en: "Whereas",
+                        pron: "وِراَز",
+                        fa: "در حالی که، از سوی دیگر",
+                        synonyms: [
+                            { en: "While", pron: "وایْل", fa: "در صورتی که" },
+                            { en: "On the other hand", pron: "آن دی اَذِر هَنْد", fa: "از طرف دیگر" }
+                        ]
+                    },
+                    {
+                        en: "Record",
+                        pron: "رِکورد",
+                        fa: "ثبت کردن، در دفاتر درج نمودن",
+                        synonyms: [
+                            { en: "Register", pron: "رِجیستِر", fa: "ثبت دفتری کردن" },
+                            { en: "Enter into books", pron: "اِنْتِر اینْتو بوکس", fa: "وارد دفاتر مالی ساختن" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 26,
+                en: "The journal entry to record such a transaction involves a debit to Sales Return and Allowances and a credit to Accounts Receivable, or Cash if the sale was made in cash.",
+                pronunciation: "دِ جِرنال اِنْتْری تو رِکورد ساچ اِ تْرَنْزَکْشِن اینْوالْوز اِ دِبیت تو سِیلز ریتِرن اَند اَلاوِنْسِز اَند اِ کْرِدیت تو اِکانْتس ریسیوابِل، اور کَش ایْف دِ سِیل واز مِید این کَش.",
+                translation: "ثبت روزنامه جهت درج چنین معامله‌ای، شامل بدهکار کردن حساب «برگشت از فروش و تخفیفات» و بستانکار کردن حساب «حساب‌های دریافتنی» (یا حساب «وجوه نقد» در صورتی که فروش نقدی بوده باشد) است.",
+                words: [
+                    {
+                        en: "Journal entry",
+                        pron: "جِرنال اِنْتْری",
+                        fa: "ثبت در دفتر روزنامه",
+                        synonyms: [
+                            { en: "Accounting entry", pron: "اِکانْتینگ اِنْتْری", fa: "ثبت سند حسابداری" },
+                            { en: "Book entry", pron: "بوک اِنْتْری", fa: "قلم ثبتی دفاتر" }
+                        ]
+                    },
+                    {
+                        en: "Debit",
+                        pron: "دِبیت",
+                        fa: "بدهکار (سمت راست حساب)",
+                        synonyms: [
+                            { en: "Charge", pron: "چارْج", fa: "ثبت به حساب بدهکار" },
+                            { en: "Left-hand entry", pron: "لِفْت هَنْد اِنْتْری", fa: "ثبت در طرف چپ حساب" }
+                        ]
+                    },
+                    {
+                        en: "Involves",
+                        pron: "اینْوالْوز",
+                        fa: "شامل بودن، مستلزم بودن",
+                        synonyms: [
+                            { en: "Entails", pron: "اِنْتِیلز", fa: "ایجاب کردن" },
+                            { en: "Includes", pron: "اینْکْلودز", fa: "در بر داشتن" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۲: تخفیفات نقدی فروش و شرایط اعتباری (Sales Discount)",
+        badge: "ادامه درس ۹ - صفحه ۱۲۷ کتاب",
+        sentences: [
+            {
+                id: 27,
+                en: "Not all sales' transactions are made for cash.",
+                pronunciation: "نات آل سِیلز تْرَنْزَکْشِنز آر مِید فور کَش.",
+                translation: "تمامی معاملات و رویدادهای فروش به‌صورت نقدی انجام نمی‌شوند.",
+                words: [
+                    {
+                        en: "Cash",
+                        pron: "کَش",
+                        fa: "نقد، وجوه نقد",
+                        synonyms: [
+                            { en: "Ready money", pron: "رِدی مانی", fa: "پول نقد در دسترس" },
+                            { en: "Currency", pron: "کارِنْسی", fa: "وجه نقد رایج" }
+                        ]
+                    },
+                    {
+                        en: "Sales transactions",
+                        pron: "سِیلز تْرَنْزَکْشِنز",
+                        fa: "معاملات فروش",
+                        synonyms: [
+                            { en: "Sales dealings", pron: "سِیلز دیلینگز", fa: "دادوستدهای فروش" },
+                            { en: "Trade activities", pron: "تْرِید اَکْتیویتیز", fa: "فعالیت‌های بازرگانی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 28,
+                en: "Most of merchandising businesses may follow the policy of credit sales to earn more profit, which requires additional efforts to convert receivables into cash.",
+                pronunciation: "مُوست آو مِرچِندایزینگ بیزینسِز مِی فالُو دِ پالیسی آو کْرِدیت سِیلز تو اِرن مُور پْرافیت، ویچ ریکْوایِرز اَدیشِنال اِفُورتْس تو کانْوِرت ریسیوابِلز اینْتو کَش.",
+                translation: "اکثر بنگاه‌های بازرگانی ممکن است برای کسب سود بیشتر از خط‌مشی فروش نسیه (اعتباری) پیروی کنند، که این امر مستلزم تلاش‌های مضاعف جهت نقد کردن مطالبات است.",
+                words: [
+                    {
+                        en: "Credit sales",
+                        pron: "کْرِدیت سِیلز",
+                        fa: "فروش نسیه، فروش اعتباری",
+                        synonyms: [
+                            { en: "On-account sales", pron: "آن اِکانْت سِیلز", fa: "فروش به حساب دفتری" },
+                            { en: "Non-cash sales", pron: "نان کَش سِیلز", fa: "فروش غیرنقدی" }
+                        ]
+                    },
+                    {
+                        en: "Merchandising businesses",
+                        pron: "مِرچِندایزینگ بیزینسِز",
+                        fa: "بنگاه‌های بازرگانی",
+                        synonyms: [
+                            { en: "Trading companies", pron: "تْرِیدینگ کامْپَنیز", fa: "شرکت‌های تجاری" },
+                            { en: "Commercial enterprises", pron: "کامِرشال اِنْتِرپْرایزِز", fa: "بنگاه‌های تجاری" }
+                        ]
+                    },
+                    {
+                        en: "Convert",
+                        pron: "کانْوِرت",
+                        fa: "تبدیل کردن، نقد کردن",
+                        synonyms: [
+                            { en: "Liquidate", pron: "لیکْویدِیت", fa: "نقد کردن دارایی" },
+                            { en: "Turn into", pron: "تِرن اینْتو", fa: "تبدیل ساختن به" }
+                        ]
+                    },
+                    {
+                        en: "Additional efforts",
+                        pron: "اَدیشِنال اِفُورتْس",
+                        fa: "تلاش‌های مضاعف، زحمات بیشتر",
+                        synonyms: [
+                            { en: "Extra measures", pron: "اِکْسْتْرا مِژِرز", fa: "اقدامات اضافی" },
+                            { en: "Further endeavors", pron: "فِردِر اِنْدِوِرز", fa: "کوشش‌های تکمیلی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 29,
+                en: "The terms of a credit sale may offer a cash discount to the customer for the earlier payment of the balance due.",
+                pronunciation: "دِ تِرمز آو اِ کْرِدیت سِیل مِی آفِر اِ کَش دیسْکانْت تو دِ کاسْتومِر فور دِ اِرْلیِر پِیمِنت آو دِ بالانْس دیو.",
+                translation: "شرایط فروش اعتباری (نسیه) ممکن است برای پرداخت زودهنگام مانده بدهی، تخفیف نقدی به مشتری پیشنهاد دهد.",
+                words: [
+                    {
+                        en: "Terms",
+                        pron: "تِرمز",
+                        fa: "شرایط، ضوابط قرارداد",
+                        synonyms: [
+                            { en: "Conditions", pron: "کاندیشِنز", fa: "شروط، اوضاع" },
+                            { en: "Provisions", pron: "پْرُویژِنز", fa: "مقررات، مفاد" }
+                        ]
+                    },
+                    {
+                        en: "Cash discount",
+                        pron: "کَش دیسْکانْت",
+                        fa: "تخفیف نقدی (تخفیف تسویه)",
+                        synonyms: [
+                            { en: "Early settlement discount", pron: "اِرْلی سِتِلْمِنت دیسْکانْت", fa: "تخفیف تسویه زودهنگام" },
+                            { en: "Prompt payment discount", pron: "پْرامْپْت پِیمِنت دیسْکانْت", fa: "تخفیف پرداخت بی‌درنگ" }
+                        ]
+                    },
+                    {
+                        en: "Balance due",
+                        pron: "بالانْس دیو",
+                        fa: "مانده بدهی، مبلغ سررسیدشده",
+                        synonyms: [
+                            { en: "Outstanding amount", pron: "آوت‌استَنْدینگ اَماوْنت", fa: "مبلغ تصفیه‌نشده" },
+                            { en: "Payable debt", pron: "پِیِبِل دِت", fa: "بدهی پرداخت‌شدنی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 30,
+                en: "This incentive, called sales discounts, conveys advantages to both parties.",
+                pronunciation: "دیس اینْسِنْتیو، کالْد سِیلز دیسْکانْتس، کانْوِیز اَدْوانْتِجِز تو بُوث پارْتیز.",
+                translation: "این انگیزاننده (مشوق مالی) که «تخفیفات نقدی فروش» نامیده می‌شود، مزایایی را برای هر دو طرف معامله به همراه دارد.",
+                words: [
+                    {
+                        en: "Incentive",
+                        pron: "اینْسِنْتیو",
+                        fa: "مشوق، انگیزاننده مالی",
+                        synonyms: [
+                            { en: "Inducement", pron: "اینْدیوسْمِنت", fa: "انگیزه، عامل ترغیب" },
+                            { en: "Stimulus", pron: "اِسْتیمیولِس", fa: "محرک، پیش‌برنده" }
+                        ]
+                    },
+                    {
+                        en: "Conveys",
+                        pron: "کانْوِیز",
+                        fa: "منتقل می‌کند، به همراه دارد",
+                        synonyms: [
+                            { en: "Brings", pron: "بْرینگز", fa: "می‌آورد، نتیجه می‌دهد" },
+                            { en: "Imparts", pron: "ایمْپارتس", fa: "اعطا می‌نماید" }
+                        ]
+                    },
+                    {
+                        en: "Advantages",
+                        pron: "اَدْوانْتِجِز",
+                        fa: "مزایا، منافع",
+                        synonyms: [
+                            { en: "Benefits", pron: "بِنِفیتس", fa: "سودها، بهره‌ها" },
+                            { en: "Gains", pron: "گِینز", fa: "عواید، دستاوردها" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 31,
+                en: "The purchaser saves money and the seller converts the account receivable into cash earlier.",
+                pronunciation: "دِ پِرچِسِر سِیوْز مانی اَند دِ سِلِر کانْوِرتس دِ اِکانْت ریسیوابِل اینْتو کَش اِرْلیِر.",
+                translation: "خریدار در پول خود صرفه‌جویی می‌کند و فروشنده نیز حساب دریافتنی خود را زودتر به پول نقد تبدیل می‌نماید.",
+                words: [
+                    {
+                        en: "Purchaser",
+                        pron: "پِرچِسِر",
+                        fa: "خریدار",
+                        synonyms: [
+                            { en: "Buyer", pron: "بایِر", fa: "مشتری، خریدار" },
+                            { en: "Customer", pron: "کاسْتومِر", fa: "ارباب‌‌رجوع، خریدار" }
+                        ]
+                    },
+                    {
+                        en: "Saves money",
+                        pron: "سِیوْز مانی",
+                        fa: "صرفه‌جویی مالی می‌کند",
+                        synonyms: [
+                            { en: "Economizes", pron: "ایکونومایزِز", fa: "اقتصادگرایی می‌کند" },
+                            { en: "Cuts expenses", pron: "کاتس اِکْسْپِنسِز", fa: "مخارج را می‌کاهد" }
+                        ]
+                    },
+                    {
+                        en: "Earlier",
+                        pron: "اِرْلیِر",
+                        fa: "زودتر، پیش از موعد",
+                        synonyms: [
+                            { en: "Sooner", pron: "سونِر", fa: "سریع‌تر، زودتر" },
+                            { en: "Ahead of time", pron: "اَهِد آو تایم", fa: "پیش از موعد مقرر" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 32,
+                en: "The credit term of 2/10, n/30, which is read \"two-ten, net thirty\" means that a 2% cash discount may be taken on the invoice price if the payment is made within 10 days from the invoice date.",
+                pronunciation: "دِ کْرِدیت تِرم آو تو تِن، نِت ثِرتی، ویچ ایز رِد تو تِن نِت ثِرتی، مینز دَت اِ تو پِرسِنت کَش دیسْکانْت مِی بی تِیکِن آن دِ اینْوویس پْرایس ایْف دِ پِیمِنت ایز مِید ویذین تِن دِیز فرام دِ اینْوویس دِیت.",
+                translation: "شرط اعتباری «۲/۱۰، ۳۰/ن» که «دو ده، خالص سی روز» خوانده می‌شود، بدان معناست که چنانچه پرداخت ظرف ۱۰ روز از تاریخ فاکتور صورت گیرد، خریدار می‌تواند از ۲ درصد تخفیف نقدی بر روی قیمت صورت‌‌حساب بهره‌مند شود.",
+                words: [
+                    {
+                        en: "Invoice price",
+                        pron: "اینْوویس پْرایس",
+                        fa: "قیمت مندرج در فاکتور (صورت‌حساب)",
+                        synonyms: [
+                            { en: "Billed price", pron: "بیلْد پْرایس", fa: "نرخ صورت‌حساب‌شده" },
+                            { en: "Gross bill amount", pron: "گْرُوس بیل اَماوْنت", fa: "مبلغ ناخالص صورت‌حساب" }
+                        ]
+                    },
+                    {
+                        en: "Net thirty",
+                        pron: "نِت ثِرتی",
+                        fa: "مهلت پرداخت خالص ۳۰ روز",
+                        synonyms: [
+                            { en: "Full payment in 30 days", pron: "فول پِیمِنت این ثِرتی دِیز", fa: "پرداخت کامل تا سی روز" },
+                            { en: "Thirty-day credit limit", pron: "ثِرتی دِی کْرِدیت لیمیت", fa: "فرجه اعتباری ۳۰ روزه" }
+                        ]
+                    },
+                    {
+                        en: "Invoice date",
+                        pron: "اینْوویس دِیت",
+                        fa: "تاریخ صدور فاکتور",
+                        synonyms: [
+                            { en: "Billing date", pron: "بیلینگ دِیت", fa: "تاریخ درج صورت‌حساب" },
+                            { en: "Issue date", pron: "ایشو دِیت", fa: "تاریخ انتشار و صدور" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۳: بهای تمام‌شده کالای فروش‌رفته و عوامل آن (Cost of Goods Sold)",
+        badge: "پایین درس ۹ - صفحه ۱۲۷ کتاب",
+        sentences: [
+            {
+                id: 33,
+                en: "The second factor in determining net income for a merchandising company is the cost of goods sold, which may be determined under a perpetual or a periodic inventory system.",
+                pronunciation: "دِ سِکِند فاکْتور این دیتِرمینینگ نِت اینْکام فور اِ مِرچِندایزینگ کامْپَنی ایز دِ کاسْتْ آو گودز سُولد، ویچ مِی بی دیتِرمینْد آنْدِر اِ پِرْپِچوال اور اِ پیریادیک اینْوِنتوری سیسْتِم.",
+                translation: "دومین عامل در تعیین سود خالص یک شرکت بازرگانی، بهای تمام‌شده کالای فروش‌رفته است که می‌تواند تحت سیستم موجودی دائمی یا ادواری مشخص شود.",
+                words: [
+                    {
+                        en: "Net income",
+                        pron: "نِت اینْکام",
+                        fa: "سود خالص، سود ویژه",
+                        synonyms: [
+                            { en: "Net profit", pron: "نِت پْرافیت", fa: "سود خالص نهایی" },
+                            { en: "Bottom-line earnings", pron: "باتِم لاین اِرْنینگز", fa: "درآمد خالص پایان دوره" }
+                        ]
+                    },
+                    {
+                        en: "Perpetual inventory",
+                        pron: "پِرْپِچوال اینْوِنتوری",
+                        fa: "سیستم ارزیابی موجودی دائمی",
+                        synonyms: [
+                            { en: "Continuous inventory", pron: "کانْتینیواِس اینْوِنتوری", fa: "انبارداری مستمر" },
+                            { en: "Real-time stock accounting", pron: "ریِل تایم اِسْتاک اِکانْتینگ", fa: "حسابداری آنلاین موجودی" }
+                        ]
+                    },
+                    {
+                        en: "Periodic inventory",
+                        pron: "پیریادیک اینْوِنتوری",
+                        fa: "سیستم ارزیابی موجودی ادواری",
+                        synonyms: [
+                            { en: "Intermittent inventory", pron: "اینْتِرمیتِنت اینْوِنتوری", fa: "انبارداری دوره‌ای" },
+                            { en: "Interval-based stock count", pron: "اینْتِروال بِیسْد اِسْتاک کاوْنت", fa: "شمارش دوره‌ای انبار" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 34,
+                en: "Regardless of the inventory system used, to determine cost of goods sold several factors are needed: cost of goods purchased, purchases returns and allowances, purchases discounts, freight-in charges, and inventories.",
+                pronunciation: "ریگاردْلِس آو دِ اینْوِنتوری سیسْتِم یوزْد، تو دیتِرمین کاسْتْ آو گودز سُولد سِوِرال فاکْتورز آر نیدِد: کاسْتْ آو گودز پِرچِسْد، پِرچِسِز ریتِرنز اَند اَلاوِنْسِز، پِرچِسِز دیسْکانْتس، فْرِیت این چارْجِز، اَند اینْوِنتوریز.",
+                translation: "صرف‌نظر از نوع سیستم موجودی کالا که به کار گرفته می‌شود، جهت محاسبه بهای تمام‌شده کالای فروش‌رفته به چندین عامل نیاز است: بهای تمام‌شده کالای خریداری‌شده، برگشت از خرید و تخفیفات، تخفیفات نقدی خرید، مخارج حمل به داخل (کرایه حمل ورودی)، و موجودی‌های کالا.",
+                words: [
+                    {
+                        en: "Purchases returns and allowances",
+                        pron: "پِرچِسِز ریتِرنز اَند اَلاوِنْسِز",
+                        fa: "برگشت از خرید و تخفیفات",
+                        synonyms: [
+                            { en: "Purchase deductions", pron: "پِرچِس دیداکْشِنز", fa: "کسورات اقلام خرید" },
+                            { en: "Vendor concessions", pron: "وِنْدُر کانْسِشِنز", fa: "ارفاق و برگشت فروشنده" }
+                        ]
+                    },
+                    {
+                        en: "Freight-in charges",
+                        pron: "فْرِیت این چارْجِز",
+                        fa: "هزینه حمل به داخل (کرایه حمل کالای خریداری‌شده)",
+                        synonyms: [
+                            { en: "Transportation-in costs", pron: "تْرَنْسْپورتِیشِن این کاسْتس", fa: "کرایه‌های ورودی به انبار" },
+                            { en: "Carriage inwards", pron: "کاریج اینْواردز", fa: "کرایه حمل ورودی کالا" }
+                        ]
+                    },
+                    {
+                        en: "Regardless of",
+                        pron: "ریگاردْلِس آو",
+                        fa: "صرف‌نظر از، بدون توجه به",
+                        synonyms: [
+                            { en: "Irrespective of", pron: "ایریسْپِکْتیو آو", fa: "جدا از اینکه" },
+                            { en: "Disregarding", pron: "دیس‌ریگارْدینگ", fa: "چشم‌پوشی از" }
+                        ]
+                    },
+                    {
+                        en: "Cost of goods purchased",
+                        pron: "کاسْتْ آو گودز پِرچِسْد",
+                        fa: "بهای کالای خریداری‌شده",
+                        synonyms: [
+                            { en: "Acquisition cost of goods", pron: "اَکْویزیشِن کاسْت آو گودز", fa: "بهای تمام‌شده تحصیل کالا" },
+                            { en: "Net purchase cost", pron: "نِت پِرچِس کاسْت", fa: "بهای خالص خرید" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۴: مبانی و اهداف سیستم‌های بهایابی (Costing Systems)",
+        badge: "صفحه ۱۶۳ کتاب",
+        sentences: [
+            {
+                id: 35,
                 en: "A cost accounting system is used to develop timely information regarding the cost of providing products or services to customers.",
                 pronunciation: "اِ کاسْتْ اِکانْتینگ سیسْتِم ایزْ یوزْدْ تو دیوِلُپْ تایمْلی اینْفِرْمِیشِن ریگارْدینگ دِ کاسْتْ آو پْرُوایدینگ پْراداکْتْسْ اور سِرْویسِز تو کاسْتومِرز.",
                 translation: "یک سیستم حسابداری بهای تمام‌شده برای ایجاد و ارائه اطلاعات به‌موقع درباره بهای تمام‌شده ارائه محصولات یا خدمات به مشتریان به کار گرفته می‌شود.",
@@ -508,7 +1810,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 2,
+                id: 36,
                 en: "Cost accounting concepts are applicable to a wide range of service industries.",
                 pronunciation: "کاسْتْ اِکانْتینگ کانْسِپْتْسْ آر اَپْلیکِبِلْ تو اِ واید رینْجْ آو سِرْویس اینْداستریز.",
                 translation: "مفاهیم حسابداری بهای تمام‌شده در طیف گسترده‌ای از صنایع خدماتی کاربرد دارند.",
@@ -543,7 +1845,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 3,
+                id: 37,
                 en: "Banks, accounting firms, hospitals, and government agencies all use cost accounting systems to ascertain the cost of performing their respective functions.",
                 pronunciation: "بَنْکْس، اِکانْتینگ فِرمز، هاسْپیتالز، اَند گاُوِرنْمِنت اِیْجِنسیز آل یوز کاسْتْ اِکانْتینگ سیسْتِمز تو اَسِرتِین دِ کاسْتْ آو پِرفورمینگ دِر رِسْپِکتیو فانْکْشِنز.",
                 translation: "بانک‌ها، مؤسسات حسابداری، بیمارستان‌ها و نهادهای دولتی همگی از سیستم‌های حسابداری بها برای تعیین بهای انجام وظایف مربوط به خود استفاده می‌کنند.",
@@ -578,7 +1880,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 4,
+                id: 38,
                 en: "However, in this lesson it is focused on manufacturing operations.",
                 pronunciation: "هاواِوِر، این دیس لِسِن ایت ایز فُوکَسْدْ آن مَنیوفَکْچِرینگ آپِرِیشِنز.",
                 translation: "با این حال، در این درس تمرکز اصلی بر روی عملیات تولیدی (کارخانه‌ای) معطوف شده است.",
@@ -613,7 +1915,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 5,
+                id: 39,
                 en: "In a manufacturing company, cost accounting systems help attain two important managerial objectives: to determine unit costs, and to provide managers with useful information for planning and controlling functions.",
                 pronunciation: "این اِ مَنیوفَکْچِرینگ کامْپَنی، کاسْتْ اِکانْتینگ سیسْتِمز هِلْپ اَتِین تو ایمْپورتانت مَنِجِریال آبْجِکْتیوز: تو دیتِرمین یونیت کاسْتْس، اَند تو پْرُواید مَنِجِرز ویذ یوسْفول اینْفِرْمِیشِن فور پْلَنینگ اَند کُنْترولینگ فانْکْشِنز.",
                 translation: "در یک شرکت تولیدی، سیستم‌های حسابداری بها به دستیابی به دو هدف مدیریتی مهم کمک می‌کنند: تعیین بهای تمام‌شده هر واحد کالا، و تجهیز مدیران با اطلاعات سودمند جهت برنامه‌‌ریزی و کنترل عملیات.",
@@ -633,7 +1935,7 @@ const sectionsData = [
                         fa: "اهداف مدیریتی",
                         synonyms: [
                             { en: "Management goals", pron: "مَنِجْمِنت گُولز", fa: "مقاصد مدیریت" },
-                            { en: "Administrative targets", pron: "اَدْمینیسترِیتیو تارْگِتس", fa: "هدف‌گذاری‌های اداری" }
+                            { en: "Administrative targets", pron: "اَدْمینیسترِیتیو تارْگِتس", fa: "هدف‌‌گذاری‌های اداری" }
                         ]
                     },
                     {
@@ -659,11 +1961,11 @@ const sectionsData = [
         ]
     },
     {
-        title: "بخش ۲: انواع سیستم‌های بهایابی و ویژگی‌های سفارش کار (Job Order)",
+        title: "بخش ۵: انواع سیستم‌های بهایابی و ویژگی‌های سفارش کار (Job Order)",
         badge: "صفحه ۱۶۴ کتاب",
         sentences: [
             {
-                id: 6,
+                id: 40,
                 en: "There are two main types of cost accounting systems for manufacturing operations: job order cost system, and process cost system.",
                 pronunciation: "دِر آر تو مِین تایپْس آو کاسْتْ اِکانْتینگ سیسْتِمز فور مَنیوفَکْچِرینگ آپِرِیشِنز: جاب اُردِر کاسْت سیسْتِم، اَند پراسِس کاسْت سیسْتِم.",
                 translation: "دو نوع عمده سیستم حسابداری بهای تمام‌شده برای عملیات تولیدی وجود دارد: سیستم بهایابی سفارش کار و سیستم بهایابی مرحله‌ای.",
@@ -698,10 +2000,10 @@ const sectionsData = [
                 ]
             },
             {
-                id: 7,
+                id: 41,
                 en: "Although each system has its unique characteristics, both produce the same end results of timely information about unit production costs, cost of goods sold, and cost of goods on hand.",
                 pronunciation: "آلدُو ایچ سیسْتِم هَز ایتس یونیک کاراکْتِریستیکْس، بُوث پْرُدیوس دِ سِیم اِند ریزالْتْس آو تایمْلی اینْفِرْمِیشِن اَبائوت یونیت پْروداکْشِن کاسْتْس، کاسْتْ آو گودز سُولد، اَند کاسْتْ آو گودز آن هَنْد.",
-                translation: "اگرچه هر یک از این سیستم‌ها دارای ویژگی‌های منحصربه‌فرد خود هستند، ولی هر دو نتایج نهایی یکسانی از اطلاعات به‌موقع درباره بهای تمام‌شده هر واحد تولید، بهای تمام‌شده کالای فروش‌رفته و بهای موجودی کالای پایان دوره فراهم می‌‌سازند.",
+                translation: "اگرچه هر یک از این سیستم‌ها دارای ویژگی‌های منحصربه‌‌فرد خود هستند، ولی هر دو نتایج نهایی یکسانی از اطلاعات به‌موقع درباره بهای تمام‌شده هر واحد تولید، بهای تمام‌شده کالای فروش‌رفته و بهای موجودی کالای پایان دوره فراهم می‌سازند.",
                 words: [
                     {
                         en: "Unique characteristics",
@@ -742,7 +2044,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 8,
+                id: 42,
                 en: "The job order cost system is most suitable where the products differ in types of materials and work performed.",
                 pronunciation: "دِ جاب اُردِر کاسْت سیسْتِم ایز مُوست سوتِبِل وِر دِ پْراداکْتْس دیفِر این تایپْس آو ماتیرْیالز اَند وِرک پِرفورمْد.",
                 translation: "سیستم بهایابی سفارش کار برای مواردی مناسب‌تر است که در آن‌ها محصولات از لحاظ جنس مواد اولیه مصرفی و نوع کار انجام‌شده با یکدیگر متفاوت باشند.",
@@ -777,7 +2079,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 9,
+                id: 43,
                 en: "Thus, each product is made according to the customer's specifications and the price quoted is closely tied to the estimated cost.",
                 pronunciation: "داس، ایچ پْراداکْت ایز مِید اِکوردینگ تو دِ کاسْتومِرز اِسْپِسیفیکِیشِنز اَند دِ پْرایس کُووتِد ایز کْلُوسْلی تاید تو دِ اِسْتیمِیتِد کاسْت.",
                 translation: "بنابراین، هر محصول دقیقاً بر اساس مشخصات و سفارش مشتری ساخته می‌شود و نرخ و قیمت پیشنهادی ارتباط تنگاتنگی با بهای تخمینی تولید دارد.",
@@ -821,7 +2123,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 10,
+                id: 44,
                 en: "Examples of types of companies, which might use job order costing, are printing and furnishing companies.",
                 pronunciation: "اِگْزامْپِلز آو تایپْس آو کامْپَنیز، ویچ مایت یوز جاب اُردِر کاسْتینگ، آر پْرینْتینگ اَند فِرنیشینگ کامْپَنیز.",
                 translation: "از نمونه‌های بارز شرکت‌هایی که ممکن است از روش بهایابی سفارش کار استفاده کنند، شرکت‌های چاپ و صنایع تولید مبلمان هستند.",
@@ -858,11 +2160,11 @@ const sectionsData = [
         ]
     },
     {
-        title: "بخش ۳: عناصر بهای تمام‌شده و نحوه ثبت و تخصیص در سفارش کار",
+        title: "بخش ۶: عناصر بهای تمام‌شده و نحوه ثبت و تخصیص در سفارش کار",
         badge: "ادامه صفحه ۱۶۴ کتاب",
         sentences: [
             {
-                id: 11,
+                id: 45,
                 en: "Under a job order cost system, the three basic elements of costs—direct material, direct labor, and factory overhead—are accumulated according to assigned job numbers.",
                 pronunciation: "آنْدِر اِ جاب اُردِر کاسْت سیسْتِم، دِ ثْری بِیسیک اِلِمِنتس آو کاسْتْس—دایْرِکْت ماتیرْیال، دایْرِکْت لِیبِر، اَند فاکْتوری اُوِرهِد—آر اَکیومیولِیتِد اِکوردینگ تو اَسایْند جاب نامْبِرز.",
                 translation: "در سیستم بهایابی سفارش کار، سه جزء اصلی تشکیل‌دهنده بهای تمام‌شده—شامل مواد مستقیم، دستمزد مستقیم، و سربار کارخانه—بر مبنای شماره سفارش تخصیص‌یافته جمع‌آوری و انباشته می‌گردند.",
@@ -906,7 +2208,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 12,
+                id: 46,
                 en: "The unit cost for each job is obtained by dividing the total costs of the job by the total units produced.",
                 pronunciation: "دِ یونیت کاسْت فور ایچ جاب ایز آبْتِینْدْ بای دیوایْدینگ دِ تُوتال کاسْتْس آو دِ جاب بای دِ تُوتال یونیتْس پْرُدیوسْد.",
                 translation: "بهای تمام‌شده هر واحد برای هر سفارش، از حاصل تقسیم کل هزینه‌های آن سفارش بر تعداد کل واحدهای تولیدشده به دست می‌آید.",
@@ -941,7 +2243,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 13,
+                id: 47,
                 en: "Selling and administrating costs are not considered as part of the cost of the job and are shown separately on the cost sheet and income statement.",
                 pronunciation: "سِلینگ اَند اَدْمینیسترِیتینگ کاسْتْس آر ناتْ کانْسیدِرد اَز پارت آو دِ کاسْت آو دِ جاب اَند آر شُونْ سِپِرِتْلی آن دِ کاسْت شیت اَند اینْکام اِسْتِیتْمِنت.",
                 translation: "هزینه‌های اداری، تشکیلاتی و فروش جزء بهای تمام‌شده سفارش به حساب نمی‌آیند و به‌طور مجزا در برگه بهای سفارش و صورت سود و زیان درج می‌شوند.",
@@ -958,7 +2260,7 @@ const sectionsData = [
                     {
                         en: "Separately",
                         pron: "سِپِرِتْلی",
-                        fa: "به‌طور مجزا، جداگانه",
+                        fa: "به‌‌طور مجزا، جداگانه",
                         synonyms: [
                             { en: "Individually", pron: "اینْدیویژوالی", fa: "منحصراً، تک‌تک" },
                             { en: "Apart", pron: "اَپارت", fa: "سوا، دور از هم" }
@@ -976,7 +2278,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 14,
+                id: 48,
                 en: "To function properly, it must be possible for a job order cost system to identify each job physically and segregate its related costs.",
                 pronunciation: "تو فانْکْشِن پْراپِرْلی، ایت ماسْت بی پاسیبِل فور اِ جاب اُردِر کاسْت سیسْتِم تو آیدِنْتیفای ایچ جاب فیزیکالی اَند سِگْرِگِیت ایتس ریلِیتِد کاسْتْس.",
                 translation: "برای اینکه سیستم بهایابی سفارش کار به‌درستی عمل کند، باید امکان شناسایی فیزیکی هر سفارش و تفکیک هزینه‌های مربوط به آن وجود داشته باشد.",
@@ -1011,7 +2313,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 15,
+                id: 49,
                 en: "Each individual order or batch is assigned a job number.",
                 pronunciation: "ایچ اینْدیویژوال اُردِر اور بَچ ایز اَسایْند اِ جاب نامْبِر.",
                 translation: "به هر سفارش منحصر‌به‌‌فرد یا هر بهر (دسته تولیدی)، یک شماره سفارش کار اختصاص می‌یابد.",
@@ -1046,7 +2348,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 16,
+                id: 50,
                 en: "Material requisitions, labor costs and other charges carry the particular job number, and a cost sheet is used to summarize the applicable job costs.",
                 pronunciation: "ماتیرْیال رِکْویزیشِنز، لِیبِر کاسْتْس اَند اَذِر چارْجِز کَری دِ پارتیکیولار جاب نامْبِر، اَند اِ کاسْت شیت ایز یوزْدْ تو سامِرایز دِ اَپْلیکِبِل جاب کاسْتْس.",
                 translation: "برگه‌های درخواست مواد، هزینه‌های دستمزد و سایر مخارج حاوی همان شماره سفارش اختصاصی هستند و از یک برگه بهای تمام‌شده جهت خلاصه کردن هزینه‌های قابل اعمال سفارش استفاده می‌شود.",
@@ -1090,7 +2392,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 17,
+                id: 51,
                 en: "The profit or loss can be computed for each job and the unit cost can be computed for the purpose of inventory costing.",
                 pronunciation: "دِ پْرافیت اور لاس کَن بی کامْپیوتِد فور ایچ جاب اَند دِ یونیت کاسْت کَن بی کامْپیوتِد فور دِ پِربِس آو اینْوِنتوری کاسْتینگ.",
                 translation: "سود یا زیان را می‌توان برای هر سفارش به تنهایی محاسبه نمود و بهای هر واحد نیز به منظور ارزشیابی موجودی‌های انبار محاسبه‌پذیر است.",
@@ -1127,11 +2429,11 @@ const sectionsData = [
         ]
     },
     {
-        title: "بخش ۴: برگه بهای سفارش کار و دفاتر معین بهایابی (Job Cost Sheet)",
+        title: "بخش ۷: برگه بهای سفارش کار و دفاتر معین بهایابی (Job Cost Sheet)",
         badge: "پایان صفحه ۱۶۴ و آغاز صفحه ۱۶۵",
         sentences: [
             {
-                id: 18,
+                id: 52,
                 en: "Costs incurred for the various jobs are debited to work in process.",
                 pronunciation: "کاسْتْس اینْکِرد فور دِ وِریوس جابز آر دِبیتِد تو وِرک این پراسِس.",
                 translation: "هزینه‌های واقع‌شده برای سفارش‌های گوناگون، به حساب کالای در جریان ساخت بدهکار می‌شوند.",
@@ -1166,7 +2468,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 19,
+                id: 53,
                 en: "The work in process account is a controlling account that contains summary information only.",
                 pronunciation: "دِ وِرک این پراسِس اِکانْت ایز اِ کُنْترولینگ اِکانْت دَت کانتِینز سامِری اینْفِرْمِیشِن اُوْنلی.",
                 translation: "حساب کالای در جریان ساخت یک حساب کل (کنترلی) است که تنها حاوی اطلاعات خلاصه و کلی می‌باشد.",
@@ -1201,7 +2503,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 20,
+                id: 54,
                 en: "The details concerning the costs incurred on each job order are accumulated in a subsidiary ledger known as the cost ledger.",
                 pronunciation: "دِ دیتِیلز کانسِرْنینگ دِ کاسْتْس اینْکِرد آن ایچ جاب اُردِر آر اَکیومیولِیتِد این اِ سابْسیدیِری لِجِر نُون اَز دِ کاسْتْ لِجِر.",
                 translation: "جزئیات مربوط به هزینه‌های انجام‌شده در هر سفارش کار، در یک دفتر معین تحت عنوان «دفتر معین بهای تمام‌شده» تجمیع می‌گردد.",
@@ -1236,7 +2538,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 21,
+                id: 55,
                 en: "Each cost ledger account, called a job cost sheet, has spaces for recording all direct materials and direct labor chargeable to the job and for factory overhead applied at the predetermined rate.",
                 pronunciation: "ایچ کاسْتْ لِجِر اِکانْت، کالْد اِ جاب کاسْت شیت، هَز اِسْپِیسِز فور رِکوردینگ آل دایْرِکْت ماتیرْیالز اَند دایْرِکْت لِیبِر چارْجِبِل تو دِ جاب اَند فور فاکْتوری اُوِرهِد اَپْلاید اَت دِ پْری‌دیتِرمینْد رِیت.",
                 translation: "هر حساب در دفتر معین بها، که «برگه بهای سفارش کار» نامیده می‌شود، دارای ستون‌هایی برای ثبت کلیه مواد مستقیم و دستمزد مستقیم قابل انتساب به سفارش، و همچنین سربار کارخانه اعمال‌شده بر مبنای نرخ از پیش تعیین‌شده است.",
@@ -1271,7 +2573,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 22,
+                id: 56,
                 en: "Postings to the job cost sheets are made from materials requisitions, time tickets, and machine usage reports, or from summaries of these documents.",
                 pronunciation: "پُوسْتینْگز تو دِ جاب کاسْت شیتْس آر مِید فرام ماتیرْیالز رِکْویزیشِنز، تایم تیکِتْس، اَند مَشین یوسِج ریپورتْس، اور فرام سامِریز آو دیز داکیومِنتْس.",
                 translation: "انتقال اقلام (ثبت) به برگه‌های بهای سفارش کار بر اساس حواله‌های درخواست مواد، کارت‌های اوقات کار کارگران، و گزارش‌های استفاده از ماشین‌آلات، یا بر پایه خلاصه‌ای از این اسناد انجام می‌پذیرد.",
@@ -1306,7 +2608,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 23,
+                id: 57,
                 en: "Job cost sheets are the heart of a job order cost system.",
                 pronunciation: "جاب کاسْت شیتْس آر دِ هارت آو اِ جاب اُردِر کاسْت سیسْتِم.",
                 translation: "برگه‌های بهای سفارش کار، قلب تپنده (محور و کانون اصلی) یک سیستم بهایابی سفارش کار هستند.",
@@ -1332,7 +2634,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 24,
+                id: 58,
                 en: "Once the job is finished, the job cost sheet indicates the cost of the finished goods manufactured and provides the information necessary to compute the unit costs of production.",
                 pronunciation: "وانْس دِ جاب ایز فینیشْتْ، دِ جاب کاسْت شیت اینْدیکِیتْس دِ کاسْتْ آو دِ فینیشْتْ گودز مَنیوفَکْچِرد اَند پْرُوایدز دِ اینْفِرْمِیشِن نِسِسِری تو کامْپیوت دِ یونیت کاسْتْس آو پْروداکْشِن.",
                 translation: "به محض اینکه سفارش تکمیل گردید، برگه بهای سفارش کار بهای تمام‌شده کالای تکمیل‌شده تولیدی را منعکس ساخته و اطلاعات لازم را برای محاسبه بهای هر واحد تولید فراهم می‌نماید.",
@@ -1367,7 +2669,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 25,
+                id: 59,
                 en: "A typical job cost sheet is shown below.",
                 pronunciation: "اِ تیپیکال جاب کاسْت شیت ایز شُون بیلُو.",
                 translation: "یک نمونه معمول از برگه بهای سفارش کار در زیر به تصویر کشیده شده است.",
@@ -1395,11 +2697,11 @@ const sectionsData = [
         ]
     },
     {
-        title: "بخش ۵: سیستم بهایابی مرحله‌ای (Process Cost System)",
+        title: "بخش ۸: سیستم بهایابی مرحله‌ای (Process Cost System)",
         badge: "پایین صفحه ۱۶۵ کتاب",
         sentences: [
             {
-                id: 26,
+                id: 60,
                 en: "Job order cost systems are appropriate when each unit of product or batch of production is manufactured to different specifications.",
                 pronunciation: "جاب اُردِر کاسْت سیسْتِمز آر اَپْروپْری‌اِیت وِن ایچ یونیت آو پْراداکْت اور بَچ آو پْروداکْشِن ایز مَنیوفَکْچِرد تو دیفِرِنت اِسْپِسیفیکِیشِنز.",
                 translation: "سیستم‌های بهایابی سفارش کار زمانی مناسب و قابل کاربرد هستند که هر واحد کالا یا بهر تولیدی طبق مشخصات اختصاصی متفاوتی ساخته شود.",
@@ -1434,7 +2736,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 27,
+                id: 61,
                 en: "Many companies, however, produce a continuous stream of identical units, such as bottles of milk, gallon of gasoline, or kilowatt hours of electricity.",
                 pronunciation: "مِنی کامْپَنیز، هاواِوِر، پْرُدیوس اِ کُنْتینیواِس اِسْتْریم آو آیدِنْتیکال یونیتْس، ساچ اَز باتِلز آو میلْک، گالِن آو گازولین، اور کیلووات آوِرز آو اِلِکْتریسیتی.",
                 translation: "با این وجود، بسیاری از شرکت‌ها جریان پیوسته‌ای از واحدهای کاملاً همسان تولید می‌کنند، نظیر بطری‌های شیر، گالن بنزین یا کیلووات‌ساعت برق.",
@@ -1444,7 +2746,7 @@ const sectionsData = [
                         pron: "کُنْتینیواِس اِسْتْریم",
                         fa: "جریان پیوسته و مداوم",
                         synonyms: [
-                            { en: "Uninterrupted flow", pron: "آن‌اینْتِراپْتِد فْلُو", fa: "سیلان بدون وقفه" },
+                            { en: "Uninterrupted flow", pron: "آن‌‌اینْتِراپْتِد فْلُو", fa: "سیلان بدون وقفه" },
                             { en: "Constant output", pron: "کانْسْتَنت آوت‌پوت", fa: "تولید یکنواخت" }
                         ]
                     },
@@ -1469,7 +2771,7 @@ const sectionsData = [
                 ]
             },
             {
-                id: 28,
+                id: 62,
                 en: "When identical products are produced in a continuous stream, there are no distinct jobs.",
                 pronunciation: "وِن آیدِنْتیکال پْراداکْتْس آر پْرُدیوسْد این اِ کُنْتینیواِس اِسْتْریم، دِر آر نُو دیستینْکْت جابز.",
                 translation: "زمانی که محصولات همسان و مشابه در جریانی پیوسته ساخته می‌شوند، دیگر سفارش‌های کاری مجزا و تفکیک‌شده‌ای وجود ندارد.",
@@ -1495,10 +2797,10 @@ const sectionsData = [
                 ]
             },
             {
-                id: 29,
+                id: 63,
                 en: "Therefore, companies engaging in mass production often use process cost systems, rather than job order systems.",
                 pronunciation: "دِرْفور، کامْپَنیز اِنْگِیْجینگ این مَسْ پْروداکْشِن آوفِن یوز پراسِس کاسْت سیسْتِمز، رَذِر دَن جاب اُردِر سیسْتِمز.",
-                translation: "از این رو، شرکت‌هایی که درگیر تولید انبوه هستند، اغلب به جای سیستم‌های سفارش کار، از سیستم‌های بهایابی مرحله‌ای بهره می‌گیرند.",
+                translation: "از این رو، شرکت‌هایی که درگیر تولید انبوه هستند، اغلب به جای سیستم‌های سفارش کار، از سیستم‌های بهایابی مرحله‌ای بهره می‌‌گیرند.",
                 words: [
                     {
                         en: "Mass production",
@@ -1514,7 +2816,7 @@ const sectionsData = [
                         pron: "اِنْگِیْجینگ",
                         fa: "مشغول بودن، مبادرت ورزیدن",
                         synonyms: [
-                            { en: "Involved", pron: "اینْوالْود", fa: "دست‌اندرکار" },
+                            { en: "Involved", pron: "اینْوالْود", fa: "دست‌‌اندرکار" },
                             { en: "Participating", pron: "پارتیسیپِیتینگ", fa: "مشارکت‌کننده" }
                         ]
                     },
@@ -1539,6 +2841,15 @@ const checkSvg = `<svg class="icon" style="color: #16a34a;" viewBox="0 0 24 24">
 const tagSvg = `<svg class="icon" style="color: #64748b;" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>`;
 
 let currentCardEl = null;
+
+function switchWeek(weekNum) {
+    stopAudio();
+    document.querySelectorAll('.week-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.week-pane').forEach(pane => pane.classList.remove('active'));
+
+    document.getElementById(`btn-week${weekNum}`).classList.add('active');
+    document.getElementById(`pane-week${weekNum}`).classList.add('active');
+}
 
 function showToast(msg) {
     const toast = document.getElementById("toast");
@@ -1602,11 +2913,11 @@ function speakText(text, cardEl = null) {
     window.speechSynthesis.speak(utter);
 }
 
-function renderContent() {
-    const container = document.getElementById("contentArea");
+function renderContent(data, containerId) {
+    const container = document.getElementById(containerId);
     let html = "";
 
-    sectionsData.forEach(section => {
+    data.forEach(section => {
         html += `
             <div class="section-header">
                 <h2>${section.title}</h2>
@@ -1689,7 +3000,8 @@ document.getElementById("rateRange").addEventListener("input", function(e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-    renderContent();
+    renderContent(week1Data, "week1ContentArea");
+    renderContent(week2Data, "week2ContentArea");
     if ('speechSynthesis' in window) {
         window.speechSynthesis.onvoiceschanged = () => {};
     }
