@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>برنامه آموزشی جامع زبان تخصصی حسابداری (هفته اول و دوم)</title>
+    <title>پایگاه آموزشی تعاملی زبان تخصصی حسابداری</title>
     <style>
         :root {
             --primary: #1e3a8a;
-            --primary-light: #3b82f6;
+            --primary-light: #2563eb;
             --secondary: #0d9488;
             --accent: #d97706;
-            --bg-body: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --text-dark: #1e293b;
+            --bg-base: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.94);
+            --border-glass: rgba(255, 255, 255, 0.4);
+            --text-dark: #0f172a;
             --text-muted: #64748b;
-            --pronounce-bg: #f1f5f9;
+            --pronounce-bg: #f8fafc;
         }
 
         * {
@@ -24,12 +24,21 @@
             padding: 0;
         }
 
+        /* Ambient Dynamic Background */
         body {
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Vazirmatn", Tahoma, sans-serif;
-            background-color: var(--bg-body);
+            background-color: #0b1120;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(13, 148, 136, 0.35) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(37, 99, 235, 0.3) 0px, transparent 60%),
+                radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.25) 0px, transparent 50%);
+            background-attachment: fixed;
+            background-size: cover;
             color: var(--text-dark);
             line-height: 1.8;
             padding: 24px 16px 80px 16px;
+            min-height: 100vh;
         }
 
         .container {
@@ -37,20 +46,26 @@
             margin: 0 auto;
         }
 
+        /* Top Header */
         header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(15, 23, 42, 0.95) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             color: #ffffff;
             padding: 32px 24px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
-            margin-bottom: 24px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 28px;
             text-align: center;
         }
 
         header h1 {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 800;
             margin-bottom: 10px;
+            color: #f8fafc;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         header p {
@@ -108,54 +123,209 @@
             background-color: #dc2626;
         }
 
-        /* Navigation Bar for Weeks */
-        .weeks-nav {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 28px;
-            justify-content: center;
+        /* VIEW CONTAINERS */
+        .view-pane {
+            display: none;
+            animation: fadeIn 0.35s ease;
         }
 
-        .week-btn {
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            color: var(--text-dark);
-            padding: 12px 28px;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: 700;
+        .view-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ================= HOME / INDEX STYLING ================= */
+        .index-intro-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .index-intro-card h2 {
+            font-size: 21px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .index-intro-card p {
+            color: #475569;
+            font-size: 14.5px;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .index-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             cursor: pointer;
             transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .index-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+            border-color: #60a5fa;
+        }
+
+        .index-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .index-badge {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 30px;
+            color: #fff;
+        }
+
+        .badge-w1 { background-color: var(--primary-light); }
+        .badge-w2 { background-color: var(--secondary); }
+
+        .index-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .index-card-desc {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .index-subtopics {
+            list-style: none;
+            margin-bottom: 24px;
+            background: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 14px;
+            border-right: 4px solid var(--accent);
+        }
+
+        .index-subtopics li {
+            font-size: 13.5px;
+            color: #334155;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .week-btn:hover {
-            border-color: var(--primary-light);
-            background-color: #f8faff;
+        .index-subtopics li:last-child {
+            margin-bottom: 0;
         }
 
-        .week-btn.active {
-            background: var(--primary);
+        .index-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: #ffffff;
-            border-color: var(--primary);
-            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
         }
 
-        .week-pane {
-            display: none;
+        .index-btn:hover {
+            opacity: 0.95;
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
         }
 
-        .week-pane.active {
-            display: block;
+        /* Top Sticky Bar in Week Views */
+        .week-top-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 14px 20px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            border: 1px solid var(--border-glass);
+        }
+
+        .back-home-btn {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .back-home-btn:hover {
+            background: #1e293b;
+            transform: translateX(2px);
+        }
+
+        .nav-switch-btn {
+            background: #e2e8f0;
+            color: #1e293b;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-switch-btn:hover {
+            background: #cbd5e1;
         }
 
         /* Section Headings */
         .section-header {
             margin: 35px 0 18px 0;
             padding-bottom: 12px;
-            border-bottom: 3px solid #cbd5e1;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -163,7 +333,8 @@
 
         .section-header h2 {
             font-size: 20px;
-            color: #0f172a;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         .section-badge {
@@ -173,27 +344,30 @@
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* SENTENCE CARD STYLING */
         .sentence-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 18px;
             padding: 24px;
             margin-bottom: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.25s ease;
         }
 
         .sentence-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-            border-color: #cbd5e1;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+            border-color: #93c5fd;
         }
 
         .sentence-card.playing {
             border: 2px solid var(--primary-light);
             background-color: #f8faff;
-            box-shadow: 0 0 18px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
         }
 
         .card-num {
@@ -201,11 +375,11 @@
             align-items: center;
             justify-content: center;
             background: #e2e8f0;
-            color: #334155;
-            font-weight: 700;
+            color: #1e293b;
+            font-weight: 800;
             font-size: 13px;
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             margin-bottom: 14px;
         }
@@ -228,11 +402,12 @@
             transition: all 0.2s ease;
             user-select: none;
             border: 2px solid transparent;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .english-box:hover {
             background: linear-gradient(145deg, #27354a, #152033);
-            border-color: var(--primary-light);
+            border-color: #60a5fa;
             transform: translateY(-2px);
         }
 
@@ -268,6 +443,8 @@
             font-size: 14.5px;
             color: #334155;
             line-height: 1.8;
+            border: 1px solid #e2e8f0;
+            border-right: 4px solid var(--accent);
         }
 
         .box-label {
@@ -284,6 +461,7 @@
         .translation-box {
             margin-top: 14px;
             background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
             border-right: 4px solid #16a34a;
             padding: 12px 16px;
             border-radius: 8px;
@@ -300,7 +478,7 @@
         .keywords-wrapper {
             margin-top: 20px;
             padding-top: 18px;
-            border-top: 1px dashed var(--border-color);
+            border-top: 1px dashed #cbd5e1;
         }
 
         .keywords-title {
@@ -324,7 +502,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 14px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -372,6 +550,7 @@
             border-radius: 8px;
             padding: 10px 12px;
             font-size: 12.5px;
+            border: 1px solid #f3e8ff;
         }
 
         .synonyms-title {
@@ -441,7 +620,7 @@
             padding: 10px 22px;
             border-radius: 30px;
             font-size: 13.5px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
@@ -453,25 +632,12 @@
         }
 
         @media (max-width: 640px) {
-            header {
-                padding: 22px 16px;
-            }
-            header h1 {
-                font-size: 19px;
-            }
-            .controls-bar {
-                flex-direction: column;
-                width: 100%;
-            }
-            .weeks-nav {
-                flex-direction: column;
-            }
-            .english-box {
-                font-size: 15px;
-            }
-            .words-grid {
-                grid-template-columns: 1fr;
-            }
+            header { padding: 22px 16px; }
+            header h1 { font-size: 19px; }
+            .controls-bar { flex-direction: column; width: 100%; }
+            .index-grid { grid-template-columns: 1fr; }
+            .english-box { font-size: 15px; }
+            .words-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -479,8 +645,8 @@
 
 <div class="container">
     <header>
-        <h1>برنامه آموزشی هفتگی زبان تخصصی حسابداری</h1>
-        <p>سیستم تعاملی مطالعه متون، تلفظ آوایی فارسی، گوینده صوتی انگلیسی با لهجه بریتانیایی و بانک جامع واژگان همراه با مترادف‌ها</p>
+        <h1>پایگاه آموزشی تعاملی زبان تخصصی حسابداری</h1>
+        <p>مجموعه سرفصل‌های هفتگی، تلفظ دقیق آوایی فارسی، گوینده هوشمند صوتی انگلیسی (British) و بانک واژگان تخصصی به همراه مترادف‌ها</p>
         
         <div class="controls-bar">
             <div class="control-group">
@@ -499,23 +665,95 @@
         </div>
     </header>
 
-    <!-- Navigation Tabs for Weeks -->
-    <div class="weeks-nav">
-        <button class="week-btn active" id="btn-week1" onclick="switchWeek(1)">
-            📘 هفته اول (مؤسسات بازرگانی، درآمدها و فروش)
-        </button>
-        <button class="week-btn" id="btn-week2" onclick="switchWeek(2)">
-            📗 هفته دوم (تخفیفات، بهای تمام‌شده و سیستم‌های بهایابی)
-        </button>
+    <!-- ================= VIEW 1: HOME / INDEX (فهرست اصلی) ================= -->
+    <div id="view-home" class="view-pane active">
+        <div class="index-intro-card">
+            <h2>فهرست سرفصل‌های آموزشی</h2>
+            <p>جهت ورود و مطالعه مباحث، روی یکی از هفته‌های آموزشی زیر کلیک فرمایید:</p>
+        </div>
+
+        <div class="index-grid">
+            <!-- WEEK 1 CARD -->
+            <div class="index-card" onclick="openWeek(1)">
+                <div>
+                    <div class="index-card-header">
+                        <span class="index-badge badge-w1">هفته اول آموزشی</span>
+                        <span style="font-size: 13px; font-weight: 700; color: #64748b;">۲۰ جمله تخصصی</span>
+                    </div>
+                    <h3>مؤسسات بازرگانی، درآمدها و فروش</h3>
+                    <div class="index-card-desc">
+                        مفاهیم اساسی شرکت‌های بازرگانی در مقایسه با مؤسسات خدماتی، چرخه حسابداری، اصل تحقق درآمد و مقدمات برگشت از فروش.
+                    </div>
+                    <ul class="index-subtopics">
+                        <li>📌 مؤسسات بازرگانی، خرده‌فروشان و عمده‌فروشان</li>
+                        <li>📌 تفکیک درآمدها و هزینه‌های عملیاتی</li>
+                        <li>📌 اصل شناخت درآمد (Revenue Recognition)</li>
+                        <li>📌 رویدادهای مالی و مقدمه برگشت از فروش</li>
+                    </ul>
+                </div>
+                <button class="index-btn">
+                    <span>ورود و مطالعه هفته اول</span>
+                    <span>←</span>
+                </button>
+            </div>
+
+            <!-- WEEK 2 CARD -->
+            <div class="index-card" onclick="openWeek(2)">
+                <div>
+                    <div class="index-card-header">
+                        <span class="index-badge badge-w2">هفته دوم آموزشی</span>
+                        <span style="font-size: 13px; font-weight: 700; color: #64748b;">۴۳ جمله تخصصی</span>
+                    </div>
+                    <h3>تخفیفات، بهای تمام‌شده و بهایابی</h3>
+                    <div class="index-card-desc">
+                        تخفیفات و کسورات فروش، شرایط اعتباری، بهای تمام‌شده کالای فروش‌رفته، بهایابی سفارش کار (Job Order) و مرحله‌ای (Process Costing).
+                    </div>
+                    <ul class="index-subtopics">
+                        <li>📌 برگشت از فروش و تخفیفات (اعلامیه بستانکار)</li>
+                        <li>📌 تخفیف نقدی فروش و شرایط اعتباری (2/10, n/30)</li>
+                        <li>📌 بهای تمام‌شده کالای فروش‌رفته (اداری و دائمی)</li>
+                        <li>📌 سیستم‌های بهایابی سفارش کار و بهایابی مرحله‌ای</li>
+                    </ul>
+                </div>
+                <button class="index-btn">
+                    <span>ورود و مطالعه هفته دوم</span>
+                    <span>←</span>
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- WEEK 1 CONTENT PANE -->
-    <div id="pane-week1" class="week-pane active">
+    <!-- ================= VIEW 2: WEEK 1 (محتوای هفته اول) ================= -->
+    <div id="view-week1" class="view-pane">
+        <div class="week-top-bar">
+            <button class="back-home-btn" onclick="openHome()">
+                <span>↩</span>
+                <span>بازگشت به فهرست اصلی</span>
+            </button>
+            <div style="font-weight: 800; font-size: 15px; color: var(--primary);">
+                مباحث هفته اول (درس ۹: مؤسسات بازرگانی)
+            </div>
+            <button class="nav-switch-btn" onclick="openWeek(2)">
+                رفتن به هفته دوم →
+            </button>
+        </div>
         <div id="week1ContentArea"></div>
     </div>
 
-    <!-- WEEK 2 CONTENT PANE -->
-    <div id="pane-week2" class="week-pane">
+    <!-- ================= VIEW 3: WEEK 2 (محتوای هفته دوم) ================= -->
+    <div id="view-week2" class="view-pane">
+        <div class="week-top-bar">
+            <button class="back-home-btn" onclick="openHome()">
+                <span>↩</span>
+                <span>بازگشت به فهرست اصلی</span>
+            </button>
+            <div style="font-weight: 800; font-size: 15px; color: var(--secondary);">
+                مباحث هفته دوم (تخفیفات و سیستم‌های بهایابی)
+            </div>
+            <button class="nav-switch-btn" onclick="openWeek(1)">
+                ← بازگشت به هفته اول
+            </button>
+        </div>
         <div id="week2ContentArea"></div>
     </div>
 </div>
@@ -523,7 +761,22 @@
 <div id="toast">در حال خواندن...</div>
 
 <script>
-// ==================== WEEK 1 DATA (Images 1000043047.jpg & 1000043048.jpg) ====================
+// Navigation State
+function openHome() {
+    stopAudio();
+    document.querySelectorAll('.view-pane').forEach(el => el.classList.remove('active'));
+    document.getElementById('view-home').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openWeek(num) {
+    stopAudio();
+    document.querySelectorAll('.view-pane').forEach(el => el.classList.remove('active'));
+    document.getElementById(`view-week${num}`).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ==================== WEEK 1 DATA (20 SENTENCES) ====================
 const week1Data = [
     {
         title: "بخش ۱: مؤسسات بازرگانی، خرده‌فروشان و عمده‌فروشان (Merchandising Enterprises)",
@@ -673,7 +926,7 @@ const week1Data = [
                 id: 5,
                 en: "Merchandising companies that purchase and sell directly to customers are called retailers.",
                 pronunciation: "مِرچِندایزینگ کامْپَنیز دَت پِرچِس اَند سِل دایْرِکْتْلی تو کاسْتومِرز آر کالْد ریتِیلِرز.",
-                translation: "شرکت‌های بازرگانی که کالا را خریداری کرده و مستقیماً به مشتریان نهایی می‌فروشند، خرده‌فروشان نامیده می‌شوند.",
+                translation: "شرکت‌های بازرگانی که کالا را خریداری کرده و مستقیماً به مشتریان نهایی می‌‌فروشند، خرده‌فروشان نامیده می‌شوند.",
                 words: [
                     {
                         en: "Retailers",
@@ -1186,7 +1439,7 @@ const week1Data = [
                     {
                         en: "Damaged",
                         pron: "دَمِجْد",
-                        fa: "آسیب‌دیده، خسارت‌دیده",
+                        fa: "آسیب‌‌دیده، خسارت‌دیده",
                         synonyms: [
                             { en: "Impaired", pron: "ایمْپِرد", fa: "صدمه‌دیده" },
                             { en: "Battered", pron: "بَتِرد", fa: "ضربه و آسیب‌خورده" }
@@ -1242,7 +1495,7 @@ const week1Data = [
     }
 ];
 
-// ==================== WEEK 2 DATA (Pages 127 and 163-165) ====================
+// ==================== WEEK 2 DATA (43 SENTENCES) ====================
 const week2Data = [
     {
         title: "بخش ۱: برگشت از فروش و تخفیفات (Sales Returns and Allowances)",
@@ -2003,7 +2256,7 @@ const week2Data = [
                 id: 41,
                 en: "Although each system has its unique characteristics, both produce the same end results of timely information about unit production costs, cost of goods sold, and cost of goods on hand.",
                 pronunciation: "آلدُو ایچ سیسْتِم هَز ایتس یونیک کاراکْتِریستیکْس، بُوث پْرُدیوس دِ سِیم اِند ریزالْتْس آو تایمْلی اینْفِرْمِیشِن اَبائوت یونیت پْروداکْشِن کاسْتْس، کاسْتْ آو گودز سُولد، اَند کاسْتْ آو گودز آن هَنْد.",
-                translation: "اگرچه هر یک از این سیستم‌ها دارای ویژگی‌های منحصربه‌‌فرد خود هستند، ولی هر دو نتایج نهایی یکسانی از اطلاعات به‌موقع درباره بهای تمام‌شده هر واحد تولید، بهای تمام‌شده کالای فروش‌رفته و بهای موجودی کالای پایان دوره فراهم می‌سازند.",
+                translation: "اگرچه هر یک از این سیستم‌ها دارای ویژگی‌های منحصربه‌‌فرد خود هستند، ولی هر دو نتایج نهایی یکسانی از اطلاعات به‌‌موقع درباره بهای تمام‌شده هر واحد تولید، بهای تمام‌شده کالای فروش‌رفته و بهای موجودی کالای پایان دوره فراهم می‌سازند.",
                 words: [
                     {
                         en: "Unique characteristics",
@@ -2800,7 +3053,7 @@ const week2Data = [
                 id: 63,
                 en: "Therefore, companies engaging in mass production often use process cost systems, rather than job order systems.",
                 pronunciation: "دِرْفور، کامْپَنیز اِنْگِیْجینگ این مَسْ پْروداکْشِن آوفِن یوز پراسِس کاسْت سیسْتِمز، رَذِر دَن جاب اُردِر سیسْتِمز.",
-                translation: "از این رو، شرکت‌هایی که درگیر تولید انبوه هستند، اغلب به جای سیستم‌های سفارش کار، از سیستم‌های بهایابی مرحله‌ای بهره می‌‌گیرند.",
+                translation: "از این رو، شرکت‌هایی که درگیر تولید انبوه هستند، اغلب به جای سیستم‌های سفارش کار، از سیستم‌های بهایابی مرحله‌ای بهره می‌‌‌گیرند.",
                 words: [
                     {
                         en: "Mass production",
@@ -2835,21 +3088,13 @@ const week2Data = [
     }
 ];
 
+// SVGs
 const speakerSvg = `<svg class="icon" viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.77l-4.5 3h-4v-8h4l4.5 3v2zm5.5-1c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>`;
 const quoteSvg = `<svg class="icon" style="color: #d97706;" viewBox="0 0 24 24"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3"/></svg>`;
 const checkSvg = `<svg class="icon" style="color: #16a34a;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`;
 const tagSvg = `<svg class="icon" style="color: #64748b;" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>`;
 
 let currentCardEl = null;
-
-function switchWeek(weekNum) {
-    stopAudio();
-    document.querySelectorAll('.week-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.week-pane').forEach(pane => pane.classList.remove('active'));
-
-    document.getElementById(`btn-week${weekNum}`).classList.add('active');
-    document.getElementById(`pane-week${weekNum}`).classList.add('active');
-}
 
 function showToast(msg) {
     const toast = document.getElementById("toast");
@@ -2870,7 +3115,7 @@ function stopAudio() {
 
 function speakText(text, cardEl = null) {
     if (!('speechSynthesis' in window)) {
-        alert("مرورگر شما از قابلیت خوانش صوتی (Speech Synthesis) پشتیبانی نمی‌کند.");
+        alert("مرورگر شما از قابلیت خوانش صوتی پشتیبانی نمی‌کند.");
         return;
     }
 
