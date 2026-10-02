@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش متون تخصصی حسابداری صنعتی (Costing Systems) - نسخه جامع واژگان</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #0d9488;
+            --accent: #d97706;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --pronounce-bg: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Vazirmatn", Tahoma, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 24px 16px 80px 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 32px 24px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 14.5px;
+            color: #cbd5e1;
+            max-width: 850px;
+            margin: 0 auto 18px auto;
+        }
+
+        .controls-bar {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 12px 20px;
+            border-radius: 14px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            color: #f1f5f9;
+        }
+
+        .control-group select, .control-group input[type="range"] {
+            background: #ffffff;
+            color: #0f172a;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .stop-btn {
+            background-color: #ef4444;
+            color: #ffffff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .stop-btn:hover {
+            background-color: #dc2626;
+        }
+
+        .section-header {
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            color: #0f172a;
+        }
+
+        .section-badge {
+            background-color: var(--secondary);
+            color: #ffffff;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease;
+        }
+
+        .sentence-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .sentence-card.playing {
+            border: 2px solid var(--primary-light);
+            background-color: #f8faff;
+            box-shadow: 0 0 18px rgba(59, 130, 246, 0.2);
+        }
+
+        .card-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e2e8f0;
+            color: #334155;
+            font-weight: 700;
+            font-size: 13px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-bottom: 14px;
+        }
+
+        .english-box {
+            direction: ltr;
+            text-align: left;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            color: #f8fafc;
+            padding: 18px 20px;
+            border-radius: 12px;
+            font-size: 16.5px;
+            line-height: 1.6;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: all 0.2s ease;
+            user-select: none;
+            border: 2px solid transparent;
+        }
+
+        .english-box:hover {
+            background: linear-gradient(145deg, #27354a, #152033);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .english-text {
+            flex-grow: 1;
+            letter-spacing: 0.2px;
+        }
+
+        .audio-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            color: #38bdf8;
+            transition: all 0.2s ease;
+        }
+
+        .english-box:hover .audio-icon {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .pronounce-box {
+            margin-top: 14px;
+            background-color: var(--pronounce-bg);
+            border-right: 4px solid var(--accent);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14.5px;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .box-label {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .translation-box {
+            margin-top: 14px;
+            background-color: #f0fdf4;
+            border-right: 4px solid #16a34a;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #14532d;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+
+        .translation-box .box-label {
+            color: #16a34a;
+        }
+
+        .keywords-wrapper {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .keywords-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .word-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .main-word-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 6px;
+        }
+
+        .main-word-en {
+            direction: ltr;
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .main-word-en:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .main-word-pron {
+            font-size: 12.5px;
+            color: #64748b;
+        }
+
+        .main-word-fa {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .synonyms-box {
+            background: #faf5ff;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 12.5px;
+        }
+
+        .synonyms-title {
+            font-weight: 700;
+            color: #7e22ce;
+            margin-bottom: 6px;
+            font-size: 11.5px;
+        }
+
+        .synonym-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            border-bottom: 1px dotted #e9d5ff;
+        }
+
+        .synonym-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .syn-en-pron {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            direction: ltr;
+        }
+
+        .syn-word {
+            font-weight: 700;
+            color: #6b21a8;
+            cursor: pointer;
+        }
+
+        .syn-word:hover {
+            text-decoration: underline;
+        }
+
+        .syn-pron {
+            direction: rtl;
+            font-size: 11.5px;
+            color: #64748b;
+        }
+
+        .syn-fa {
+            color: #3b0764;
+            margin-top: 2px;
+        }
+
+        .icon {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 13.5px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        #toast.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 22px 16px;
+            }
+            header h1 {
+                font-size: 19px;
+            }
+            .controls-bar {
+                flex-direction: column;
+                width: 100%;
+            }
+            .english-box {
+                font-size: 15px;
+            }
+            .words-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>آموزش تعاملی متون تخصصی حسابداری صنعتی (Costing Systems)</h1>
+        <p>متن کامل صفحات ۱۶۳، ۱۶۴ و ۱۶۵ به همراه تمامی واژگان مهم هر جمله، مترادف‌ها، تلفظ صوتی با لهجه آرام انگلیسی و برگردان دقیق فارسی</p>
+        
+        <div class="controls-bar">
+            <div class="control-group">
+                <label for="accentSelect">لهجه گوینده:</label>
+                <select id="accentSelect">
+                    <option value="en-GB" selected>انگلیسی بریتانیایی (British)</option>
+                    <option value="en-US">انگلیسی آمریکایی (American)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="rateRange">سرعت خوانش:</label>
+                <input type="range" id="rateRange" min="0.6" max="1.0" step="0.05" value="0.8">
+                <span id="rateVal" style="font-size: 12px; font-weight: bold;">0.8x</span>
+            </div>
+            <button class="stop-btn" onclick="stopAudio()">توقف خوانش</button>
+        </div>
+    </header>
+
+    <div id="contentArea"></div>
+</div>
+
+<div id="toast">در حال خواندن...</div>
+
+<script>
+const sectionsData = [
+    {
+        title: "بخش ۱: مبانی و اهداف سیستم‌های بهایابی (Costing Systems)",
+        badge: "صفحه ۱۶۳ کتاب",
+        sentences: [
+            {
+                id: 1,
+                en: "A cost accounting system is used to develop timely information regarding the cost of providing products or services to customers.",
+                pronunciation: "اِ کاسْتْ اِکانْتینگ سیسْتِم ایزْ یوزْدْ تو دیوِلُپْ تایمْلی اینْفِرْمِیشِن ریگارْدینگ دِ کاسْتْ آو پْرُوایدینگ پْراداکْتْسْ اور سِرْویسِز تو کاسْتومِرز.",
+                translation: "یک سیستم حسابداری بهای تمام‌شده برای ایجاد و ارائه اطلاعات به‌موقع درباره بهای تمام‌شده ارائه محصولات یا خدمات به مشتریان به کار گرفته می‌شود.",
+                words: [
+                    {
+                        en: "Cost accounting",
+                        pron: "کاسْتْ اِکانْتینگ",
+                        fa: "حسابداری بهای تمام‌شده",
+                        synonyms: [
+                            { en: "Managerial accounting", pron: "مَنِجِریال اِکانْتینگ", fa: "حسابداری مدیریت" },
+                            { en: "Cost tracking", pron: "کاسْتْ تْرَکینگ", fa: "ردیابی هزینه‌ها" }
+                        ]
+                    },
+                    {
+                        en: "Timely",
+                        pron: "تایمْلی",
+                        fa: "به‌موقع، بهنگام",
+                        synonyms: [
+                            { en: "Punctual", pron: "پانْکچوئال", fa: "دقیق، سر وقت" },
+                            { en: "Opportune", pron: "آپِرتون", fa: "مناسب، مقتضی" }
+                        ]
+                    },
+                    {
+                        en: "Develop",
+                        pron: "دیوِلُپْ",
+                        fa: "ایجاد کردن، تدوین نمودن",
+                        synonyms: [
+                            { en: "Generate", pron: "جِنِرِیت", fa: "تولید کردن، پدید آوردن" },
+                            { en: "Formulate", pron: "فورْمیولِیت", fa: "فرموله‌بندی کردن" }
+                        ]
+                    },
+                    {
+                        en: "Regarding",
+                        pron: "ریگارْدینگ",
+                        fa: "درباره، در رابطه با",
+                        synonyms: [
+                            { en: "Concerning", pron: "کانسِرْنینگ", fa: "راجع به" },
+                            { en: "Respecting", pron: "ریسْپِکْتینگ", fa: "در ارتباط با" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                en: "Cost accounting concepts are applicable to a wide range of service industries.",
+                pronunciation: "کاسْتْ اِکانْتینگ کانْسِپْتْسْ آر اَپْلیکِبِلْ تو اِ واید رینْجْ آو سِرْویس اینْداستریز.",
+                translation: "مفاهیم حسابداری بهای تمام‌شده در طیف گسترده‌ای از صنایع خدماتی کاربرد دارند.",
+                words: [
+                    {
+                        en: "Concepts",
+                        pron: "کانْسِپْتْسْ",
+                        fa: "مفاهیم، اصول نظری",
+                        synonyms: [
+                            { en: "Principles", pron: "پْرینْسیپِلز", fa: "اصول، قواعد" },
+                            { en: "Notions", pron: "نُوشِنز", fa: "دیدگاه‌ها، باورها" }
+                        ]
+                    },
+                    {
+                        en: "Applicable",
+                        pron: "اَپْلیکِبِلْ",
+                        fa: "قابل‌اجرا، کاربردی",
+                        synonyms: [
+                            { en: "Relevant", pron: "رِلِوِنت", fa: "مرتبط، مناسب" },
+                            { en: "Appropriate", pron: "اَپْروپْری‌اِیت", fa: "درخور، شایسته" }
+                        ]
+                    },
+                    {
+                        en: "Wide range",
+                        pron: "واید رینْجْ",
+                        fa: "طیف گسترده، دامنه وسیع",
+                        synonyms: [
+                            { en: "Broad spectrum", pron: "بْرود اِسْپِکْتْرِم", fa: "گستره پهناور" },
+                            { en: "Vast array", pron: "واسْت اَرِی", fa: "مجموعه وسیع" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 3,
+                en: "Banks, accounting firms, hospitals, and government agencies all use cost accounting systems to ascertain the cost of performing their respective functions.",
+                pronunciation: "بَنْکْس، اِکانْتینگ فِرمز، هاسْپیتالز، اَند گاُوِرنْمِنت اِیْجِنسیز آل یوز کاسْتْ اِکانْتینگ سیسْتِمز تو اَسِرتِین دِ کاسْتْ آو پِرفورمینگ دِر رِسْپِکتیو فانْکْشِنز.",
+                translation: "بانک‌ها، مؤسسات حسابداری، بیمارستان‌ها و نهادهای دولتی همگی از سیستم‌های حسابداری بها برای تعیین بهای انجام وظایف مربوط به خود استفاده می‌کنند.",
+                words: [
+                    {
+                        en: "Ascertain",
+                        pron: "اَسِرتِین",
+                        fa: "معین کردن، محرز ساختن",
+                        synonyms: [
+                            { en: "Determine", pron: "دیتِرمین", fa: "تعیین نمودن" },
+                            { en: "Establish", pron: "اِسْتابْلیش", fa: "اثبات و محقق ساختن" }
+                        ]
+                    },
+                    {
+                        en: "Respective",
+                        pron: "رِسْپِکتیو",
+                        fa: "مربوطه، اختصاصی",
+                        synonyms: [
+                            { en: "Particular", pron: "پارتیکیولار", fa: "ویژه، مشخص" },
+                            { en: "Corresponding", pron: "کارِسْپاندینگ", fa: "متناظر، نظیر" }
+                        ]
+                    },
+                    {
+                        en: "Functions",
+                        pron: "فانْکْشِنز",
+                        fa: "وظایف، نقش‌های عملیاتی",
+                        synonyms: [
+                            { en: "Operations", pron: "آپِرِیشِنز", fa: "عملیات کاری" },
+                            { en: "Duties", pron: "دیوتیز", fa: "تکالیف، وظایف" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 4,
+                en: "However, in this lesson it is focused on manufacturing operations.",
+                pronunciation: "هاواِوِر، این دیس لِسِن ایت ایز فُوکَسْدْ آن مَنیوفَکْچِرینگ آپِرِیشِنز.",
+                translation: "با این حال، در این درس تمرکز اصلی بر روی عملیات تولیدی (کارخانه‌ای) معطوف شده است.",
+                words: [
+                    {
+                        en: "Focused",
+                        pron: "فُوکَسْدْ",
+                        fa: "متمرکز، معطوف‌شده",
+                        synonyms: [
+                            { en: "Centered", pron: "سِنْتِرد", fa: "مرکزیت‌یافته" },
+                            { en: "Targeted", pron: "تارْگِتِد", fa: "هدف‌‌گذاری‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Manufacturing",
+                        pron: "مَنیوفَکْچِرینگ",
+                        fa: "تولیدی، ساخت صنعتی",
+                        synonyms: [
+                            { en: "Production", pron: "پْروداکْشِن", fa: "تولید، ساخت" },
+                            { en: "Fabrication", pron: "فابریکِیشِن", fa: "ساخت کارخانه‌ای" }
+                        ]
+                    },
+                    {
+                        en: "Operations",
+                        pron: "آپِرِیشِنز",
+                        fa: "عملیات، فعالیت‌ها",
+                        synonyms: [
+                            { en: "Processes", pron: "پراسِسِز", fa: "فرایندها" },
+                            { en: "Activities", pron: "اَکْتیویتیز", fa: "فعالیت‌ها" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 5,
+                en: "In a manufacturing company, cost accounting systems help attain two important managerial objectives: to determine unit costs, and to provide managers with useful information for planning and controlling functions.",
+                pronunciation: "این اِ مَنیوفَکْچِرینگ کامْپَنی، کاسْتْ اِکانْتینگ سیسْتِمز هِلْپ اَتِین تو ایمْپورتانت مَنِجِریال آبْجِکْتیوز: تو دیتِرمین یونیت کاسْتْس، اَند تو پْرُواید مَنِجِرز ویذ یوسْفول اینْفِرْمِیشِن فور پْلَنینگ اَند کُنْترولینگ فانْکْشِنز.",
+                translation: "در یک شرکت تولیدی، سیستم‌های حسابداری بها به دستیابی به دو هدف مدیریتی مهم کمک می‌کنند: تعیین بهای تمام‌شده هر واحد کالا، و تجهیز مدیران با اطلاعات سودمند جهت برنامه‌‌ریزی و کنترل عملیات.",
+                words: [
+                    {
+                        en: "Attain",
+                        pron: "اَتِین",
+                        fa: "دستیابی، نائل آمدن",
+                        synonyms: [
+                            { en: "Achieve", pron: "اَچیو", fa: "رسیدن، کسب کردن" },
+                            { en: "Accomplish", pron: "اِکامْپْلیش", fa: "به سرانجام رساندن" }
+                        ]
+                    },
+                    {
+                        en: "Managerial objectives",
+                        pron: "مَنِجِریال آبْجِکْتیوز",
+                        fa: "اهداف مدیریتی",
+                        synonyms: [
+                            { en: "Management goals", pron: "مَنِجْمِنت گُولز", fa: "مقاصد مدیریت" },
+                            { en: "Administrative targets", pron: "اَدْمینیسترِیتیو تارْگِتس", fa: "هدف‌گذاری‌های اداری" }
+                        ]
+                    },
+                    {
+                        en: "Determine",
+                        pron: "دیتِرمین",
+                        fa: "تعیین کردن، مشخص نمودن",
+                        synonyms: [
+                            { en: "Calculate", pron: "کالْکیولِیت", fa: "محاسبه کردن" },
+                            { en: "Establish", pron: "اِسْتابْلیش", fa: "مشخص ساختن" }
+                        ]
+                    },
+                    {
+                        en: "Controlling",
+                        pron: "کُنْترولینگ",
+                        fa: "کنترل، مهار و نظارت",
+                        synonyms: [
+                            { en: "Monitoring", pron: "مانیتورینگ", fa: "پایش و نظارت" },
+                            { en: "Regulating", pron: "رِگیولِیتینگ", fa: "تنظیم و مهار کردن" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۲: انواع سیستم‌های بهایابی و ویژگی‌های سفارش کار (Job Order)",
+        badge: "صفحه ۱۶۴ کتاب",
+        sentences: [
+            {
+                id: 6,
+                en: "There are two main types of cost accounting systems for manufacturing operations: job order cost system, and process cost system.",
+                pronunciation: "دِر آر تو مِین تایپْس آو کاسْتْ اِکانْتینگ سیسْتِمز فور مَنیوفَکْچِرینگ آپِرِیشِنز: جاب اُردِر کاسْت سیسْتِم، اَند پراسِس کاسْت سیسْتِم.",
+                translation: "دو نوع عمده سیستم حسابداری بهای تمام‌شده برای عملیات تولیدی وجود دارد: سیستم بهایابی سفارش کار و سیستم بهایابی مرحله‌ای.",
+                words: [
+                    {
+                        en: "Main types",
+                        pron: "مِین تایپْس",
+                        fa: "انواع اصلی، گونه‌های عمده",
+                        synonyms: [
+                            { en: "Primary forms", pron: "پْرایمِری فُورمز", fa: "گونه‌های اولیه و مهم" },
+                            { en: "Major categories", pron: "مِیجِر کاتِگوریز", fa: "دسته‌بندی‌های کلان" }
+                        ]
+                    },
+                    {
+                        en: "Job order",
+                        pron: "جاب اُردِر",
+                        fa: "سفارش کار",
+                        synonyms: [
+                            { en: "Work order", pron: "وِرک اُردِر", fa: "حواله سفارش کار" },
+                            { en: "Custom job", pron: "کاستوم جاب", fa: "کار سفارشی" }
+                        ]
+                    },
+                    {
+                        en: "Process cost",
+                        pron: "پراسِس کاسْت",
+                        fa: "بهایابی مرحله‌ای (فرایندی)",
+                        synonyms: [
+                            { en: "Continuous costing", pron: "کانْتینیواِس کاسْتینگ", fa: "بهایابی مداوم" },
+                            { en: "Operational costing", pron: "آپِرِیشِنال کاسْتینگ", fa: "بهایابی عملیاتی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 7,
+                en: "Although each system has its unique characteristics, both produce the same end results of timely information about unit production costs, cost of goods sold, and cost of goods on hand.",
+                pronunciation: "آلدُو ایچ سیسْتِم هَز ایتس یونیک کاراکْتِریستیکْس، بُوث پْرُدیوس دِ سِیم اِند ریزالْتْس آو تایمْلی اینْفِرْمِیشِن اَبائوت یونیت پْروداکْشِن کاسْتْس، کاسْتْ آو گودز سُولد، اَند کاسْتْ آو گودز آن هَنْد.",
+                translation: "اگرچه هر یک از این سیستم‌ها دارای ویژگی‌های منحصربه‌فرد خود هستند، ولی هر دو نتایج نهایی یکسانی از اطلاعات به‌موقع درباره بهای تمام‌شده هر واحد تولید، بهای تمام‌شده کالای فروش‌رفته و بهای موجودی کالای پایان دوره فراهم می‌‌سازند.",
+                words: [
+                    {
+                        en: "Unique characteristics",
+                        pron: "یونیک کاراکْتِریستیکْس",
+                        fa: "ویژگی‌های منحصربه‌فرد",
+                        synonyms: [
+                            { en: "Distinct traits", pron: "دیستینْکْت تْرِیتس", fa: "خصایص متمایز" },
+                            { en: "Specific features", pron: "اِسْپِسیفیک فیچِرز", fa: "مشخصه‌های بارز" }
+                        ]
+                    },
+                    {
+                        en: "End results",
+                        pron: "اِند ریزالْتْس",
+                        fa: "نتایج نهایی، دستاوردها",
+                        synonyms: [
+                            { en: "Final outcomes", pron: "فاینال آوت‌کامز", fa: "پیامدهای نهایی" },
+                            { en: "Ultimate outputs", pron: "آلْتیمِیت آوت‌پوتس", fa: "خروجی‌های غایی" }
+                        ]
+                    },
+                    {
+                        en: "Cost of goods sold",
+                        pron: "کاسْتْ آو گودز سُولد",
+                        fa: "بهای تمام‌شده کالای فروش‌رفته",
+                        synonyms: [
+                            { en: "COGS", pron: "سی‌او‌جی‌اِس", fa: "مخفف بهای کالای فروش‌رفته" },
+                            { en: "Cost of sales", pron: "کاسْتْ آو سِیلز", fa: "بهای تمام‌شده فروش" }
+                        ]
+                    },
+                    {
+                        en: "Goods on hand",
+                        pron: "گودز آن هَنْد",
+                        fa: "کالای موجود (در انبار)",
+                        synonyms: [
+                            { en: "Inventory", pron: "اینْوِنتوری", fa: "موجودی انبار" },
+                            { en: "Stock", pron: "اِسْتاک", fa: "موجودی کالا" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 8,
+                en: "The job order cost system is most suitable where the products differ in types of materials and work performed.",
+                pronunciation: "دِ جاب اُردِر کاسْت سیسْتِم ایز مُوست سوتِبِل وِر دِ پْراداکْتْس دیفِر این تایپْس آو ماتیرْیالز اَند وِرک پِرفورمْد.",
+                translation: "سیستم بهایابی سفارش کار برای مواردی مناسب‌تر است که در آن‌ها محصولات از لحاظ جنس مواد اولیه مصرفی و نوع کار انجام‌شده با یکدیگر متفاوت باشند.",
+                words: [
+                    {
+                        en: "Suitable",
+                        pron: "سوتِبِل",
+                        fa: "مناسب، درخور",
+                        synonyms: [
+                            { en: "Appropriate", pron: "اَپْروپْری‌اِیت", fa: "متناسب، درخور" },
+                            { en: "Fitting", pron: "فیتینگ", fa: "شایسته، هماهنگ" }
+                        ]
+                    },
+                    {
+                        en: "Differ",
+                        pron: "دیفِر",
+                        fa: "تفاوت داشتن، فرق کردن",
+                        synonyms: [
+                            { en: "Vary", pron: "وِری", fa: "متنوع و متغیر بودن" },
+                            { en: "Diverge", pron: "دایوِرج", fa: "اختلاف داشتن" }
+                        ]
+                    },
+                    {
+                        en: "Performed",
+                        pron: "پِرفورمْد",
+                        fa: "انجام‌شده، اجراشده",
+                        synonyms: [
+                            { en: "Executed", pron: "اِکْسِکیوتِد", fa: "پیاده‌سازی‌شده" },
+                            { en: "Conducted", pron: "کاندَکْتِد", fa: "هدایت و اجراشده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 9,
+                en: "Thus, each product is made according to the customer's specifications and the price quoted is closely tied to the estimated cost.",
+                pronunciation: "داس، ایچ پْراداکْت ایز مِید اِکوردینگ تو دِ کاسْتومِرز اِسْپِسیفیکِیشِنز اَند دِ پْرایس کُووتِد ایز کْلُوسْلی تاید تو دِ اِسْتیمِیتِد کاسْت.",
+                translation: "بنابراین، هر محصول دقیقاً بر اساس مشخصات و سفارش مشتری ساخته می‌شود و نرخ و قیمت پیشنهادی ارتباط تنگاتنگی با بهای تخمینی تولید دارد.",
+                words: [
+                    {
+                        en: "Specifications",
+                        pron: "اِسْپِسیفیکِیشِنز",
+                        fa: "مشخصات فنی، جزئیات سفارش",
+                        synonyms: [
+                            { en: "Requirements", pron: "ریکْوایِرمِنتس", fa: "الزامات و نیازمندی‌ها" },
+                            { en: "Standards", pron: "اِسْتانداردز", fa: "معیارها، ضوابط" }
+                        ]
+                    },
+                    {
+                        en: "Quoted",
+                        pron: "کُووتِد",
+                        fa: "مظنه‌زده شده، اعلام‌شده",
+                        synonyms: [
+                            { en: "Stated", pron: "اِسْتِیتِد", fa: "بیان‌شده، مقررشده" },
+                            { en: "Offered", pron: "آفِرد", fa: "پیشنهادشده" }
+                        ]
+                    },
+                    {
+                        en: "Closely tied",
+                        pron: "کْلُوسْلی تاید",
+                        fa: "وابسته، گره‌خورده",
+                        synonyms: [
+                            { en: "Tightly linked", pron: "تایتْلی لینْکْت", fa: "پیوندخورده محکم" },
+                            { en: "Strongly connected", pron: "اِسْتْرانگْلی کُنِکْتِد", fa: "دارای ارتباط تنگاتنگ" }
+                        ]
+                    },
+                    {
+                        en: "Estimated cost",
+                        pron: "اِسْتیمِیتِد کاسْت",
+                        fa: "بهای تخمینی / برآوردی",
+                        synonyms: [
+                            { en: "Projected cost", pron: "پْرُجِکْتِد کاسْت", fa: "بهای پیش‌بینی‌شده" },
+                            { en: "Budgeted cost", pron: "باجِتِد کاسْت", fa: "بهای بودجه‌شده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 10,
+                en: "Examples of types of companies, which might use job order costing, are printing and furnishing companies.",
+                pronunciation: "اِگْزامْپِلز آو تایپْس آو کامْپَنیز، ویچ مایت یوز جاب اُردِر کاسْتینگ، آر پْرینْتینگ اَند فِرنیشینگ کامْپَنیز.",
+                translation: "از نمونه‌های بارز شرکت‌هایی که ممکن است از روش بهایابی سفارش کار استفاده کنند، شرکت‌های چاپ و صنایع تولید مبلمان هستند.",
+                words: [
+                    {
+                        en: "Examples",
+                        pron: "اِگْزامْپِلز",
+                        fa: "نمونه‌ها، مثال‌ها",
+                        synonyms: [
+                            { en: "Instances", pron: "اینْسْتَنسِز", fa: "موارد، نمونه‌ها" },
+                            { en: "Illustrations", pron: "ایلوستْرِیشِنز", fa: "شواهد، مصادیق" }
+                        ]
+                    },
+                    {
+                        en: "Printing",
+                        pron: "پْرینْتینگ",
+                        fa: "چاپ، نشر",
+                        synonyms: [
+                            { en: "Publishing", pron: "پابْلیشینگ", fa: "انتشارات" },
+                            { en: "Press", pron: "پْرِس", fa: "امور مطبوعاتی و چاپ" }
+                        ]
+                    },
+                    {
+                        en: "Furnishing",
+                        pron: "فِرنیشینگ",
+                        fa: "تولید مبلمان، دکوراسیون",
+                        synonyms: [
+                            { en: "Furniture making", pron: "فِرنیچِر مِیکینگ", fa: "مبل‌سازی صنعتی" },
+                            { en: "Interior fitting", pron: "اینْتیریِر فیتینگ", fa: "تجهیز دکوراسیون داخلی" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۳: عناصر بهای تمام‌شده و نحوه ثبت و تخصیص در سفارش کار",
+        badge: "ادامه صفحه ۱۶۴ کتاب",
+        sentences: [
+            {
+                id: 11,
+                en: "Under a job order cost system, the three basic elements of costs—direct material, direct labor, and factory overhead—are accumulated according to assigned job numbers.",
+                pronunciation: "آنْدِر اِ جاب اُردِر کاسْت سیسْتِم، دِ ثْری بِیسیک اِلِمِنتس آو کاسْتْس—دایْرِکْت ماتیرْیال، دایْرِکْت لِیبِر، اَند فاکْتوری اُوِرهِد—آر اَکیومیولِیتِد اِکوردینگ تو اَسایْند جاب نامْبِرز.",
+                translation: "در سیستم بهایابی سفارش کار، سه جزء اصلی تشکیل‌دهنده بهای تمام‌شده—شامل مواد مستقیم، دستمزد مستقیم، و سربار کارخانه—بر مبنای شماره سفارش تخصیص‌یافته جمع‌آوری و انباشته می‌گردند.",
+                words: [
+                    {
+                        en: "Basic elements",
+                        pron: "بِیسیک اِلِمِنتس",
+                        fa: "عناصر پایه، اجزای بنیادین",
+                        synonyms: [
+                            { en: "Fundamental components", pron: "فانْدامِنْتال کامْپونِنتس", fa: "اجزای اصلی" },
+                            { en: "Core constituents", pron: "کُور کانْسْتیتیوئِنتس", fa: "بخش‌های تشکیل‌دهنده" }
+                        ]
+                    },
+                    {
+                        en: "Direct labor",
+                        pron: "دایْرِکْت لِیبِر",
+                        fa: "دستمزد مستقیم کارگران تولید",
+                        synonyms: [
+                            { en: "Production workforce", pron: "پْروداکْشِن وِرک‌فورس", fa: "نیروی کار تولید" },
+                            { en: "Touch labor", pron: "تاچ لِیبِر", fa: "کارگر در تماس با محصول" }
+                        ]
+                    },
+                    {
+                        en: "Factory overhead",
+                        pron: "فاکْتوری اُوِرهِد",
+                        fa: "سربار کارخانه (هزینه‌های غیرمستقیم)",
+                        synonyms: [
+                            { en: "Manufacturing overhead", pron: "مَنیوفَکْچِرینگ اُوِرهِد", fa: "سربار ساخت" },
+                            { en: "Indirect factory costs", pron: "اینْدایْرِکت فاکْتوری کاسْتس", fa: "هزینه‌های غیرمستقیم کارگاه" }
+                        ]
+                    },
+                    {
+                        en: "Accumulated",
+                        pron: "اَکیومیولِیتِد",
+                        fa: "گردآوری‌شده، انباشته‌شده",
+                        synonyms: [
+                            { en: "Aggregated", pron: "اَگْریگِیتِد", fa: "تجمیع‌شده" },
+                            { en: "Collected", pron: "کالِکْتِد", fa: "جمع‌آوری‌شده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 12,
+                en: "The unit cost for each job is obtained by dividing the total costs of the job by the total units produced.",
+                pronunciation: "دِ یونیت کاسْت فور ایچ جاب ایز آبْتِینْدْ بای دیوایْدینگ دِ تُوتال کاسْتْس آو دِ جاب بای دِ تُوتال یونیتْس پْرُدیوسْد.",
+                translation: "بهای تمام‌شده هر واحد برای هر سفارش، از حاصل تقسیم کل هزینه‌های آن سفارش بر تعداد کل واحدهای تولیدشده به دست می‌آید.",
+                words: [
+                    {
+                        en: "Unit cost",
+                        pron: "یونیت کاسْت",
+                        fa: "بهای تمام‌شده هر واحد",
+                        synonyms: [
+                            { en: "Cost per unit", pron: "کاسْتْ پِر یونیت", fa: "بها به ازای هر تک کالا" },
+                            { en: "Single item cost", pron: "سینْگِل آیتِم کاسْت", fa: "هزینه تک‌قلمی" }
+                        ]
+                    },
+                    {
+                        en: "Obtained",
+                        pron: "آبْتِینْد",
+                        fa: "حاصل‌شده، به دست آمده",
+                        synonyms: [
+                            { en: "Acquired", pron: "اَکْوایِرد", fa: "کسب‌شده" },
+                            { en: "Derived", pron: "دیرایْود", fa: "استخراج‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Dividing",
+                        pron: "دیوایْدینگ",
+                        fa: "تقسیم کردن، تسهیم نمودن",
+                        synonyms: [
+                            { en: "Splitting", pron: "اِسْپْلیتینگ", fa: "بخش کردن" },
+                            { en: "Partitioning", pron: "پارتیشِنینگ", fa: "تسهیم و تفکیک کردن" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 13,
+                en: "Selling and administrating costs are not considered as part of the cost of the job and are shown separately on the cost sheet and income statement.",
+                pronunciation: "سِلینگ اَند اَدْمینیسترِیتینگ کاسْتْس آر ناتْ کانْسیدِرد اَز پارت آو دِ کاسْت آو دِ جاب اَند آر شُونْ سِپِرِتْلی آن دِ کاسْت شیت اَند اینْکام اِسْتِیتْمِنت.",
+                translation: "هزینه‌های اداری، تشکیلاتی و فروش جزء بهای تمام‌شده سفارش به حساب نمی‌آیند و به‌طور مجزا در برگه بهای سفارش و صورت سود و زیان درج می‌شوند.",
+                words: [
+                    {
+                        en: "Administrating costs",
+                        pron: "اَدْمینیسترِیتینگ کاسْتْس",
+                        fa: "هزینه‌های عمومی و اداری",
+                        synonyms: [
+                            { en: "Management expenses", pron: "مَنِجْمِنت اِکْسْپِنسِز", fa: "مخارج مدیریتی" },
+                            { en: "General overhead", pron: "جِنِرال اُوِرهِد", fa: "سربار عمومی ستاد" }
+                        ]
+                    },
+                    {
+                        en: "Separately",
+                        pron: "سِپِرِتْلی",
+                        fa: "به‌طور مجزا، جداگانه",
+                        synonyms: [
+                            { en: "Individually", pron: "اینْدیویژوالی", fa: "منحصراً، تک‌تک" },
+                            { en: "Apart", pron: "اَپارت", fa: "سوا، دور از هم" }
+                        ]
+                    },
+                    {
+                        en: "Income statement",
+                        pron: "اینْکام اِسْتِیتْمِنت",
+                        fa: "صورت سود و زیان",
+                        synonyms: [
+                            { en: "Profit and loss report", pron: "پْرافیت اَند لاس ریپورت", fa: "گزارش سود و زیان" },
+                            { en: "Earnings statement", pron: "اِرْنینگز اِسْتِیتْمِنت", fa: "صورت عایدات" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 14,
+                en: "To function properly, it must be possible for a job order cost system to identify each job physically and segregate its related costs.",
+                pronunciation: "تو فانْکْشِن پْراپِرْلی، ایت ماسْت بی پاسیبِل فور اِ جاب اُردِر کاسْت سیسْتِم تو آیدِنْتیفای ایچ جاب فیزیکالی اَند سِگْرِگِیت ایتس ریلِیتِد کاسْتْس.",
+                translation: "برای اینکه سیستم بهایابی سفارش کار به‌درستی عمل کند، باید امکان شناسایی فیزیکی هر سفارش و تفکیک هزینه‌های مربوط به آن وجود داشته باشد.",
+                words: [
+                    {
+                        en: "Properly",
+                        pron: "پْراپِرْلی",
+                        fa: "به‌درستی، مطابق قاعده",
+                        synonyms: [
+                            { en: "Appropriately", pron: "اَپْروپْریِتْلی", fa: "به‌نحو شایسته" },
+                            { en: "Correctly", pron: "کارِکْتْلی", fa: "به‌طور صحیح" }
+                        ]
+                    },
+                    {
+                        en: "Identify",
+                        pron: "آیدِنْتیفای",
+                        fa: "شناسایی کردن، بازشناختن",
+                        synonyms: [
+                            { en: "Recognize", pron: "رِکاگْنایز", fa: "تشخیص دادن" },
+                            { en: "Distinguish", pron: "دیستینگْویش", fa: "تمایز نهادن" }
+                        ]
+                    },
+                    {
+                        en: "Segregate",
+                        pron: "سِگْرِگِیت",
+                        fa: "تفکیک کردن، مجزا ساختن",
+                        synonyms: [
+                            { en: "Isolate", pron: "آیسُولِیت", fa: "جدا کردن" },
+                            { en: "Separate", pron: "سِپَرِیت", fa: "جداسازی نمودن" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 15,
+                en: "Each individual order or batch is assigned a job number.",
+                pronunciation: "ایچ اینْدیویژوال اُردِر اور بَچ ایز اَسایْند اِ جاب نامْبِر.",
+                translation: "به هر سفارش منحصر‌به‌‌فرد یا هر بهر (دسته تولیدی)، یک شماره سفارش کار اختصاص می‌یابد.",
+                words: [
+                    {
+                        en: "Individual",
+                        pron: "اینْدیویژوال",
+                        fa: "منفرد، مجزا",
+                        synonyms: [
+                            { en: "Distinct", pron: "دیستینْکْت", fa: "متمایز" },
+                            { en: "Single", pron: "سینْگِل", fa: "واحد، تکی" }
+                        ]
+                    },
+                    {
+                        en: "Batch",
+                        pron: "بَچ",
+                        fa: "بهر، دسته تولیدی",
+                        synonyms: [
+                            { en: "Lot", pron: "لات", fa: "پارتی کالا، محموله" },
+                            { en: "Cluster", pron: "کْلاسْتِر", fa: "مجموعه، گروه" }
+                        ]
+                    },
+                    {
+                        en: "Assigned",
+                        pron: "اَسایْند",
+                        fa: "تخصیص‌داده‌شده، منتسب",
+                        synonyms: [
+                            { en: "Allocated", pron: "اَلُوکِیتِد", fa: "تخصیص‌یافته" },
+                            { en: "Designated", pron: "دِزیگْنِیتِد", fa: "تعیین‌شده، معین" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 16,
+                en: "Material requisitions, labor costs and other charges carry the particular job number, and a cost sheet is used to summarize the applicable job costs.",
+                pronunciation: "ماتیرْیال رِکْویزیشِنز، لِیبِر کاسْتْس اَند اَذِر چارْجِز کَری دِ پارتیکیولار جاب نامْبِر، اَند اِ کاسْت شیت ایز یوزْدْ تو سامِرایز دِ اَپْلیکِبِل جاب کاسْتْس.",
+                translation: "برگه‌های درخواست مواد، هزینه‌های دستمزد و سایر مخارج حاوی همان شماره سفارش اختصاصی هستند و از یک برگه بهای تمام‌شده جهت خلاصه کردن هزینه‌های قابل اعمال سفارش استفاده می‌شود.",
+                words: [
+                    {
+                        en: "Requisitions",
+                        pron: "رِکْویزیشِنز",
+                        fa: "برگه‌های درخواست رسمی، حواله‌ها",
+                        synonyms: [
+                            { en: "Request forms", pron: "ریکْوِست فُورمز", fa: "فرم‌های تقاضا" },
+                            { en: "Formal orders", pron: "فورمال اُردِرز", fa: "دستورهای سفارش رسمی" }
+                        ]
+                    },
+                    {
+                        en: "Particular",
+                        pron: "پارتیکیولار",
+                        fa: "خاص، معین",
+                        synonyms: [
+                            { en: "Specific", pron: "اِسْپِسیفیک", fa: "ویژه، مشخص" },
+                            { en: "Distinctive", pron: "دیستینْکْتیو", fa: "متمایز" }
+                        ]
+                    },
+                    {
+                        en: "Summarize",
+                        pron: "سامِرایز",
+                        fa: "خلاصه کردن، تلخیص نمودن",
+                        synonyms: [
+                            { en: "Condense", pron: "کاندِنس", fa: "فشرده ساختن" },
+                            { en: "Encapsulate", pron: "اِنْکَپْسیولِیت", fa: "موجز بیان کردن" }
+                        ]
+                    },
+                    {
+                        en: "Applicable",
+                        pron: "اَپْلیکِبِل",
+                        fa: "قابل انتساب، مربوطه",
+                        synonyms: [
+                            { en: "Pertinent", pron: "پِرتینِنت", fa: "درخور، مرتبط" },
+                            { en: "Relevant", pron: "رِلِوِنت", fa: "وابسته" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 17,
+                en: "The profit or loss can be computed for each job and the unit cost can be computed for the purpose of inventory costing.",
+                pronunciation: "دِ پْرافیت اور لاس کَن بی کامْپیوتِد فور ایچ جاب اَند دِ یونیت کاسْت کَن بی کامْپیوتِد فور دِ پِربِس آو اینْوِنتوری کاسْتینگ.",
+                translation: "سود یا زیان را می‌توان برای هر سفارش به تنهایی محاسبه نمود و بهای هر واحد نیز به منظور ارزشیابی موجودی‌های انبار محاسبه‌پذیر است.",
+                words: [
+                    {
+                        en: "Computed",
+                        pron: "کامْپیوتِد",
+                        fa: "محاسبه‌شده، برآوردشده",
+                        synonyms: [
+                            { en: "Calculated", pron: "کالْکیولِیتِد", fa: "حساب‌شده" },
+                            { en: "Quantified", pron: "کوانْتیفاید", fa: "کمی‌شده، ارزیابی‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Profit or loss",
+                        pron: "پْرافیت اور لاس",
+                        fa: "سود یا زیان",
+                        synonyms: [
+                            { en: "Net earnings", pron: "نِت اِرْنینگز", fa: "عایدات خالص" },
+                            { en: "Bottom line", pron: "باتِم لاین", fa: "نتیجه نهایی مالی" }
+                        ]
+                    },
+                    {
+                        en: "Inventory costing",
+                        pron: "اینْوِنتوری کاسْتینگ",
+                        fa: "ارزشیابی موجودی‌های انبار",
+                        synonyms: [
+                            { en: "Stock valuation", pron: "اِسْتاک وَلیواِیشِن", fa: "ارزیابی قیمت کالا" },
+                            { en: "Inventory appraisal", pron: "اینْوِنتوری اَپْرِیزال", fa: "تقویم موجودی انبار" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۴: برگه بهای سفارش کار و دفاتر معین بهایابی (Job Cost Sheet)",
+        badge: "پایان صفحه ۱۶۴ و آغاز صفحه ۱۶۵",
+        sentences: [
+            {
+                id: 18,
+                en: "Costs incurred for the various jobs are debited to work in process.",
+                pronunciation: "کاسْتْس اینْکِرد فور دِ وِریوس جابز آر دِبیتِد تو وِرک این پراسِس.",
+                translation: "هزینه‌های واقع‌شده برای سفارش‌های گوناگون، به حساب کالای در جریان ساخت بدهکار می‌شوند.",
+                words: [
+                    {
+                        en: "Incurred",
+                        pron: "اینْکِرد",
+                        fa: "متحمل‌شده، واقع‌شده",
+                        synonyms: [
+                            { en: "Sustained", pron: "سَستِینْد", fa: "تحمل‌شده" },
+                            { en: "Accrued", pron: "اَکْرود", fa: "تحقق‌یافته" }
+                        ]
+                    },
+                    {
+                        en: "Debited",
+                        pron: "دِبیتِد",
+                        fa: "بدهکار شده در دفاتر مالی",
+                        synonyms: [
+                            { en: "Charged", pron: "چارْجْد", fa: "به‌حساب‌گذاشته‌شده" },
+                            { en: "Entered to debit", pron: "اِنْتِرد تو دِبیت", fa: "ثبت‌شده در ستون بدهکار" }
+                        ]
+                    },
+                    {
+                        en: "Work in process",
+                        pron: "وِرک این پراسِس",
+                        fa: "کالای در جریان ساخت",
+                        synonyms: [
+                            { en: "Goods in progress", pron: "گودز این پْرُوگْرِس", fa: "کالاهای در حال تکمیل" },
+                            { en: "Uncompleted goods", pron: "آنْ‌کامْپْلیتِد گودز", fa: "کالای ناتمام" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 19,
+                en: "The work in process account is a controlling account that contains summary information only.",
+                pronunciation: "دِ وِرک این پراسِس اِکانْت ایز اِ کُنْترولینگ اِکانْت دَت کانتِینز سامِری اینْفِرْمِیشِن اُوْنلی.",
+                translation: "حساب کالای در جریان ساخت یک حساب کل (کنترلی) است که تنها حاوی اطلاعات خلاصه و کلی می‌باشد.",
+                words: [
+                    {
+                        en: "Controlling account",
+                        pron: "کُنْترولینگ اِکانْت",
+                        fa: "حساب کل معین‌دار، حساب کنترل",
+                        synonyms: [
+                            { en: "Master account", pron: "مَسْتِر اِکانْت", fa: "حساب اصلی" },
+                            { en: "General ledger account", pron: "جِنِرال لِجِر اِکانْت", fa: "حساب دفتر کل" }
+                        ]
+                    },
+                    {
+                        en: "Contains",
+                        pron: "کانتِینز",
+                        fa: "شامل بودن، در بر داشتن",
+                        synonyms: [
+                            { en: "Holds", pron: "هُولْدز", fa: "نگه داشتن" },
+                            { en: "Comprises", pron: "کامْپْرایزِز", fa: "تشکیل شدن از" }
+                        ]
+                    },
+                    {
+                        en: "Summary",
+                        pron: "سامِری",
+                        fa: "خلاصه، اجمالی",
+                        synonyms: [
+                            { en: "Condensed overview", pron: "کاندِنْسْد اُوِرویو", fa: "مرور فشرده" },
+                            { en: "Digest", pron: "دایْجِست", fa: "گزیده، چکیده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 20,
+                en: "The details concerning the costs incurred on each job order are accumulated in a subsidiary ledger known as the cost ledger.",
+                pronunciation: "دِ دیتِیلز کانسِرْنینگ دِ کاسْتْس اینْکِرد آن ایچ جاب اُردِر آر اَکیومیولِیتِد این اِ سابْسیدیِری لِجِر نُون اَز دِ کاسْتْ لِجِر.",
+                translation: "جزئیات مربوط به هزینه‌های انجام‌شده در هر سفارش کار، در یک دفتر معین تحت عنوان «دفتر معین بهای تمام‌شده» تجمیع می‌گردد.",
+                words: [
+                    {
+                        en: "Details",
+                        pron: "دیتِیلز",
+                        fa: "جزئیات، ریز اقلام",
+                        synonyms: [
+                            { en: "Particulars", pron: "پارتیکیولارز", fa: "اقلام جزئی" },
+                            { en: "Specifics", pron: "اِسْپِسیفیکْس", fa: "موارد خاص" }
+                        ]
+                    },
+                    {
+                        en: "Concerning",
+                        pron: "کانسِرْنینگ",
+                        fa: "در ارتباط با، راجع به",
+                        synonyms: [
+                            { en: "Regarding", pron: "ریگارْدینگ", fa: "پیرامون، درباره" },
+                            { en: "Pertaining to", pron: "پِرتِینینگ تو", fa: "مربوط به" }
+                        ]
+                    },
+                    {
+                        en: "Subsidiary ledger",
+                        pron: "سابْسیدیِری لِجِر",
+                        fa: "دفتر معین، دفتر فرعی",
+                        synonyms: [
+                            { en: "Sub-ledger", pron: "ساب لِجِر", fa: "دفترچه معین" },
+                            { en: "Supporting ledger", pron: "ساپورتینگ لِجِر", fa: "دفتر پشتیبان کل" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 21,
+                en: "Each cost ledger account, called a job cost sheet, has spaces for recording all direct materials and direct labor chargeable to the job and for factory overhead applied at the predetermined rate.",
+                pronunciation: "ایچ کاسْتْ لِجِر اِکانْت، کالْد اِ جاب کاسْت شیت، هَز اِسْپِیسِز فور رِکوردینگ آل دایْرِکْت ماتیرْیالز اَند دایْرِکْت لِیبِر چارْجِبِل تو دِ جاب اَند فور فاکْتوری اُوِرهِد اَپْلاید اَت دِ پْری‌دیتِرمینْد رِیت.",
+                translation: "هر حساب در دفتر معین بها، که «برگه بهای سفارش کار» نامیده می‌شود، دارای ستون‌هایی برای ثبت کلیه مواد مستقیم و دستمزد مستقیم قابل انتساب به سفارش، و همچنین سربار کارخانه اعمال‌شده بر مبنای نرخ از پیش تعیین‌شده است.",
+                words: [
+                    {
+                        en: "Chargeable",
+                        pron: "چارْجِبِل",
+                        fa: "قابل انتساب، قابل ثبت به حساب",
+                        synonyms: [
+                            { en: "Assignable", pron: "اَسایْنِبِل", fa: "قابل واگذاری و تخصیص" },
+                            { en: "Billable", pron: "بیلِبِل", fa: "قابل محاسبه در صورت‌حساب" }
+                        ]
+                    },
+                    {
+                        en: "Predetermined rate",
+                        pron: "پْری‌دیتِرمینْد رِیت",
+                        fa: "نرخ از پیش تعیین‌شده",
+                        synonyms: [
+                            { en: "Preset rate", pron: "پْری‌سِت رِیت", fa: "نرخ پیش‌تنظیم‌شده" },
+                            { en: "Budgeted standard rate", pron: "باجِتِد اِسْتاندارد رِیت", fa: "نرخ استاندارد بودجه‌شده" }
+                        ]
+                    },
+                    {
+                        en: "Applied",
+                        pron: "اَپْلاید",
+                        fa: "اعمال‌شده، تخصیص‌یافته",
+                        synonyms: [
+                            { en: "Allocated", pron: "اَلُوکِیتِد", fa: "سرشکن‌شده" },
+                            { en: "Assigned", pron: "اَسایْند", fa: "واگذارشده" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 22,
+                en: "Postings to the job cost sheets are made from materials requisitions, time tickets, and machine usage reports, or from summaries of these documents.",
+                pronunciation: "پُوسْتینْگز تو دِ جاب کاسْت شیتْس آر مِید فرام ماتیرْیالز رِکْویزیشِنز، تایم تیکِتْس، اَند مَشین یوسِج ریپورتْس، اور فرام سامِریز آو دیز داکیومِنتْس.",
+                translation: "انتقال اقلام (ثبت) به برگه‌های بهای سفارش کار بر اساس حواله‌های درخواست مواد، کارت‌های اوقات کار کارگران، و گزارش‌های استفاده از ماشین‌آلات، یا بر پایه خلاصه‌ای از این اسناد انجام می‌پذیرد.",
+                words: [
+                    {
+                        en: "Postings",
+                        pron: "پُوسْتینْگز",
+                        fa: "انتقال ارقام به دفاتر، ثبت‌ها",
+                        synonyms: [
+                            { en: "Book entries", pron: "بوک اِنْتْریز", fa: "ثبت‌های دفتری" },
+                            { en: "Ledger transfers", pron: "لِجِر تْرَنْسْفِرز", fa: "انتقالات حساب‌ها" }
+                        ]
+                    },
+                    {
+                        en: "Time tickets",
+                        pron: "تایم تیکِتْس",
+                        fa: "کارت‌های اوقات کار، بلیت کارکرد",
+                        synonyms: [
+                            { en: "Time sheets", pron: "تایم شیتس", fa: "برگه‌های ثبت ساعت کار" },
+                            { en: "Labor cards", pron: "لِیبِر کاردز", fa: "کارت‌های حضور کارگران" }
+                        ]
+                    },
+                    {
+                        en: "Usage reports",
+                        pron: "یوسِج ریپورتْس",
+                        fa: "گزارش‌های مصرف و استفاده",
+                        synonyms: [
+                            { en: "Consumption records", pron: "کانْسَمْپْشِن رِکوردز", fa: "سوابق مصرف" },
+                            { en: "Utilization logs", pron: "یوتیلایْزِیشِن لاگز", fa: "دفاتر کارکرد ماشین‌آلات" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 23,
+                en: "Job cost sheets are the heart of a job order cost system.",
+                pronunciation: "جاب کاسْت شیتْس آر دِ هارت آو اِ جاب اُردِر کاسْت سیسْتِم.",
+                translation: "برگه‌های بهای سفارش کار، قلب تپنده (محور و کانون اصلی) یک سیستم بهایابی سفارش کار هستند.",
+                words: [
+                    {
+                        en: "Heart",
+                        pron: "هارت",
+                        fa: "قلب، هسته اصلی",
+                        synonyms: [
+                            { en: "Core", pron: "کُور", fa: "مغز، کانون" },
+                            { en: "Vital center", pron: "وایتال سِنْتِر", fa: "مرکز حیاتی" }
+                        ]
+                    },
+                    {
+                        en: "System",
+                        pron: "سیسْتِم",
+                        fa: "سامانه، نظام ساخت‌‌یافته",
+                        synonyms: [
+                            { en: "Structured mechanism", pron: "اِسْتْراکْچِرد مِکانیکال", fa: "سازوکار منسجم" },
+                            { en: "Framework", pron: "فْرِیمْ‌وِرک", fa: "چارچوب عملیاتی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 24,
+                en: "Once the job is finished, the job cost sheet indicates the cost of the finished goods manufactured and provides the information necessary to compute the unit costs of production.",
+                pronunciation: "وانْس دِ جاب ایز فینیشْتْ، دِ جاب کاسْت شیت اینْدیکِیتْس دِ کاسْتْ آو دِ فینیشْتْ گودز مَنیوفَکْچِرد اَند پْرُوایدز دِ اینْفِرْمِیشِن نِسِسِری تو کامْپیوت دِ یونیت کاسْتْس آو پْروداکْشِن.",
+                translation: "به محض اینکه سفارش تکمیل گردید، برگه بهای سفارش کار بهای تمام‌شده کالای تکمیل‌شده تولیدی را منعکس ساخته و اطلاعات لازم را برای محاسبه بهای هر واحد تولید فراهم می‌نماید.",
+                words: [
+                    {
+                        en: "Finished goods",
+                        pron: "فینیشْتْ گودز",
+                        fa: "کالای ساخته‌شده، محصول نهایی",
+                        synonyms: [
+                            { en: "Completed products", pron: "کامْپْلیتِد پْراداکْتس", fa: "کالاهای آماده" },
+                            { en: "Ready inventory", pron: "رِدی اینْوِنتوری", fa: "موجودی آماده فروش" }
+                        ]
+                    },
+                    {
+                        en: "Indicates",
+                        pron: "اینْدیکِیتْس",
+                        fa: "نشان می‌دهد، حاکی است",
+                        synonyms: [
+                            { en: "Demonstrates", pron: "دِمِنْسْتْرِیتس", fa: "نمایان می‌سازد" },
+                            { en: "Reflects", pron: "ریفْلِکْتس", fa: "منعکس می‌کند" }
+                        ]
+                    },
+                    {
+                        en: "Necessary",
+                        pron: "نِسِسِری",
+                        fa: "ضروری، موردنیاز",
+                        synonyms: [
+                            { en: "Essential", pron: "اِسِنْشال", fa: "حیاتی و بنیادین" },
+                            { en: "Required", pron: "ریکْوایِرد", fa: "لازم" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 25,
+                en: "A typical job cost sheet is shown below.",
+                pronunciation: "اِ تیپیکال جاب کاسْت شیت ایز شُون بیلُو.",
+                translation: "یک نمونه معمول از برگه بهای سفارش کار در زیر به تصویر کشیده شده است.",
+                words: [
+                    {
+                        en: "Typical",
+                        pron: "تیپیکال",
+                        fa: "معمول، نمونه استاندارد",
+                        synonyms: [
+                            { en: "Representative", pron: "رِپْرِزِنْتِتیو", fa: "نمایانگر، معرف" },
+                            { en: "Standard", pron: "اِسْتاندارد", fa: "متعارف و رایج" }
+                        ]
+                    },
+                    {
+                        en: "Shown",
+                        pron: "شُون",
+                        fa: "نمایش‌‌داده‌شده",
+                        synonyms: [
+                            { en: "Presented", pron: "پْرِزِنْتِد", fa: "ارائه‌‌شده" },
+                            { en: "Displayed", pron: "دیسْپْلِید", fa: "به نمایش درآمده" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۵: سیستم بهایابی مرحله‌ای (Process Cost System)",
+        badge: "پایین صفحه ۱۶۵ کتاب",
+        sentences: [
+            {
+                id: 26,
+                en: "Job order cost systems are appropriate when each unit of product or batch of production is manufactured to different specifications.",
+                pronunciation: "جاب اُردِر کاسْت سیسْتِمز آر اَپْروپْری‌اِیت وِن ایچ یونیت آو پْراداکْت اور بَچ آو پْروداکْشِن ایز مَنیوفَکْچِرد تو دیفِرِنت اِسْپِسیفیکِیشِنز.",
+                translation: "سیستم‌های بهایابی سفارش کار زمانی مناسب و قابل کاربرد هستند که هر واحد کالا یا بهر تولیدی طبق مشخصات اختصاصی متفاوتی ساخته شود.",
+                words: [
+                    {
+                        en: "Appropriate",
+                        pron: "اَپْروپْری‌اِیت",
+                        fa: "مناسب، مقتضی",
+                        synonyms: [
+                            { en: "Suitable", pron: "سوتِبِل", fa: "درخور، مناسب" },
+                            { en: "Fitting", pron: "فیتینگ", fa: "شایسته" }
+                        ]
+                    },
+                    {
+                        en: "Batch of production",
+                        pron: "بَچ آو پْروداکْشِن",
+                        fa: "دسته یا بهر تولیدی",
+                        synonyms: [
+                            { en: "Manufacturing lot", pron: "مَنیوفَکْچِرینگ لات", fa: "پارتی کارخانه" },
+                            { en: "Production run", pron: "پْروداکْشِن ران", fa: "دوره تولید مداوم" }
+                        ]
+                    },
+                    {
+                        en: "Different",
+                        pron: "دیفِرِنت",
+                        fa: "متفاوت، گوناگون",
+                        synonyms: [
+                            { en: "Diverse", pron: "دایْوِرس", fa: "متنوع" },
+                            { en: "Varying", pron: "وِری‌اینگ", fa: "دگرگون و متمایز" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 27,
+                en: "Many companies, however, produce a continuous stream of identical units, such as bottles of milk, gallon of gasoline, or kilowatt hours of electricity.",
+                pronunciation: "مِنی کامْپَنیز، هاواِوِر، پْرُدیوس اِ کُنْتینیواِس اِسْتْریم آو آیدِنْتیکال یونیتْس، ساچ اَز باتِلز آو میلْک، گالِن آو گازولین، اور کیلووات آوِرز آو اِلِکْتریسیتی.",
+                translation: "با این وجود، بسیاری از شرکت‌ها جریان پیوسته‌ای از واحدهای کاملاً همسان تولید می‌کنند، نظیر بطری‌های شیر، گالن بنزین یا کیلووات‌ساعت برق.",
+                words: [
+                    {
+                        en: "Continuous stream",
+                        pron: "کُنْتینیواِس اِسْتْریم",
+                        fa: "جریان پیوسته و مداوم",
+                        synonyms: [
+                            { en: "Uninterrupted flow", pron: "آن‌اینْتِراپْتِد فْلُو", fa: "سیلان بدون وقفه" },
+                            { en: "Constant output", pron: "کانْسْتَنت آوت‌پوت", fa: "تولید یکنواخت" }
+                        ]
+                    },
+                    {
+                        en: "Identical",
+                        pron: "آیدِنْتیکال",
+                        fa: "همانند، کاملاً یکسان",
+                        synonyms: [
+                            { en: "Uniform", pron: "یونیفورم", fa: "یکدست، هماهنگ" },
+                            { en: "Equivalent", pron: "ایکْویوالِنت", fa: "هم‌ارز، برابر" }
+                        ]
+                    },
+                    {
+                        en: "Gasoline",
+                        pron: "گازولین",
+                        fa: "بنزین، سوخت خودرو",
+                        synonyms: [
+                            { en: "Motor fuel", pron: "مُوتور فیواِل", fa: "سوخت موتور" },
+                            { en: "Petrol", pron: "پِتْرول", fa: "بنزین به لهجه بریتانیایی" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 28,
+                en: "When identical products are produced in a continuous stream, there are no distinct jobs.",
+                pronunciation: "وِن آیدِنْتیکال پْراداکْتْس آر پْرُدیوسْد این اِ کُنْتینیواِس اِسْتْریم، دِر آر نُو دیستینْکْت جابز.",
+                translation: "زمانی که محصولات همسان و مشابه در جریانی پیوسته ساخته می‌شوند، دیگر سفارش‌های کاری مجزا و تفکیک‌شده‌ای وجود ندارد.",
+                words: [
+                    {
+                        en: "Distinct",
+                        pron: "دیستینْکْت",
+                        fa: "متمایز، مجزا",
+                        synonyms: [
+                            { en: "Discrete", pron: "دیسْکْریت", fa: "گسسته، مجزا" },
+                            { en: "Specific", pron: "اِسْپِسیفیک", fa: "خاص، ویژه" }
+                        ]
+                    },
+                    {
+                        en: "Produced",
+                        pron: "پْرُدیوسْد",
+                        fa: "تولیدشده، فرآوری‌شده",
+                        synonyms: [
+                            { en: "Manufactured", pron: "مَنیوفَکْچِرد", fa: "ساخته‌شده صنعتی" },
+                            { en: "Fabricated", pron: "فابریکِیتِد", fa: "سرهم‌شده در کارگاه" }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 29,
+                en: "Therefore, companies engaging in mass production often use process cost systems, rather than job order systems.",
+                pronunciation: "دِرْفور، کامْپَنیز اِنْگِیْجینگ این مَسْ پْروداکْشِن آوفِن یوز پراسِس کاسْت سیسْتِمز، رَذِر دَن جاب اُردِر سیسْتِمز.",
+                translation: "از این رو، شرکت‌هایی که درگیر تولید انبوه هستند، اغلب به جای سیستم‌های سفارش کار، از سیستم‌های بهایابی مرحله‌ای بهره می‌گیرند.",
+                words: [
+                    {
+                        en: "Mass production",
+                        pron: "مَسْ پْروداکْشِن",
+                        fa: "تولید انبوه",
+                        synonyms: [
+                            { en: "Large-scale manufacturing", pron: "لارْج اِسْکِیل مَنیوفَکْچِرینگ", fa: "ساخت در مقیاس وسیع" },
+                            { en: "Volume production", pron: "والیوم پْروداکْشِن", fa: "تولید تناژ بالا" }
+                        ]
+                    },
+                    {
+                        en: "Engaging",
+                        pron: "اِنْگِیْجینگ",
+                        fa: "مشغول بودن، مبادرت ورزیدن",
+                        synonyms: [
+                            { en: "Involved", pron: "اینْوالْود", fa: "دست‌اندرکار" },
+                            { en: "Participating", pron: "پارتیسیپِیتینگ", fa: "مشارکت‌کننده" }
+                        ]
+                    },
+                    {
+                        en: "Rather than",
+                        pron: "رَذِر دَن",
+                        fa: "به جای، به جای اینکه",
+                        synonyms: [
+                            { en: "Instead of", pron: "اینْسْتِد آو", fa: "در عوض" },
+                            { en: "In lieu of", pron: "این لیو آو", fa: "به جای" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+const speakerSvg = `<svg class="icon" viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.77l-4.5 3h-4v-8h4l4.5 3v2zm5.5-1c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>`;
+const quoteSvg = `<svg class="icon" style="color: #d97706;" viewBox="0 0 24 24"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3"/></svg>`;
+const checkSvg = `<svg class="icon" style="color: #16a34a;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`;
+const tagSvg = `<svg class="icon" style="color: #64748b;" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>`;
+
+let currentCardEl = null;
+
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+function stopAudio() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
+    if (currentCardEl) {
+        currentCardEl.classList.remove("playing");
+        currentCardEl = null;
+    }
+}
+
+function speakText(text, cardEl = null) {
+    if (!('speechSynthesis' in window)) {
+        alert("مرورگر شما از قابلیت خوانش صوتی (Speech Synthesis) پشتیبانی نمی‌کند.");
+        return;
+    }
+
+    stopAudio();
+
+    const accent = document.getElementById("accentSelect").value;
+    const rate = parseFloat(document.getElementById("rateRange").value) || 0.8;
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = accent;
+    utter.rate = rate;
+    utter.pitch = 1.0;
+
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+        let bestVoice = voices.find(v => v.lang === accent) ||
+                        voices.find(v => v.lang.startsWith(accent.split('-')[0]));
+        if (bestVoice) {
+            utter.voice = bestVoice;
+        }
+    }
+
+    if (cardEl) {
+        currentCardEl = cardEl;
+        cardEl.classList.add("playing");
+    }
+
+    utter.onstart = () => {
+        showToast("در حال پخش با لهجه " + (accent === 'en-GB' ? 'بریتانیایی' : 'آمریکایی') + " (سرعت " + rate + "x)...");
+    };
+
+    utter.onend = () => {
+        if (cardEl) cardEl.classList.remove("playing");
+    };
+
+    utter.onerror = () => {
+        if (cardEl) cardEl.classList.remove("playing");
+    };
+
+    window.speechSynthesis.speak(utter);
+}
+
+function renderContent() {
+    const container = document.getElementById("contentArea");
+    let html = "";
+
+    sectionsData.forEach(section => {
+        html += `
+            <div class="section-header">
+                <h2>${section.title}</h2>
+                <span class="section-badge">${section.badge}</span>
+            </div>
+        `;
+
+        section.sentences.forEach(s => {
+            const escapedEn = s.en.replace(/'/g, "\\'");
+            html += `
+                <div class="sentence-card" id="card-${s.id}">
+                    <div class="card-num">${s.id}</div>
+
+                    <div class="english-box" onclick="speakText('${escapedEn}', document.getElementById('card-${s.id}'))" title="برای پخش تلفظ با لهجه انگلیسی کلیک کنید">
+                        <div class="english-text">${s.en}</div>
+                        <div class="audio-icon">${speakerSvg}</div>
+                    </div>
+
+                    <div class="pronounce-box">
+                        <div class="box-label">${quoteSvg} تلفظ دقیق آوایی (فارسی):</div>
+                        <div>${s.pronunciation}</div>
+                    </div>
+
+                    <div class="translation-box">
+                        <div class="box-label">${checkSvg} ترجمه دقیق تخصصی:</div>
+                        <div>${s.translation}</div>
+                    </div>
+
+                    <div class="keywords-wrapper">
+                        <div class="keywords-title">${tagSvg} تمامی واژگان مهم این جمله به همراه مترادف‌ها:</div>
+                        <div class="words-grid">
+            `;
+
+            s.words.forEach(w => {
+                const escapedWord = w.en.replace(/'/g, "\\'");
+                html += `
+                    <div class="word-card">
+                        <div class="main-word-header">
+                            <span class="main-word-en" onclick="speakText('${escapedWord}')" title="پخش تلفظ کلمه">${w.en} ${speakerSvg}</span>
+                            <span class="main-word-pron">[تلفظ: ${w.pron}]</span>
+                        </div>
+                        <div class="main-word-fa">معنی: ${w.fa}</div>
+
+                        <div class="synonyms-box">
+                            <div class="synonyms-title">مترادف‌ها (Synonyms):</div>
+                `;
+
+                w.synonyms.forEach(syn => {
+                    const escapedSyn = syn.en.replace(/'/g, "\\'");
+                    html += `
+                        <div class="synonym-item">
+                            <div class="syn-en-pron">
+                                <span class="syn-word" onclick="speakText('${escapedSyn}')" title="پخش تلفظ مترادف">${syn.en}</span>
+                                <span class="syn-pron">تلفظ: ${syn.pron}</span>
+                            </div>
+                            <div class="syn-fa">معنی: ${syn.fa}</div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    });
+
+    container.innerHTML = html;
+}
+
+document.getElementById("rateRange").addEventListener("input", function(e) {
+    document.getElementById("rateVal").textContent = e.target.value + "x";
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    renderContent();
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = () => {};
+    }
+});
+</script>
+</body>
+</html>
