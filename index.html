@@ -8,13 +8,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap');
 
         :root {
-            --navy-deep: #090e1a;
-            --navy-mid: #131c31;
+            --navy-deep: #080c16;
+            --navy-mid: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-card: rgba(255, 255, 255, 0.94);
+            --glass-border: rgba(255, 255, 255, 0.22);
             --pink-soft: #fbcfe8;
-            --pink-glow: rgba(244, 114, 182, 0.35);
+            --pink-glow: rgba(244, 114, 182, 0.4);
+            --cyan-glow: rgba(56, 189, 248, 0.35);
             --primary: #1e3a8a;
             --primary-light: #2563eb;
             --accent: #d97706;
+            --emerald: #059669;
             --text-dark: #0f172a;
             --text-muted: #64748b;
         }
@@ -26,50 +31,49 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* پس‌زمینه گرادیانی سرمه‌ای و صورتی کمرنگ */
+        /* پس‌زمینه با عمق بالا و پترن گرادیانی */
         body {
             font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
             background-color: var(--navy-deep);
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(251, 207, 232, 0.28) 0%, transparent 45%),
-                radial-gradient(circle at 85% 80%, rgba(244, 114, 182, 0.22) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.4) 0%, transparent 60%),
-                linear-gradient(160deg, #060a12 0%, #0d1527 40%, #1e1b4b 75%, #2a1128 100%);
+                radial-gradient(circle at 10% 15%, rgba(251, 207, 232, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 90% 75%, rgba(244, 114, 182, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 50% 40%, rgba(30, 58, 138, 0.38) 0%, transparent 65%),
+                linear-gradient(165deg, #050811 0%, #0d1527 35%, #19143a 70%, #251025 100%);
             background-attachment: fixed;
             background-size: cover;
             color: var(--text-dark);
             line-height: 1.7;
-            padding: 12px 10px 70px 10px;
+            padding: 14px 10px 80px 10px;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
         .container {
             width: 100%;
-            max-width: 600px; /* بهینه‌شده برای موبایل */
+            max-width: 620px;
             margin: 0 auto;
         }
 
-        /* سربرگ اختصاصی */
+        /* سربرگ شیشه‌ای لوکس */
         header {
-            background: rgba(13, 21, 39, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 18px 12px 14px 12px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px var(--pink-glow);
-            border: 1px solid rgba(251, 207, 232, 0.2);
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 18px 14px 14px 14px;
+            border-radius: 22px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(99, 102, 241, 0.2);
+            border: 1px solid var(--glass-border);
             margin-bottom: 16px;
             text-align: center;
         }
 
-        /* انیمیشن‌های سربرگ SVG */
         .svg-container {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         svg.neon-header {
@@ -86,7 +90,7 @@
             text-anchor: middle;
             dominant-baseline: middle;
             fill: url(#movingGradient);
-            stroke: rgba(255, 255, 255, 0.3);
+            stroke: rgba(255, 255, 255, 0.35);
             stroke-width: 2px;
             paint-order: stroke fill;
             filter: url(#neonGlow);
@@ -98,15 +102,14 @@
 
         @keyframes gradientMove {
             0% { stop-color: #00e5ff; }
-            20% { stop-color: #6366f1; }
-            40% { stop-color: #a855f7; }
-            60% { stop-color: #ec4899; }
-            80% { stop-color: #06b6d4; }
+            25% { stop-color: #6366f1; }
+            50% { stop-color: #a855f7; }
+            75% { stop-color: #ec4899; }
             100% { stop-color: #00e5ff; }
         }
 
         @keyframes glow {
-            0%, 100% { opacity: 0.65; }
+            0%, 100% { opacity: 0.7; }
             50% { opacity: 1; }
         }
 
@@ -120,24 +123,26 @@
 
         @keyframes lightMove {
             0% { transform: translateX(-300px); opacity: 0; }
-            30% { opacity: 0.8; }
-            70% { opacity: 0.8; }
+            30% { opacity: 0.85; }
+            70% { opacity: 0.85; }
             100% { transform: translateX(300px); opacity: 0; }
         }
 
         header p.sub-desc {
-            font-size: 12.5px;
+            font-size: 12px;
             color: #cbd5e1;
             margin: 6px auto 14px auto;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* کنترل تنظیمات گوینده و سرعت */
+        /* نوار تنظیمات صدا و سرعت تمام‌شیشه‌ای */
         .controls-bar {
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 12px;
-            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            padding: 9px 12px;
+            border-radius: 16px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -151,38 +156,47 @@
             gap: 6px;
             font-size: 12px;
             color: #f1f5f9;
+            font-weight: 600;
         }
 
         .control-group select {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
             color: #0f172a;
             border: none;
-            padding: 4px 8px;
-            border-radius: 8px;
+            padding: 5px 10px;
+            border-radius: 9px;
             font-size: 11.5px;
-            font-weight: 700;
+            font-weight: 800;
+            outline: none;
         }
 
         .control-group input[type="range"] {
             width: 75px;
             cursor: pointer;
+            accent-color: #38bdf8;
         }
 
         .stop-btn {
-            background-color: #ef4444;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
             color: #ffffff;
             border: none;
-            padding: 5px 12px;
-            border-radius: 8px;
+            padding: 6px 14px;
+            border-radius: 10px;
             font-size: 11.5px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+            transition: transform 0.1s ease;
+        }
+
+        .stop-btn:active {
+            transform: scale(0.95);
         }
 
         /* پنل‌های جابه‌جایی */
         .view-pane {
             display: none;
-            animation: fadeIn 0.25s ease;
+            animation: fadeIn 0.28s ease;
         }
 
         .view-pane.active {
@@ -190,150 +204,178 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ================= صفحه فهرست اصلی (کاملاً جمع‌وجور و مناسب موبایل) ================= */
+        /* کارت معرفی فهرست اصلی (طرح شیشه‌ای مات نئونی) */
         .index-intro-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 12px 14px;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 18px;
+            padding: 14px 16px;
             margin-bottom: 14px;
-            border: 1px solid rgba(251, 207, 232, 0.5);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
             text-align: center;
         }
 
         .index-intro-card h2 {
             font-size: 15px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 3px;
+            font-weight: 900;
+            color: #f8fafc;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
         }
 
         .index-intro-card p {
             font-size: 12px;
-            color: #64748b;
+            color: #94a3b8;
         }
 
-        /* دکمه‌های کوچک و فشرده هفته‌ها */
+        /* کارت‌های فشرده هفته‌ها با شیشه مات و گلس‌مورفیسم */
         .compact-weeks-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 22px;
         }
 
         .compact-week-card {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            border-radius: 16px;
-            padding: 14px 12px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            border-radius: 18px;
+            padding: 14px 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            transition: transform 0.15s ease, border-color 0.15s ease;
-            text-align: center;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .compact-week-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
         }
 
         .compact-week-card:active {
-            transform: scale(0.97);
+            transform: scale(0.98);
         }
 
-        .w1-card { border-top: 4px solid var(--primary-light); }
-        .w2-card { border-top: 4px solid #ec4899; }
+        .w1-card { border-right: 6px solid var(--primary-light); }
+        .w2-card { border-right: 6px solid #ec4899; }
+        .w3-card { border-right: 6px solid #10b981; }
+
+        .card-info {
+            text-align: right;
+        }
 
         .compact-week-tag {
-            font-size: 10.5px;
+            font-size: 11px;
             font-weight: 800;
-            padding: 2px 8px;
-            border-radius: 12px;
+            padding: 3px 9px;
+            border-radius: 10px;
             display: inline-block;
-            margin: 0 auto 6px auto;
+            margin-bottom: 5px;
             color: #fff;
         }
 
-        .tag-w1 { background-color: var(--primary-light); }
-        .tag-w2 { background-color: #db2777; }
+        .tag-w1 { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .tag-w2 { background: linear-gradient(135deg, #db2777, #be185d); }
+        .tag-w3 { background: linear-gradient(135deg, #059669, #047857); }
 
         .compact-week-card h3 {
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 900;
             color: #0f172a;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .compact-week-card .count-badge {
-            font-size: 11px;
+            font-size: 11.5px;
             color: #64748b;
             font-weight: 700;
-            margin-bottom: 8px;
         }
 
         .compact-week-btn {
-            background: var(--navy-deep);
+            background: rgba(15, 23, 42, 0.95);
             color: #ffffff;
             border: none;
-            padding: 6px 0;
-            border-radius: 10px;
-            font-size: 11.5px;
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 12px;
             font-weight: 800;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
         }
 
-        /* نوار بالای هر هفته (استیکی) */
+        /* نوار بالای چسبنده (Sticky Glass Bar) */
         .week-top-bar {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-            padding: 8px 12px;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 14px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 8px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             position: sticky;
-            top: 8px;
+            top: 10px;
             z-index: 100;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--glass-border);
         }
 
         .back-home-btn {
-            background: #0f172a;
+            background: rgba(255, 255, 255, 0.15);
             color: #ffffff;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             padding: 6px 12px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 12px;
             font-weight: 800;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
+            transition: background 0.15s ease;
+        }
+
+        .back-home-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .nav-switch-btn {
-            background: #f1f5f9;
-            color: #1e293b;
-            border: 1px solid #cbd5e1;
-            padding: 5px 10px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 11px;
+            border-radius: 10px;
             font-size: 11.5px;
             font-weight: 800;
             cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .nav-switch-btn:hover {
+            background: rgba(255, 255, 255, 0.22);
         }
 
         /* تیتر بخش‌ها */
         .section-header {
-            margin: 22px 0 12px 0;
+            margin: 24px 0 12px 0;
             padding-bottom: 8px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.22);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -342,35 +384,38 @@
         .section-header h2 {
             font-size: 14.5px;
             color: #ffffff;
-            font-weight: 800;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .section-badge {
-            background-color: #0d9488;
+            background: linear-gradient(135deg, #0d9488, #0f766e);
             color: #ffffff;
-            font-size: 10.5px;
-            padding: 2px 8px;
-            border-radius: 14px;
+            font-size: 11px;
+            padding: 3px 9px;
+            border-radius: 12px;
             font-weight: 700;
             white-space: nowrap;
+            box-shadow: 0 3px 8px rgba(13, 148, 136, 0.3);
         }
 
-        /* کارت جمله (Mobile Optimized) */
+        /* کارت جمله (Sentence Glass Card) */
         .sentence-card {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 16px;
-            padding: 14px 12px;
-            margin-bottom: 14px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 18px;
+            padding: 15px 14px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
         .sentence-card.playing {
-            border: 2px solid var(--primary-light);
-            background-color: #f8faff;
-            box-shadow: 0 0 16px rgba(59, 130, 246, 0.5);
+            border: 2px solid #38bdf8;
+            background-color: #f0f9ff;
+            box-shadow: 0 0 22px rgba(56, 189, 248, 0.5);
         }
 
         .card-num {
@@ -381,34 +426,36 @@
             color: #1e293b;
             font-weight: 800;
             font-size: 11.5px;
-            width: 26px;
-            height: 26px;
+            width: 27px;
+            height: 27px;
             border-radius: 50%;
-            margin-bottom: 8px;
+            margin-bottom: 9px;
         }
 
-        /* کادر انگلیسی برای پخش صوتی */
+        /* کادر انگلیسی برای خوانش */
         .english-box {
             direction: ltr;
             text-align: left;
             background: linear-gradient(145deg, #1e293b, #0f172a);
             color: #f8fafc;
-            padding: 12px 14px;
-            border-radius: 10px;
+            padding: 13px 14px;
+            border-radius: 12px;
             font-size: 14.5px;
-            line-height: 1.55;
+            line-height: 1.6;
             font-weight: 500;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 10px;
-            border: 1.5px solid transparent;
+            gap: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.15s ease;
         }
 
         .english-box:active {
-            border-color: #60a5fa;
+            border-color: #38bdf8;
             background: #1e293b;
+            transform: scale(0.99);
         }
 
         .english-text {
@@ -420,22 +467,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
             flex-shrink: 0;
             color: #38bdf8;
         }
 
-        /* تلفظ و ترجمه */
+        /* باکس‌های تلفظ و ترجمه */
         .pronounce-box {
             margin-top: 10px;
             background-color: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-right: 3.5px solid var(--accent);
+            border-right: 4px solid var(--accent);
             padding: 9px 12px;
-            border-radius: 8px;
+            border-radius: 9px;
             font-size: 13px;
             color: #334155;
             line-height: 1.75;
@@ -455,9 +502,9 @@
             margin-top: 10px;
             background-color: #f0fdf4;
             border: 1px solid #bbf7d0;
-            border-right: 3.5px solid #16a34a;
+            border-right: 4px solid #16a34a;
             padding: 9px 12px;
-            border-radius: 8px;
+            border-radius: 9px;
             font-size: 13.5px;
             color: #14532d;
             font-weight: 600;
@@ -494,7 +541,7 @@
         .word-card {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            border-radius: 11px;
             padding: 10px 12px;
         }
 
@@ -515,7 +562,7 @@
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
         }
 
         .main-word-pron {
@@ -593,20 +640,22 @@
 
         #toast {
             position: fixed;
-            bottom: 20px;
+            bottom: 22px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
             color: #fff;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 12px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            padding: 9px 20px;
+            border-radius: 22px;
+            font-size: 12.5px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.25s ease;
             z-index: 1000;
             white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         #toast.show { opacity: 1; }
@@ -616,7 +665,6 @@
 
 <div class="container">
     <header>
-        <!-- سربرگ SVG اختصاصی نئونی -->
         <div class="svg-container">
             <svg class="neon-header" viewBox="0 0 1000 220">
                 <defs>
@@ -647,18 +695,15 @@
                     </mask>
                 </defs>
 
-                <!-- هاله پشت نوشته -->
                 <text x="500" y="110" class="title glow" opacity=".35" filter="url(#neonGlow)">زبان تخصصی ۲</text>
-                <!-- نوشته اصلی -->
                 <text x="500" y="110" class="title">زبان تخصصی ۲</text>
-                <!-- برق متحرک روی نوشته -->
                 <rect class="light" x="0" y="20" width="180" height="180" fill="url(#lightGradient)" mask="url(#textMask)" transform="rotate(15 500 110)"/>
             </svg>
         </div>
 
-        <p class="sub-desc">آموزش تعاملی زبان تخصصی حسابداری با تلفظ آوایی، ترجمه دقیق و گوینده انگلیسی</p>
+        <p class="sub-desc">آموزش تعاملی زبان تخصصی حسابداری با تلفظ صوتی، ترجمه و واژگان تخصصی</p>
 
-        <!-- تنظیمات صدا و سرعت -->
+        <!-- تنظیمات صدا و سرعت شیشه‌ای -->
         <div class="controls-bar">
             <div class="control-group">
                 <label for="accentSelect">لهجه:</label>
@@ -672,49 +717,59 @@
                 <input type="range" id="rateRange" min="0.6" max="1.0" step="0.05" value="0.8">
                 <span id="rateVal" style="font-weight: 800; font-size: 11px;">0.8x</span>
             </div>
-            <button class="stop-btn" onclick="stopAudio()">توقف</button>
+            <button class="stop-btn" onclick="stopAudio()">توقف صوت</button>
         </div>
     </header>
 
-    <!-- ================= VIEW 1: HOME (فهرست اصلی کامپکت موبایلی) ================= -->
+    <!-- ================= VIEW 1: HOME (منوی شیشه‌ای کامل) ================= -->
     <div id="view-home" class="view-pane active">
         <div class="index-intro-card">
-            <h2>فهرست سرفصل‌های هفتگی</h2>
-            <p>هفته مورد نظر را برای مطالعه انتخاب کنید:</p>
+            <h2>سرفصل‌های جامع هفتگی</h2>
+            <p>درس مورد نظر را برای شروع انتخاب فرمایید:</p>
         </div>
 
         <div class="compact-weeks-container">
-            <!-- دکمه هفته اول -->
+            <!-- کارت هفته اول -->
             <div class="compact-week-card w1-card" onclick="openWeek(1)">
-                <div>
+                <div class="card-info">
                     <span class="compact-week-tag tag-w1">هفته ۱</span>
-                    <h3>مؤسسات بازرگانی</h3>
-                    <div class="count-badge">۲۰ جمله آموزشی</div>
+                    <h3>مؤسسات بازرگانی و فروش</h3>
+                    <div class="count-badge">۲۰ جمله آموزشی تخصصی</div>
                 </div>
-                <button class="compact-week-btn">ورود به درس ←</button>
+                <button class="compact-week-btn">ورود ←</button>
             </div>
 
-            <!-- دکمه هفته دوم -->
+            <!-- کارت هفته دوم -->
             <div class="compact-week-card w2-card" onclick="openWeek(2)">
-                <div>
+                <div class="card-info">
                     <span class="compact-week-tag tag-w2">هفته ۲</span>
-                    <h3>تخفیفات و بهایابی</h3>
-                    <div class="count-badge">۴۳ جمله آموزشی</div>
+                    <h3>تخفیفات، بهایابی و سفارش کار</h3>
+                    <div class="count-badge">۴۳ جمله آموزشی تخصصی</div>
                 </div>
-                <button class="compact-week-btn">ورود به درس ←</button>
+                <button class="compact-week-btn">ورود ←</button>
+            </div>
+
+            <!-- کارت هفته سوم -->
+            <div class="compact-week-card w3-card" onclick="openWeek(3)">
+                <div class="card-info">
+                    <span class="compact-week-tag tag-w3">هفته ۳</span>
+                    <h3>حسابداری مطالبات (Receivables)</h3>
+                    <div class="count-badge">۲۴ جمله جدید آموزشی تخصصی</div>
+                </div>
+                <button class="compact-week-btn">ورود ←</button>
             </div>
         </div>
     </div>
 
-    <!-- ================= VIEW 2: WEEK 1 (محتوای هفته اول) ================= -->
+    <!-- ================= VIEW 2: WEEK 1 ================= -->
     <div id="view-week1" class="view-pane">
         <div class="week-top-bar">
             <button class="back-home-btn" onclick="openHome()">
                 <span>↩</span>
                 <span>فهرست</span>
             </button>
-            <div style="font-weight: 800; font-size: 13px; color: var(--primary);">
-                هفته اول (درس ۹: بازرگانی)
+            <div style="font-weight: 800; font-size: 13px; color: #60a5fa;">
+                هفته اول: مؤسسات بازرگانی
             </div>
             <button class="nav-switch-btn" onclick="openWeek(2)">
                 هفته ۲ →
@@ -723,21 +778,36 @@
         <div id="week1ContentArea"></div>
     </div>
 
-    <!-- ================= VIEW 3: WEEK 2 (محتوای هفته دوم) ================= -->
+    <!-- ================= VIEW 3: WEEK 2 ================= -->
     <div id="view-week2" class="view-pane">
         <div class="week-top-bar">
             <button class="back-home-btn" onclick="openHome()">
                 <span>↩</span>
                 <span>فهرست</span>
             </button>
-            <div style="font-weight: 800; font-size: 13px; color: #db2777;">
-                هفته دوم (تخفیفات و بهایابی)
+            <div style="display:flex; gap:6px;">
+                <button class="nav-switch-btn" onclick="openWeek(1)">← هـ ۱</button>
+                <button class="nav-switch-btn" onclick="openWeek(3)">هـ ۳ →</button>
             </div>
-            <button class="nav-switch-btn" onclick="openWeek(1)">
-                ← هفته ۱
-            </button>
         </div>
         <div id="week2ContentArea"></div>
+    </div>
+
+    <!-- ================= VIEW 4: WEEK 3 ================= -->
+    <div id="view-week3" class="view-pane">
+        <div class="week-top-bar">
+            <button class="back-home-btn" onclick="openHome()">
+                <span>↩</span>
+                <span>فهرست</span>
+            </button>
+            <div style="font-weight: 800; font-size: 13px; color: #34d399;">
+                هفته سوم: حسابداری مطالبات
+            </div>
+            <button class="nav-switch-btn" onclick="openWeek(2)">
+                ← هفته ۲
+            </button>
+        </div>
+        <div id="week3ContentArea"></div>
     </div>
 </div>
 
@@ -758,7 +828,7 @@ function openWeek(num) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ==================== داده‌های هفته اول (۲۰ جمله کامل) ====================
+// ==================== هفته ۱ (۲۰ جمله) ====================
 const week1Data = [
     {
         title: "بخش ۱: مؤسسات بازرگانی، خرده‌فروشان و عمده‌فروشان",
@@ -1150,7 +1220,7 @@ const week1Data = [
                     },
                     {
                         en: "Damaged", pron: "دَمِجْد", fa: "آسیب‌دیده",
-                        synonyms: [{ en: "Impaired", pron: "ایمْپِرد", fa: "صدمه‌دیده" }, { en: "Battered", pron: "بَتِرد", fa: "ضربه خورده" }]
+                        synonyms: [{ en: "Impaired", pron: "ایمْپِرد", fa: "صدمه‌‌دیده" }, { en: "Battered", pron: "بَتِرد", fa: "ضربه خورده" }]
                     },
                     {
                         en: "Cash refund", pron: "کَش ریفاند", fa: "استرداد وجه نقد",
@@ -1182,7 +1252,7 @@ const week1Data = [
     }
 ];
 
-// ==================== داده‌های هفته دوم (۴۳ جمله کامل) ====================
+// ==================== هفته ۲ (۴۳ جمله) ====================
 const week2Data = [
     {
         title: "بخش ۱: برگشت از فروش و تخفیفات",
@@ -1750,7 +1820,7 @@ const week2Data = [
                 words: [
                     {
                         en: "Unit cost", pron: "یونیت کاسْت", fa: "بهای هر واحد",
-                        synonyms: [{ en: "Cost per unit", pron: "کاسْتْ پِر یونیت", fa: "هزینه هر تک کالا" }, { en: "Single item cost", pron: "سینْگِل آیتِم کاسْت", fa: "بهای تک‌قلم" }]
+                        synonyms: [{ en: "Cost per unit", pron: "کاسْتْ پِر یونیت", fa: "هزینه هر تک کالا" }, { en: "Single item cost", pron: "سینْگِل آیتِم کاسْت", fa: "بهای تک‌‌قلم" }]
                     },
                     {
                         en: "Obtained", pron: "آبْتِینْد", fa: "به دست آمده",
@@ -2110,7 +2180,456 @@ const week2Data = [
     }
 ];
 
-// آیکون‌های SVG
+// ==================== داده‌های جدید هفته ۳ (۲۴ جمله کامل از روی تصاویر) ====================
+const week3Data = [
+    {
+        title: "بخش ۱: تعریف و طبقه‌بندی مطالبات (Receivables)",
+        badge: "مطالبات - صفحه اول",
+        sentences: [
+            {
+                id: 64,
+                en: "Claims held against individuals, organizations, and others for money, goods, or services are considered as receivables, which may be either trade or nontrade receivables.",
+                pronunciation: "کْلِیمْز هِلْد اَگِینْسْت اینْدیویژوالْز، اُرْگانایْزِیشِنْز، اَند اَذِرز فور مانی، گودز، اور سِرْویسِز آر کانْسیدِرد اَز ریسیوابِلْز، ویچ مِی بی ایدِر تْرِید اور نان‌تْرِید ریسیوابِلْز.",
+                translation: "ادعاهای مالی علیه افراد، سازمان‌ها و سایرین بابت پول، کالا یا خدمات به عنوان مطالبات تلقی می‌شوند که ممکن است مطالبات تجاری یا غیرتجاری باشند.",
+                words: [
+                    {
+                        en: "Claims held", pron: "کْلِیمْز هِلْد", fa: "ادعاها و مطالبات در دست",
+                        synonyms: [{ en: "Rights to receive", pron: "رایتس تو رسیو", fa: "حقوق دریافت" }, { en: "Demands", pron: "دیمندز", fa: "مطالبات قانونی" }]
+                    },
+                    {
+                        en: "Receivables", pron: "ریسیوابِلْز", fa: "مطالبات / دریافتنی‌ها",
+                        synonyms: [{ en: "Amounts due", pron: "اماونتس دیو", fa: "مبالغ سررسیدشده" }, { en: "Debts owed", pron: "دتس اود", fa: "بدهی‌های دیگران" }]
+                    },
+                    {
+                        en: "Trade receivables", pron: "تْرِید ریسیوابِلْز", fa: "مطالبات تجاری",
+                        synonyms: [{ en: "Commercial claims", pron: "کامرشال کلیمس", fa: "ادعاهای بازرگانی" }]
+                    },
+                    {
+                        en: "Nontrade receivables", pron: "نان‌تْرِید ریسیوابِلْز", fa: "مطالبات غیرتجاری",
+                        synonyms: [{ en: "Other receivables", pron: "اذر ریسیوابلز", fa: "سایر دریافتنی‌ها" }]
+                    }
+                ]
+            },
+            {
+                id: 65,
+                en: "Trade receivables are amounts customers owed to the company for goods or services they received.",
+                pronunciation: "تْرِید ریسیوابِلْز آر اَماوْنْتْس کاسْتومِرز اُود تو دِ کامْپَنی فور گودز اور سِرْویسِز دِی رِسیوْد.",
+                translation: "مطالبات تجاری مبالغی هستند که مشتریان بابت کالاها یا خدماتی که دریافت کرده‌اند به شرکت بدهکارند.",
+                words: [
+                    {
+                        en: "Owed to", pron: "اُود تو", fa: "بدهکار به، متعلق به",
+                        synonyms: [{ en: "Payable to", pron: "پییبل تو", fa: "پرداختنی به" }, { en: "Indebted to", pron: "ایندتد تو", fa: "مدیون به" }]
+                    },
+                    {
+                        en: "Received", pron: "رِسیوْد", fa: "دریافت‌شده",
+                        synonyms: [{ en: "Acquired", pron: "اکوایرد", fa: "اخذشده" }, { en: "Obtained", pron: "ابتیند", fa: "به دست آمده" }]
+                    }
+                ]
+            },
+            {
+                id: 66,
+                en: "Nontrade receivables, however, arise from a variety of transactions.",
+                pronunciation: "نان‌تْرِید ریسیوابِلْز، هاواِوِر، اَرایْز فرام اِ وِرایِتی آو تْرَنْزَکْشِنْز.",
+                translation: "با این حال، مطالبات غیرتجاری از انواع گوناگونی از معاملات و رویدادهای مالی ناشی می‌شوند.",
+                words: [
+                    {
+                        en: "Arise from", pron: "اَرایْز فرام", fa: "ناشی شدن از",
+                        synonyms: [{ en: "Originate from", pron: "اوریجینیت فرام", fa: "سرچشمه گرفتن" }, { en: "Stem from", pron: "استم فرام", fa: "ریشه داشتن در" }]
+                    },
+                    {
+                        en: "Variety", pron: "وِرایِتی", fa: "گوناگونی، تنوع",
+                        synonyms: [{ en: "Diversity", pron: "دایورسیتی", fa: "تنوع" }, { en: "Assortment", pron: "اسورتمِنت", fa: "مجموعه متنوع" }]
+                    }
+                ]
+            },
+            {
+                id: 67,
+                en: "Examples of nontrade receivables are advances to officers and employees, advances to subsidiaries, dividends and interest receivable, deposits as guarantee of performance or payment, and deposits to cover potential damages or losses.",
+                pronunciation: "اِگْزامْپِلْز آو نان‌تْرِید ریسیوابِلْز آر اَدْوانْسِز تو آفیسِرز اَند اِمْپلوییز، اَدْوانْسِز تو سابْسیدیِریز، دیویدِنْدز اَند اینْتْرِست ریسیوابِل، دیپازیتْس اَز گارَنْتی آو پِرفورمِنس اور پِیمِنت، اَند دیپازیتْس تو کاوِر پوتِنْشال دَمِجِز اور لاسِز.",
+                translation: "نمونه‌هایی از مطالبات غیرتجاری شامل مساعده به مدیران و کارکنان، مساعده به شرکت‌های فرعی، سود سهام و بهره دریافتنی، سپرده‌های حسن انجام کار یا پرداخت، و سپرده‌های پوشش خسارت یا زیان‌های احتمالی است.",
+                words: [
+                    {
+                        en: "Advances", pron: "اَدْوانْسِز", fa: "مساعده‌ها، پیش‌پرداخت‌ها",
+                        synonyms: [{ en: "Prepayments", pron: "پری‌پیمنتس", fa: "پیش‌پرداخت" }, { en: "Upfront loans", pron: "آپ‌فرانت لونز", fa: "وام‌های علی‌الحساب" }]
+                    },
+                    {
+                        en: "Subsidiaries", pron: "سابْسیدیِریز", fa: "شرکت‌های فرعی / تابعه",
+                        synonyms: [{ en: "Affiliates", pron: "افیلیتس", fa: "واحدهای وابسته" }]
+                    },
+                    {
+                        en: "Guarantee of performance", pron: "گارَنْتی آو پِرفورمِنس", fa: "ضمانت انجام کار (تعهدات)",
+                        synonyms: [{ en: "Performance bond", pron: "پرفورمنس باند", fa: "ضمانت حسن اجرای تعهدات" }]
+                    },
+                    {
+                        en: "Potential damages", pron: "پوتِنْشال دَمِجِز", fa: "خسارات و صدمات احتمالی",
+                        synonyms: [{ en: "Possible losses", pron: "پاسیبل لاسز", fa: "زیان‌های بالقوه" }]
+                    }
+                ]
+            },
+            {
+                id: 68,
+                en: "Both of trade and nontrade receivables may be subclassified into accounts receivable and notes receivable.",
+                pronunciation: "بُوث آو تْرِید اَند نان‌تْرِید ریسیوابِلْز مِی بی سابْ‌کْلَسیفایْد اینْتو اِکانْتْس ریسیوابِل اَند نُوتْس ریسیوابِل.",
+                translation: "هر دو گروه مطالبات تجاری و غیرتجاری ممکن است به حساب‌های دریافتنی و اسناد دریافتنی طبقه‌بندی فرعی شوند.",
+                words: [
+                    {
+                        en: "Subclassified", pron: "سابْ‌کْلَسیفایْد", fa: "طبقه‌بندی فرعی شده",
+                        synonyms: [{ en: "Subdivided", pron: "ساب‌دیوایْدد", fa: "ریزطبقه‌بندی‌شده" }, { en: "Sub-grouped", pron: "ساب‌گروپد", fa: "تفکیک‌شده" }]
+                    },
+                    {
+                        en: "Notes receivable", pron: "نُوتْس ریسیوابِل", fa: "اسناد دریافتنی (سفته/برات)",
+                        synonyms: [{ en: "Promissory notes", pron: "پرامیسوری نوتس", fa: "سفته‌های تعهدی" }]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۲: حساب‌های دریافتنی و هزینه مطالبات مشکوک‌الوصول",
+        badge: "مطالبات - صفحه دوم",
+        sentences: [
+            {
+                id: 69,
+                en: "When customers buy on credit, the seller's accounting records show this transaction as an account receivable commonly referred to as an open account.",
+                pronunciation: "وِن کاسْتومِرز بای آن کْرِدیت، دِ سِلِرز اِکانْتینگ رِکوردز شُو دیس تْرَنْزَکْشِن اَز اَن اِکانْت ریسیوابِل کامِنْلی ریفِرد تو اَز اَن اُوپِن اِکانْت.",
+                translation: "هنگامی که مشتریان نسیه خرید می‌کنند، دفاتر حسابداری فروشنده این معامله را به عنوان حساب دریافتنی که معمولاً «حساب باز» نامیده می‌شود، ثبت می‌نمایند.",
+                words: [
+                    {
+                        en: "Open account", pron: "اُوپِن اِکانْت", fa: "حساب باز (نسیه)",
+                        synonyms: [{ en: "Unsecured credit line", pron: "آن‌سیکیورد کردیت لاین", fa: "اعتبار بدون وثیقه" }, { en: "Charge account", pron: "چارژ اکانت", fa: "حساب دفتری" }]
+                    },
+                    {
+                        en: "Accounting records", pron: "اِکانْتینگ رِکوردز", fa: "سوابق و دفاتر حسابداری",
+                        synonyms: [{ en: "Books of account", pron: "بوکس آو اکانت", fa: "دفاتر مالی" }]
+                    }
+                ]
+            },
+            {
+                id: 70,
+                en: "An account receivable indicates the buyer's oral agreement to pay the seller for goods or services purchased.",
+                pronunciation: "اَن اِکانْت ریسیوابِل اینْدیکِیتْس دِ بایِرز اُورال اَگْریمِنت تو پِی دِ سِلِر فور گودز اور سِرْویسِز پِرچِسْد.",
+                translation: "حساب دریافتنی نشان‌دهنده توافق شفاهی خریدار برای پرداخت وجه کالاها یا خدمات خریداری‌شده به فروشنده است.",
+                words: [
+                    {
+                        en: "Oral agreement", pron: "اُورال اَگْریمِنت", fa: "توافق شفاهی",
+                        synonyms: [{ en: "Verbal agreement", pron: "وربال اگریمنت", fa: "قرارداد کلامی" }, { en: "Unwritten contract", pron: "آن‌ریتن کانترکت", fa: "پیمان کتبی‌نشده" }]
+                    },
+                    {
+                        en: "Indicates", pron: "اینْدیکِیتْس", fa: "حاکی بودن از، دلالت داشتن بر",
+                        synonyms: [{ en: "Signifies", pron: "سیگنیفایز", fa: "بیانگر بودن" }, { en: "Represents", pron: "ریپرزنتس", fa: "نشان دادن" }]
+                    }
+                ]
+            },
+            {
+                id: 71,
+                en: "Accounts receivable that are not expected to be collected after a reasonable length of time are recognized by the seller as bad debts or uncollectible accounts expense.",
+                pronunciation: "اِکانْتْس ریسیوابِل دَت آر نات اِکْسْپِکْتِد تو بی کالِکْتِد اَفْتِر اِ ریزونابِل لِنْگْث آو تایم آر رِکاگْنایْزد بای دِ سِلِر اَز بَد دِتْس اور آنْ‌کالِکْتیبِل اِکانْتْس اِکْسْپِنس.",
+                translation: "حساب‌های دریافتنی که انتظار نمی‌رود پس از گذشت مدتی معقول وصول شوند، از سوی فروشنده به عنوان هزینه مطالبات سوخت‌شده یا لاوصول شناسایی می‌گردند.",
+                words: [
+                    {
+                        en: "Bad debts", pron: "بَد دِتْس", fa: "مطالبات سوخت‌شده / لاوصول",
+                        synonyms: [{ en: "Uncollectible debts", pron: "آن‌کالکتیبل دتس", fa: "بدهی‌های غیرقابل وصول" }, { en: "Defaulted debts", pron: "دیفالتد دتس", fa: "مطالبات نکول‌شده" }]
+                    },
+                    {
+                        en: "Uncollectible accounts expense", pron: "آنْ‌کالِکْتیبِل اِکانْتْس اِکْسْپِنس", fa: "هزینه مطالبات لاوصول",
+                        synonyms: [{ en: "Bad debt expense", pron: "بد دت اکسپنس", fa: "هزینه مطالبات مشکوک‌الوصول" }]
+                    },
+                    {
+                        en: "Reasonable length of time", pron: "ریزونابِل لِنْگْث آو تایم", fa: "مدت زمان معقول و منطقی",
+                        synonyms: [{ en: "Fair duration", pron: "فر دیوریشن", fa: "دوره متعارف" }]
+                    }
+                ]
+            },
+            {
+                id: 72,
+                en: "There are two methods of accounting for receivables that are expected to be uncollectible: direct write-off method and allowance method.",
+                pronunciation: "دِر آر تو مِثودْز آو اِکانْتینگ فور ریسیوابِلْز دَت آر اِکْسْپِکْتِد تو بی آنْ‌کالِکْتیبِل: دایْرِکْت رایْت‌آف مِثود اَند اَلاوِنْس مِثود.",
+                translation: "برای حسابداری مطالبات لاوصول دو روش وجود دارد: روش حذف مستقیم و روش ایجاد ذخیره (اندوخته).",
+                words: [
+                    {
+                        en: "Direct write-off method", pron: "دایْرِکْت رایْت‌آف مِثود", fa: "روش حذف مستقیم",
+                        synonyms: [{ en: "Direct charge-off", pron: "دایرکت چارژ آف", fa: "ابطال مستقیم" }]
+                    },
+                    {
+                        en: "Allowance method", pron: "اَلاوِنْس مِثود", fa: "روش ذخیره‌گیری (ایجاد اندوخته)",
+                        synonyms: [{ en: "Reserve method", pron: "ریزو متد", fa: "روش ذخیره" }]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۳: روش حذف مستقیم (Direct Write-off Method)",
+        badge: "مطالبات - صفحه دوم",
+        sentences: [
+            {
+                id: 73,
+                en: "The direct write-off method records the bad debt expense in the year it is determined that specific receivable cannot be collected.",
+                pronunciation: "دِ دایْرِکْت رایْت‌آف مِثود رِکوردز دِ بَد دِت اِکْسْپِنس این دِ ییر ایت ایز دیتِرمینْد دَت اِسْپِسیفیک ریسیوابِل کَن‌‌نات بی کالِکْتِد.",
+                translation: "روش حذف مستقیم، هزینه مطالبات سوخت‌شده را در همان سالی ثبت می‌کند که قطعی می‌شود طلب معینی وصول نخواهد شد.",
+                words: [
+                    {
+                        en: "Specific receivable", pron: "اِسْپِسیفیک ریسیوابِل", fa: "مطالبه و حساب مشخص",
+                        synonyms: [{ en: "Particular account", pron: "پارتیکیولار اکانت", fa: "حساب خاص" }]
+                    },
+                    {
+                        en: "Determined", pron: "دیتِرمینْد", fa: "مشخص‌شده، قطعی‌شده",
+                        synonyms: [{ en: "Ascertained", pron: "اسرتیند", fa: "محرز گشته" }, { en: "Identified", pron: "آیدنتیفاید", fa: "شناسایی‌شده" }]
+                    }
+                ]
+            },
+            {
+                id: 74,
+                en: "This method delays the recognition of a bad debt expense until a specific account is identified as uncollectible.",
+                pronunciation: "دیس مِثود دیلِیز دِ رِکاگْنیشِن آو اِ بَد دِت اِکْسْپِنس آنْتیل اِ اِسْپِسیفیک اِکانْت ایز آیدِنْتیفایْد اَز آنْ‌کالِکْتیبِل.",
+                translation: "این روش، شناخت هزینه مطالبات سوخت‌شده را تا زمانی که حساب مشخصی به عنوان لاوصول شناسایی گردد، به تعویق می‌اندازد.",
+                words: [
+                    {
+                        en: "Delays", pron: "دیلِیز", fa: "به تأخیر می‌اندازد",
+                        synonyms: [{ en: "Postpones", pron: "پستپونز", fa: "عقب می‌اندازد" }, { en: "Defers", pron: "دیفرز", fa: "به تعویق می‌اندازد" }]
+                    },
+                    {
+                        en: "Identified", pron: "آیدِنْتیفایْد", fa: "شناسایی‌شده",
+                        synonyms: [{ en: "Recognized", pron: "رکاگنایزد", fa: "تشخیص داده شده" }]
+                    }
+                ]
+            },
+            {
+                id: 75,
+                en: "Since this method does not properly match revenues and expenses and distorts the measurement of the amount of accounts receivable, it is not in accord with good accounting practice.",
+                pronunciation: "سینس دیس مِثود داز نات پْراپِرْلی مَچ رِوِنیوز اَند اِکْسْپِنسِز اَند دیستُورتْس دِ مِژِرمِنت آو دی اَماوْنت آو اِکانْتْس ریسیوابِل، ایت ایز نات این اَکورد ویذ گود اِکانْتینگ پْرَکتیس.",
+                translation: "از آنجا که این روش درآمدها و هزینه‌ها را به درستی مقابله (تطابق) نمی‌دهد و سنجش رقم حساب‌های دریافتنی را مخدوش می‌‌سازد، با رویه مطلوب حسابداری مطابقت ندارد.",
+                words: [
+                    {
+                        en: "Match revenues and expenses", pron: "مَچ رِوِنیوز اَند اِکْسْپِنسِز", fa: "تطابق درآمدها و هزینه‌ها",
+                        synonyms: [{ en: "Matching principle", pron: "مچینگ پرینسیپل", fa: "اصل تطابق" }]
+                    },
+                    {
+                        en: "Distorts", pron: "دیستُورتْس", fa: "مخدوش می‌کند، از شکل می‌اندازد",
+                        synonyms: [{ en: "Misrepresents", pron: "میس‌ریپرزنتس", fa: "تحریف می‌کند" }, { en: "Skews", pron: "اسکیوز", fa: "منحرف می‌سازد" }]
+                    },
+                    {
+                        en: "Accounting practice", pron: "اِکانْتینگ پْرَکتیس", fa: "رویه / استانداردهای عملی حسابداری",
+                        synonyms: [{ en: "Accounting convention", pron: "اکانتینگ کانونکشن", fa: "میثاق حسابداری" }]
+                    }
+                ]
+            },
+            {
+                id: 76,
+                en: "As a result, only if it is impossible to estimate uncollectibles with reasonable accuracy or if most sales are made on a cash basis, the direct write-off method may be used, providing that the amount uncollectible is immaterial.",
+                pronunciation: "اَز اِ ریزالْت، اُوْنلی ایْف ایت ایز ایم‌پاسیبِل تو اِسْتیمِیت آنْ‌کالِکْتیبِلْز ویذ ریزونابِل اَکیورِسی اور ایْف مُوست سِیلز آر مِید آن اِ کَش بِیسیس، دِ دایْرِکْت رایْت‌آف مِثود مِی بی یوزْد، پْرُوایدینگ دَت دی اَماوْنت آنْ‌کالِکْتیبِل ایز ایمَتیرْیال.",
+                translation: "در نتیجه، تنها در صورتی که برآورد مطالبات لاوصول با دقت معقول غیرممکن باشد یا اکثر فروش‌ها نقدی باشد، می‌توان از روش حذف مستقیم استفاده کرد، مشروط بر اینکه مبلغ لاوصول بی‌اهمیت باشد.",
+                words: [
+                    {
+                        en: "Reasonable accuracy", pron: "ریزونابِل اَکیورِسی", fa: "دقت معقول",
+                        synonyms: [{ en: "Acceptable precision", pron: "اکسپتبل پریسیژن", fa: "دقت قابل قبول" }]
+                    },
+                    {
+                        en: "Cash basis", pron: "کَش بِیسیس", fa: "مبنای نقدی",
+                        synonyms: [{ en: "Cash accounting method", pron: "کش اکانتینگ متد", fa: "روش نقدی" }]
+                    },
+                    {
+                        en: "Immaterial", pron: "ایمَتیرْیال", fa: "بی‌اهمیت (فاقد اهمیت)",
+                        synonyms: [{ en: "Insignificant", pron: "اینسیگنیفیکنت", fa: "ناچیز" }, { en: "Negligible", pron: "نگلیجبِل", fa: "قابل چشم‌پوشی" }]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۴: روش ایجاد ذخیره مطالبات (Allowance Method)",
+        badge: "مطالبات - صفحه دوم و سوم",
+        sentences: [
+            {
+                id: 77,
+                en: "In contrast to the direct write-off method, the allowance method does a better job of matching and measuring receivables.",
+                pronunciation: "این کانْتْراسْت تو دِ دایْرِکْت رایْت‌آف مِثود، دی اَلاوِنْس مِثود داز اِ بَتِر جاب آو مَچینگ اَند مِژِرینگ ریسیوابِلْز.",
+                translation: "در مقایسه با روش حذف مستقیم، روش ذخیره‌گیری عملکرد بهتری در تطابق هزینه‌ها و اندازه‌گیری ارزش مطالبات دارد.",
+                words: [
+                    {
+                        en: "Measuring receivables", pron: "مِژِرینگ ریسیوابِلْز", fa: "اندازه‌گیری و ارزشیابی مطالبات",
+                        synonyms: [{ en: "Valuing claims", pron: "ولیویینگ کلیمس", fa: "ارزیابی مطالبات" }]
+                    }
+                ]
+            },
+            {
+                id: 78,
+                en: "Under the allowance method, business enterprises provide for the amount of their trade receivables estimated to become uncollectible prior to identifying a specific account as uncollectible.",
+                pronunciation: "آنْدِر دی اَلاوِنْس مِثود، بیزینِس اِنْتِرپْرایزِز پْرُواید فور دی اَماوْنت آو دِر تْرِید ریسیوابِلْز اِسْتیمِیتِد تو بیْ‌‌کام آنْ‌کالِکْتیبِل پْرایِر تو آیدِنْتیفایینگ اِ اِسْپِسیفیک اِکانْت اَز آنْ‌کالِکْتیبِل.",
+                translation: "در روش ذخیره‌گیری، بنگاه‌های اقتصادی پیش از آنکه حساب مشخصی را لاوصول شناسایی نمایند، برای آن بخش از مطالبات تجاری که برآورد می‌شود لاوصول گردند، ذخیره منظور می‌کنند.",
+                words: [
+                    {
+                        en: "Provide for", pron: "پْرُواید فور", fa: "ذخیره در نظر گرفتن، تأمین اعتبار کردن",
+                        synonyms: [{ en: "Set aside reserves", pron: "ست اساید ریزوز", fa: "اندوختن ذخیره" }, { en: "Recognize provision", pron: "رکاگنایز پروویژن", fa: "شناسایی ذخیره" }]
+                    },
+                    {
+                        en: "Prior to", pron: "پْرایِر تو", fa: "پیش از، قبل از",
+                        synonyms: [{ en: "Before", pron: "بیفور", fa: "پیش از" }, { en: "Ahead of", pron: "اهد آو", fa: "قبل از" }]
+                    }
+                ]
+            },
+            {
+                id: 79,
+                en: "When a customer fails to pay, his or her account is written off against the allowance account.",
+                pronunciation: "وِن اِ کاسْتومِر فِیلز تو پِی، هیز اور هِر اِکانْت ایز رِیتِن آف اَگِینْسْت دی اَلاوِنْس اِکانْت.",
+                translation: "هنگامی که مشتری از پرداخت بازمی‌ماند، حساب او از محل حساب ذخیره حذف می‌شود.",
+                words: [
+                    {
+                        en: "Fails to pay", pron: "فِیلز تو پِی", fa: "قصور در پرداخت، ناتوانی از پرداخت",
+                        synonyms: [{ en: "Defaults on payment", pron: "دیفالتس آن پیمنت", fa: "نکول کردن" }]
+                    },
+                    {
+                        en: "Written off", pron: "رِیتِن آف", fa: "حذف‌شده، سوخت‌شده",
+                        synonyms: [{ en: "Charged off", pron: "چارژد آف", fa: "از دفاتر خط‌‌خورده" }, { en: "Cancelled", pron: "کنسلد", fa: "باطل‌شده" }]
+                    },
+                    {
+                        en: "Allowance account", pron: "اَلاوِنْس اِکانْت", fa: "حساب ذخیره مطالبات",
+                        synonyms: [{ en: "Allowance for doubtful accounts", pron: "الاونس فور دات‌فول اکانتس", fa: "ذخیره مطالبات مشکوک‌الوصول" }]
+                    }
+                ]
+            },
+            {
+                id: 80,
+                en: "If the customer later pays, the account is reinstated, and payment is then recorded as usual.",
+                pronunciation: "ایْف دِ کاسْتومِر لِیتِر پِیز، دی اِکانْت ایز ری‌اینْسْتِیتِد، اَند پِیمِنت ایز دِن رِکوردِد اَز یُوژوال.",
+                translation: "چنانچه مشتری بعداً بدهی خود را پرداخت نماید، حساب دوباره احیا شده و سپس وجه دریافتی طبق معمول ثبت می‌گردد.",
+                words: [
+                    {
+                        en: "Reinstated", pron: "ری‌اینْسْتِیتِد", fa: "دوباره احیاشده، بازگردانده‌شده",
+                        synonyms: [{ en: "Restored", pron: "ریستورد", fa: "اعاده‌شده" }, { en: "Re-established", pron: "ری‌استابلیشد", fa: "مجدداً برقرارشده" }]
+                    },
+                    {
+                        en: "As usual", pron: "اَز یُوژوال", fa: "طبق معمول، مطابق روال",
+                        synonyms: [{ en: "Routinely", pron: "روتینلی", fa: "به‌طور معمول" }]
+                    }
+                ]
+            },
+            {
+                id: 81,
+                en: "The allowance account, which will normally have a credit balance, is a contra asset account.",
+                pronunciation: "دی اَلاوِنْس اِکانْت، ویچ ویل نُورمالی هَو اِ کْرِدیت بالانْس، ایز اِ کانتْرا اَسِت اِکانْت.",
+                translation: "حساب ذخیره، که قاعدتاً دارای مانده بستانکار است، یک حساب کاهنده دارایی (پاددارایی) محسوب می‌شود.",
+                words: [
+                    {
+                        en: "Contra asset account", pron: "کانتْرا اَسِت اِکانْت", fa: "حساب کاهنده دارایی",
+                        synonyms: [{ en: "Asset offset account", pron: "است آف‌ست اکانت", fa: "حساب تعدیل دارایی" }, { en: "Negative asset account", pron: "نگتیو است اکانت", fa: "حساب دارایی منفی" }]
+                    },
+                    {
+                        en: "Credit balance", pron: "کْرِدیت بالانْس", fa: "مانده بستانکار",
+                        synonyms: [{ en: "Credit remainder", pron: "کردیت ریمیندر", fa: "باقی‌مانده بستانکار" }]
+                    }
+                ]
+            },
+            {
+                id: 82,
+                en: "The uncollectible accounts expense is usually reported on the income statement as an administrative expense.",
+                pronunciation: "دی آنْ‌کالِکْتیبِل اِکانْتْس اِکْسْپِنس ایز یُوژوالی ریپورتِد آن دی اینْکام اِسْتِیتْمِنت اَز اَن اَدْمینیسترِیتیو اِکْسْپِنس.",
+                translation: "هزینه مطالبات لاوصول معمولاً در صورت سود و زیان به عنوان یک هزینه اداری گزارش می‌گردد.",
+                words: [
+                    {
+                        en: "Administrative expense", pron: "اَدْمینیسترِیتیو اِکْسْپِنس", fa: "هزینه اداری و تشکیلاتی",
+                        synonyms: [{ en: "General and administrative expense", pron: "جنرال اند ادمینیستریتیو", fa: "هزینه‌های عمومی و اداری" }, { en: "Management overhead", pron: "منجمنت اورهد", fa: "سربار مدیریت" }]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: "بخش ۵: روش‌های برآورد ذخیره و سایر ذخایر مطالبات",
+        badge: "مطالبات - صفحه سوم",
+        sentences: [
+            {
+                id: 83,
+                en: "The estimate of the amount of uncollectibles may be based on the percentage of sales, or the percentage of receivables.",
+                pronunciation: "دی اِسْتیمِیت آو دی اَماوْنت آو آنْ‌کالِکْتیبِلْز مِی بی بِیسْد آن دِ پِرسِنْتِج آو سِیلز، اور دِ پِرسِنْتِج آو ریسیوابِلْز.",
+                translation: "برآورد رقم مطالبات لاوصول ممکن است بر مبنای درصدی از فروش، یا درصدی از مطالبات (حساب‌های دریافتنی) انجام شود.",
+                words: [
+                    {
+                        en: "Percentage of sales", pron: "پِرسِنْتِج آو سِیلز", fa: "درصدی از فروش (روش سودوزیانی)",
+                        synonyms: [{ en: "Sales ratio approach", pron: "سیلز ریشیو اپروچ", fa: "رویکرد نسبت فروش" }]
+                    },
+                    {
+                        en: "Percentage of receivables", pron: "پِرسِنْتِج آو ریسیوابِلْز", fa: "درصدی از مطالبات (روش ترازنامه‌ای)",
+                        synonyms: [{ en: "Receivables ratio approach", pron: "ریسیوابلز ریشیو اپروچ", fa: "رویکرد نسبت مطالبات" }]
+                    }
+                ]
+            },
+            {
+                id: 84,
+                en: "Under the first method, the amount of bad debt expense is unaffected by any balance currently existing in the allowance account, which is frequently referred to as income statement approach.",
+                pronunciation: "آنْدِر دِ فِرْسْت مِثود، دی اَماوْنت آو بَد دِت اِکْسْپِنس ایز آن‌اَفِکْتِد بای اِنی بالانْس کارِنْتْلی اِگْزیستینگ این دی اَلاوِنْس اِکانْت، ویچ ایز فْریکْوِنْتْلی ریفِرد تو اَز اینْکام اِسْتِیتْمِنت اَپْروچ.",
+                translation: "در روش اول، مبلغ هزینه مطالبات سوخت‌شده تحت تأثیر مانده فعلی موجود در حساب ذخیره قرار نمی‌گیرد، که این روش مکرراً رویکرد سود و زیانی نامیده می‌شود.",
+                words: [
+                    {
+                        en: "Unaffected", pron: "آن‌اَفِکْتِد", fa: "تأثیرناپذیر، بدون تأثیر",
+                        synonyms: [{ en: "Independent of", pron: "ایندیپندنت آو", fa: "مستقل از" }, { en: "Uninfluenced", pron: "آن‌اینفلوئنسد", fa: "دست‌نخورده" }]
+                    },
+                    {
+                        en: "Income statement approach", pron: "اینْکام اِسْتِیتْمِنت اَپْروچ", fa: "رویکرد صورت سود و زیان",
+                        synonyms: [{ en: "P&L approach", pron: "پی اند ال اپروچ", fa: "روش سود و زیان" }]
+                    }
+                ]
+            },
+            {
+                id: 85,
+                en: "Under the percentage of receivable method, referred to as balance sheet approach, the uncollectibles may be estimated using one composite rate or different percentages in an aging schedule.",
+                pronunciation: "آنْدِر دِ پِرسِنْتِج آو ریسیوابِل مِثود، ریفِرد تو اَز بالانْس شیت اَپْروچ، دی آنْ‌کالِکْتیبِلْز مِی بی اِسْتیمِیتِد یوزینگ وان کامْپوزیت رِیت اور دیفِرِنت پِرسِنْتِجِز این اَن اِیْجینگ اِسْکِجول.",
+                translation: "در روش درصدی از مطالبات که رویکرد ترازنامه‌ای نام دارد، مطالبات لاوصول با استفاده از یک نرخ ترکیبی یا درصدهای متفاوت در جدول تجزیه سنی مطالبات تخمین زده می‌شود.",
+                words: [
+                    {
+                        en: "Balance sheet approach", pron: "بالانْس شیت اَپْروچ", fa: "رویکرد ترازنامه‌ای",
+                        synonyms: [{ en: "Statement of financial position approach", pron: "استیتمنت آو فایننشال پوزیشن اپروچ", fa: "روش وضعیت مالی" }]
+                    },
+                    {
+                        en: "Composite rate", pron: "کامْپوزیت رِیت", fa: "نرخ مرکب / ترکیبی",
+                        synonyms: [{ en: "Blended rate", pron: "بلندد ریت", fa: "نرخ تلفیقی" }, { en: "Uniform rate", pron: "یونیفورم ریت", fa: "نرخ یکنواخت" }]
+                    },
+                    {
+                        en: "Aging schedule", pron: "اِیْجینگ اِسْکِجول", fa: "جدول تجزیه سنی مطالبات",
+                        synonyms: [{ en: "Aging analysis sheet", pron: "ایجینگ آنالیسیس شیت", fa: "برگه تحلیل سن بدهی‌ها" }]
+                    }
+                ]
+            },
+            {
+                id: 86,
+                en: "The most common other allowances are allowance for sales returns and allowances, and allowance for collection expenses.",
+                pronunciation: "دِ مُوست کامِن اَذِر اَلاوِنْسِز آر اَلاوِنْس فور سِیلز ریتِرنز اَند اَلاوِنْسِز، اَند اَلاوِنْس فور کالِکْشِن اِکْسْپِنسِز.",
+                translation: "رایج‌ترین سایر ذخایر شامل ذخیره برگشت از فروش و تخفیفات، و ذخیره هزینه‌های وصول مطالبات است.",
+                words: [
+                    {
+                        en: "Allowance for collection expenses", pron: "اَلاوِنْس فور کالِکْشِن اِکْسْپِنسِز", fa: "ذخیره هزینه‌های وصول مطالبات",
+                        synonyms: [{ en: "Reserve for recovery costs", pron: "ریزو فور ریکاوری کاستس", fa: "ذخیره مخارج جمع‌آوری" }]
+                    },
+                    {
+                        en: "Net realizable value", pron: "نِت ریالایْزِبِل وَلیو", fa: "خالص ارزش بازیافتنی (تحقق‌پذیر)",
+                        synonyms: [{ en: "NRV", pron: "ان آر وی", fa: "ارزش خالص بازیافتنی" }]
+                    }
+                ]
+            },
+            {
+                id: 87,
+                en: "Retail firms frequently accept receivable notes from customers who need to extend the payment period of an outstanding receivable, though the majority of notes originate from lending transactions.",
+                pronunciation: "ریتِیل فِرمز فْریکْوِنْتْلی اَکْسِپْت ریسیوابِل نُوتْس فرام کاسْتومِرز هو نید تو اِکْسْتِند دِ پِیمِنت پیریاد آو اَن آوت‌استَنْدینگ ریسیوابِل، ذُو دِ مِجوریتی آو نُوتْس اُریجینِیت فرام لِنْدینگ تْرَنْزَکْشِنْز.",
+                translation: "بنگاه‌های خرده‌فروشی معمولاً از مشتریانی که نیاز به تمدید دوره پرداخت بدهی معوق خود دارند، اسناد دریافتنی (سفته) می‌پذیرند، هرچند بیشتر اسناد از معاملات اعطای وام سرچشمه می‌گیرند.",
+                words: [
+                    {
+                        en: "Extend the payment period", pron: "اِکْسْتِند دِ پِیمِنت پیریاد", fa: "تمدید سررسید و مهلت پرداخت",
+                        synonyms: [{ en: "Prolong due date", pron: "پرولانگ دیو دیت", fa: "طولانی کردن تاریخ سررسید" }]
+                    },
+                    {
+                        en: "Outstanding receivable", pron: "آوت‌استَنْدینگ ریسیوابِل", fa: "طلب معوق و تسویه‌نشده",
+                        synonyms: [{ en: "Unsettled debt", pron: "آن‌ستلد دت", fa: "بدهی تسویه‌نشده" }]
+                    },
+                    {
+                        en: "Lending transactions", pron: "لِنْدینگ تْرَنْزَکْشِنْز", fa: "معاملات اعطای وام و تسهیلات",
+                        synonyms: [{ en: "Loan dealings", pron: "لون دیلینگز", fa: "معاملات قرضی" }]
+                    }
+                ]
+            }
+        ]
+    }
+];
+
 const speakerSvg = `<svg class="icon" viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.77l-4.5 3h-4v-8h4l4.5 3v2zm5.5-1c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>`;
 const quoteSvg = `<svg class="icon" style="color: #d97706;" viewBox="0 0 24 24"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3"/></svg>`;
 const checkSvg = `<svg class="icon" style="color: #16a34a;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`;
@@ -2267,6 +2786,7 @@ document.getElementById("rateRange").addEventListener("input", function(e) {
 window.addEventListener("DOMContentLoaded", () => {
     renderContent(week1Data, "week1ContentArea");
     renderContent(week2Data, "week2ContentArea");
+    renderContent(week3Data, "week3ContentArea");
     if ('speechSynthesis' in window) {
         window.speechSynthesis.onvoiceschanged = () => {};
     }
