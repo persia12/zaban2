@@ -799,7 +799,7 @@ function openWeek(num) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ==================== هفته اول (۲۰ جمله) ====================
+// ==================== داده‌های هفته اول (۲۰ جمله) ====================
 const week1Data = [
     {
         title: "بخش ۱: مؤسسات بازرگانی، خرده‌فروشان و عمده‌فروشان",
@@ -1223,7 +1223,7 @@ const week1Data = [
     }
 ];
 
-// ==================== هفته دوم (۴۳ جمله) ====================
+// ==================== داده‌های هفته دوم (۴۳ جمله) ====================
 const week2Data = [
     {
         title: "بخش ۱: برگشت از فروش و تخفیفات",
@@ -2109,7 +2109,7 @@ const week2Data = [
     }
 ];
 
-// ==================== داده‌های دقیق هفته ۳ (۳۵ جمله بدون ادغام و بدون جاافتادگی) ====================
+// ==================== داده‌های دقیق هفته ۳ (۳۵ جمله، ۳ تا ۴ واژه به همراه ۲ مترادف) ====================
 const week3Data = [
     {
         title: "بخش ۱: کلیات و انواع مطالبات (RECEIVABLES)",
@@ -2126,8 +2126,16 @@ const week3Data = [
                         synonyms: [{ en: "Demands", pron: "دیمندز", fa: "مطالبات قانونی" }, { en: "Rights to receive", pron: "رایتس تو رسیو", fa: "حقوق دریافت" }]
                     },
                     {
-                        en: "Receivables", pron: "ریسیوابِلْز", fa: "مطالبات، حساب‌ها و اسناد دریافتنی",
+                        en: "Receivables", pron: "ریسیوابِلْز", fa: "مطالبات / دریافتنی‌ها",
                         synonyms: [{ en: "Amounts due", pron: "اماونتس دیو", fa: "مبالغ سررسیدشده" }, { en: "Debts owed", pron: "دتس اود", fa: "بدهی‌های دیگران" }]
+                    },
+                    {
+                        en: "Considered as", pron: "کانْسیدِرد اَز", fa: "تلقی‌شده به عنوان، محسوب‌شده",
+                        synonyms: [{ en: "Regarded as", pron: "ریگاردد از", fa: "به‌شمارآمده" }, { en: "Deemed as", pron: "دیمد از", fa: "فرض‌شده" }]
+                    },
+                    {
+                        en: "Trade receivables", pron: "تْرِید ریسیوابِلْز", fa: "مطالبات تجاری",
+                        synonyms: [{ en: "Commercial claims", pron: "کامرشال کلیمس", fa: "ادعاهای بازرگانی" }, { en: "Customer receivables", pron: "کاستومر ریسیوابلز", fa: "مطالبات از مشتریان" }]
                     }
                 ]
             },
@@ -2138,12 +2146,16 @@ const week3Data = [
                 translation: "مطالبات تجاری مبالغی هستند که مشتریان بابت کالاها یا خدماتی که دریافت کرده‌اند به شرکت بدهکارند.",
                 words: [
                     {
-                        en: "Trade receivables", pron: "تْرِید ریسیوابِلْز", fa: "مطالبات تجاری",
-                        synonyms: [{ en: "Commercial receivables", pron: "کامرشال ریسیوابلز", fa: "مطالبات بازرگانی" }]
+                        en: "Amounts", pron: "اَماوْنْتْس", fa: "مبالغ، وجوه",
+                        synonyms: [{ en: "Sums", pron: "سامز", fa: "ارقام مالی" }, { en: "Balances", pron: "بالانسز", fa: "مانده‌ها" }]
                     },
                     {
-                        en: "Owed to", pron: "اُود تو", fa: "بدهکار بودن به، مدیون بودن به",
-                        synonyms: [{ en: "Payable to", pron: "پییبل تو", fa: "پرداختنی به" }]
+                        en: "Owed to", pron: "اُود تو", fa: "بدهکار بودن به، متعلق بودن به",
+                        synonyms: [{ en: "Payable to", pron: "پییبل تو", fa: "پرداختنی به" }, { en: "Due to", pron: "دیو تو", fa: "سررسیدشده به نفعِ" }]
+                    },
+                    {
+                        en: "Received", pron: "رِسیوْد", fa: "دریافت‌شده، تحویل‌گرفته",
+                        synonyms: [{ en: "Acquired", pron: "اکوایرد", fa: "تحصیل‌شده" }, { en: "Obtained", pron: "ابتیند", fa: "به‌دست‌آمده" }]
                     }
                 ]
             },
@@ -2155,11 +2167,15 @@ const week3Data = [
                 words: [
                     {
                         en: "Nontrade receivables", pron: "نان‌تْرِید ریسیوابِلْز", fa: "مطالبات غیرتجاری",
-                        synonyms: [{ en: "Other receivables", pron: "اذر ریسیوابلز", fa: "سایر دریافتنی‌ها" }]
+                        synonyms: [{ en: "Other receivables", pron: "اذر ریسیوابلز", fa: "سایر دریافتنی‌ها" }, { en: "Non-commercial claims", pron: "نان کامرشال کلیمس", fa: "ادعاهای غیربازرگانی" }]
                     },
                     {
-                        en: "Arise from", pron: "اَرایْز فرام", fa: "ناشی شدن از، سرچشمه گرفتن از",
-                        synonyms: [{ en: "Originate from", pron: "اوریجینیت فرام", fa: "ریشه داشتن در" }]
+                        en: "Arise from", pron: "اَرایْز فرام", fa: "ناشی شدن از، سرچشمه گرفتن",
+                        synonyms: [{ en: "Originate from", pron: "اوریجینیت فرام", fa: "ریشه داشتن در" }, { en: "Stem from", pron: "استم فرام", fa: "نشأت گرفتن" }]
+                    },
+                    {
+                        en: "Variety", pron: "وِرایِتی", fa: "تنوع، گوناگونی",
+                        synonyms: [{ en: "Diversity", pron: "دایورسیتی", fa: "گوناگونی" }, { en: "Assortment", pron: "اسورتمِنت", fa: "مجموعه متنوع" }]
                     }
                 ]
             },
@@ -2171,15 +2187,19 @@ const week3Data = [
                 words: [
                     {
                         en: "Advances", pron: "اَدْوانْسِز", fa: "مساعده‌ها، علی‌الحساب‌ها",
-                        synonyms: [{ en: "Prepayments", pron: "پری‌پیمنتس", fa: "پیش‌پرداخت‌ها" }]
+                        synonyms: [{ en: "Prepayments", pron: "پری‌پیمنتس", fa: "پیش‌پرداخت‌ها" }, { en: "Upfront loans", pron: "آپ‌فرانت لونز", fa: "وام‌های علی‌الحساب" }]
                     },
                     {
                         en: "Subsidiaries", pron: "سابْسیدیِریز", fa: "شرکت‌های تابعه / فرعی",
-                        synonyms: [{ en: "Affiliated companies", pron: "افیلیتید کامپنیز", fa: "شرکت‌های وابسته" }]
+                        synonyms: [{ en: "Affiliates", pron: "افیلیتس", fa: "واحدهای وابسته" }, { en: "Controlled firms", pron: "کنترلد فرمز", fa: "شرکت‌های تحت کنترل" }]
                     },
                     {
-                        en: "Guarantee of performance", pron: "گارَنْتی آو پِرفورمِنس", fa: "ضمانت انجام کار (حسن انجام تعهدات)",
-                        synonyms: [{ en: "Performance bond", pron: "پرفورمنس باند", fa: "ضمانت‌نامه عملکرد" }]
+                        en: "Guarantee of performance", pron: "گارَنْتی آو پِرفورمِنس", fa: "ضمانت انجام کار (حسن انجام تعهد)",
+                        synonyms: [{ en: "Performance bond", pron: "پرفورمنس باند", fa: "ضمانت‌نامه حسن اجرا" }, { en: "Execution warranty", pron: "اگزیوکیوشن وارانتی", fa: "تعهد اجرای کار" }]
+                    },
+                    {
+                        en: "Potential damages", pron: "پوتِنْشال دَمِجِز", fa: "خسارات و صدمات احتمالی",
+                        synonyms: [{ en: "Possible losses", pron: "پاسیبل لاسز", fa: "زیان‌های بالقوه" }, { en: "Contingent costs", pron: "کانتینجنت کاستس", fa: "مخارج احتمالی" }]
                     }
                 ]
             },
@@ -2190,12 +2210,16 @@ const week3Data = [
                 translation: "هر دو گروه مطالبات تجاری و غیرتجاری ممکن است به حساب‌های دریافتنی و اسناد دریافتنی طبقه‌بندی فرعی شوند.",
                 words: [
                     {
-                        en: "Subclassified", pron: "سابْ‌کْلَسیفایْد", fa: "طبقه‌بندی فرعی شده، زیرگروه‌بندی‌شده",
-                        synonyms: [{ en: "Subdivided", pron: "ساب‌دیوایْدد", fa: "تفکیک‌شده" }]
+                        en: "Subclassified", pron: "سابْ‌کْلَسیفایْد", fa: "طبقه‌بندی فرعی شده",
+                        synonyms: [{ en: "Subdivided", pron: "ساب‌دیوایْدد", fa: "تفکیک‌شده" }, { en: "Categorized further", pron: "کتگورایزد فردِر", fa: "ریزطبقه‌بندی‌شده" }]
+                    },
+                    {
+                        en: "Accounts receivable", pron: "اِکانْتْس ریسیوابِل", fa: "حساب‌های دریافتنی",
+                        synonyms: [{ en: "Open accounts", pron: "اوپن اکانتس", fa: "حساب‌های باز دفتری" }, { en: "Book debts", pron: "بوک دتس", fa: "بدهی‌های دفتری مشتری" }]
                     },
                     {
                         en: "Notes receivable", pron: "نُوتْس ریسیوابِل", fa: "اسناد دریافتنی (سفته/برات)",
-                        synonyms: [{ en: "Promissory notes", pron: "پرامیسوری نوتس", fa: "اسناد تعهدی" }]
+                        synonyms: [{ en: "Promissory notes", pron: "پرامیسوری نوتس", fa: "سفته‌های تعهدی" }, { en: "Bills receivable", pron: "بیلْز ریسیوابل", fa: "برات‌های دریافتنی" }]
                     }
                 ]
             }
@@ -2213,11 +2237,15 @@ const week3Data = [
                 words: [
                     {
                         en: "Buy on credit", pron: "بای آن کْرِدیت", fa: "خرید نسیه (اعتباری)",
-                        synonyms: [{ en: "Purchase on account", pron: "پرچس آن اکانت", fa: "خرید دفتری" }]
+                        synonyms: [{ en: "Purchase on account", pron: "پرچس آن اکانت", fa: "خرید دفتری" }, { en: "Deferred purchase", pron: "دیفرد پرچس", fa: "خرید موجل" }]
                     },
                     {
-                        en: "Open account", pron: "اُوپِن اِکانْت", fa: "حساب باز، نسیه بدون سند رسمی",
-                        synonyms: [{ en: "Trade credit", pron: "ترید کردیت", fa: "اعتبار تجاری" }]
+                        en: "Accounting records", pron: "اِکانْتینگ رِکوردز", fa: "سوابق و دفاتر حسابداری",
+                        synonyms: [{ en: "Books of account", pron: "بوکس آو اکانت", fa: "دفاتر مالی" }, { en: "Financial logs", pron: "فایننشال لاگز", fa: "اسناد ثبت مالی" }]
+                    },
+                    {
+                        en: "Open account", pron: "اُوپِن اِکانْت", fa: "حساب باز (نسیه بدون وثیقه)",
+                        synonyms: [{ en: "Unsecured line", pron: "آن‌سیکیورد لاین", fa: "اعتبار بدون وثیقه" }, { en: "Trade credit line", pron: "ترید کردیت لاین", fa: "خط اعتبار تجاری" }]
                     }
                 ]
             },
@@ -2228,12 +2256,16 @@ const week3Data = [
                 translation: "یک حساب دریافتنی بیانگر توافق شفاهی خریدار برای پرداخت وجه کالاها یا خدمات خریداری‌شده به فروشنده است.",
                 words: [
                     {
-                        en: "Oral agreement", pron: "اُورال اَگْریمِنت", fa: "توافق شفاهی / کلامی",
-                        synonyms: [{ en: "Verbal agreement", pron: "وربال اگریمنت", fa: "تعهد کلامی" }]
+                        en: "Indicates", pron: "اینْدیکِیتْس", fa: "نشان می‌دهد، دلالت دارد بر",
+                        synonyms: [{ en: "Signifies", pron: "سیگنیفایز", fa: "بیانگر است" }, { en: "Represents", pron: "ریپرزنتس", fa: "معرف است" }]
                     },
                     {
-                        en: "Indicates", pron: "اینْدیکِیتْس", fa: "نشان می‌دهد، حاکی است از",
-                        synonyms: [{ en: "Signifies", pron: "سیگنیفایز", fa: "بیانگر است" }]
+                        en: "Oral agreement", pron: "اُورال اَگْریمِنت", fa: "توافق شفاهی / کلامی",
+                        synonyms: [{ en: "Verbal agreement", pron: "وربال اگریمنت", fa: "تعهد زبانی" }, { en: "Unwritten contract", pron: "آن‌ریتن کانترکت", fa: "قرارداد نانوشته" }]
+                    },
+                    {
+                        en: "Purchased", pron: "پِرچِسْد", fa: "خریداری‌شده",
+                        synonyms: [{ en: "Bought", pron: "بات", fa: "خریدشده" }, { en: "Procured", pron: "پروکیورد", fa: "تأمین‌شده" }]
                     }
                 ]
             },
@@ -2244,12 +2276,20 @@ const week3Data = [
                 translation: "حساب‌های دریافتنی که انتظار نمی‌رود پس از مدتی معقول وصول شوند، توسط فروشنده به عنوان هزینه مطالبات سوخت‌شده یا لاوصول شناسایی می‌گردند.",
                 words: [
                     {
-                        en: "Bad debts", pron: "بَد دِتْس", fa: "مطالبات سوخت‌شده / لاوصول",
-                        synonyms: [{ en: "Uncollectible debts", pron: "آن‌کالکتیبل دتس", fa: "بدهی‌های وصول‌نشدنی" }]
+                        en: "Reasonable length of time", pron: "ریزونابِل لِنْگْث آو تایم", fa: "مدت زمان معقول و منطقی",
+                        synonyms: [{ en: "Fair duration", pron: "فر دیوریشن", fa: "مهلت متعارف" }, { en: "Appropriate period", pron: "اپروپریت پیریاد", fa: "بازه زمانی مناسب" }]
                     },
                     {
-                        en: "Reasonable length of time", pron: "ریزونابِل لِنْگْث آو تایم", fa: "مدت زمان معقول",
-                        synonyms: [{ en: "Fair period", pron: "فر پیریاد", fa: "فرجه منطقی" }]
+                        en: "Recognized", pron: "رِکاگْنایْزد", fa: "شناسایی‌شده، ثبت‌شده",
+                        synonyms: [{ en: "Recorded", pron: "رکوردد", fa: "درج‌شده در دفاتر" }, { en: "Acknowledged", pron: "اکنالجید", fa: "تأیید و ثبت‌شده" }]
+                    },
+                    {
+                        en: "Bad debts", pron: "بَد دِتْس", fa: "مطالبات سوخت‌شده / لاوصول",
+                        synonyms: [{ en: "Uncollectible debts", pron: "آن‌کالکتیبل دتس", fa: "بدهی‌های غیرقابل وصول" }, { en: "Defaulted loans", pron: "دیفالتد لونز", fa: "مطالبات نکول‌شده" }]
+                    },
+                    {
+                        en: "Uncollectible accounts expense", pron: "آنْ‌کالِکْتیبِل اِکانْتْس اِکْسْپِنس", fa: "هزینه مطالبات لاوصول",
+                        synonyms: [{ en: "Bad debt expense", pron: "بد دت اکسپنس", fa: "هزینه مطالبات مشکوک‌الوصول" }, { en: "Doubtful debt charge", pron: "دات‌فول دت چارژ", fa: "هزینه مطالبات مشکوک" }]
                     }
                 ]
             },
@@ -2260,12 +2300,16 @@ const week3Data = [
                 translation: "برای حسابداری مطالبات مشکوک‌الوصول دو روش وجود دارد: روش حذف مستقیم و روش ذخیره‌گیری (ایجاد اندوخته).",
                 words: [
                     {
+                        en: "Expected", pron: "اِکْسْپِکْتِد", fa: "مورد انتظار، پیش‌بینی‌شده",
+                        synonyms: [{ en: "Anticipated", pron: "انتیسی‌پیتد", fa: "پیش‌بینی‌شده" }, { en: "Projected", pron: "پروجکتد", fa: "برآوردشده" }]
+                    },
+                    {
                         en: "Direct write-off method", pron: "دایْرِکْت رایْت‌آف مِثود", fa: "روش حذف مستقیم",
-                        synonyms: [{ en: "Direct charge-off", pron: "دایرکت چارژ آف", fa: "سوخت مستقیم" }]
+                        synonyms: [{ en: "Direct charge-off", pron: "دایرکت چارژ آف", fa: "سوخت مستقیم" }, { en: "Direct cancellation", pron: "دایرکت کنسلِیشن", fa: "ابطال مستقیم دفتری" }]
                     },
                     {
                         en: "Allowance method", pron: "اَلاوِنْس مِثود", fa: "روش ذخیره / اندوخته",
-                        synonyms: [{ en: "Reserve method", pron: "ریزو متد", fa: "روش ذخیره‌گیری" }]
+                        synonyms: [{ en: "Reserve method", pron: "ریزو متد", fa: "روش ذخیره‌گیری" }, { en: "Provisioning method", pron: "پروویژنینگ متد", fa: "رویکرد وضع ذخیره" }]
                     }
                 ]
             }
@@ -2282,12 +2326,16 @@ const week3Data = [
                 translation: "روش حذف مستقیم، هزینه مطالبات سوخت‌شده را در همان سالی ثبت می‌کند که قطعی می‌شود طلب معینی قابل وصول نیست.",
                 words: [
                     {
-                        en: "Specific receivable", pron: "اِسْپِسیفیک ریسیوابِل", fa: "مطالبه و حساب مشخص",
-                        synonyms: [{ en: "Particular account", pron: "پارتیکیولار اکانت", fa: "حساب معین" }]
+                        en: "Determined", pron: "دیتِرمینْد", fa: "محرز گشته، قطعی‌شده",
+                        synonyms: [{ en: "Ascertained", pron: "اسرتیند", fa: "مسلم‌شده" }, { en: "Established", pron: "استابلیشد", fa: "ثابت‌شده" }]
                     },
                     {
-                        en: "Determined", pron: "دیتِرمینْد", fa: "محرز گشته، مشخص‌شده",
-                        synonyms: [{ en: "Ascertained", pron: "اسرتیند", fa: "معین‌شده" }]
+                        en: "Specific receivable", pron: "اِسْپِسیفیک ریسیوابِل", fa: "مطالبه و حساب مشخص",
+                        synonyms: [{ en: "Particular account", pron: "پارتیکیولار اکانت", fa: "حساب معین" }, { en: "Identified debtor", pron: "آیدنتیفاید دتر", fa: "بدهکار مشخص‌شده" }]
+                    },
+                    {
+                        en: "Cannot be collected", pron: "کَن‌‌نات بی کالِکْتِد", fa: "غیرقابل وصول بودن",
+                        synonyms: [{ en: "Unrecoverable", pron: "آن‌ریکاوربل", fa: "غیرقابل بازیافت" }, { en: "Irretrievable", pron: "ایری‌تریوبل", fa: "جبران‌ناپذیر" }]
                     }
                 ]
             },
@@ -2298,12 +2346,16 @@ const week3Data = [
                 translation: "این روش شناخت هزینه مطالبات سوخت‌شده را تا زمانی که حساب مشخصی به عنوان غیرقابل‌وصول شناسایی گردد، به تأخیر می‌اندازد.",
                 words: [
                     {
-                        en: "Delays", pron: "دیلِیز", fa: "به تعویق می‌اندازد",
-                        synonyms: [{ en: "Postpones", pron: "پستپونز", fa: "عقب می‌اندازد" }]
+                        en: "Delays", pron: "دیلِیز", fa: "به تعویق می‌اندازد، به تأخیر می‌افکند",
+                        synonyms: [{ en: "Postpones", pron: "پستپونز", fa: "عقب می‌اندازد" }, { en: "Defers", pron: "دیفرز", fa: "به بعد موکول می‌کند" }]
+                    },
+                    {
+                        en: "Recognition", pron: "رِکاگْنیشِن", fa: "شناخت، شناسایی در حساب‌ها",
+                        synonyms: [{ en: "Realization", pron: "ریالایزیشن", fa: "تحقق و ثبت" }, { en: "Book recording", pron: "بوک رکوردینگ", fa: "شناسایی دفتری" }]
                     },
                     {
                         en: "Identified", pron: "آیدِنْتیفایْد", fa: "شناسایی‌شده، مشخص‌شده",
-                        synonyms: [{ en: "Recognized", pron: "رکاگنایزد", fa: "تشخیص داده شده" }]
+                        synonyms: [{ en: "Singled out", pron: "سینگلد آوت", fa: "دست‌چین‌شده" }, { en: "Pinpointed", pron: "پین‌پوینتد", fa: "دقیقاً مشخص‌شده" }]
                     }
                 ]
             },
@@ -2314,16 +2366,20 @@ const week3Data = [
                 translation: "چون این روش درآمدها و هزینه‌ها را به درستی مقابله (تطابق) نمی‌دهد و اندازه‌گیری مانده حساب‌های دریافتنی را مخدوش می‌کند، با رویه مطلوب حسابداری سازگار نیست.",
                 words: [
                     {
-                        en: "Match revenues and expenses", pron: "مَچ رِوِنیوز اَند اِکْسْپِنسِز", fa: "تطابق درآمدها و هزینه‌ها",
-                        synonyms: [{ en: "Matching principle", pron: "مچینگ پرینسیپل", fa: "اصل تطابق" }]
+                        en: "Properly match", pron: "پْراپِرْلی مَچ", fa: "تطابق صحیح و اصولی",
+                        synonyms: [{ en: "Accurately offset", pron: "اکیوریتلی آف‌ست", fa: "هم‌ترازی دقیق" }, { en: "Correctly correspond", pron: "کارکتلی کارسپاند", fa: "تطبیق درست" }]
                     },
                     {
                         en: "Distorts", pron: "دیستُورتْس", fa: "مخدوش می‌سازد، تحریف می‌کند",
-                        synonyms: [{ en: "Misrepresents", pron: "میس‌ریپرزنتس", fa: "وارونه جلوه دادن" }]
+                        synonyms: [{ en: "Misrepresents", pron: "میس‌ریپرزنتس", fa: "وارونه جلوه دادن" }, { en: "Skews", pron: "اسکیوز", fa: "منحرف کردن" }]
                     },
                     {
-                        en: "Accounting practice", pron: "اِکانْتینگ پْرَکتیس", fa: "رویه و عرف حسابداری",
-                        synonyms: [{ en: "Accounting convention", pron: "اکانتینگ کانونکشن", fa: "میثاق حسابداری" }]
+                        en: "Measurement", pron: "مِژِرمِنت", fa: "اندازه‌گیری، سنجش مالی",
+                        synonyms: [{ en: "Valuation", pron: "ولیواِیشن", fa: "ارزش‌گذاری" }, { en: "Quantification", pron: "کوانتیفیکیشن", fa: "سنجش مقداری" }]
+                    },
+                    {
+                        en: "In accord with", pron: "این اَکورد ویذ", fa: "منطبق با، سازگار با",
+                        synonyms: [{ en: "Consistent with", pron: "کانسیستنت ویذ", fa: "همسو با" }, { en: "In compliance with", pron: "این کامپلایِنس ویذ", fa: "مطابق با" }]
                     }
                 ]
             },
@@ -2335,15 +2391,19 @@ const week3Data = [
                 words: [
                     {
                         en: "Reasonable accuracy", pron: "ریزونابِل اَکیورِسی", fa: "دقت معقول",
-                        synonyms: [{ en: "Acceptable precision", pron: "اکسپتبل پریسیژن", fa: "دقت قابل قبول" }]
+                        synonyms: [{ en: "Acceptable precision", pron: "اکسپتبل پریسیژن", fa: "دقت قابل قبول" }, { en: "Reliable exactness", pron: "ریلایبل اگزاَکتنس", fa: "صحت قابل اتکا" }]
                     },
                     {
                         en: "Cash basis", pron: "کَش بِیسیس", fa: "مبنای نقدی",
-                        synonyms: [{ en: "Cash accounting", pron: "کش اکانتینگ", fa: "حسابداری نقدی" }]
+                        synonyms: [{ en: "Cash accounting", pron: "کش اکانتینگ", fa: "روش نقدی" }, { en: "Non-accrual basis", pron: "نان‌اکرول بیسیس", fa: "مبنای غیرتعهدی" }]
                     },
                     {
-                        en: "Immaterial", pron: "ایمَتیرْیال", fa: "بی‌اهمیت (فاقد اهمیت)",
-                        synonyms: [{ en: "Insignificant", pron: "اینسیگنیفیکنت", fa: "ناچیز" }]
+                        en: "Providing that", pron: "پْرُوایدینگ دَت", fa: "مشروط بر اینکه، به شرط آنکه",
+                        synonyms: [{ en: "On condition that", pron: "آن کاندیشن دت", fa: "به شرطِ" }, { en: "Subject to", pron: "سابجکت تو", fa: "منوط به" }]
+                    },
+                    {
+                        en: "Immaterial", pron: "ایمَتیرْیال", fa: "بی‌اهمیت (فاقد اهمیت نسبی)",
+                        synonyms: [{ en: "Insignificant", pron: "اینسیگنیفیکنت", fa: "ناچیز" }, { en: "Negligible", pron: "نگلیجبِل", fa: "قابل اغماض" }]
                     }
                 ]
             }
@@ -2360,12 +2420,16 @@ const week3Data = [
                 translation: "در مقایسه با روش حذف مستقیم، روش ذخیره‌گیری عملکرد بهتری در تطابق هزینه‌ها و اندازه‌گیری مطالبات ارائه می‌دهد.",
                 words: [
                     {
-                        en: "In contrast to", pron: "این کانْتْراسْت تو", fa: "در مقایسه با، برخلاف",
-                        synonyms: [{ en: "As opposed to", pron: "از اپوزد تو", fa: "برعکسِ" }]
+                        en: "In contrast to", pron: "این کانْتْراسْت تو", fa: "برخلاف، در نقطه مقابلِ",
+                        synonyms: [{ en: "As opposed to", pron: "از اپوزد تو", fa: "در تضاد با" }, { en: "Unlike", pron: "آن‌لایک", fa: "برعکسِ" }]
+                    },
+                    {
+                        en: "Matching", pron: "مَچینگ", fa: "تطابق، مقابله هزینه‌ها و درآمدها",
+                        synonyms: [{ en: "Offsetting", pron: "آف‌ستینگ", fa: "تراز کردن" }, { en: "Pairing", pron: "پِرینگ", fa: "جفت‌سازی دوره‌ای" }]
                     },
                     {
                         en: "Measuring receivables", pron: "مِژِرینگ ریسیوابِلْز", fa: "ارزشیابی و سنجش مطالبات",
-                        synonyms: [{ en: "Valuing receivables", pron: "ولیویینگ ریسیوابلز", fa: "ارزیابی حساب‌ها" }]
+                        synonyms: [{ en: "Valuing receivables", pron: "ولیویینگ ریسیوابلز", fa: "ارزیابی حساب‌ها" }, { en: "Appraising claims", pron: "اپریزینگ کلیمس", fa: "تقویم ارزش مطالبات" }]
                     }
                 ]
             },
@@ -2377,11 +2441,15 @@ const week3Data = [
                 words: [
                     {
                         en: "Provide for", pron: "پْرُواید فور", fa: "ذخیره در نظر گرفتن، منظور کردن",
-                        synonyms: [{ en: "Set aside reserve", pron: "ست اساید ریزو", fa: "اندوختن" }]
+                        synonyms: [{ en: "Set aside reserve", pron: "ست اساید ریزو", fa: "اندوختن" }, { en: "Recognize provision", pron: "رکاگنایز پروویژن", fa: "شناسایی ذخیره" }]
                     },
                     {
-                        en: "Prior to", pron: "پْرایِر تو", fa: "قبل از، پیش از",
-                        synonyms: [{ en: "Before", pron: "بیفور", fa: "پیش از" }]
+                        en: "Estimated", pron: "اِسْتیمِیتِد", fa: "برآوردشده، تخمین‌زده‌شده",
+                        synonyms: [{ en: "Projected", pron: "پروجکتد", fa: "پیش‌بینی‌شده" }, { en: "Approximated", pron: "اپروکسیمیتد", fa: "محاسبه تخمینی" }]
+                    },
+                    {
+                        en: "Prior to", pron: "پْرایِر تو", fa: "قبل از، پیش از آنکه",
+                        synonyms: [{ en: "Before", pron: "بیفور", fa: "پیش از" }, { en: "In advance of", pron: "این ادونس آو", fa: "جلوتر از" }]
                     }
                 ]
             },
@@ -2393,11 +2461,15 @@ const week3Data = [
                 words: [
                     {
                         en: "Fails to pay", pron: "فِیلز تو پِی", fa: "قصور در پرداخت، ناتوانی از تأدیه بدهی",
-                        synonyms: [{ en: "Defaults", pron: "دیفالتس", fa: "نکول کردن" }]
+                        synonyms: [{ en: "Defaults", pron: "دیفالتس", fa: "نکول کردن" }, { en: "Becomes insolvent", pron: "بیکامز اینسالونت", fa: "معسر شدن" }]
                     },
                     {
-                        en: "Written off against", pron: "رِیتِن آف اَگِینْسْت", fa: "حذف‌شدن از محلِ، کسرشدن از حسابِ",
-                        synonyms: [{ en: "Charged to", pron: "چارژد تو", fa: "به‌حساب‌گذاشته‌شده به" }]
+                        en: "Written off", pron: "رِیتِن آف", fa: "سوخت‌شده، از دفاتر حذف‌شده",
+                        synonyms: [{ en: "Charged off", pron: "چارژد آف", fa: "سند ابطال‌خورده" }, { en: "Cancelled", pron: "کنسلد", fa: "باطل‌شده" }]
+                    },
+                    {
+                        en: "Allowance account", pron: "اَلاوِنْس اِکانْت", fa: "حساب ذخیره مطالبات",
+                        synonyms: [{ en: "Reserve account", pron: "ریزو اکانت", fa: "حساب اندوخته" }, { en: "Provision account", pron: "پروویژن اکانت", fa: "حساب ذخیره‌گیری" }]
                     }
                 ]
             },
@@ -2408,8 +2480,16 @@ const week3Data = [
                 translation: "چنانچه مشتری بعداً بدهی خود را پرداخت کند، حساب او مجدداً احیا (برقرار) می‌شود.",
                 words: [
                     {
+                        en: "Later pays", pron: "لِیتِر پِیز", fa: "بعداً تأدیه کردن وجه",
+                        synonyms: [{ en: "Subsequently settles", pron: "سابسکوئنتلی ستلز", fa: "تسویه در ادامه" }, { en: "Pays eventually", pron: "پیز ایونچوالی", fa: "پرداخت عاقبت" }]
+                    },
+                    {
                         en: "Reinstated", pron: "ری‌اینْسْتِیتِد", fa: "دوباره احیاشده، اعاده‌شده",
                         synonyms: [{ en: "Restored", pron: "ریستورد", fa: "بازگردانده‌شده" }, { en: "Re-established", pron: "ری‌استابلیشد", fa: "مجدداً برقرارشده" }]
+                    },
+                    {
+                        en: "Account", pron: "اِکانْت", fa: "حساب دفتری مشتری",
+                        synonyms: [{ en: "Ledger item", pron: "لجر آیتم", fa: "قلم دفتر کل" }, { en: "Balance record", pron: "بالانس رکورد", fa: "پرونده مانده حساب" }]
                     }
                 ]
             },
@@ -2420,12 +2500,16 @@ const week3Data = [
                 translation: "ثبت روزنامه شامل بدهکار کردن حساب دریافتنی و بستانکار کردن حساب ذخیره است.",
                 words: [
                     {
-                        en: "Debit", pron: "دِبیت", fa: "بدهکار کردن",
-                        synonyms: [{ en: "Charge", pron: "چارژ", fa: "ثبت در بدهکار" }]
+                        en: "Journal entry", pron: "جِرنال اِنْتْری", fa: "ثبت روزنامه / سند حسابداری",
+                        synonyms: [{ en: "Bookkeeping entry", pron: "بوک‌کیپینگ انتری", fa: "سند دفاتر" }, { en: "Accounting record", pron: "اکانتینگ رکورد", fa: "ثبت حسابداری" }]
                     },
                     {
-                        en: "Credit", pron: "کْرِدیت", fa: "بستانکار کردن",
-                        synonyms: [{ en: "Recognize as credit", pron: "رکاگنایز از کردیت", fa: "ثبت در بستانکار" }]
+                        en: "Debit", pron: "دِبیت", fa: "بدهکار کردن حساب",
+                        synonyms: [{ en: "Charge", pron: "چارژ", fa: "ثبت به بدهکار" }, { en: "Left-side entry", pron: "لفت ساید انتری", fa: "ثبت در سمت چپ" }]
+                    },
+                    {
+                        en: "Credit", pron: "کْرِدیت", fa: "بستانکار کردن حساب",
+                        synonyms: [{ en: "Right-side entry", pron: "رایت ساید انتری", fa: "ثبت در سمت راست" }, { en: "Recognize credit", pron: "رکاگنایز کردیت", fa: "منظور کردن به بستانکار" }]
                     }
                 ]
             },
@@ -2436,8 +2520,16 @@ const week3Data = [
                 translation: "سپس دریافت وجه طبق روال همیشگی ثبت می‌گردد.",
                 words: [
                     {
-                        en: "As usual", pron: "اَز یُوژوال", fa: "طبق معمول، مطابق روال",
-                        synonyms: [{ en: "As per routine", pron: "از پر روتین", fa: "طبق روال" }]
+                        en: "Recorded", pron: "رِکوردِد", fa: "ثبت‌شده در دفاتر",
+                        synonyms: [{ en: "Logged", pron: "لاگد", fa: "درج‌شده" }, { en: "Entered", pron: "انترد", fa: "واردشده" }]
+                    },
+                    {
+                        en: "As usual", pron: "اَز یُوژوال", fa: "طبق معمول، مطابق روال عادی",
+                        synonyms: [{ en: "As per routine", pron: "از پر روتین", fa: "بر پایه روال" }, { en: "Ordinarily", pron: "اوردینریلی", fa: "به‌طور عادی" }]
+                    },
+                    {
+                        en: "Payment", pron: "پِیمِنت", fa: "پرداخت وجه نقد، وصولی",
+                        synonyms: [{ en: "Remittance", pron: "رمیتنس", fa: "حواله و تأدیه وجه" }, { en: "Settlement", pron: "ستلمنت", fa: "تسویه نقدی" }]
                     }
                 ]
             },
@@ -2448,12 +2540,16 @@ const week3Data = [
                 translation: "حساب ذخیره که به‌طور معمول دارای مانده بستانکار است، یک حساب کاهنده دارایی (پاددارایی) به شمار می‌آید.",
                 words: [
                     {
-                        en: "Contra asset account", pron: "کانتْرا اَسِت اِکانْت", fa: "حساب کاهنده دارایی",
-                        synonyms: [{ en: "Asset offset account", pron: "است آف‌ست اکانت", fa: "حساب تعدیل دارایی" }]
+                        en: "Normally", pron: "نُورمالی", fa: "معمولاً، در حالت عادی",
+                        synonyms: [{ en: "Typically", pron: "تیپیکالی", fa: "به‌طور متعارف" }, { en: "Generally", pron: "جنرالی", fa: "عموماً" }]
                     },
                     {
                         en: "Credit balance", pron: "کْرِدیت بالانْس", fa: "مانده بستانکار",
-                        synonyms: [{ en: "Credit remainder", pron: "کردیت ریمیندر", fa: "باقی‌مانده بستانکار" }]
+                        synonyms: [{ en: "Favorable balance", pron: "فیوربل بالانس", fa: "مانده مثبت حسابی" }, { en: "Credit remainder", pron: "کردیت ریمیندر", fa: "باقی‌مانده بستانکار" }]
+                    },
+                    {
+                        en: "Contra asset account", pron: "کانتْرا اَسِت اِکانْت", fa: "حساب کاهنده دارایی (پاددارایی)",
+                        synonyms: [{ en: "Asset offset account", pron: "است آف‌ست اکانت", fa: "حساب تعدیل دارایی" }, { en: "Negative asset account", pron: "نگتیو است اکانت", fa: "حساب دارایی منفی" }]
                     }
                 ]
             },
@@ -2464,12 +2560,16 @@ const week3Data = [
                 translation: "هزینه مطالبات لاوصول معمولاً در صورت سود و زیان به عنوان هزینه عمومی و اداری گزارش می‌شود.",
                 words: [
                     {
-                        en: "Income statement", pron: "اینْکام اِسْتِیتْمِنت", fa: "صورت سود و زیان",
-                        synonyms: [{ en: "P&L statement", pron: "پی اند ال استیتمنت", fa: "گزارش سود و زیان" }]
+                        en: "Reported", pron: "ریپورتِد", fa: "گزارش‌شده، منعکس‌شده",
+                        synonyms: [{ en: "Disclosed", pron: "دیسکلوزد", fa: "افشاشده" }, { en: "Presented", pron: "پرزنتد", fa: "ارائه‌شده" }]
                     },
                     {
-                        en: "Administrative expense", pron: "اَدْمینیسترِیتیو اِکْسْپِنس", fa: "هزینه اداری",
-                        synonyms: [{ en: "General expense", pron: "جنرال اکسپنس", fa: "هزینه عمومی" }]
+                        en: "Income statement", pron: "اینْکام اِسْتِیتْمِنت", fa: "صورت سود و زیان",
+                        synonyms: [{ en: "P&L statement", pron: "پی اند ال استیتمنت", fa: "گزارش عملکرد مالی" }, { en: "Statement of operations", pron: "استیتمنت آو اپریشنز", fa: "صورت عملیات مالی" }]
+                    },
+                    {
+                        en: "Administrative expense", pron: "اَدْمینیسترِیتیو اِکْسْپِنس", fa: "هزینه اداری و تشکیلاتی",
+                        synonyms: [{ en: "General expense", pron: "جنرال اکسپنس", fa: "هزینه عمومی" }, { en: "Management overhead", pron: "منجمنت اورهد", fa: "سربار مدیریتی" }]
                     }
                 ]
             }
@@ -2486,12 +2586,16 @@ const week3Data = [
                 translation: "برآورد مبلغ مطالبات لاوصول ممکن است بر اساس درصدی از فروش، یا درصدی از مطالبات باشد.",
                 words: [
                     {
-                        en: "Percentage of sales", pron: "پِرسِنْتِج آو سِیلز", fa: "درصدی از فروش",
-                        synonyms: [{ en: "Sales percentage method", pron: "سیلز پرسنتج متد", fa: "روش نسبت فروش" }]
+                        en: "Estimate", pron: "اِسْتیمِیت", fa: "برآورد، تخمین محاسباتی",
+                        synonyms: [{ en: "Appraisal", pron: "اپریزَل", fa: "ارزیابی" }, { en: "Approximation", pron: "اپروکسیمیشن", fa: "محاسبه حدودی" }]
                     },
                     {
-                        en: "Percentage of receivables", pron: "پِرسِنْتِج آو ریسیوابِلْز", fa: "درصدی از مطالبات",
-                        synonyms: [{ en: "Receivables percentage method", pron: "ریسیوابلز پرسنتج متد", fa: "روش نسبت مطالبات" }]
+                        en: "Percentage of sales", pron: "پِرسِنْتِج آو سِیلز", fa: "درصدی از فروش (روش سودوزیانی)",
+                        synonyms: [{ en: "Sales ratio method", pron: "سیلز ریشیو متد", fa: "روش نسبت فروش" }, { en: "Revenue percentage", pron: "روینیو پرسنتج", fa: "درصد درآمد فروش" }]
+                    },
+                    {
+                        en: "Percentage of receivables", pron: "پِرسِنْتِج آو ریسیوابِلْز", fa: "درصدی از مطالبات (روش ترازنامه‌ای)",
+                        synonyms: [{ en: "Receivables ratio approach", pron: "ریسیوابلز ریشیو اپروچ", fa: "رویکرد نسبت بدهی‌ها" }, { en: "Claims percentage", pron: "کلیمس پرسنتج", fa: "درصد مطالبات دفتری" }]
                     }
                 ]
             },
@@ -2502,12 +2606,16 @@ const week3Data = [
                 translation: "در روش نخست، مبلغ هزینه مطالبات مشکوک‌الوصول و بستانکاریِ مربوطه به حساب ذخیره، از هرگونه مانده موجود در حساب ذخیره تأثیر نمی‌پذیرد.",
                 words: [
                     {
-                        en: "Unaffected", pron: "آن‌اَفِکْتِد", fa: "بدون تأثیر، تأثیرناپذیر",
-                        synonyms: [{ en: "Independent", pron: "ایندیپندنت", fa: "مستقل" }]
+                        en: "Related credit", pron: "ریلِیتِد کْرِدیت", fa: "بستانکاری وابسته، رقم بستانکار",
+                        synonyms: [{ en: "Corresponding credit", pron: "کارسپاندینگ کردیت", fa: "بستانکار متناظر" }, { en: "Matching credit", pron: "مچینگ کردیت", fa: "بستانکار معادل" }]
                     },
                     {
-                        en: "Currently existing", pron: "کارِنْتْلی اِگْزیستینگ", fa: "موجودِ فعلی",
-                        synonyms: [{ en: "Present", pron: "پرزنت", fa: "کنونی" }]
+                        en: "Unaffected", pron: "آن‌اَفِکْتِد", fa: "بدون تأثیر، تأثیرناپذیر",
+                        synonyms: [{ en: "Independent", pron: "ایندیپندنت", fa: "مستقل" }, { en: "Uninfluenced", pron: "آن‌اینفلوئنسد", fa: "دست‌نخورده" }]
+                    },
+                    {
+                        en: "Currently existing", pron: "کارِنْتْلی اِگْزیستینگ", fa: "موجودِ فعلی، موجود کنونی",
+                        synonyms: [{ en: "Present", pron: "پرزنت", fa: "حاضر" }, { en: "Existing at hand", pron: "اگزیستینگ ات هند", fa: "موجود در دست" }]
                     }
                 ]
             },
@@ -2519,11 +2627,15 @@ const week3Data = [
                 words: [
                     {
                         en: "Ignored", pron: "ایگْنُورد", fa: "نادیده گرفته‌شده، چشم‌پوشی‌شده",
-                        synonyms: [{ en: "Disregarded", pron: "دیس‌ریگاردد", fa: "صرف‌نظرشده" }]
+                        synonyms: [{ en: "Disregarded", pron: "دیس‌ریگاردد", fa: "صرف‌نظرشده" }, { en: "Overlooked", pron: "اورلوکد", fa: "نادیده‌انگاشته" }]
+                    },
+                    {
+                        en: "Frequently", pron: "فْریکْوِنْتْلی", fa: "مکرراً، اغلب اوقات",
+                        synonyms: [{ en: "Often", pron: "آفن", fa: "بارها" }, { en: "Commonly", pron: "کامنلی", fa: "معمولاً" }]
                     },
                     {
                         en: "Income statement approach", pron: "اینْکام اِسْتِیتْمِنت اَپْروچ", fa: "رویکرد سود و زیانی",
-                        synonyms: [{ en: "Revenue-expense approach", pron: "روینیو اکسپنس اپروچ", fa: "رویکرد درآمد-هزینه" }]
+                        synonyms: [{ en: "Revenue-expense approach", pron: "روینیو اکسپنس اپروچ", fa: "رویکرد درآمد-هزینه" }, { en: "P&L focus", pron: "پی اند ال فوکوس", fa: "تمرکز بر سود و زیان" }]
                     }
                 ]
             },
@@ -2534,12 +2646,16 @@ const week3Data = [
                 translation: "روش درصدی از مطالبات، برآورد نسبتاً دقیقی از ارزش بازیافتنی مطالبات ارائه می‌دهد، اما هزینه‌ها و درآمدها را به درستی مقابله نمی‌کند.",
                 words: [
                     {
-                        en: "Realizable value", pron: "ریالایْزِبِل وَلیو", fa: "ارزش بازیافتنی (تحقق‌پذیر)",
-                        synonyms: [{ en: "Recoverable value", pron: "ریکاوربل ولیو", fa: "ارزش قابل وصول" }]
+                        en: "Reasonably accurate", pron: "ریزونابْلی اَکیورِت", fa: "نسبتاً دقیق و معقول",
+                        synonyms: [{ en: "Fairly precise", pron: "فرلی پریساینس", fa: "تا حدی دقیق" }, { en: "Sufficiently correct", pron: "سافیشنتلی کارکت", fa: "به‌اندازه کافی درست" }]
                     },
                     {
-                        en: "Reasonably accurate", pron: "ریزونابْلی اَکیورِت", fa: "نسبتاً دقیق و معقول",
-                        synonyms: [{ en: "Fairly precise", pron: "فرلی پریساینس", fa: "تا حدی دقیق" }]
+                        en: "Realizable value", pron: "ریالایْزِبِل وَلیو", fa: "ارزش بازیافتنی (تحقق‌پذیر)",
+                        synonyms: [{ en: "Recoverable value", pron: "ریکاوربل ولیو", fa: "ارزش قابل وصول" }, { en: "Cash equivalent value", pron: "کش اکویولنت ولیو", fa: "ارزش معادل نقد" }]
+                    },
+                    {
+                        en: "Revenues", pron: "رِوِنیوز", fa: "درآمدها، عایدات عملیاتی",
+                        synonyms: [{ en: "Incomes", pron: "اینکامز", fa: "دریافتی‌های مالی" }, { en: "Earnings", pron: "ارنینگز", fa: "عواید شرکت" }]
                     }
                 ]
             },
@@ -2550,24 +2666,40 @@ const week3Data = [
                 translation: "بنابراین، این روش «رویکرد ترازنامه‌ای» نامیده می‌شود.",
                 words: [
                     {
-                        en: "Balance sheet approach", pron: "بالانْس شیت اَپْروچ", fa: "رویکرد ترازنامه‌ای",
-                        synonyms: [{ en: "Asset-liability approach", pron: "است لایبیلیتی اپروچ", fa: "رویکرد دارایی-بدهی" }]
+                        en: "Therefore", pron: "دِرْفور", fa: "بنابراین، به همین دلیل",
+                        synonyms: [{ en: "Consequently", pron: "کانسیکوئنتلی", fa: "در نتیجه" }, { en: "Hence", pron: "هنس", fa: "از این رو" }]
+                    },
+                    {
+                        en: "Referred to as", pron: "ریفِرد تو اَز", fa: "نامیده شده به عنوان",
+                        synonyms: [{ en: "Known as", pron: "نون از", fa: "شناخته‌شده به نام" }, { en: "Termed as", pron: "ترمد از", fa: "اصطلاح‌شده به عنوان" }]
+                    },
+                    {
+                        en: "Balance sheet approach", pron: "بالانْس شیت اَپْروچ", fa: "رویکرد ترازنامه‌ای (وضعیت مالی)",
+                        synonyms: [{ en: "Statement of financial position approach", pron: "استیتمنت آو فایننشال پوزیشن اپروچ", fa: "روش ترازنامه" }, { en: "Asset valuation approach", pron: "است ولیواِیشن اپروچ", fa: "رویکرد ارزشیابی دارایی" }]
                     }
                 ]
             },
             {
                 id: 90,
                 en: "Under the percentage of receivable method, the amount of uncollectibles may be estimated using one composite rate that reflects an estimate of the uncollectible receivables, or different percentages for different ages of receivables in an aging schedule.",
-                pronunciation: "آنْدِر دِ پِرسِنْتِج آو ریسیوابِل مِثود، دی اَماوْنت آو آنْ‌کالِکْتیبِلْز مِی بی اِسْتیمِیتِد یوزینگ وان کامْپوزیت رِیت دَت ریفْلِکْتْس اَن اِسْتیمِیت آو دی آنْ‌کالِکْتیبِل ریسیوابِلْز، اور دیفِرِنت پِرسِنْتِجِز فور دیفِرِنت اِیْجِز آو ریسیوابِلْز این اَن اِیْجینگ اِسْکِجول.",
+                pronunciation: "آنْدِر دِ پِرسِنْتِج آو ریسیوابِل مِثود، دی اَماوْnt آو آنْ‌کالِکْتیبِلْز مِی بی اِسْتیمِیتِد یوزینگ وان کامْپوزیت رِیت دَت ریفْلِکْتْس اَن اِسْتیمِیت آو دی آنْ‌کالِکْتیبِل ریسیوابِلْز، اور دیفِرِنت پِرسِنْتِجِز فور دیفِرِنت اِیْجِز آو ریسیوابِلْز این اَن اِیْجینگ اِسْکِجول.",
                 translation: "در روش درصدی از مطالبات، رقم مطالبات لاوصول ممکن است با استفاده از یک نرخ ترکیبی واحد که برآوردی از مطالبات لاوصول را نشان می‌دهد، یا درصدهای متفاوت برای سنین مختلف مطالبات در جدول تجزیه سنی تخمین زده شود.",
                 words: [
                     {
-                        en: "Composite rate", pron: "کامْپوزیت رِیت", fa: "نرخ ترکیبی، نرخ مرکب",
-                        synonyms: [{ en: "Combined rate", pron: "کمبایند ریت", fa: "نرخ تلفیقی" }]
+                        en: "Composite rate", pron: "کامْپوزیت رِیت", fa: "نرخ ترکیبی، نرخ مرکب واحد",
+                        synonyms: [{ en: "Blended rate", pron: "بلندد ریت", fa: "نرخ تلفیقی" }, { en: "Uniform rate", pron: "یونیفورم ریت", fa: "نرخ یکنواخت و فراگیر" }]
+                    },
+                    {
+                        en: "Reflects", pron: "ریفْلِکْتْس", fa: "منعکس می‌کند، نشان می‌دهد",
+                        synonyms: [{ en: "Mirrors", pron: "میرورز", fa: "بازتاب می‌دهد" }, { en: "Displays", pron: "دیسپلیز", fa: "نمایش می‌دهد" }]
                     },
                     {
                         en: "Aging schedule", pron: "اِیْجینگ اِسْکِجول", fa: "جدول تجزیه سنی مطالبات",
-                        synonyms: [{ en: "Aging of receivables schedule", pron: "ایجینگ آو ریسیوابلز اسکول", fa: "جدول سن‌سنجی حساب‌ها" }]
+                        synonyms: [{ en: "Aging analysis sheet", pron: "ایجینگ آنالیسیس شیت", fa: "برگه تحلیل سن بدهی‌ها" }, { en: "Maturity analysis table", pron: "مچوریتی انالیسیس تیبل", fa: "جدول بررسی سررسید" }]
+                    },
+                    {
+                        en: "Ages of receivables", pron: "اِیْجِز آو ریسیوابِلْز", fa: "قدمت مطالبات / سن بدهی‌ها",
+                        synonyms: [{ en: "Overdue periods", pron: "اوردیو پیریادز", fa: "دوره‌های معوق" }, { en: "Time elapsed since invoice", pron: "تایم الپست سنس اینوویس", fa: "زمان سپری‌شده از فاکتور" }]
                     }
                 ]
             }
@@ -2584,12 +2716,16 @@ const week3Data = [
                 translation: "برای تطابق صحیح هزینه‌ها با درآمد فروش، گاهی اوقات لازم است حساب‌های ذخیره دیگری نیز ایجاد گردد.",
                 words: [
                     {
-                        en: "Establish", pron: "اِسْتابْلیش", fa: "ایجاد کردن، تأسیس کردن",
-                        synonyms: [{ en: "Set up", pron: "ست آپ", fa: "برپا کردن" }, { en: "Create", pron: "کرییت", fa: "خلق کردن" }]
+                        en: "Establish", pron: "اِسْتابْلیش", fa: "ایجاد کردن، برقرار ساختن",
+                        synonyms: [{ en: "Set up", pron: "ست آپ", fa: "برپا کردن" }, { en: "Create", pron: "کرییت", fa: "تأسیس کردن" }]
                     },
                     {
-                        en: "Additional", pron: "اَدیشِنال", fa: "اضافی، مازاد",
-                        synonyms: [{ en: "Supplementary", pron: "ساپلمنتری", fa: "تکمیلی" }]
+                        en: "Additional", pron: "اَدیشِنال", fa: "اضافی، مازاد، تکمیلی",
+                        synonyms: [{ en: "Supplementary", pron: "ساپلمنتری", fa: "تکمیلی" }, { en: "Extra", pron: "اکسترا", fa: "بیشتر" }]
+                    },
+                    {
+                        en: "Sales revenue", pron: "سِیلز رِوِنیو", fa: "درآمد حاصل از فروش کالا",
+                        synonyms: [{ en: "Gross sales", pron: "گروس سیلز", fa: "فروش ناخالص" }, { en: "Sales turnover", pron: "سیلز ترن‌اور", fa: "گردش فروش" }]
                     }
                 ]
             },
@@ -2600,12 +2736,16 @@ const week3Data = [
                 translation: "این ذخایر به عنوان حساب‌های کاهنده حساب‌های دریافتنی گزارش می‌شوند و مطالبات را به ارزش خالص بازیافتنی منعکس می‌سازند.",
                 words: [
                     {
-                        en: "Contra accounts", pron: "کانتْرا اِکانْتْس", fa: "حساب‌های کاهنده / مقابل",
-                        synonyms: [{ en: "Offsetting accounts", pron: "آف‌ستینگ اکانتس", fa: "حساب‌های تعدیلی" }]
+                        en: "Contra accounts", pron: "کانتْرا اِکانْتْس", fa: "حساب‌های کاهنده / حساب‌های پاد",
+                        synonyms: [{ en: "Offsetting accounts", pron: "آف‌ستینگ اکانتس", fa: "حساب‌های تعدیل‌کننده" }, { en: "Deductive accounts", pron: "دیداکتیو اکانتس", fa: "حساب‌های کسری" }]
+                    },
+                    {
+                        en: "Establish", pron: "اِسْتابْلیش", fa: "تثبیت کردن، نشان دادن قطعی",
+                        synonyms: [{ en: "Fix", pron: "فیکس", fa: "معین کردن" }, { en: "Determine", pron: "دیتِرمین", fa: "تعیین کردن" }]
                     },
                     {
                         en: "Net realizable value", pron: "نِت ریالایْزِبِل وَلیو", fa: "خالص ارزش بازیافتنی (تحقق‌پذیر)",
-                        synonyms: [{ en: "NRV", pron: "ان آر وی", fa: "ارزش خالص بازیافت" }]
+                        synonyms: [{ en: "NRV", pron: "ان آر وی", fa: "مخفف ارزش بازیافتنی" }, { en: "Net collectible worth", pron: "نت کالکتیبل ورث", fa: "ارزش خالص وصول" }]
                     }
                 ]
             },
@@ -2616,12 +2756,16 @@ const week3Data = [
                 translation: "رایج‌ترین ذخایر، ذخیره برگشت از فروش و تخفیفات، و ذخیره هزینه‌های وصول مطالبات هستند.",
                 words: [
                     {
-                        en: "Allowance for sales returns and allowances", pron: "اَلاوِنْس فور سِیلز ریتِرنز اَند اَلاوِنْسِز", fa: "ذخیره برگشت از فروش و تخفیفات",
-                        synonyms: [{ en: "Sales return reserve", pron: "سیلز ریترن ریزو", fa: "اندوخته برگشت فروش" }]
+                        en: "Common", pron: "کامِن", fa: "رایج، متداول، عمومی",
+                        synonyms: [{ en: "Prevalent", pron: "پروالنت", fa: "شایع" }, { en: "Widespread", pron: "وایداسپرد", fa: "فراگیر" }]
                     },
                     {
-                        en: "Allowance for collection expenses", pron: "اَلاوِنْس فور کالِکْشِن اِکْسْپِنسِز", fa: "ذخیره هزینه‌های وصول",
-                        synonyms: [{ en: "Reserve for collection costs", pron: "ریزو فور کالکشن کاستس", fa: "ذخیره مخارج وصول" }]
+                        en: "Allowance for sales returns and allowances", pron: "اَلاوِنْس فور سِیلز ریتِرنز...", fa: "ذخیره برگشت از فروش و تخفیفات",
+                        synonyms: [{ en: "Sales return reserve", pron: "سیلز ریترن ریزو", fa: "اندوخته کالای مرجوعی" }, { en: "Return provision", pron: "ریترن پروویژن", fa: "ذخیره کالای برگشتی" }]
+                    },
+                    {
+                        en: "Allowance for collection expenses", pron: "اَلاوِنْس فور کالِکْشِن اِکْسْپِنسِز", fa: "ذخیره هزینه‌های وصول مطالبات",
+                        synonyms: [{ en: "Reserve for recovery costs", pron: "ریزو فور ریکاوری کاستس", fa: "ذخیره مخارج جمع‌آوری" }, { en: "Collection costs provision", pron: "کالکشن کاستس پروویژن", fa: "ذخیره هزینه وصول" }]
                     }
                 ]
             }
@@ -2638,16 +2782,20 @@ const week3Data = [
                 translation: "بنگاه‌های خرده‌فروشی معمولاً از مشتریانی که نیاز به تمدید سررسید بدهی پرداخت‌نشده خود دارند، اسناد دریافتنی (سفته) قبول می‌کنند.",
                 words: [
                     {
+                        en: "Retail firms", pron: "ریتِیل فِرمز", fa: "شرکت‌های خرده‌فروشی",
+                        synonyms: [{ en: "Retail companies", pron: "ریتیل کامپنیز", fa: "بنگاه‌های خرده‌فروش" }, { en: "Merchants", pron: "مرچنتس", fa: "کاسبان و فروشگاه‌ها" }]
+                    },
+                    {
                         en: "Receivable notes", pron: "ریسیوابِل نُوتْس", fa: "اسناد تجاری دریافتنی (سفته)",
-                        synonyms: [{ en: "Promissory notes", pron: "پرامیسوری نوتس", fa: "سفته‌های تعهدی" }]
+                        synonyms: [{ en: "Promissory notes", pron: "پرامیسوری نوتس", fa: "سفته‌های عندالمطالبه" }, { en: "Commercial papers", pron: "کامرشال پیپرز", fa: "اوراق بازرگانی" }]
                     },
                     {
                         en: "Extend the payment period", pron: "اِکْسْتِند دِ پِیمِنت پیریاد", fa: "تمدید مهلت پرداخت",
-                        synonyms: [{ en: "Prolong the due date", pron: "پرولانگ د دیو دیت", fa: "عقب انداختن سررسید" }]
+                        synonyms: [{ en: "Prolong the due date", pron: "پرولانگ د دیو دیت", fa: "عقب انداختن موعد" }, { en: "Grant credit extension", pron: "گرنت کردیت اکستنشن", fa: "اعطای مهلت اعتباری" }]
                     },
                     {
                         en: "Outstanding receivable", pron: "آوت‌استَنْدینگ ریسیوابِل", fa: "مطالبه تسویه‌نشده / معوق",
-                        synonyms: [{ en: "Unpaid receivable", pron: "آن‌پید ریسیوابل", fa: "طلب پرداخت‌نشده" }]
+                        synonyms: [{ en: "Unpaid receivable", pron: "آن‌پید ریسیوابل", fa: "طلب وصول‌نشده" }, { en: "Pending balance", pron: "پندینگ بالانس", fa: "مانده تسویه‌نشده" }]
                     }
                 ]
             },
@@ -2658,12 +2806,16 @@ const week3Data = [
                 translation: "بدین معنا که اگر یک حساب دریافتنی سررسیدگذشته و معوق گردد، ممکن است آن حساب به یک سند دریافتنی (سفته) تبدیل شود.",
                 words: [
                     {
-                        en: "Delinquent", pron: "دیلینْکْوِنت", fa: "سررسیدگذشته، معوق، تأخیری",
+                        en: "Delinquent", pron: "دیلینْکْوِنت", fa: "سررسیدگذشته، معوق، همراه با تأخیر",
                         synonyms: [{ en: "Overdue", pron: "اوردیو", fa: "سررسیدشده پرداخت‌نشده" }, { en: "Past due", pron: "پست دیو", fa: "معوقه" }]
                     },
                     {
                         en: "Converted to", pron: "کانْوِرتِد تو", fa: "تبدیل‌شده به",
-                        synonyms: [{ en: "Transformed into", pron: "ترنسفورمد اینتو", fa: "تغییریافته به" }]
+                        synonyms: [{ en: "Transformed into", pron: "ترنسفورمد اینتو", fa: "تغییریافته به" }, { en: "Exchanged for", pron: "اکسچنجد فور", fa: "مبادله‌شده با" }]
+                    },
+                    {
+                        en: "Note", pron: "نُوت", fa: "سند تجاری، سفته تعهدی",
+                        synonyms: [{ en: "Promissory document", pron: "پرامیسوری داکیومنت", fa: "سند تعهد پرداخت" }, { en: "Debt instrument", pron: "دت اینسترومنت", fa: "ابزار بدهی" }]
                     }
                 ]
             },
@@ -2674,12 +2826,16 @@ const week3Data = [
                 translation: "به علاوه، اسناد معمولاً در وام‌های پرداختی به کارکنان و شرکت‌های فرعی، و همچنین در فروش اموال، ماشین‌آلات و تجهیزات (دارایی‌های ثابت) به کار می‌روند.",
                 words: [
                     {
-                        en: "Property, plant, and equipment", pron: "پْراپِرتی، پْلَنْت، اَند ایکْویپْمِنت", fa: "اموال، ماشین‌آلات و تجهیزات (PPE)",
-                        synonyms: [{ en: "Fixed assets", pron: "فیکست استس", fa: "دارایی‌های ثابت مشهود" }]
+                        en: "In addition", pron: "این اَدیشِن", fa: "علاوه بر این، همچنین",
+                        synonyms: [{ en: "Furthermore", pron: "فردِرمور", fa: "افزون بر این" }, { en: "Moreover", pron: "مورووِر", fa: "به‌علاوه" }]
                     },
                     {
                         en: "Loans", pron: "لُونز", fa: "وام‌ها و تسهیلات اعطایی",
-                        synonyms: [{ en: "Lendings", pron: "لندینگز", fa: "قرض‌ها" }]
+                        synonyms: [{ en: "Lendings", pron: "لندینگز", fa: "قرض‌ها" }, { en: "Credit advances", pron: "کردیت ادونسز", fa: "اعتبارات پرداختی" }]
+                    },
+                    {
+                        en: "Property, plant, and equipment", pron: "پْراپِرتی، پْلَنْت، اَند ایکْویپْمِنت", fa: "اموال، ماشین‌آلات و تجهیزات (PPE)",
+                        synonyms: [{ en: "Fixed assets", pron: "فیکست استس", fa: "دارایی‌های ثابت مشهود" }, { en: "Capital assets", pron: "کپیتال استس", fa: "دارایی‌های سرمایه‌ای" }]
                     }
                 ]
             },
@@ -2690,8 +2846,16 @@ const week3Data = [
                 translation: "در برخی صنایع (مانند صنعت قایق‌های تفریحی و ورزشی)، تمامی فروش‌های نسیه با اخذ اسناد تجاری (سفته) پشتیبانی می‌شوند.",
                 words: [
                     {
-                        en: "Support credit sales", pron: "ساپُورت کْرِدیت سِیلز", fa: "پشتیبانی از فروش‌های نسیه (با وثیقه اسنادی)",
-                        synonyms: [{ en: "Back credit transactions", pron: "بک کردیت ترنزکشنز", fa: "پشتوانه معاملات اعتباری" }]
+                        en: "Industries", pron: "اینْداستریز", fa: "صنایع، حوزه‌های تجاری",
+                        synonyms: [{ en: "Sectors", pron: "سکتورز", fa: "بخش‌های اقتصادی" }, { en: "Trades", pron: "تریدز", fa: "رسته‌های صنفی" }]
+                    },
+                    {
+                        en: "Support credit sales", pron: "ساپُورت کْرِدیت سِیلز", fa: "پشتیبانی از فروش‌های نسیه (با وثیقه)",
+                        synonyms: [{ en: "Back credit transactions", pron: "بک کردیت ترنزکشنز", fa: "پشتوانه معاملات اعتباری" }, { en: "Secure on-credit sales", pron: "سیکیور آن‌کردیت سیلز", fa: "تضمین فروش‌های نسیه" }]
+                    },
+                    {
+                        en: "Credit sales", pron: "کْرِدیت سِیلز", fa: "فروش‌های اعتباری / نسیه",
+                        synonyms: [{ en: "Sales on account", pron: "سیلز آن اکانت", fa: "فروش‌های دفتری" }, { en: "Deferred-payment sales", pron: "دیفرد پیمنت سیلز", fa: "فروش‌های وعده‌دار" }]
                     }
                 ]
             },
@@ -2702,16 +2866,16 @@ const week3Data = [
                 translation: "با این وجود، اکثریت اسناد تجاری از معاملات اعطای وام و تسهیلات سرچشمه می‌گیرند.",
                 words: [
                     {
-                        en: "Majority", pron: "مِجوریتی", fa: "اکثریت، بخش عمده",
-                        synonyms: [{ en: "Greater part", pron: "گریتر پارت", fa: "بخش اعظم" }]
+                        en: "Majority", pron: "مِجوریتی", fa: "اکثریت، بخش اعظم",
+                        synonyms: [{ en: "Greater part", pron: "گریتر پارت", fa: "بخش عمده" }, { en: "Bulk", pron: "بالک", fa: "بدنه اصلی" }]
                     },
                     {
-                        en: "Originate from", pron: "اُریجینِیت فرام", fa: "سرچشمه گرفتن از، ناشی شدن از",
-                        synonyms: [{ en: "Stem from", pron: "استم فرام", fa: "نشأت گرفتن از" }]
+                        en: "Originate from", pron: "اُریجینِیت فرام", fa: "سرچشمه گرفتن، ناشی شدن",
+                        synonyms: [{ en: "Stem from", pron: "استم فرام", fa: "ریشه داشتن در" }, { en: "Derive from", pron: "دیرایو فرام", fa: "مشتق شدن از" }]
                     },
                     {
                         en: "Lending transactions", pron: "لِنْدینگ تْرَنْزَکْشِنْز", fa: "معاملات اعطای وام / تسهیلات مالی",
-                        synonyms: [{ en: "Loan agreements", pron: "لون اگریمنتس", fa: "قراردادهای وام" }]
+                        synonyms: [{ en: "Loan agreements", pron: "لون اگریمنتس", fa: "قراردادهای وام‌دهی" }, { en: "Financing deals", pron: "فایننسینگ دیلز", fa: "معاملات تأمین مالی" }]
                     }
                 ]
             }
