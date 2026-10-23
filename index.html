@@ -266,6 +266,7 @@
         .w2-card { border-right: 6px solid #ec4899; }
         .w3-card { border-right: 6px solid #10b981; }
         .w4-card { border-right: 6px solid #a855f7; }
+        .w5-card { border-right: 6px solid #f59e0b; }
 
         .card-info {
             text-align: right;
@@ -285,6 +286,7 @@
         .tag-w2 { background: linear-gradient(135deg, #db2777, #be185d); }
         .tag-w3 { background: linear-gradient(135deg, #059669, #047857); }
         .tag-w4 { background: linear-gradient(135deg, #9333ea, #6d28d9); }
+        .tag-w5 { background: linear-gradient(135deg, #f59e0b, #b45309); }
 
         .compact-week-card h3 {
             font-size: 14.5px;
@@ -740,6 +742,15 @@
                 </div>
                 <button class="compact-week-btn">ورود ←</button>
             </div>
+
+            <div class="compact-week-card w5-card" onclick="openWeek(5)">
+                <div class="card-info">
+                    <span class="compact-week-tag tag-w5">هفته ۵</span>
+                    <h3>حسابداری سرمایه‌گذاری‌ها (Investments)</h3>
+                    <div class="count-badge">۳۳ جمله آموزشی تخصصی</div>
+                </div>
+                <button class="compact-week-btn">ورود ←</button>
+            </div>
         </div>
     </div>
 
@@ -800,6 +811,16 @@
             <button class="nav-switch-btn" onclick="openWeek(3)">← هفته ۳</button>
         </div>
         <div id="week4ContentArea"></div>
+    </div>
+
+    <!-- ================= VIEW 6: WEEK 5 ================= -->
+    <div id="view-week5" class="view-pane">
+        <div class="week-top-bar">
+            <button class="back-home-btn" onclick="openHome()"><span>↩</span><span>فهرست</span></button>
+            <div style="font-weight: 800; font-size: 13px; color: #f59e0b;">هفته پنجم: سرمایه‌گذاری‌ها</div>
+            <button class="nav-switch-btn" onclick="openWeek(4)">← هفته ۴</button>
+        </div>
+        <div id="week5ContentArea"></div>
     </div>
 </div>
 
@@ -2971,6 +2992,2368 @@ function speakText(text, cardEl = null) {
     window.speechSynthesis.speak(utter);
 }
 
+
+// ==================== داده‌های هفته پنجم: سرمایه‌گذاری‌ها ====================
+const week5Data = [
+  {
+    "title": "بخش ۱: کلیات و سرمایه‌گذاری در اوراق بدهی",
+    "badge": "درس ۱۹ - صفحه‌های ۲۲۷ تا ۲۲۸",
+    "sentences": [
+      {
+        "id": 1,
+        "en": "Accounting for investments is controversial.",
+        "pronunciation": "اَکَونتینگ فاُر این‌وِست‌مِنتس ایز کانترووِر‌شِل.",
+        "translation": "حسابداری سرمایه‌گذاری‌ها بحث‌برانگیز است.",
+        "words": [
+          {
+            "en": "controversial",
+            "pron": "کانترووِر‌شِل",
+            "fa": "بحث‌برانگیز",
+            "synonyms": [
+              {
+                "en": "debatable",
+                "pron": "دی‌بِیتَبِل",
+                "fa": "قابل بحث"
+              },
+              {
+                "en": "disputed",
+                "pron": "دیس‌پیوتِد",
+                "fa": "مورد اختلاف"
+              }
+            ]
+          },
+          {
+            "en": "investments",
+            "pron": "این‌وِست‌مِنتس",
+            "fa": "سرمایه‌گذاری‌ها",
+            "synonyms": [
+              {
+                "en": "placements",
+                "pron": "پلاِیسماَنتس",
+                "fa": "سرمایه‌گذاری‌ها"
+              },
+              {
+                "en": "holdings",
+                "pron": "هاُولداینگز",
+                "fa": "دارایی‌های نگهداری‌شده"
+              }
+            ]
+          },
+          {
+            "en": "accounting",
+            "pron": "اَکَونتینگ",
+            "fa": "حسابداری",
+            "synonyms": [
+              {
+                "en": "bookkeeping",
+                "pron": "باُککیپاینگ",
+                "fa": "دفترداری"
+              },
+              {
+                "en": "financial reporting",
+                "pron": "فاینَنشِل ری‌پورتینگ",
+                "fa": "گزارشگری مالی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "en": "The problems of accounting for investments involve measurement, recognition, and disclosure matters.",
+        "pronunciation": "ذاَ پرآبلاَمز اَو اَکَونتینگ فاُر این‌وِست‌مِنتس اینوآلو مِژِرمِنت, رِکِگنیشِن, اَند دیس‌کْلوژِر ماَتاِرز.",
+        "translation": "مسائل حسابداری سرمایه‌گذاری‌ها شامل اندازه‌گیری، شناسایی و افشا هستند.",
+        "words": [
+          {
+            "en": "measurement",
+            "pron": "مِژِرمِنت",
+            "fa": "اندازه‌گیری",
+            "synonyms": [
+              {
+                "en": "valuation",
+                "pron": "واَلیواِیشاَن",
+                "fa": "ارزش‌گذاری"
+              },
+              {
+                "en": "quantification",
+                "pron": "کوآنتایفاَکاِیشاَن",
+                "fa": "کمّی‌سازی"
+              }
+            ]
+          },
+          {
+            "en": "recognition",
+            "pron": "رِکِگنیشِن",
+            "fa": "شناسایی",
+            "synonyms": [
+              {
+                "en": "identification",
+                "pron": "آیداِنتاَفاَکاِیشاَن",
+                "fa": "تشخیص"
+              },
+              {
+                "en": "acknowledgment",
+                "pron": "اَکنآلایجماَنت",
+                "fa": "به‌رسمیت‌شناختن"
+              }
+            ]
+          },
+          {
+            "en": "disclosure",
+            "pron": "دیس‌کْلوژِر",
+            "fa": "افشا",
+            "synonyms": [
+              {
+                "en": "reporting",
+                "pron": "ری‌پورتینگ",
+                "fa": "گزارش‌دهی"
+              },
+              {
+                "en": "revealing",
+                "pron": "رایویلاینگ",
+                "fa": "آشکارسازی"
+              }
+            ]
+          },
+          {
+            "en": "involve",
+            "pron": "اینوآلو",
+            "fa": "در بر داشتن",
+            "synonyms": [
+              {
+                "en": "include",
+                "pron": "اینکلود",
+                "fa": "شامل شدن"
+              },
+              {
+                "en": "entail",
+                "pron": "اِنتاِیل",
+                "fa": "مستلزم بودن"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "en": "According to SFAS No. 115, accounting for investments is classified into two broad categories as investment in debt securities and in equity securities.",
+        "pronunciation": "اَکوردینگ تو سفاَس ناُو. 115, اَکَونتینگ فاُر این‌وِست‌مِنتس ایز کْلَسِفاید اینتو تو براُد کَتِگوریز اَز این‌وِست‌مِنت این دِت سِکیوریتیز اَند این اِکوئیتی سِکیوریتیز.",
+        "translation": "طبق استاندارد SFAS شماره ۱۱۵، حسابداری سرمایه‌گذاری‌ها به دو دسته کلی سرمایه‌گذاری در اوراق بدهی و اوراق مالکانه تقسیم می‌شود.",
+        "words": [
+          {
+            "en": "classified",
+            "pron": "کْلَسِفاید",
+            "fa": "طبقه‌بندی‌شده",
+            "synonyms": [
+              {
+                "en": "categorized",
+                "pron": "کاَتاَگاِرآیزد",
+                "fa": "دسته‌بندی‌شده"
+              },
+              {
+                "en": "grouped",
+                "pron": "گروپت",
+                "fa": "گروه‌بندی‌شده"
+              }
+            ]
+          },
+          {
+            "en": "broad categories",
+            "pron": "براُد کَتِگوریز",
+            "fa": "دسته‌های کلی",
+            "synonyms": [
+              {
+                "en": "main classes",
+                "pron": "ماِین کلاَساَز",
+                "fa": "طبقه‌های اصلی"
+              },
+              {
+                "en": "general groups",
+                "pron": "جاِناِراَل گروپس",
+                "fa": "گروه‌های عمومی"
+              }
+            ]
+          },
+          {
+            "en": "debt securities",
+            "pron": "دِت سِکیوریتیز",
+            "fa": "اوراق بدهی",
+            "synonyms": [
+              {
+                "en": "debt instruments",
+                "pron": "دِت اینستراَماَنتس",
+                "fa": "ابزارهای بدهی"
+              },
+              {
+                "en": "bonds",
+                "pron": "بآندز",
+                "fa": "اوراق قرضه"
+              }
+            ]
+          },
+          {
+            "en": "equity securities",
+            "pron": "اِکوئیتی سِکیوریتیز",
+            "fa": "اوراق مالکانه",
+            "synonyms": [
+              {
+                "en": "ownership securities",
+                "pron": "اونِرشِپ سِکیوریتیز",
+                "fa": "اوراق مالکیت"
+              },
+              {
+                "en": "shares",
+                "pron": "شاِرز",
+                "fa": "سهام"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "en": "The fundamentals of the accounting for investments in debt and equity securities are explained below.",
+        "pronunciation": "ذاَ فَندَمِنتَلز اَو ذاَ اَکَونتینگ فاُر این‌وِست‌مِنتس این دِت اَند اِکوئیتی سِکیوریتیز آر ایکس‌پلِیند بِلو.",
+        "translation": "اصول اساسی حسابداری سرمایه‌گذاری در اوراق بدهی و مالکانه در ادامه توضیح داده می‌شود.",
+        "words": [
+          {
+            "en": "fundamentals",
+            "pron": "فَندَمِنتَلز",
+            "fa": "اصول اساسی",
+            "synonyms": [
+              {
+                "en": "basics",
+                "pron": "باِیسایکس",
+                "fa": "مبانی"
+              },
+              {
+                "en": "essentials",
+                "pron": "اِساِنشاَلز",
+                "fa": "اصول ضروری"
+              }
+            ]
+          },
+          {
+            "en": "explained",
+            "pron": "ایکس‌پلِیند",
+            "fa": "توضیح داده‌شده",
+            "synonyms": [
+              {
+                "en": "described",
+                "pron": "دیسکرایبد",
+                "fa": "شرح داده‌شده"
+              },
+              {
+                "en": "clarified",
+                "pron": "کلاِراَفآید",
+                "fa": "روشن‌شده"
+              }
+            ]
+          },
+          {
+            "en": "below",
+            "pron": "بِلو",
+            "fa": "در ادامه/پایین",
+            "synonyms": [
+              {
+                "en": "hereafter",
+                "pron": "هایراَفتاِر",
+                "fa": "از این پس"
+              },
+              {
+                "en": "following",
+                "pron": "فآلاُواینگ",
+                "fa": "بعدی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "en": "Investments in debt securities are grouped into three separate categories for accounting and reporting purposes.",
+        "pronunciation": "این‌وِست‌مِنتس این دِت سِکیوریتیز آر گروپت اینتو ثری سِپِرِت کَتِگوریز فاُر اَکَونتینگ اَند ری‌پورتینگ پِرپِسِز.",
+        "translation": "سرمایه‌گذاری‌ها در اوراق بدهی برای اهداف حسابداری و گزارشگری در سه دسته جداگانه گروه‌بندی می‌شوند.",
+        "words": [
+          {
+            "en": "grouped",
+            "pron": "گروپت",
+            "fa": "گروه‌بندی‌شده",
+            "synonyms": [
+              {
+                "en": "classified",
+                "pron": "کْلَسِفاید",
+                "fa": "طبقه‌بندی‌شده"
+              },
+              {
+                "en": "categorized",
+                "pron": "کاَتاَگاِرآیزد",
+                "fa": "دسته‌بندی‌شده"
+              }
+            ]
+          },
+          {
+            "en": "separate",
+            "pron": "سِپِرِت",
+            "fa": "جداگانه",
+            "synonyms": [
+              {
+                "en": "distinct",
+                "pron": "دیستینکت",
+                "fa": "متمایز"
+              },
+              {
+                "en": "individual",
+                "pron": "ایندیویجوال",
+                "fa": "مجزا"
+              }
+            ]
+          },
+          {
+            "en": "reporting purposes",
+            "pron": "ری‌پورتینگ پِرپِسِز",
+            "fa": "اهداف گزارشگری",
+            "synonyms": [
+              {
+                "en": "disclosure purposes",
+                "pron": "دیس‌کْلوژِر پِرپِسِز",
+                "fa": "اهداف افشا"
+              },
+              {
+                "en": "reporting needs",
+                "pron": "ری‌پورتینگ نیدز",
+                "fa": "نیازهای گزارشگری"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "en": "These categories are 1) Held-to-maturity, 2) Trading, and 3) Available-for-sale.",
+        "pronunciation": "ذیز کَتِگوریز آر 1) هِلد تو مَچورِتی, 2) تْرِیدینگ, اَند 3) اَوِیلَبِل فُر سِیل.",
+        "translation": "این دسته‌ها عبارت‌اند از: ۱) نگهداری تا سررسید، ۲) معاملاتی و ۳) آماده برای فروش.",
+        "words": [
+          {
+            "en": "categories",
+            "pron": "کَتِگوریز",
+            "fa": "دسته‌ها",
+            "synonyms": [
+              {
+                "en": "classes",
+                "pron": "کلاَساَز",
+                "fa": "طبقه‌ها"
+              },
+              {
+                "en": "groups",
+                "pron": "گروپس",
+                "fa": "گروه‌ها"
+              }
+            ]
+          },
+          {
+            "en": "held-to-maturity",
+            "pron": "هِلد تو مَچورِتی",
+            "fa": "نگهداری تا سررسید",
+            "synonyms": [
+              {
+                "en": "kept until maturity",
+                "pron": "کاِپت اَنتایل مَچورِتی",
+                "fa": "نگهداری تا سررسید"
+              },
+              {
+                "en": "maturity-held",
+                "pron": "مَچورِتی هاِلد",
+                "fa": "نگهداری تا سررسید"
+              }
+            ]
+          },
+          {
+            "en": "available-for-sale",
+            "pron": "اَوِیلَبِل فُر سِیل",
+            "fa": "آماده برای فروش",
+            "synonyms": [
+              {
+                "en": "saleable",
+                "pron": "ساِیلاَباَل",
+                "fa": "قابل فروش"
+              },
+              {
+                "en": "held for sale",
+                "pron": "هاِلد فاُر سِیل",
+                "fa": "نگهداری‌شده برای فروش"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "en": "Only debt securities can be classified as held-to-maturity because equity securities, by definition, have no maturity date.",
+        "pronunciation": "اُونلی دِت سِکیوریتیز کاَن بی کْلَسِفاید اَز هِلد تو مَچورِتی بایکاُز اِکوئیتی سِکیوریتیز, بآی داِفاَنایشاَن, هاَو ناُو مَچورِتی داِیت.",
+        "translation": "فقط اوراق بدهی را می‌توان در طبقه نگهداری تا سررسید قرار داد، زیرا اوراق مالکانه بنا بر تعریف تاریخ سررسید ندارند.",
+        "words": [
+          {
+            "en": "classified",
+            "pron": "کْلَسِفاید",
+            "fa": "طبقه‌بندی‌شده",
+            "synonyms": [
+              {
+                "en": "categorized",
+                "pron": "کاَتاَگاِرآیزد",
+                "fa": "دسته‌بندی‌شده"
+              },
+              {
+                "en": "designated",
+                "pron": "داِزایگناِیتاید",
+                "fa": "تعیین‌شده"
+              }
+            ]
+          },
+          {
+            "en": "by definition",
+            "pron": "بآی داِفاَنایشاَن",
+            "fa": "بنا بر تعریف",
+            "synonyms": [
+              {
+                "en": "in principle",
+                "pron": "این پراینساَپاَل",
+                "fa": "از نظر اصولی"
+              },
+              {
+                "en": "as defined",
+                "pron": "اَز دایفآیند",
+                "fa": "طبق تعریف"
+              }
+            ]
+          },
+          {
+            "en": "maturity date",
+            "pron": "مَچورِتی داِیت",
+            "fa": "تاریخ سررسید",
+            "synonyms": [
+              {
+                "en": "due date",
+                "pron": "دو داِیت",
+                "fa": "تاریخ پرداخت"
+              },
+              {
+                "en": "expiration date",
+                "pron": "اِکسپاِراِیشاَن داِیت",
+                "fa": "تاریخ انقضا"
+              }
+            ]
+          },
+          {
+            "en": "maturity",
+            "pron": "مَچورِتی",
+            "fa": "سررسید",
+            "synonyms": [
+              {
+                "en": "due date",
+                "pron": "دو دیت",
+                "fa": "تاریخ سررسید"
+              },
+              {
+                "en": "expiration",
+                "pron": "اِکسپِرِیشِن",
+                "fa": "پایان مهلت"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "en": "A debt security should be classified as held-to-maturity only if the reporting entity has both a) the positive intent, and b) the ability to hold those securities to maturity.",
+        "pronunciation": "اَ دِت سِکیوریتی شاُد بی کْلَسِفاید اَز هِلد تو مَچورِتی اُونلی ایف ذاَ ری‌پورتینگ اِن‌تِتی هاَز باُوث اَ) ذاَ پازِتیو اِنتِنت, اَند بی) ذاَ اَبیلِتی تو هاُولد ذاُوز سِکیوریتیز تو مَچورِتی.",
+        "translation": "اوراق بدهی تنها زمانی باید نگهداری تا سررسید طبقه‌بندی شوند که واحد گزارشگر هم الف) قصد مثبت و هم ب) توانایی نگهداری آن‌ها تا سررسید را داشته باشد.",
+        "words": [
+          {
+            "en": "reporting entity",
+            "pron": "ری‌پورتینگ اِن‌تِتی",
+            "fa": "واحد گزارشگر",
+            "synonyms": [
+              {
+                "en": "reporting organization",
+                "pron": "ری‌پورتینگ اُرگاَناَزاِیشاَن",
+                "fa": "سازمان گزارشگر"
+              },
+              {
+                "en": "business entity",
+                "pron": "بایزناَس اِن‌تِتی",
+                "fa": "واحد تجاری"
+              }
+            ]
+          },
+          {
+            "en": "positive intent",
+            "pron": "پازِتیو اِنتِنت",
+            "fa": "قصد مثبت",
+            "synonyms": [
+              {
+                "en": "clear intention",
+                "pron": "کلایر اِنتِنشِن",
+                "fa": "قصد روشن"
+              },
+              {
+                "en": "firm purpose",
+                "pron": "فاِرم پاِرپاَس",
+                "fa": "هدف قطعی"
+              }
+            ]
+          },
+          {
+            "en": "ability",
+            "pron": "اَبیلِتی",
+            "fa": "توانایی",
+            "synonyms": [
+              {
+                "en": "capacity",
+                "pron": "کاَپاَساَتی",
+                "fa": "ظرفیت"
+              },
+              {
+                "en": "capability",
+                "pron": "کاِیپاَبایلاَتی",
+                "fa": "قابلیت"
+              }
+            ]
+          },
+          {
+            "en": "intent",
+            "pron": "اِنتِنت",
+            "fa": "قصد",
+            "synonyms": [
+              {
+                "en": "intention",
+                "pron": "اِنتِنشِن",
+                "fa": "نیت"
+              },
+              {
+                "en": "purpose",
+                "pron": "پِرپِس",
+                "fa": "هدف"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "en": "A company should not classify a debt security as held-to-maturity if the company intends to hold the security for an indefinite period of time.",
+        "pronunciation": "اَ کَمپَنی شاُد نآت کلاَساَفآی اَ دِت سِکیوریتی اَز هِلد تو مَچورِتی ایف ذاَ کَمپَنی اِنتِندز تو هاُولد ذاَ سِکیوریتی فاُر اَن ایندِفِنِت پیِریِد اَو تآیم.",
+        "translation": "اگر شرکت قصد داشته باشد اوراق را برای مدتی نامحدود نگه دارد، نباید آن را در طبقه نگهداری تا سررسید قرار دهد.",
+        "words": [
+          {
+            "en": "intends",
+            "pron": "اِنتِندز",
+            "fa": "قصد دارد",
+            "synonyms": [
+              {
+                "en": "plans",
+                "pron": "پلاَنز",
+                "fa": "برنامه دارد"
+              },
+              {
+                "en": "aims",
+                "pron": "اِیمز",
+                "fa": "هدف دارد"
+              }
+            ]
+          },
+          {
+            "en": "indefinite",
+            "pron": "ایندِفِنِت",
+            "fa": "نامحدود",
+            "synonyms": [
+              {
+                "en": "unlimited",
+                "pron": "اَنلایماَتاید",
+                "fa": "بی‌حد"
+              },
+              {
+                "en": "unspecified",
+                "pron": "اَنسپاِساَفآید",
+                "fa": "نامشخص"
+              }
+            ]
+          },
+          {
+            "en": "period of time",
+            "pron": "پیِریِد اَو تآیم",
+            "fa": "بازه زمانی",
+            "synonyms": [
+              {
+                "en": "duration",
+                "pron": "داُراِیشاَن",
+                "fa": "مدت"
+              },
+              {
+                "en": "time span",
+                "pron": "تآیم سپاَن",
+                "fa": "فاصله زمانی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "en": "Likewise, if the enterprise anticipates that a sale may be necessary due to changes in interest rates, or other reasons, the security should not be classified as held-to-maturity.",
+        "pronunciation": "لایک‌وایز, ایف ذاَ اِنتِرپرایز اَنتیسِپِیتس ذاَت اَ سِیل ماِی بی نِسِسِری دو تو چِینجِز این اینترِست رِیتس, اُر اَذاِر ریزِنز, ذاَ سِکیوریتی شاُد نآت بی کْلَسِفاید اَز هِلد تو مَچورِتی.",
+        "translation": "همچنین، اگر واحد تجاری پیش‌بینی کند که به دلیل تغییر نرخ بهره یا دلایل دیگر فروش ضروری شود، اوراق نباید نگهداری تا سررسید طبقه‌بندی شوند.",
+        "words": [
+          {
+            "en": "anticipates",
+            "pron": "اَنتیسِپِیتس",
+            "fa": "پیش‌بینی می‌کند",
+            "synonyms": [
+              {
+                "en": "expects",
+                "pron": "ایکسپاِکتس",
+                "fa": "انتظار دارد"
+              },
+              {
+                "en": "foresees",
+                "pron": "فاُرسیز",
+                "fa": "از پیش می‌بیند"
+              }
+            ]
+          },
+          {
+            "en": "necessary",
+            "pron": "نِسِسِری",
+            "fa": "ضروری",
+            "synonyms": [
+              {
+                "en": "required",
+                "pron": "ریکوآیاِرد",
+                "fa": "لازم"
+              },
+              {
+                "en": "essential",
+                "pron": "اِساِنشاَل",
+                "fa": "لازم و اساسی"
+              }
+            ]
+          },
+          {
+            "en": "interest rates",
+            "pron": "اینترِست رِیتس",
+            "fa": "نرخ‌های بهره",
+            "synonyms": [
+              {
+                "en": "lending rates",
+                "pron": "لاِنداینگ رِیتس",
+                "fa": "نرخ‌های وام"
+              },
+              {
+                "en": "rates of interest",
+                "pron": "رِیتس اَو اینترِست",
+                "fa": "نرخ بهره"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "en": "For example, if a company buys bonds issued by other corporations and it has no plan on keeping the bonds or selling them in the future, the investment cannot be classified as held-to-maturity because of the lack of positive intent.",
+        "pronunciation": "فاُر اِگزامپِل, ایف اَ کَمپَنی بآیز بآندز ایشود بآی اَذاِر کورپُرِیشنز اَند ایت هاَز ناُو پلاَن آن کیپاینگ ذاَ بآندز اُر سِلینگ ذاِم این ذاَ فیوچِر, ذاَ این‌وِست‌مِنت کَنات بی کْلَسِفاید اَز هِلد تو مَچورِتی بایکاُز اَو ذاَ لاَک اَو پازِتیو اِنتِنت.",
+        "translation": "برای مثال، اگر شرکتی اوراق قرضه صادرشده توسط شرکت‌های دیگر را بخرد و برنامه‌ای برای نگهداری یا فروش آن‌ها در آینده نداشته باشد، سرمایه‌گذاری به دلیل نبود قصد مثبت نمی‌تواند نگهداری تا سررسید طبقه‌بندی شود.",
+        "words": [
+          {
+            "en": "issued",
+            "pron": "ایشود",
+            "fa": "صادرشده",
+            "synonyms": [
+              {
+                "en": "released",
+                "pron": "ریلیست",
+                "fa": "منتشرشده"
+              },
+              {
+                "en": "offered",
+                "pron": "اُفاِرد",
+                "fa": "عرضه‌شده"
+              }
+            ]
+          },
+          {
+            "en": "keeping",
+            "pron": "کیپاینگ",
+            "fa": "نگهداری کردن",
+            "synonyms": [
+              {
+                "en": "retaining",
+                "pron": "رایتاِیناینگ",
+                "fa": "حفظ کردن"
+              },
+              {
+                "en": "holding",
+                "pron": "هُلدینگ",
+                "fa": "در اختیار داشتن"
+              }
+            ]
+          },
+          {
+            "en": "lack",
+            "pron": "لاَک",
+            "fa": "نبود/فقدان",
+            "synonyms": [
+              {
+                "en": "absence",
+                "pron": "اَبساَنس",
+                "fa": "عدم وجود"
+              },
+              {
+                "en": "shortage",
+                "pron": "شاُرتاَج",
+                "fa": "کمبود"
+              }
+            ]
+          },
+          {
+            "en": "corporations",
+            "pron": "کورپِرِیشِنز",
+            "fa": "شرکت‌ها",
+            "synonyms": [
+              {
+                "en": "companies",
+                "pron": "کامپِنیز",
+                "fa": "شرکت‌ها"
+              },
+              {
+                "en": "businesses",
+                "pron": "بیزنِسِز",
+                "fa": "کسب‌وکارها"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "en": "However, having positive intent by the investor is not sufficient to classify the investment as held-to-maturity.",
+        "pronunciation": "هاو‌اِوِر, هاَواینگ پازِتیو اِنتِنت بآی ذاَ این‌وِستور ایز نآت سَفیشِنت تو کلاَساَفآی ذاَ این‌وِست‌مِنت اَز هِلد تو مَچورِتی.",
+        "translation": "بااین‌حال، داشتن قصد مثبت از سوی سرمایه‌گذار برای طبقه‌بندی سرمایه‌گذاری به‌عنوان نگهداری تا سررسید کافی نیست.",
+        "words": [
+          {
+            "en": "sufficient",
+            "pron": "سَفیشِنت",
+            "fa": "کافی",
+            "synonyms": [
+              {
+                "en": "adequate",
+                "pron": "اَداَکواَت",
+                "fa": "بسنده"
+              },
+              {
+                "en": "enough",
+                "pron": "ایناَف",
+                "fa": "به‌اندازه کافی"
+              }
+            ]
+          },
+          {
+            "en": "investor",
+            "pron": "این‌وِستور",
+            "fa": "سرمایه‌گذار",
+            "synonyms": [
+              {
+                "en": "shareholder",
+                "pron": "شاِرهاُولداِر",
+                "fa": "سهام‌دار"
+              },
+              {
+                "en": "financier",
+                "pron": "فایناَنسایر",
+                "fa": "تأمین‌کننده مالی"
+              }
+            ]
+          },
+          {
+            "en": "classify",
+            "pron": "کلاَساَفآی",
+            "fa": "طبقه‌بندی کردن",
+            "synonyms": [
+              {
+                "en": "categorize",
+                "pron": "کاَتاَگاِرآیز",
+                "fa": "دسته‌بندی کردن"
+              },
+              {
+                "en": "group",
+                "pron": "گروپ",
+                "fa": "گروه‌بندی کردن"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "en": "To see why, consider that the company is willing to keep the bond securities until maturity, but the financial strength of the company is not so well to be sure as to having ability to hold the bonds until maturity.",
+        "pronunciation": "تو سی وآی, کِن‌سیدِر ذاَت ذاَ کَمپَنی ایز ویلینگ تو کیپ ذاَ بآند سِکیوریتیز اَنتایل مَچورِتی, باَت ذاَ فاینَنشِل اِسترِنگث اَو ذاَ کَمپَنی ایز نآت ساُو واِل تو بی شور اَز تو هاَواینگ اَبیلِتی تو هاُولد ذاَ بآندز اَنتایل مَچورِتی.",
+        "translation": "برای درک علت، فرض کنید شرکت مایل است اوراق را تا سررسید نگه دارد، اما توان مالی شرکت آن‌قدر مطمئن نیست که بتوان از توانایی نگهداری اوراق تا سررسید اطمینان داشت.",
+        "words": [
+          {
+            "en": "willing",
+            "pron": "ویلینگ",
+            "fa": "مایل",
+            "synonyms": [
+              {
+                "en": "ready",
+                "pron": "راِدی",
+                "fa": "آماده"
+              },
+              {
+                "en": "prepared",
+                "pron": "پریپاِرد",
+                "fa": "آماده"
+              }
+            ]
+          },
+          {
+            "en": "financial strength",
+            "pron": "فاینَنشِل اِسترِنگث",
+            "fa": "توان مالی",
+            "synonyms": [
+              {
+                "en": "financial position",
+                "pron": "فاینَنشِل پاَزایشاَن",
+                "fa": "وضعیت مالی"
+              },
+              {
+                "en": "economic power",
+                "pron": "ایکانامیک پاَواِر",
+                "fa": "قدرت اقتصادی"
+              }
+            ]
+          },
+          {
+            "en": "ability to hold",
+            "pron": "اَبیلِتی تو هاُولد",
+            "fa": "توانایی نگهداری",
+            "synonyms": [
+              {
+                "en": "capacity to retain",
+                "pron": "کاَپاَساَتی تو رایتاِین",
+                "fa": "ظرفیت حفظ کردن"
+              },
+              {
+                "en": "power to keep",
+                "pron": "پاَواِر تو کیپ",
+                "fa": "توان نگه‌داشتن"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "en": "Held-to-maturity securities are accounted for at amortized cost, not fair value.",
+        "pronunciation": "هِلد تو مَچورِتی سِکیوریتیز آر اَکَونتِد فاُر اَت اَمُرتایزد کآست, نآت فاِر وَلیو.",
+        "translation": "اوراق نگهداری‌شده تا سررسید بر مبنای بهای مستهلک‌شده، نه ارزش منصفانه، حسابداری می‌شوند.",
+        "words": [
+          {
+            "en": "accounted for",
+            "pron": "اَکَونتِد فاُر",
+            "fa": "حسابداری‌شده",
+            "synonyms": [
+              {
+                "en": "recorded",
+                "pron": "راَکاُرداید",
+                "fa": "ثبت‌شده"
+              },
+              {
+                "en": "treated",
+                "pron": "تریتاید",
+                "fa": "برخوردشده"
+              }
+            ]
+          },
+          {
+            "en": "amortized cost",
+            "pron": "اَمُرتایزد کآست",
+            "fa": "بهای مستهلک‌شده",
+            "synonyms": [
+              {
+                "en": "adjusted cost",
+                "pron": "اَجَستِد کآست",
+                "fa": "بهای تعدیل‌شده"
+              },
+              {
+                "en": "carrying cost",
+                "pron": "کاَریاینگ کآست",
+                "fa": "بهای دفتری"
+              }
+            ]
+          },
+          {
+            "en": "fair value",
+            "pron": "فاِر وَلیو",
+            "fa": "ارزش منصفانه",
+            "synonyms": [
+              {
+                "en": "market value",
+                "pron": "مآرکاَت وَلیو",
+                "fa": "ارزش بازار"
+              },
+              {
+                "en": "current value",
+                "pron": "کِرِنت وَلیو",
+                "fa": "ارزش جاری"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "en": "Amortized cost is the acquisition cost adjusted for the amortization of discount or premium, if appropriate.",
+        "pronunciation": "اَمُرتایزد کآست ایز ذاَ اَکوِزیشِن کآست اَجَستِد فاُر ذاَ اَمُرتیزِیشن اَو دیسکَونت اُر پریمیِم, ایف اَپروپریِت.",
+        "translation": "بهای مستهلک‌شده، بهای تحصیل است که در صورت لزوم بابت استهلاک کسر یا صرف تعدیل می‌شود.",
+        "words": [
+          {
+            "en": "acquisition cost",
+            "pron": "اَکوِزیشِن کآست",
+            "fa": "بهای تحصیل",
+            "synonyms": [
+              {
+                "en": "purchase cost",
+                "pron": "پاِرچاَس کآست",
+                "fa": "بهای خرید"
+              },
+              {
+                "en": "initial cost",
+                "pron": "اینایشاَل کآست",
+                "fa": "بهای اولیه"
+              }
+            ]
+          },
+          {
+            "en": "adjusted",
+            "pron": "اَجَستِد",
+            "fa": "تعدیل‌شده",
+            "synonyms": [
+              {
+                "en": "modified",
+                "pron": "مآداَفآید",
+                "fa": "اصلاح‌شده"
+              },
+              {
+                "en": "revised",
+                "pron": "رایوآیزد",
+                "fa": "بازنگری‌شده"
+              }
+            ]
+          },
+          {
+            "en": "discount",
+            "pron": "دیسکَونت",
+            "fa": "کسر/تخفیف",
+            "synonyms": [
+              {
+                "en": "reduction",
+                "pron": "راَداَکشاَن",
+                "fa": "کاهش"
+              },
+              {
+                "en": "markdown",
+                "pron": "مآرکداَون",
+                "fa": "کاهش قیمت"
+              }
+            ]
+          },
+          {
+            "en": "acquisition",
+            "pron": "اَکوِزیشِن",
+            "fa": "تحصیل / خرید",
+            "synonyms": [
+              {
+                "en": "purchase",
+                "pron": "پِرچِس",
+                "fa": "خرید"
+              },
+              {
+                "en": "procurement",
+                "pron": "پروکیورمِنت",
+                "fa": "تأمین / تهیه"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "en": "Fair value is the amount at which a financial instrument could be exchanged in a current transaction between willing parties rather than in a forced or liquidation sale.",
+        "pronunciation": "فاِر وَلیو ایز ذاَ اَماونت اَت وایچ اَ فاینَنشِل اینسترومِنت کاُد بی ایکس‌چِینجد این اَ کِرِنت ترَنزَکشِن بِتوین ویلینگ پارتیز رَذِر ذاَن این اَ فورست اُر لیکوی‌دِیشن سِیل.",
+        "translation": "ارزش منصفانه مبلغی است که ابزار مالی می‌تواند در معامله‌ای جاری میان طرف‌های مایل، نه در فروش اجباری یا تصفیه، مبادله شود.",
+        "words": [
+          {
+            "en": "financial instrument",
+            "pron": "فاینَنشِل اینسترومِنت",
+            "fa": "ابزار مالی",
+            "synonyms": [
+              {
+                "en": "financial asset",
+                "pron": "فاینَنشِل اَساِت",
+                "fa": "دارایی مالی"
+              },
+              {
+                "en": "monetary instrument",
+                "pron": "مآناَتاِری اینسترومِنت",
+                "fa": "ابزار پولی"
+              }
+            ]
+          },
+          {
+            "en": "exchanged",
+            "pron": "ایکس‌چِینجد",
+            "fa": "مبادله‌شده",
+            "synonyms": [
+              {
+                "en": "traded",
+                "pron": "تْرِیدِد",
+                "fa": "معامله‌شده"
+              },
+              {
+                "en": "swapped",
+                "pron": "سوآپت",
+                "fa": "جابه‌جا‌شده"
+              }
+            ]
+          },
+          {
+            "en": "forced sale",
+            "pron": "فورست سِیل",
+            "fa": "فروش اجباری",
+            "synonyms": [
+              {
+                "en": "distressed sale",
+                "pron": "دایستراِست سِیل",
+                "fa": "فروش اضطراری"
+              },
+              {
+                "en": "compulsory sale",
+                "pron": "کاَمپاَلساِری سِیل",
+                "fa": "فروش تحمیلی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "en": "Trading securities are held with the intention of selling them in a short period of time.",
+        "pronunciation": "تْرِیدینگ سِکیوریتیز آر هاِلد وایذ ذاَ اِنتِنشِن اَو سِلینگ ذاِم این اَ شاُرت پیِریِد اَو تآیم.",
+        "translation": "اوراق معاملاتی با قصد فروش در مدت زمانی کوتاه نگهداری می‌شوند.",
+        "words": [
+          {
+            "en": "intention",
+            "pron": "اِنتِنشِن",
+            "fa": "قصد",
+            "synonyms": [
+              {
+                "en": "purpose",
+                "pron": "پاِرپاَس",
+                "fa": "هدف"
+              },
+              {
+                "en": "aim",
+                "pron": "اِیم",
+                "fa": "منظور"
+              }
+            ]
+          },
+          {
+            "en": "short period",
+            "pron": "شاُرت پیِریِد",
+            "fa": "مدت کوتاه",
+            "synonyms": [
+              {
+                "en": "brief time",
+                "pron": "بریف تآیم",
+                "fa": "زمان کوتاه"
+              },
+              {
+                "en": "short term",
+                "pron": "شاُرت تاِرم",
+                "fa": "کوتاه‌مدت"
+              }
+            ]
+          },
+          {
+            "en": "held",
+            "pron": "هاِلد",
+            "fa": "نگهداری‌شده",
+            "synonyms": [
+              {
+                "en": "kept",
+                "pron": "کاِپت",
+                "fa": "حفظ‌شده"
+              },
+              {
+                "en": "retained",
+                "pron": "رایتاِیند",
+                "fa": "در اختیار نگه‌داشته‌شده"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "en": "Trading securities are traded to generate profits from short-term differences in price.",
+        "pronunciation": "تْرِیدینگ سِکیوریتیز آر تْرِیدِد تو جِنِرِیت پرافیتس فراَم شورت تِرم دیفِرِنسِز این پرایس.",
+        "translation": "اوراق معاملاتی خریدوفروش می‌شوند تا از تفاوت‌های کوتاه‌مدت قیمت سود ایجاد کنند.",
+        "words": [
+          {
+            "en": "generate profits",
+            "pron": "جِنِرِیت پرافیتس",
+            "fa": "سود ایجاد کردن",
+            "synonyms": [
+              {
+                "en": "earn returns",
+                "pron": "اِرن رایتاِرنز",
+                "fa": "بازده کسب کردن"
+              },
+              {
+                "en": "make gains",
+                "pron": "ماِیک گِینز",
+                "fa": "سود به‌دست آوردن"
+              }
+            ]
+          },
+          {
+            "en": "short-term",
+            "pron": "شورت تِرم",
+            "fa": "کوتاه‌مدت",
+            "synonyms": [
+              {
+                "en": "brief",
+                "pron": "بریف",
+                "fa": "کوتاه"
+              },
+              {
+                "en": "temporary",
+                "pron": "تاِمپاِراِری",
+                "fa": "موقتی"
+              }
+            ]
+          },
+          {
+            "en": "differences in price",
+            "pron": "دیفِرِنسِز این پرایس",
+            "fa": "تفاوت‌های قیمت",
+            "synonyms": [
+              {
+                "en": "price gaps",
+                "pron": "پرایس گاَپس",
+                "fa": "فاصله‌های قیمتی"
+              },
+              {
+                "en": "price variations",
+                "pron": "پرایس واِریاِیشاَنز",
+                "fa": "تغییرات قیمت"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "en": "The holding period for these securities is generally less than 3 months.",
+        "pronunciation": "ذاَ هُلدینگ پیِریِد فاُر ذیز سِکیوریتیز ایز جِنِرَلی لاِس ذاَن 3 مانثس.",
+        "translation": "دوره نگهداری این اوراق معمولاً کمتر از سه ماه است.",
+        "words": [
+          {
+            "en": "holding period",
+            "pron": "هُلدینگ پیِریِد",
+            "fa": "دوره نگهداری",
+            "synonyms": [
+              {
+                "en": "retention period",
+                "pron": "ریتاِنشاَن پیِریِد",
+                "fa": "مدت حفظ"
+              },
+              {
+                "en": "investment term",
+                "pron": "این‌وِست‌مِنت تاِرم",
+                "fa": "مدت سرمایه‌گذاری"
+              }
+            ]
+          },
+          {
+            "en": "generally",
+            "pron": "جِنِرَلی",
+            "fa": "معمولاً",
+            "synonyms": [
+              {
+                "en": "usually",
+                "pron": "یوژاَواَلی",
+                "fa": "اغلب"
+              },
+              {
+                "en": "typically",
+                "pron": "تایپایکلی",
+                "fa": "به‌طور معمول"
+              }
+            ]
+          },
+          {
+            "en": "less than",
+            "pron": "لاِس ذاَن",
+            "fa": "کمتر از",
+            "synonyms": [
+              {
+                "en": "under",
+                "pron": "اَنداِر",
+                "fa": "زیرِ"
+              },
+              {
+                "en": "below",
+                "pron": "بِلو",
+                "fa": "پایین‌تر از"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "بخش ۲: اوراق آماده برای فروش و سرمایه‌گذاری در سهام",
+    "badge": "درس ۱۹ - ادامه متن",
+    "sentences": [
+      {
+        "id": 20,
+        "en": "These securities are reported at fair value, with unrealized holding gains and losses reported as part of net income.",
+        "pronunciation": "ذیز سِکیوریتیز آر ری‌پورتِد اَت فاِر وَلیو, وایذ آن‌ریِلایزد هُلدینگ گِینز اَند لاسِز ری‌پورتِد اَز پآرت اَو ناِت اینکَم.",
+        "translation": "این اوراق به ارزش منصفانه گزارش می‌شوند و سود و زیان نگهداری تحقق‌نیافته به‌عنوان بخشی از سود خالص گزارش می‌شود.",
+        "words": [
+          {
+            "en": "reported",
+            "pron": "ری‌پورتِد",
+            "fa": "گزارش‌شده",
+            "synonyms": [
+              {
+                "en": "presented",
+                "pron": "پریزاِنتاید",
+                "fa": "ارائه‌شده"
+              },
+              {
+                "en": "disclosed",
+                "pron": "دایسکلاُوزد",
+                "fa": "افشاشده"
+              }
+            ]
+          },
+          {
+            "en": "unrealized",
+            "pron": "آن‌ریِلایزد",
+            "fa": "تحقق‌نیافته",
+            "synonyms": [
+              {
+                "en": "unearned",
+                "pron": "اَناِرند",
+                "fa": "کسب‌نشده"
+              },
+              {
+                "en": "not realized",
+                "pron": "نآت ریِلایزد",
+                "fa": "تحقق‌نیافته"
+              }
+            ]
+          },
+          {
+            "en": "net income",
+            "pron": "ناِت اینکَم",
+            "fa": "سود خالص",
+            "synonyms": [
+              {
+                "en": "net profit",
+                "pron": "ناِت پرآفاَت",
+                "fa": "سود خالص"
+              },
+              {
+                "en": "earnings",
+                "pron": "اِرناینگز",
+                "fa": "درآمد/سود"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "en": "Any discount or premium is not amortized.",
+        "pronunciation": "اِنی دیسکَونت اُر پریمیِم ایز نآت اَمُرتایزد.",
+        "translation": "هیچ کسر یا صرفی مستهلک نمی‌شود.",
+        "words": [
+          {
+            "en": "discount",
+            "pron": "دیسکَونت",
+            "fa": "کسر",
+            "synonyms": [
+              {
+                "en": "reduction",
+                "pron": "راَداَکشاَن",
+                "fa": "کاهش"
+              },
+              {
+                "en": "markdown",
+                "pron": "مآرکداَون",
+                "fa": "کاهش قیمت"
+              }
+            ]
+          },
+          {
+            "en": "premium",
+            "pron": "پریمیِم",
+            "fa": "صرف",
+            "synonyms": [
+              {
+                "en": "extra amount",
+                "pron": "اِکستراَ اَماونت",
+                "fa": "مبلغ اضافی"
+              },
+              {
+                "en": "surcharge",
+                "pron": "ساِرچآرج",
+                "fa": "هزینه اضافی"
+              }
+            ]
+          },
+          {
+            "en": "amortized",
+            "pron": "اَمُرتایزد",
+            "fa": "مستهلک‌شده",
+            "synonyms": [
+              {
+                "en": "written down",
+                "pron": "رایتاَن داَون",
+                "fa": "کاهش‌یافته در دفاتر"
+              },
+              {
+                "en": "allocated over time",
+                "pron": "اَلاَکاِیتاید اُوواِر تآیم",
+                "fa": "تخصیص‌یافته در طول زمان"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "en": "A holding gain or loss is the net change in the fair value of a security from one period to another, exclusive of dividend or interest revenue recognized but not received.",
+        "pronunciation": "اَ هُلدینگ گاِین اُر لاُس ایز ذاَ ناِت چاِینج این ذاَ فاِر وَلیو اَو اَ سِکیوریتی فراَم واَن پیِریِد تو اَناذِر, ایکسکلووسیو اَو دی‌ویدِند اُر اینترِست رِوِنیو رِکِگنایزد باَت نآت ری‌سیود.",
+        "translation": "سود یا زیان نگهداری، تغییر خالص ارزش منصفانه یک ورقه از یک دوره به دوره دیگر است، به‌جز درآمد سود سهام یا بهره‌ای که شناسایی شده اما دریافت نشده است.",
+        "words": [
+          {
+            "en": "net change",
+            "pron": "ناِت چاِینج",
+            "fa": "تغییر خالص",
+            "synonyms": [
+              {
+                "en": "overall change",
+                "pron": "اُوواِراُل چاِینج",
+                "fa": "تغییر کلی"
+              },
+              {
+                "en": "balance change",
+                "pron": "باَلاَنس چاِینج",
+                "fa": "تغییر تراز"
+              }
+            ]
+          },
+          {
+            "en": "exclusive of",
+            "pron": "ایکسکلووسیو اَو",
+            "fa": "به‌استثنای",
+            "synonyms": [
+              {
+                "en": "excluding",
+                "pron": "ایکسکلوداینگ",
+                "fa": "بدون احتساب"
+              },
+              {
+                "en": "apart from",
+                "pron": "اَپآرت فراَم",
+                "fa": "جدا از"
+              }
+            ]
+          },
+          {
+            "en": "recognized",
+            "pron": "رِکِگنایزد",
+            "fa": "شناسایی‌شده",
+            "synonyms": [
+              {
+                "en": "recorded",
+                "pron": "راَکاُرداید",
+                "fa": "ثبت‌شده"
+              },
+              {
+                "en": "acknowledged",
+                "pron": "اَکنآلایجد",
+                "fa": "به‌رسمیت‌شناخته‌شده"
+              }
+            ]
+          },
+          {
+            "en": "exclusive",
+            "pron": "اِکسکلوسیو",
+            "fa": "به‌جز / مستثنا",
+            "synonyms": [
+              {
+                "en": "excluding",
+                "pron": "اِکسکلودینگ",
+                "fa": "به‌استثنای"
+              },
+              {
+                "en": "excepting",
+                "pron": "اِکسِپتینگ",
+                "fa": "مستثنی‌کننده"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "en": "Debt securities not classified as held-to-maturity or trading should be classified as available-for-sale securities.",
+        "pronunciation": "دِت سِکیوریتیز نآت کْلَسِفاید اَز هِلد تو مَچورِتی اُر تْرِیدینگ شاُد بی کْلَسِفاید اَز اَوِیلَبِل فُر سِیل سِکیوریتیز.",
+        "translation": "اوراق بدهی‌ای که نگهداری تا سررسید یا معاملاتی طبقه‌بندی نشده‌اند، باید به‌عنوان اوراق آماده برای فروش طبقه‌بندی شوند.",
+        "words": [
+          {
+            "en": "classified",
+            "pron": "کْلَسِفاید",
+            "fa": "طبقه‌بندی‌شده",
+            "synonyms": [
+              {
+                "en": "categorized",
+                "pron": "کاَتاَگاِرآیزد",
+                "fa": "دسته‌بندی‌شده"
+              },
+              {
+                "en": "designated",
+                "pron": "داِزایگناِیتاید",
+                "fa": "تعیین‌شده"
+              }
+            ]
+          },
+          {
+            "en": "available-for-sale",
+            "pron": "اَوِیلَبِل فُر سِیل",
+            "fa": "آماده برای فروش",
+            "synonyms": [
+              {
+                "en": "saleable",
+                "pron": "ساِیلاَباَل",
+                "fa": "قابل فروش"
+              },
+              {
+                "en": "held for sale",
+                "pron": "هاِلد فاُر سِیل",
+                "fa": "نگهداری‌شده برای فروش"
+              }
+            ]
+          },
+          {
+            "en": "debt securities",
+            "pron": "دِت سِکیوریتیز",
+            "fa": "اوراق بدهی",
+            "synonyms": [
+              {
+                "en": "debt instruments",
+                "pron": "دِت اینستراَماَنتس",
+                "fa": "ابزارهای بدهی"
+              },
+              {
+                "en": "bonds",
+                "pron": "بآندز",
+                "fa": "اوراق قرضه"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "en": "This category is therefore a catch-up category.",
+        "pronunciation": "ذایس کَتِگوری ایز ذاِرفاُر اَ کَچ اَپ کَتِگوری.",
+        "translation": "بنابراین این دسته، دسته‌ای جبرانی/باقی‌مانده است.",
+        "words": [
+          {
+            "en": "therefore",
+            "pron": "ذاِرفاُر",
+            "fa": "بنابراین",
+            "synonyms": [
+              {
+                "en": "thus",
+                "pron": "ذَس",
+                "fa": "ازاین‌رو"
+              },
+              {
+                "en": "consequently",
+                "pron": "کآنساَکواَنتلی",
+                "fa": "درنتیجه"
+              }
+            ]
+          },
+          {
+            "en": "category",
+            "pron": "کَتِگوری",
+            "fa": "دسته",
+            "synonyms": [
+              {
+                "en": "class",
+                "pron": "کلاَس",
+                "fa": "طبقه"
+              },
+              {
+                "en": "group",
+                "pron": "گروپ",
+                "fa": "گروه"
+              }
+            ]
+          },
+          {
+            "en": "catch-up",
+            "pron": "کَچ اَپ",
+            "fa": "جبرانی/تکمیلی",
+            "synonyms": [
+              {
+                "en": "residual",
+                "pron": "رایزایجواَل",
+                "fa": "باقی‌مانده"
+              },
+              {
+                "en": "balancing",
+                "pron": "باَلاَنساینگ",
+                "fa": "متعادل‌کننده"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "en": "Investments in debt securities that are in the available-for-sale category are reported at fair value.",
+        "pronunciation": "این‌وِست‌مِنتس این دِت سِکیوریتیز ذاَت آر این ذاَ اَوِیلَبِل فُر سِیل کَتِگوری آر ری‌پورتِد اَت فاِر وَلیو.",
+        "translation": "سرمایه‌گذاری در اوراق بدهیِ دسته آماده برای فروش به ارزش منصفانه گزارش می‌شود.",
+        "words": [
+          {
+            "en": "investments",
+            "pron": "این‌وِست‌مِنتس",
+            "fa": "سرمایه‌گذاری‌ها",
+            "synonyms": [
+              {
+                "en": "placements",
+                "pron": "پلاِیسماَنتس",
+                "fa": "سرمایه‌گذاری‌ها"
+              },
+              {
+                "en": "holdings",
+                "pron": "هاُولداینگز",
+                "fa": "دارایی‌های نگهداری‌شده"
+              }
+            ]
+          },
+          {
+            "en": "reported",
+            "pron": "ری‌پورتِد",
+            "fa": "گزارش‌شده",
+            "synonyms": [
+              {
+                "en": "presented",
+                "pron": "پریزاِنتاید",
+                "fa": "ارائه‌شده"
+              },
+              {
+                "en": "disclosed",
+                "pron": "دایسکلاُوزد",
+                "fa": "افشاشده"
+              }
+            ]
+          },
+          {
+            "en": "fair value",
+            "pron": "فاِر وَلیو",
+            "fa": "ارزش منصفانه",
+            "synonyms": [
+              {
+                "en": "market value",
+                "pron": "مآرکاَت وَلیو",
+                "fa": "ارزش بازار"
+              },
+              {
+                "en": "current value",
+                "pron": "کِرِنت وَلیو",
+                "fa": "ارزش جاری"
+              }
+            ]
+          },
+          {
+            "en": "available-for-sale",
+            "pron": "اَوِیلِبِل فُر سِیل",
+            "fa": "آماده برای فروش",
+            "synonyms": [
+              {
+                "en": "saleable",
+                "pron": "سِیلَبِل",
+                "fa": "قابل فروش"
+              },
+              {
+                "en": "marketable",
+                "pron": "مارکِتَبِل",
+                "fa": "قابل عرضه در بازار"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "en": "The unrealized gains and losses related to changes in the fair value of available-for-sale debt securities are reported in an unrealized holding gain or loss account.",
+        "pronunciation": "ذاَ آن‌ریِلایزد گِینز اَند لاسِز ری‌لِیتِد تو چِینجِز این ذاَ فاِر وَلیو اَو اَوِیلَبِل فُر سِیل دِت سِکیوریتیز آر ری‌پورتِد این اَن آن‌ریِلایزد هُلدینگ گاِین اُر لاُس اَکَونت.",
+        "translation": "سودها و زیان‌های تحقق‌نیافته ناشی از تغییر ارزش منصفانه اوراق بدهی آماده برای فروش، در حساب سود یا زیان نگهداری تحقق‌نیافته گزارش می‌شوند.",
+        "words": [
+          {
+            "en": "related to",
+            "pron": "ری‌لِیتِد تو",
+            "fa": "مرتبط با",
+            "synonyms": [
+              {
+                "en": "associated with",
+                "pron": "اَساُوسیاِیتاید وایذ",
+                "fa": "وابسته به"
+              },
+              {
+                "en": "connected with",
+                "pron": "کاَناِکتاید وایذ",
+                "fa": "متصل به"
+              }
+            ]
+          },
+          {
+            "en": "changes",
+            "pron": "چِینجِز",
+            "fa": "تغییرات",
+            "synonyms": [
+              {
+                "en": "alterations",
+                "pron": "اُلتاِراِیشاَنز",
+                "fa": "دگرگونی‌ها"
+              },
+              {
+                "en": "variations",
+                "pron": "واِریاِیشاَنز",
+                "fa": "تغییرات"
+              }
+            ]
+          },
+          {
+            "en": "unrealized gains and losses",
+            "pron": "آن‌ریِلایزد گِینز اَند لاسِز",
+            "fa": "سودها و زیان‌های تحقق‌نیافته",
+            "synonyms": [
+              {
+                "en": "unrealized profits and losses",
+                "pron": "آن‌ریِلایزد پرافیتس اَند لاسِز",
+                "fa": "سودها و زیان‌های تحقق‌نیافته"
+              },
+              {
+                "en": "paper gains and losses",
+                "pron": "پاِیپاِر گِینز اَند لاسِز",
+                "fa": "سودها و زیان‌های دفتری"
+              }
+            ]
+          },
+          {
+            "en": "related",
+            "pron": "رِلیتِد",
+            "fa": "مرتبط",
+            "synonyms": [
+              {
+                "en": "connected",
+                "pron": "کَنِکتِد",
+                "fa": "متصل"
+              },
+              {
+                "en": "associated",
+                "pron": "اَسوشیِیتِد",
+                "fa": "وابسته"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "en": "This account is reported as other comprehensive income and as a separate component of stockholders’ equity until realized.",
+        "pronunciation": "ذایس اَکَونت ایز ری‌پورتِد اَز اَذاِر کامپرِهِنسیو اینکَم اَند اَز اَ سِپِرِت کَمپونِنت اَو ستاک‌هُلدِرز’ اِکوئیتی اَنتایل ریِلایزد.",
+        "translation": "این حساب تا زمان تحقق، به‌عنوان سایر درآمد جامع و جزء جداگانه‌ای از حقوق صاحبان سهام گزارش می‌شود.",
+        "words": [
+          {
+            "en": "comprehensive income",
+            "pron": "کامپرِهِنسیو اینکَم",
+            "fa": "درآمد جامع",
+            "synonyms": [
+              {
+                "en": "total comprehensive income",
+                "pron": "تاُوتاَل کامپرِهِنسیو اینکَم",
+                "fa": "درآمد جامع کل"
+              },
+              {
+                "en": "overall income",
+                "pron": "اُوواِراُل اینکَم",
+                "fa": "درآمد کلی"
+              }
+            ]
+          },
+          {
+            "en": "separate component",
+            "pron": "سِپِرِت کَمپونِنت",
+            "fa": "جزء جداگانه",
+            "synonyms": [
+              {
+                "en": "distinct part",
+                "pron": "دیستینکت پآرت",
+                "fa": "بخش متمایز"
+              },
+              {
+                "en": "individual element",
+                "pron": "ایندیویجوال اِلاَماَنت",
+                "fa": "عنصر مستقل"
+              }
+            ]
+          },
+          {
+            "en": "stockholders’ equity",
+            "pron": "ستاک‌هُلدِرز’ اِکوئیتی",
+            "fa": "حقوق صاحبان سهام",
+            "synonyms": [
+              {
+                "en": "shareholders’ equity",
+                "pron": "شاِرهاُولداِرز’ اِکوئیتی",
+                "fa": "حقوق سهام‌داران"
+              },
+              {
+                "en": "owners’ equity",
+                "pron": "اُوناِرز’ اِکوئیتی",
+                "fa": "حقوق مالکان"
+              }
+            ]
+          },
+          {
+            "en": "component",
+            "pron": "کَم‌پونِنت",
+            "fa": "جزء / مؤلفه",
+            "synonyms": [
+              {
+                "en": "part",
+                "pron": "پارت",
+                "fa": "بخش"
+              },
+              {
+                "en": "element",
+                "pron": "اِلِمِنت",
+                "fa": "عنصر"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "en": "Thus, changes in fair value are not reported as part of net income until the security is sold.",
+        "pronunciation": "ذَس, چِینجِز این فاِر وَلیو آر نآت ری‌پورتِد اَز پآرت اَو ناِت اینکَم اَنتایل ذاَ سِکیوریتی ایز ساُولد.",
+        "translation": "بنابراین، تغییرات ارزش منصفانه تا زمان فروش ورقه، بخشی از سود خالص گزارش نمی‌شوند.",
+        "words": [
+          {
+            "en": "changes in fair value",
+            "pron": "چِینجِز این فاِر وَلیو",
+            "fa": "تغییرات ارزش منصفانه",
+            "synonyms": [
+              {
+                "en": "value fluctuations",
+                "pron": "وَلیو فلاَکچواِیشاَنز",
+                "fa": "نوسان‌های ارزش"
+              },
+              {
+                "en": "market-value changes",
+                "pron": "مآرکاَت وَلیو چِینجِز",
+                "fa": "تغییرات ارزش بازار"
+              }
+            ]
+          },
+          {
+            "en": "net income",
+            "pron": "ناِت اینکَم",
+            "fa": "سود خالص",
+            "synonyms": [
+              {
+                "en": "net profit",
+                "pron": "ناِت پرآفاَت",
+                "fa": "سود خالص"
+              },
+              {
+                "en": "earnings",
+                "pron": "اِرناینگز",
+                "fa": "سود/درآمد"
+              }
+            ]
+          },
+          {
+            "en": "sold",
+            "pron": "ساُولد",
+            "fa": "فروخته‌شده",
+            "synonyms": [
+              {
+                "en": "disposed of",
+                "pron": "دایسپاُوزد اَو",
+                "fa": "واگذار‌شده"
+              },
+              {
+                "en": "marketed",
+                "pron": "مآرکاَتاَد",
+                "fa": "به بازار عرضه‌شده"
+              }
+            ]
+          },
+          {
+            "en": "thus",
+            "pron": "ذَس",
+            "fa": "بنابراین",
+            "synonyms": [
+              {
+                "en": "therefore",
+                "pron": "ذِرفور",
+                "fa": "ازاین‌رو"
+              },
+              {
+                "en": "consequently",
+                "pron": "کانسِکوِنتلی",
+                "fa": "در نتیجه"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "en": "This approach reduces the volatility on net income.",
+        "pronunciation": "ذایس اَپراُوچ راَدوساَز ذاَ والَتیلِتی آن ناِت اینکَم.",
+        "translation": "این روش نوسان سود خالص را کاهش می‌دهد.",
+        "words": [
+          {
+            "en": "approach",
+            "pron": "اَپراُوچ",
+            "fa": "روش",
+            "synonyms": [
+              {
+                "en": "method",
+                "pron": "ماِثاَد",
+                "fa": "شیوه"
+              },
+              {
+                "en": "procedure",
+                "pron": "پراَسیجاِر",
+                "fa": "رویه"
+              }
+            ]
+          },
+          {
+            "en": "reduces",
+            "pron": "راَدوساَز",
+            "fa": "کاهش می‌دهد",
+            "synonyms": [
+              {
+                "en": "decreases",
+                "pron": "دایکریساَز",
+                "fa": "کم می‌کند"
+              },
+              {
+                "en": "lessens",
+                "pron": "لاِساَنز",
+                "fa": "می‌کاهد"
+              }
+            ]
+          },
+          {
+            "en": "volatility",
+            "pron": "والَتیلِتی",
+            "fa": "نوسان‌پذیری",
+            "synonyms": [
+              {
+                "en": "fluctuation",
+                "pron": "فلاَکچواِیشاَن",
+                "fa": "نوسان"
+              },
+              {
+                "en": "instability",
+                "pron": "اینستاَبایلایتی",
+                "fa": "بی‌ثباتی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "en": "Investments by one corporation in the common stock of another corporation can be classified according to the percentage of the voting stock of the investee held by the investor.",
+        "pronunciation": "این‌وِست‌مِنتس بآی واَن کاُرپاِراِیشاَن این ذاَ کامِن ستآک اَو اَناذِر کاُرپاِراِیشاَن کاَن بی کْلَسِفاید اَکوردینگ تو ذاَ پِرسِنتِج اَو ذاَ ووتینگ ستآک اَو ذاَ این‌وِستی هاِلد بآی ذاَ این‌وِستور.",
+        "translation": "سرمایه‌گذاری یک شرکت در سهام عادی شرکت دیگر را می‌توان بر اساس درصد سهام دارای حق رأیِ شرکت سرمایه‌پذیر که سرمایه‌گذار در اختیار دارد طبقه‌بندی کرد.",
+        "words": [
+          {
+            "en": "classified according to",
+            "pron": "کْلَسِفاید اَکوردینگ تو",
+            "fa": "طبقه‌بندی بر اساس",
+            "synonyms": [
+              {
+                "en": "categorized by",
+                "pron": "کاَتاَگاِرآیزد بآی",
+                "fa": "دسته‌بندی‌شده بر پایه"
+              },
+              {
+                "en": "grouped based on",
+                "pron": "گروپت باِیست آن",
+                "fa": "گروه‌بندی بر مبنای"
+              }
+            ]
+          },
+          {
+            "en": "percentage",
+            "pron": "پِرسِنتِج",
+            "fa": "درصد",
+            "synonyms": [
+              {
+                "en": "proportion",
+                "pron": "پراَپاُرشاَن",
+                "fa": "نسبت"
+              },
+              {
+                "en": "share",
+                "pron": "شاِر",
+                "fa": "سهم"
+              }
+            ]
+          },
+          {
+            "en": "voting stock",
+            "pron": "ووتینگ ستآک",
+            "fa": "سهام دارای حق رأی",
+            "synonyms": [
+              {
+                "en": "voting shares",
+                "pron": "ووتینگ شاِرز",
+                "fa": "سهام رأی‌دار"
+              },
+              {
+                "en": "shares with voting rights",
+                "pron": "شاِرز وایذ ووتینگ رآیتس",
+                "fa": "سهام دارای حقوق رأی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "en": "For the case in which the ownership interest is less than 20%, the same accounting and reporting treatment (except for held-to-maturity) is used as with the debt securities.",
+        "pronunciation": "فاُر ذاَ کاِیس این وایچ ذاَ اونِرشِپ اینترِست ایز لاِس ذاَن 20%, ذاَ ساِیم اَکَونتینگ اَند ری‌پورتینگ تریتمِنت (ایکسِپت فاُر هِلد تو مَچورِتی) ایز یوزد اَز وایذ ذاَ دِت سِکیوریتیز.",
+        "translation": "در مواردی که سهم مالکیت کمتر از ۲۰ درصد باشد، همان روش حسابداری و گزارشگری اوراق بدهی (به‌جز نگهداری تا سررسید) به کار می‌رود.",
+        "words": [
+          {
+            "en": "ownership interest",
+            "pron": "اونِرشِپ اینترِست",
+            "fa": "سهم مالکیت",
+            "synonyms": [
+              {
+                "en": "equity stake",
+                "pron": "اِکوئیتی ستاِیک",
+                "fa": "سهم سهام"
+              },
+              {
+                "en": "ownership share",
+                "pron": "اونِرشِپ شاِر",
+                "fa": "سهم مالکانه"
+              }
+            ]
+          },
+          {
+            "en": "treatment",
+            "pron": "تریتمِنت",
+            "fa": "روش برخورد",
+            "synonyms": [
+              {
+                "en": "handling",
+                "pron": "هاَندلاینگ",
+                "fa": "نحوه رسیدگی"
+              },
+              {
+                "en": "accounting method",
+                "pron": "اَکَونتینگ ماِثاَد",
+                "fa": "روش حسابداری"
+              }
+            ]
+          },
+          {
+            "en": "except for",
+            "pron": "ایکسِپت فاُر",
+            "fa": "به‌جز",
+            "synonyms": [
+              {
+                "en": "excluding",
+                "pron": "ایکسکلوداینگ",
+                "fa": "به‌استثنای"
+              },
+              {
+                "en": "apart from",
+                "pron": "اَپآرت فراَم",
+                "fa": "جدا از"
+              }
+            ]
+          },
+          {
+            "en": "ownership",
+            "pron": "اونِرشیپ",
+            "fa": "مالکیت",
+            "synonyms": [
+              {
+                "en": "possession",
+                "pron": "پَزِشِن",
+                "fa": "دارایی / تملک"
+              },
+              {
+                "en": "holding",
+                "pron": "هُلدینگ",
+                "fa": "سهام / مالکیت"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "en": "Accounting for investments in more than 20% of the ownership of the investee is described below under the caption Long-Term Investments.",
+        "pronunciation": "اَکَونتینگ فاُر این‌وِست‌مِنتس این ماُر ذاَن 20% اَو ذاَ اونِرشِپ اَو ذاَ این‌وِستی ایز دیسکرایبد بِلو اَنداِر ذاَ کَپشِن لانگ تِرم این‌وِست‌مِنتس.",
+        "translation": "حسابداری سرمایه‌گذاری بیش از ۲۰ درصد مالکیت شرکت سرمایه‌پذیر، در ادامه زیر عنوان سرمایه‌گذاری‌های بلندمدت توضیح داده می‌شود.",
+        "words": [
+          {
+            "en": "ownership",
+            "pron": "اونِرشِپ",
+            "fa": "مالکیت",
+            "synonyms": [
+              {
+                "en": "possession",
+                "pron": "پاَزاِشاَن",
+                "fa": "دارایی/تملک"
+              },
+              {
+                "en": "proprietorship",
+                "pron": "پراَپرآیاَتاِرشایپ",
+                "fa": "مالکیت"
+              }
+            ]
+          },
+          {
+            "en": "described",
+            "pron": "دیسکرایبد",
+            "fa": "توضیح داده‌شده",
+            "synonyms": [
+              {
+                "en": "explained",
+                "pron": "ایکس‌پلِیند",
+                "fa": "شرح داده‌شده"
+              },
+              {
+                "en": "outlined",
+                "pron": "اَوتلآیند",
+                "fa": "به‌اختصار بیان‌شده"
+              }
+            ]
+          },
+          {
+            "en": "caption",
+            "pron": "کَپشِن",
+            "fa": "عنوان",
+            "synonyms": [
+              {
+                "en": "heading",
+                "pron": "هاِداینگ",
+                "fa": "سرعنوان"
+              },
+              {
+                "en": "title",
+                "pron": "تآیتاَل",
+                "fa": "عنوان"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "en": "Accounting for long-term investments in stock depends primarily upon the degree of control, which the investor exercises over the investee.",
+        "pronunciation": "اَکَونتینگ فاُر لانگ تِرم این‌وِست‌مِنتس این ستآک دیپِندز پرایمِرِلی اَپآن ذاَ دِگری اَو کِنترول, وایچ ذاَ این‌وِستور اِکسِرسایزِز اُوواِر ذاَ این‌وِستی.",
+        "translation": "حسابداری سرمایه‌گذاری‌های بلندمدت در سهام، عمدتاً به میزان کنترلی بستگی دارد که سرمایه‌گذار بر شرکت سرمایه‌پذیر اعمال می‌کند.",
+        "words": [
+          {
+            "en": "depends primarily upon",
+            "pron": "دیپِندز پرایمِرِلی اَپآن",
+            "fa": "عمدتاً بستگی دارد به",
+            "synonyms": [
+              {
+                "en": "is mainly based on",
+                "pron": "ایز ماِینلی باِیست آن",
+                "fa": "عمدتاً مبتنی است بر"
+              },
+              {
+                "en": "rests chiefly on",
+                "pron": "راِستس چیفلی آن",
+                "fa": "اساساً متکی است به"
+              }
+            ]
+          },
+          {
+            "en": "degree of control",
+            "pron": "دِگری اَو کِنترول",
+            "fa": "میزان کنترل",
+            "synonyms": [
+              {
+                "en": "level of authority",
+                "pron": "لاِواَل اَو اَثاُراَتی",
+                "fa": "سطح اختیار"
+              },
+              {
+                "en": "extent of control",
+                "pron": "ایکستاِنت اَو کِنترول",
+                "fa": "حد کنترل"
+              }
+            ]
+          },
+          {
+            "en": "exercises",
+            "pron": "اِکسِرسایزِز",
+            "fa": "اعمال می‌کند",
+            "synonyms": [
+              {
+                "en": "uses",
+                "pron": "یوساَز",
+                "fa": "به‌کار می‌گیرد"
+              },
+              {
+                "en": "wields",
+                "pron": "ویلدز",
+                "fa": "به کار می‌بندد"
+              }
+            ]
+          },
+          {
+            "en": "primarily",
+            "pron": "پرایمِرِلی",
+            "fa": "عمدتاً",
+            "synonyms": [
+              {
+                "en": "mainly",
+                "pron": "مِینلی",
+                "fa": "بیشتر"
+              },
+              {
+                "en": "chiefly",
+                "pron": "چیفلی",
+                "fa": "در درجهٔ اول"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "en": "If the investor is able to exercise significant influence over the investee’s management, dividends paid by the investee may no longer be a good measure of the investor’s income from the investment because the investor may influence the investee’s dividend policy.",
+        "pronunciation": "ایف ذاَ این‌وِستور ایز اِیباَل تو اِکساِرسآیز سیگنیفیکِنت اینفلوئِنس اُوواِر ذاَ اینواِستی'س مَنِج‌مِنت, دی‌ویدِندز پاِید بآی ذاَ این‌وِستی ماِی ناُو لاُنگگاِر بی اَ گاُد مِژِر اَو ذاَ اینواِستاِرز اینکَم فراَم ذاَ این‌وِست‌مِنت بایکاُز ذاَ این‌وِستور ماِی اینفلوئِنس ذاَ اینواِستی'س دی‌ویدِند پالِسی.",
+        "translation": "اگر سرمایه‌گذار بتواند بر مدیریت شرکت سرمایه‌پذیر نفوذ قابل‌توجهی اعمال کند، سود سهام پرداختی ممکن است دیگر معیار مناسبی برای درآمد سرمایه‌گذار نباشد، زیرا سرمایه‌گذار می‌تواند بر سیاست تقسیم سود شرکت سرمایه‌پذیر اثر بگذارد.",
+        "words": [
+          {
+            "en": "significant influence",
+            "pron": "سیگنیفیکِنت اینفلوئِنس",
+            "fa": "نفوذ قابل‌توجه",
+            "synonyms": [
+              {
+                "en": "substantial impact",
+                "pron": "ساَبستاَنشاَل ایمپاَکت",
+                "fa": "تأثیر چشمگیر"
+              },
+              {
+                "en": "major effect",
+                "pron": "ماِیجاِر ایفاِکت",
+                "fa": "اثر عمده"
+              }
+            ]
+          },
+          {
+            "en": "measure",
+            "pron": "مِژِر",
+            "fa": "معیار/اندازه‌گیری",
+            "synonyms": [
+              {
+                "en": "indicator",
+                "pron": "اینداَکاِیتاِر",
+                "fa": "شاخص"
+              },
+              {
+                "en": "standard",
+                "pron": "ستاَنداِرد",
+                "fa": "استاندارد"
+              }
+            ]
+          },
+          {
+            "en": "dividend policy",
+            "pron": "دی‌ویدِند پالِسی",
+            "fa": "سیاست تقسیم سود",
+            "synonyms": [
+              {
+                "en": "payout policy",
+                "pron": "پاِیاَوت پالِسی",
+                "fa": "سیاست پرداخت سود"
+              },
+              {
+                "en": "distribution policy",
+                "pron": "دایستراَبیوشاَن پالِسی",
+                "fa": "سیاست توزیع"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "en": "In such cases, dividends paid by the investee are likely to reflect the investor’s cash needs and income tax considerations, rather than the profitability of the investment.",
+        "pronunciation": "این ساَچ کاِیساَز, دی‌ویدِندز پاِید بآی ذاَ این‌وِستی آر لایکلی تو ریفلِکت ذاَ اینواِستاِرز کَش نیدز اَند اینکَم تاَکس کِن‌سیدِرِیشنز, رَذِر ذاَن ذاَ پرافیتَبیلِتی اَو ذاَ این‌وِست‌مِنت.",
+        "translation": "در چنین مواردی، سود سهام پرداختی شرکت سرمایه‌پذیر احتمالاً نیازهای نقدی و ملاحظات مالیاتی سرمایه‌گذار را منعکس می‌کند، نه سودآوری سرمایه‌گذاری را.",
+        "words": [
+          {
+            "en": "reflect",
+            "pron": "ریفلِکت",
+            "fa": "منعکس می‌کند",
+            "synonyms": [
+              {
+                "en": "represent",
+                "pron": "راِپرایزاِنت",
+                "fa": "نشان می‌دهد"
+              },
+              {
+                "en": "mirror",
+                "pron": "مایراِر",
+                "fa": "بازتاب می‌دهد"
+              }
+            ]
+          },
+          {
+            "en": "considerations",
+            "pron": "کِن‌سیدِرِیشنز",
+            "fa": "ملاحظات",
+            "synonyms": [
+              {
+                "en": "factors",
+                "pron": "فاَکتاِرز",
+                "fa": "عوامل"
+              },
+              {
+                "en": "concerns",
+                "pron": "کاَنساِرنز",
+                "fa": "موارد مورد توجه"
+              }
+            ]
+          },
+          {
+            "en": "profitability",
+            "pron": "پرافیتَبیلِتی",
+            "fa": "سودآوری",
+            "synonyms": [
+              {
+                "en": "earning capacity",
+                "pron": "اِرناینگ کاَپاَساَتی",
+                "fa": "توان سودآوری"
+              },
+              {
+                "en": "return potential",
+                "pron": "رایتاِرن پاَتاِنشاَل",
+                "fa": "ظرفیت بازدهی"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "en": "Since investments of these types cannot be sold without disrupting the relationships between the two parties, they cannot be regarded as ordinary investments and special accounting methods are needed to reflect the economic content of the investment.",
+        "pronunciation": "ساینس این‌وِست‌مِنتس اَو ذیز تایپس کَنات بی ساُولد وایثاَوت دیس‌رَپتینگ ذاَ ری‌لِیشن‌شیپس بِتوین ذاَ تو پارتیز, ذاِی کَنات بی رایگآرداید اَز اوردِنِری این‌وِست‌مِنتس اَند اِسپِشِل اَکَونتینگ مِثِدز آر نیدِد تو ریفلِکت ذاَ ایکانامیک کانتِنت اَو ذاَ این‌وِست‌مِنت.",
+        "translation": "از آنجا که این نوع سرمایه‌گذاری‌ها بدون برهم‌زدن روابط دو طرف قابل فروش نیستند، نمی‌توان آن‌ها را سرمایه‌گذاری عادی دانست و برای انعکاس محتوای اقتصادی سرمایه‌گذاری به روش‌های خاص حسابداری نیاز است.",
+        "words": [
+          {
+            "en": "disrupting",
+            "pron": "دیس‌رَپتینگ",
+            "fa": "مختل کردن",
+            "synonyms": [
+              {
+                "en": "disturbing",
+                "pron": "دایستاِرباینگ",
+                "fa": "برهم زدن"
+              },
+              {
+                "en": "interrupting",
+                "pron": "اینتاِراَپتاینگ",
+                "fa": "قطع کردن"
+              }
+            ]
+          },
+          {
+            "en": "regarded as",
+            "pron": "رایگآرداید اَز",
+            "fa": "تلقی‌شده به‌عنوان",
+            "synonyms": [
+              {
+                "en": "considered",
+                "pron": "کاَنسایداِرد",
+                "fa": "در نظر گرفته‌شده"
+              },
+              {
+                "en": "viewed as",
+                "pron": "ویود اَز",
+                "fa": "دیده‌شده به‌عنوان"
+              }
+            ]
+          },
+          {
+            "en": "economic content",
+            "pron": "ایکانامیک کانتِنت",
+            "fa": "محتوای اقتصادی",
+            "synonyms": [
+              {
+                "en": "economic substance",
+                "pron": "ایکانامیک ساَبستاَنس",
+                "fa": "ماهیت اقتصادی"
+              },
+              {
+                "en": "financial reality",
+                "pron": "فاینَنشِل ریاَلاَتی",
+                "fa": "واقعیت مالی"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+];
+
 // ==================== داده‌های هفته چهارم: دارایی‌های نامشهود ====================
 const week4Raw = [
   {
@@ -3149,6 +5532,7 @@ window.addEventListener("DOMContentLoaded", () => {
     renderContent(week2Data, "week2ContentArea");
     renderContent(week3Data, "week3ContentArea");
     renderContent(week4Data, "week4ContentArea");
+    renderContent(week5Data, "week5ContentArea");
     if ('speechSynthesis' in window) {
         window.speechSynthesis.onvoiceschanged = () => {};
     }
