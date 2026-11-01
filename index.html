@@ -751,6 +751,15 @@
                 </div>
                 <button class="compact-week-btn">ورود ←</button>
             </div>
+
+            <div class="compact-week-card w5-card" onclick="openWeek(6)">
+                <div class="card-info">
+                    <span class="compact-week-tag tag-w5">هفته ۶</span>
+                    <h3>مشارکت‌ها (Partnerships)</h3>
+                    <div class="count-badge">۳۴ جمله آموزشی تخصصی</div>
+                </div>
+                <button class="compact-week-btn">ورود ←</button>
+            </div>
         </div>
     </div>
 
@@ -821,6 +830,15 @@
             <button class="nav-switch-btn" onclick="openWeek(4)">← هفته ۴</button>
         </div>
         <div id="week5ContentArea"></div>
+    </div>
+
+    <div id="view-week6" class="view-pane">
+        <div class="week-top-bar">
+            <button class="back-home-btn" onclick="openHome()"><span>↩</span><span>فهرست</span></button>
+            <div style="font-weight: 800; font-size: 13px; color: #f59e0b;">هفته ششم: مشارکت‌ها</div>
+            <button class="nav-switch-btn" onclick="openWeek(5)">← هفته ۵</button>
+        </div>
+        <div id="week6ContentArea"></div>
     </div>
 </div>
 
@@ -5354,6 +5372,2752 @@ const week5Data = [
   }
 ];
 
+const week6Data = [
+  {
+    title: "بخش ۱: مالکیت انفرادی و حسابداری مشارکت‌ها",
+    badge: "درس ۲۲ - صفحه‌های ۲۸۳ تا ۲۸۵",
+    sentences: [
+      {
+            "id": 1,
+            "en": "Three major types of business entities are distinguished as sole proprietorships, partnerships, and corporations.",
+            "pronunciation": "ثری مِیجِر تایپس آو بیزنِس اِنتیتیز آر دیستینگویشت اَز سُول پراپِرایتِرشیپس، پارتنِرشیپس، اَند کورپِرِیشِنز.",
+            "translation": "سه نوع اصلی واحد تجاری از یکدیگر متمایز می‌شوند: مالکیت انفرادی، مشارکت و شرکت سهامی.",
+            "words": [
+                  {
+                        "en": "major",
+                        "pron": "مِیجِر",
+                        "fa": "اصلی، عمده",
+                        "synonyms": [
+                              {
+                                    "en": "main",
+                                    "pron": "مِین",
+                                    "fa": "اصلی"
+                              },
+                              {
+                                    "en": "primary",
+                                    "pron": "پرایمِری",
+                                    "fa": "اساسی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distinguished",
+                        "pron": "دیستینگویشت",
+                        "fa": "متمایز‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "separated",
+                                    "pron": "سِپِرِیتِد",
+                                    "fa": "جداشده"
+                              },
+                              {
+                                    "en": "differentiated",
+                                    "pron": "دیفِرِنشی‌اِیتِد",
+                                    "fa": "تفکیک‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "business entities",
+                        "pron": "بیزنِس اِنتیتیز",
+                        "fa": "واحدهای تجاری",
+                        "synonyms": [
+                              {
+                                    "en": "business organizations",
+                                    "pron": "بیزنِس اورگِنایزِیشِنز",
+                                    "fa": "سازمان‌های تجاری"
+                              },
+                              {
+                                    "en": "firms",
+                                    "pron": "فِرمز",
+                                    "fa": "بنگاه‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "sole proprietorships",
+                        "pron": "سُول پراپِرایتِرشیپس",
+                        "fa": "مالکیت‌های انفرادی",
+                        "synonyms": [
+                              {
+                                    "en": "individual businesses",
+                                    "pron": "ایندیویدجوال بیزنِسِز",
+                                    "fa": "کسب‌وکارهای فردی"
+                              },
+                              {
+                                    "en": "sole trader businesses",
+                                    "pron": "سُول تِریدِر بیزنِسِز",
+                                    "fa": "کسب‌وکارهای تک‌مالک"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 2,
+            "en": "The third topic (corporations) will be presented in a separate lesson unit.",
+            "pronunciation": "دِ ثِرد تاپیک (کورپِرِیشِنز) ویل بی پریزِنتِد این اِ سِپِرِیت لِسِن یونیت.",
+            "translation": "موضوع سوم (شرکت‌های سهامی) در یک واحد درسی جداگانه ارائه خواهد شد.",
+            "words": [
+                  {
+                        "en": "topic",
+                        "pron": "تاپیک",
+                        "fa": "موضوع",
+                        "synonyms": [
+                              {
+                                    "en": "subject",
+                                    "pron": "سابجِکت",
+                                    "fa": "مبحث"
+                              },
+                              {
+                                    "en": "theme",
+                                    "pron": "ثیم",
+                                    "fa": "موضوع"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "presented",
+                        "pron": "پریزِنتِد",
+                        "fa": "ارائه‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "introduced",
+                                    "pron": "اینتِرودیوسْت",
+                                    "fa": "معرفی‌شده"
+                              },
+                              {
+                                    "en": "shown",
+                                    "pron": "شون",
+                                    "fa": "نشان‌داده‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "separate",
+                        "pron": "سِپِرِیت",
+                        "fa": "جداگانه",
+                        "synonyms": [
+                              {
+                                    "en": "distinct",
+                                    "pron": "دیستینکت",
+                                    "fa": "متمایز"
+                              },
+                              {
+                                    "en": "independent",
+                                    "pron": "ایندیپِندِنت",
+                                    "fa": "مستقل"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 3,
+            "en": "In this lesson, only the first two types of businesses are covered.",
+            "pronunciation": "این دیس لِسِن، اونلی دِ فِرست تو تایپس آو بیزنِسِز آر کاوِرد.",
+            "translation": "در این درس، فقط دو نوع نخست کسب‌وکار بررسی می‌شوند.",
+            "words": [
+                  {
+                        "en": "only",
+                        "pron": "اونلی",
+                        "fa": "فقط",
+                        "synonyms": [
+                              {
+                                    "en": "solely",
+                                    "pron": "سُوللی",
+                                    "fa": "منحصراً"
+                              },
+                              {
+                                    "en": "exclusively",
+                                    "pron": "اِکسکلوسیولی",
+                                    "fa": "صرفاً"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "types",
+                        "pron": "تایپس",
+                        "fa": "انواع",
+                        "synonyms": [
+                              {
+                                    "en": "kinds",
+                                    "pron": "کایندز",
+                                    "fa": "گونه‌ها"
+                              },
+                              {
+                                    "en": "categories",
+                                    "pron": "کَتِگوریز",
+                                    "fa": "دسته‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "covered",
+                        "pron": "کاوِرد",
+                        "fa": "بررسی‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "discussed",
+                                    "pron": "دیسکاست",
+                                    "fa": "مورد بحث"
+                              },
+                              {
+                                    "en": "examined",
+                                    "pron": "اِگزامیند",
+                                    "fa": "بررسی‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 4,
+            "en": "A sole proprietorship is a business owned by one individual and is a separate entity for accounting purposes.",
+            "pronunciation": "اِ سُول پراپِرایتِرشیپ ایز اِ بیزنِس اُوند بای وان ایندیویدجوال اَند ایز اِ سِپِرِیت اِنتیتی فور اَکانتینگ پِرپِسِز.",
+            "translation": "مالکیت انفرادی کسب‌وکاری است که متعلق به یک فرد است و از نظر حسابداری یک واحد مستقل به شمار می‌رود.",
+            "words": [
+                  {
+                        "en": "sole proprietorship",
+                        "pron": "سُول پراپِرایتِرشیپ",
+                        "fa": "مالکیت انفرادی",
+                        "synonyms": [
+                              {
+                                    "en": "individual ownership",
+                                    "pron": "ایندیویدجوال اُونِرشیپ",
+                                    "fa": "مالکیت فردی"
+                              },
+                              {
+                                    "en": "single proprietorship",
+                                    "pron": "سینگِل پراپِرایتِرشیپ",
+                                    "fa": "مالکیت تک‌نفره"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "owned",
+                        "pron": "اُوند",
+                        "fa": "متعلق به",
+                        "synonyms": [
+                              {
+                                    "en": "possessed",
+                                    "pron": "پِزِست",
+                                    "fa": "در مالکیت"
+                              },
+                              {
+                                    "en": "held",
+                                    "pron": "هِلد",
+                                    "fa": "در اختیار"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "individual",
+                        "pron": "ایندیویدجوال",
+                        "fa": "فرد",
+                        "synonyms": [
+                              {
+                                    "en": "person",
+                                    "pron": "پِرسِن",
+                                    "fa": "شخص"
+                              },
+                              {
+                                    "en": "single owner",
+                                    "pron": "سینگِل اُونِر",
+                                    "fa": "مالک واحد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "separate entity",
+                        "pron": "سِپِرِیت اِنتیتی",
+                        "fa": "واحد مستقل",
+                        "synonyms": [
+                              {
+                                    "en": "independent unit",
+                                    "pron": "ایندیپِندِنت یونیت",
+                                    "fa": "واحد مستقل"
+                              },
+                              {
+                                    "en": "distinct organization",
+                                    "pron": "دیستینکت اورگِنایزِیشن",
+                                    "fa": "سازمان متمایز"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 5,
+            "en": "Establishing a sole proprietorship is straightforward, and the owner makes all business decisions without being accountable to others.",
+            "pronunciation": "اِستَبلِشینگ اِ سُول پراپِرایتِرشیپ ایز اِسترِیت‌فوروِرد، اَند دی اُونِر مِیکس آل بیزنِس دیسیژِنز ویداوت بیینگ اَکاونتِبِل تو آذِرز.",
+            "translation": "ایجاد مالکیت انفرادی ساده است و مالک همه تصمیم‌های تجاری را بدون پاسخ‌گویی به دیگران می‌گیرد.",
+            "words": [
+                  {
+                        "en": "establishing",
+                        "pron": "اِستَبلِشینگ",
+                        "fa": "ایجاد کردن",
+                        "synonyms": [
+                              {
+                                    "en": "forming",
+                                    "pron": "فورمینگ",
+                                    "fa": "تشکیل دادن"
+                              },
+                              {
+                                    "en": "setting up",
+                                    "pron": "سِتینگ آپ",
+                                    "fa": "راه‌اندازی کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "straightforward",
+                        "pron": "اِسترِیت‌فوروِرد",
+                        "fa": "ساده و بی‌دردسر",
+                        "synonyms": [
+                              {
+                                    "en": "simple",
+                                    "pron": "سیمپِل",
+                                    "fa": "ساده"
+                              },
+                              {
+                                    "en": "uncomplicated",
+                                    "pron": "اَنکامپلیکِیتِد",
+                                    "fa": "بی‌پیچیدگی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "owner",
+                        "pron": "اُونِر",
+                        "fa": "مالک",
+                        "synonyms": [
+                              {
+                                    "en": "proprietor",
+                                    "pron": "پراپِرایتِر",
+                                    "fa": "صاحب کسب‌وکار"
+                              },
+                              {
+                                    "en": "holder",
+                                    "pron": "هُولدِر",
+                                    "fa": "دارنده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "decisions",
+                        "pron": "دیسیژِنز",
+                        "fa": "تصمیم‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "choices",
+                                    "pron": "چویسِز",
+                                    "fa": "انتخاب‌ها"
+                              },
+                              {
+                                    "en": "judgments",
+                                    "pron": "جاجمِنتس",
+                                    "fa": "قضاوت‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "accountable",
+                        "pron": "اَکاونتِبِل",
+                        "fa": "پاسخ‌گو",
+                        "synonyms": [
+                              {
+                                    "en": "responsible",
+                                    "pron": "ریسپانسیبِل",
+                                    "fa": "مسئول"
+                              },
+                              {
+                                    "en": "answerable",
+                                    "pron": "اَنسِرِبِل",
+                                    "fa": "ملزم به پاسخ‌گویی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 6,
+            "en": "A primary disadvantage of a sole proprietorship is the difficulty in raising funds.",
+            "pronunciation": "اِ پرایمِری دیسَدوَنتیج آو اِ سُول پراپِرایتِرشیپ ایز دِ دیفیکالتی این رِیزینگ فاندز.",
+            "translation": "یکی از معایب اصلی مالکیت انفرادی، دشواری در تأمین سرمایه است.",
+            "words": [
+                  {
+                        "en": "primary",
+                        "pron": "پرایمِری",
+                        "fa": "اصلی",
+                        "synonyms": [
+                              {
+                                    "en": "main",
+                                    "pron": "مِین",
+                                    "fa": "عمده"
+                              },
+                              {
+                                    "en": "chief",
+                                    "pron": "چیف",
+                                    "fa": "مهم‌ترین"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "disadvantage",
+                        "pron": "دیسَدوَنتیج",
+                        "fa": "عیب، نقطه‌ضعف",
+                        "synonyms": [
+                              {
+                                    "en": "drawback",
+                                    "pron": "درا‌بَک",
+                                    "fa": "نقطه‌ضعف"
+                              },
+                              {
+                                    "en": "shortcoming",
+                                    "pron": "شورت‌کامینگ",
+                                    "fa": "کاستی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "difficulty",
+                        "pron": "دیفیکالتی",
+                        "fa": "دشواری",
+                        "synonyms": [
+                              {
+                                    "en": "hardship",
+                                    "pron": "هاردشیپ",
+                                    "fa": "سختی"
+                              },
+                              {
+                                    "en": "problem",
+                                    "pron": "پرابْلِم",
+                                    "fa": "مشکل"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "raising funds",
+                        "pron": "رِیزینگ فاندز",
+                        "fa": "تأمین سرمایه",
+                        "synonyms": [
+                              {
+                                    "en": "obtaining capital",
+                                    "pron": "اَبتِینینگ کَپیتِل",
+                                    "fa": "به‌دست‌آوردن سرمایه"
+                              },
+                              {
+                                    "en": "securing financing",
+                                    "pron": "سِکیورینگ فاینَنسینگ",
+                                    "fa": "تأمین مالی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 7,
+            "en": "A capital account is used to record investments of the owner in the enterprise.",
+            "pronunciation": "اِ کَپیتِل اَکاونت ایز یوزد تو ریکورد اینوِستمِنتس آو دی اُونِر این دی اِنترپرایز.",
+            "translation": "حساب سرمایه برای ثبت سرمایه‌گذاری‌های مالک در واحد تجاری استفاده می‌شود.",
+            "words": [
+                  {
+                        "en": "capital account",
+                        "pron": "کَپیتِل اَکاونت",
+                        "fa": "حساب سرمایه",
+                        "synonyms": [
+                              {
+                                    "en": "owner's equity account",
+                                    "pron": "اُونِرز اِکوئیتی اَکاونت",
+                                    "fa": "حساب حقوق مالکانه"
+                              },
+                              {
+                                    "en": "investment account",
+                                    "pron": "اینوِستمِنت اَکاونت",
+                                    "fa": "حساب سرمایه‌گذاری"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "record",
+                        "pron": "ریکورد",
+                        "fa": "ثبت کردن",
+                        "synonyms": [
+                              {
+                                    "en": "document",
+                                    "pron": "داکیومِنت",
+                                    "fa": "مستندسازی کردن"
+                              },
+                              {
+                                    "en": "enter",
+                                    "pron": "اِنتِر",
+                                    "fa": "وارد کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "investments",
+                        "pron": "اینوِستمِنتس",
+                        "fa": "سرمایه‌گذاری‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "contributions",
+                                    "pron": "کانتریبیوشِنز",
+                                    "fa": "آورده‌ها"
+                              },
+                              {
+                                    "en": "funds invested",
+                                    "pron": "فاندز اینوِستِد",
+                                    "fa": "وجوه سرمایه‌گذاری‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "enterprise",
+                        "pron": "اِنترپرایز",
+                        "fa": "واحد تجاری",
+                        "synonyms": [
+                              {
+                                    "en": "business",
+                                    "pron": "بیزنِس",
+                                    "fa": "کسب‌وکار"
+                              },
+                              {
+                                    "en": "company",
+                                    "pron": "کامپَنی",
+                                    "fa": "شرکت"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 8,
+            "en": "Changes in owner's equity from net income or loss are also recorded in this account.",
+            "pronunciation": "چِینجِز این اُونِرز اِکوئیتی فرام نِت اینکام اُر لاس آر آلسو ریکوردِد این دیس اَکاونت.",
+            "translation": "تغییرات حقوق مالکانه ناشی از سود یا زیان خالص نیز در این حساب ثبت می‌شوند.",
+            "words": [
+                  {
+                        "en": "changes",
+                        "pron": "چِینجِز",
+                        "fa": "تغییرات",
+                        "synonyms": [
+                              {
+                                    "en": "alterations",
+                                    "pron": "آلتِرِیشِنز",
+                                    "fa": "دگرگونی‌ها"
+                              },
+                              {
+                                    "en": "adjustments",
+                                    "pron": "اَجاستمِنتس",
+                                    "fa": "تعدیلات"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "owner's equity",
+                        "pron": "اُونِرز اِکوئیتی",
+                        "fa": "حقوق مالکانه",
+                        "synonyms": [
+                              {
+                                    "en": "net worth",
+                                    "pron": "نِت وِرث",
+                                    "fa": "ارزش خالص"
+                              },
+                              {
+                                    "en": "ownership interest",
+                                    "pron": "اُونِرشیپ اینتِرِست",
+                                    "fa": "سهم مالکیت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "net income",
+                        "pron": "نِت اینکام",
+                        "fa": "سود خالص",
+                        "synonyms": [
+                              {
+                                    "en": "net profit",
+                                    "pron": "نِت پرافیت",
+                                    "fa": "سود خالص"
+                              },
+                              {
+                                    "en": "earnings",
+                                    "pron": "اِرنینگز",
+                                    "fa": "درآمد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "recorded",
+                        "pron": "ریکوردِد",
+                        "fa": "ثبت‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "entered",
+                                    "pron": "اِنتِرد",
+                                    "fa": "واردشده"
+                              },
+                              {
+                                    "en": "documented",
+                                    "pron": "داکیومِنتِد",
+                                    "fa": "مستندسازی‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 9,
+            "en": "However, distributions to the owner are recorded in the owner's drawing account.",
+            "pronunciation": "هاوِوِر، دیستریبیوشِنز تو دی اُونِر آر ریکوردِد این دی اُونِرز دراوینگ اَکاونت.",
+            "translation": "بااین‌حال، برداشت‌های مالک در حساب برداشت مالک ثبت می‌شوند.",
+            "words": [
+                  {
+                        "en": "distributions",
+                        "pron": "دیستریبیوشِنز",
+                        "fa": "توزیع‌ها، برداشت‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "withdrawals",
+                                    "pron": "ویددراوِلز",
+                                    "fa": "برداشت‌ها"
+                              },
+                              {
+                                    "en": "payments",
+                                    "pron": "پِیمِنتس",
+                                    "fa": "پرداخت‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "drawing account",
+                        "pron": "دراوینگ اَکاونت",
+                        "fa": "حساب برداشت",
+                        "synonyms": [
+                              {
+                                    "en": "withdrawal account",
+                                    "pron": "ویددراوِل اَکاونت",
+                                    "fa": "حساب برداشت"
+                              },
+                              {
+                                    "en": "owner's drawings",
+                                    "pron": "اُونِرز دراوینگز",
+                                    "fa": "برداشت‌های مالک"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "recorded",
+                        "pron": "ریکوردِد",
+                        "fa": "ثبت‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "entered",
+                                    "pron": "اِنتِرد",
+                                    "fa": "واردشده"
+                              },
+                              {
+                                    "en": "logged",
+                                    "pron": "لاگد",
+                                    "fa": "ثبت‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 10,
+            "en": "A major reason for one individual to form a partnership is to obtain additional capital from another partner.",
+            "pronunciation": "اِ مِیجِر ریزِن فور وان ایندیویدجوال تو فورم اِ پارتنِرشیپ ایز تو اَبتِین اَدیشِنِل کَپیتِل فرام اَناذِر پارتنِر.",
+            "translation": "یکی از دلایل اصلی تشکیل مشارکت توسط یک فرد، به‌دست‌آوردن سرمایه اضافی از شریک دیگر است.",
+            "words": [
+                  {
+                        "en": "major reason",
+                        "pron": "مِیجِر ریزِن",
+                        "fa": "دلیل اصلی",
+                        "synonyms": [
+                              {
+                                    "en": "main cause",
+                                    "pron": "مِین کاز",
+                                    "fa": "علت اصلی"
+                              },
+                              {
+                                    "en": "primary motive",
+                                    "pron": "پرایمِری موتیو",
+                                    "fa": "انگیزه اصلی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "form",
+                        "pron": "فورم",
+                        "fa": "تشکیل دادن",
+                        "synonyms": [
+                              {
+                                    "en": "establish",
+                                    "pron": "اِستَبلِش",
+                                    "fa": "ایجاد کردن"
+                              },
+                              {
+                                    "en": "create",
+                                    "pron": "کری‌اِیت",
+                                    "fa": "به‌وجود آوردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "partnership",
+                        "pron": "پارتنِرشیپ",
+                        "fa": "مشارکت",
+                        "synonyms": [
+                              {
+                                    "en": "joint venture",
+                                    "pron": "جوینت وِنچِر",
+                                    "fa": "مشارکت مشترک"
+                              },
+                              {
+                                    "en": "business association",
+                                    "pron": "بیزنِس اَسوسی‌اِیشن",
+                                    "fa": "اتحاد تجاری"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "obtain",
+                        "pron": "اَبتِین",
+                        "fa": "به‌دست آوردن",
+                        "synonyms": [
+                              {
+                                    "en": "acquire",
+                                    "pron": "اَکوایِر",
+                                    "fa": "کسب کردن"
+                              },
+                              {
+                                    "en": "gain",
+                                    "pron": "گِین",
+                                    "fa": "به‌دست آوردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "additional capital",
+                        "pron": "اَدیشِنِل کَپیتِل",
+                        "fa": "سرمایه اضافی",
+                        "synonyms": [
+                              {
+                                    "en": "extra funds",
+                                    "pron": "اِکسترا فاندز",
+                                    "fa": "وجوه بیشتر"
+                              },
+                              {
+                                    "en": "supplementary financing",
+                                    "pron": "ساپلیمِنتِری فاینَنسینگ",
+                                    "fa": "تأمین مالی تکمیلی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 11,
+            "en": "Partnerships are defined as “an association of two or more persons to carry on, as co-owner, a business for profit”.",
+            "pronunciation": "پارتنِرشیپس آر دیفایند اَز «اَن اَسوسی‌اِیشن آو تو اُر مور پِرسِنز تو کَری آن، اَز کو-اُونِر، اِ بیزنِس فور پرافیت».",
+            "translation": "مشارکت‌ها چنین تعریف می‌شوند: «اجتماع دو یا چند نفر برای اداره یک کسب‌وکار به‌عنوان مالک مشترک و با هدف کسب سود».",
+            "words": [
+                  {
+                        "en": "defined",
+                        "pron": "دیفایند",
+                        "fa": "تعریف‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "described",
+                                    "pron": "دیسکرایبد",
+                                    "fa": "توصیف‌شده"
+                              },
+                              {
+                                    "en": "specified",
+                                    "pron": "سپِسیفاید",
+                                    "fa": "مشخص‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "association",
+                        "pron": "اَسوسی‌اِیشن",
+                        "fa": "اجتماع، انجمن",
+                        "synonyms": [
+                              {
+                                    "en": "group",
+                                    "pron": "گروپ",
+                                    "fa": "گروه"
+                              },
+                              {
+                                    "en": "organization",
+                                    "pron": "اورگِنایزِیشن",
+                                    "fa": "سازمان"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "carry on",
+                        "pron": "کَری آن",
+                        "fa": "اداره کردن، ادامه دادن",
+                        "synonyms": [
+                              {
+                                    "en": "conduct",
+                                    "pron": "کِنداکت",
+                                    "fa": "اداره کردن"
+                              },
+                              {
+                                    "en": "operate",
+                                    "pron": "آپِرِیت",
+                                    "fa": "فعالیت کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "co-owner",
+                        "pron": "کو-اُونِر",
+                        "fa": "مالک مشترک",
+                        "synonyms": [
+                              {
+                                    "en": "joint owner",
+                                    "pron": "جوینت اُونِر",
+                                    "fa": "مالک مشترک"
+                              },
+                              {
+                                    "en": " 공동 owner",
+                                    "pron": "مشترک‌مالک",
+                                    "fa": "مالک مشترک"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "for profit",
+                        "pron": "فور پرافیت",
+                        "fa": "با هدف سود",
+                        "synonyms": [
+                              {
+                                    "en": "profit-seeking",
+                                    "pron": "پرافیت‌سیکینگ",
+                                    "fa": "سودجو"
+                              },
+                              {
+                                    "en": "for financial gain",
+                                    "pron": "فور فاینَنشِل گِین",
+                                    "fa": "برای منفعت مالی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 12,
+            "en": "Advantages of partnerships are the ease of formation, the combination of talents, tax advantages, its informality, less government regulations, and ability to generate more capital than sole proprietorships.",
+            "pronunciation": "اَدوَنتیجِز آو پارتنِرشیپس آر دی ایز آو فورمِیشِن، دِ کامبینِیشِن آو تَلِنتس، تَکس اَدوَنتیجِز، ایتس اینفورمَلِتی، لِس گاوِرنمِنت رِگیولِیشِنز، اَند اَبیلِتی تو جِنِرِیت مور کَپیتِل ذَن سُول پراپِرایتِرشیپس.",
+            "translation": "مزایای مشارکت‌ها عبارت‌اند از سهولت تشکیل، ترکیب استعدادها، مزایای مالیاتی، غیررسمی بودن، مقررات دولتی کمتر و توانایی ایجاد سرمایه‌ای بیشتر از مالکیت‌های انفرادی.",
+            "words": [
+                  {
+                        "en": "advantages",
+                        "pron": "اَدوَنتیجِز",
+                        "fa": "مزایا",
+                        "synonyms": [
+                              {
+                                    "en": "benefits",
+                                    "pron": "بِنِفیتس",
+                                    "fa": "فواید"
+                              },
+                              {
+                                    "en": "merits",
+                                    "pron": "مِریتس",
+                                    "fa": "نکات مثبت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "ease of formation",
+                        "pron": "ایز آو فورمِیشِن",
+                        "fa": "سهولت تشکیل",
+                        "synonyms": [
+                              {
+                                    "en": "simple establishment",
+                                    "pron": "سیمپِل اِستَبلِشمِنت",
+                                    "fa": "ایجاد آسان"
+                              },
+                              {
+                                    "en": "easy setup",
+                                    "pron": "ایزی سِت‌آپ",
+                                    "fa": "راه‌اندازی آسان"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "combination",
+                        "pron": "کامبینِیشِن",
+                        "fa": "ترکیب",
+                        "synonyms": [
+                              {
+                                    "en": "merger",
+                                    "pron": "مِرجِر",
+                                    "fa": "ادغام"
+                              },
+                              {
+                                    "en": "joining",
+                                    "pron": "جوینینگ",
+                                    "fa": "پیوستن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "informality",
+                        "pron": "اینفورمَلِتی",
+                        "fa": "غیررسمی بودن",
+                        "synonyms": [
+                              {
+                                    "en": "flexibility",
+                                    "pron": "فلِکسیبیلِتی",
+                                    "fa": "انعطاف‌پذیری"
+                              },
+                              {
+                                    "en": "lack of formality",
+                                    "pron": "لَک آو فورمَلِتی",
+                                    "fa": "نبود تشریفات رسمی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "generate",
+                        "pron": "جِنِرِیت",
+                        "fa": "ایجاد کردن",
+                        "synonyms": [
+                              {
+                                    "en": "produce",
+                                    "pron": "پرودیوس",
+                                    "fa": "تولید کردن"
+                              },
+                              {
+                                    "en": "create",
+                                    "pron": "کری‌اِیت",
+                                    "fa": "خلق کردن"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 13,
+            "en": "The main disadvantages of partnerships are limited life, unlimited liability of the partners, and mutual agency relationship between partners.",
+            "pronunciation": "دِ مِین دیسَدوَنتیجِز آو پارتنِرشیپس آر لیمیتِد لایف، اَنلیمیتِد لایَبیلِتی آو دِ پارتنِرز، اَند میوچوئِل اِیجِنسی ریلیشِنشیپ بیتوین پارتنِرز.",
+            "translation": "معایب اصلی مشارکت‌ها عبارت‌اند از عمر محدود، مسئولیت نامحدود شرکا و رابطه نمایندگی متقابل میان شرکا.",
+            "words": [
+                  {
+                        "en": "main disadvantages",
+                        "pron": "مِین دیسَدوَنتیجِز",
+                        "fa": "معایب اصلی",
+                        "synonyms": [
+                              {
+                                    "en": "major drawbacks",
+                                    "pron": "مِیجِر درابَکس",
+                                    "fa": "نقاط‌ضعف عمده"
+                              },
+                              {
+                                    "en": "chief problems",
+                                    "pron": "چیف پرابْلِمز",
+                                    "fa": "مشکلات اصلی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "limited life",
+                        "pron": "لیمیتِد لایف",
+                        "fa": "عمر محدود",
+                        "synonyms": [
+                              {
+                                    "en": "finite duration",
+                                    "pron": "فاینایت دورِیشِن",
+                                    "fa": "مدت محدود"
+                              },
+                              {
+                                    "en": "restricted existence",
+                                    "pron": "ریستریکتِد اِگزستِنس",
+                                    "fa": "وجود محدود"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "unlimited liability",
+                        "pron": "اَنلیمیتِد لایَبیلِتی",
+                        "fa": "مسئولیت نامحدود",
+                        "synonyms": [
+                              {
+                                    "en": "unrestricted responsibility",
+                                    "pron": "اَنریستریکتِد ریسپانسیبیلِتی",
+                                    "fa": "مسئولیت بدون محدودیت"
+                              },
+                              {
+                                    "en": "full liability",
+                                    "pron": "فول لایَبیلِتی",
+                                    "fa": "مسئولیت کامل"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "mutual agency",
+                        "pron": "میوچوئِل اِیجِنسی",
+                        "fa": "نمایندگی متقابل",
+                        "synonyms": [
+                              {
+                                    "en": "shared authority",
+                                    "pron": "شِرد اَثورِتی",
+                                    "fa": "اختیار مشترک"
+                              },
+                              {
+                                    "en": "reciprocal agency",
+                                    "pron": "ریسیپروکِل اِیجِنسی",
+                                    "fa": "نمایندگی دوطرفه"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 14,
+            "en": "The accounting for partnerships can be categorized into the following areas: formation, income distribution, dissolution, and liquidation.",
+            "pronunciation": "دی اَکانتینگ فور پارتنِرشیپس کَن بی کَتِگورایزد اینتو دِ فالُوینگ اِریاز: فورمِیشِن، اینکام دیستریبیوشِن، دیسولوشِن، اَند لیکوئیدِیشِن.",
+            "translation": "حسابداری مشارکت‌ها را می‌توان در حوزه‌های زیر دسته‌بندی کرد: تشکیل، توزیع سود، انحلال و تصفیه.",
+            "words": [
+                  {
+                        "en": "categorized",
+                        "pron": "کَتِگورایزد",
+                        "fa": "دسته‌بندی‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "classified",
+                                    "pron": "کِلَسیفاید",
+                                    "fa": "طبقه‌بندی‌شده"
+                              },
+                              {
+                                    "en": "grouped",
+                                    "pron": "گروپت",
+                                    "fa": "گروه‌بندی‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "formation",
+                        "pron": "فورمِیشِن",
+                        "fa": "تشکیل",
+                        "synonyms": [
+                              {
+                                    "en": "establishment",
+                                    "pron": "اِستَبلِشمِنت",
+                                    "fa": "ایجاد"
+                              },
+                              {
+                                    "en": "creation",
+                                    "pron": "کری‌اِیشِن",
+                                    "fa": "تشکیل"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "income distribution",
+                        "pron": "اینکام دیستریبیوشِن",
+                        "fa": "توزیع درآمد",
+                        "synonyms": [
+                              {
+                                    "en": "profit allocation",
+                                    "pron": "پرافیت اَلُکِیشِن",
+                                    "fa": "تخصیص سود"
+                              },
+                              {
+                                    "en": "earnings division",
+                                    "pron": "اِرنینگز دیویژِن",
+                                    "fa": "تقسیم درآمد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "dissolution",
+                        "pron": "دیسولوشِن",
+                        "fa": "انحلال",
+                        "synonyms": [
+                              {
+                                    "en": "termination",
+                                    "pron": "تِرمینِیشِن",
+                                    "fa": "پایان فعالیت"
+                              },
+                              {
+                                    "en": "ending",
+                                    "pron": "اِندینگ",
+                                    "fa": "پایان"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "liquidation",
+                        "pron": "لیکوئیدِیشِن",
+                        "fa": "تصفیه",
+                        "synonyms": [
+                              {
+                                    "en": "winding up",
+                                    "pron": "وایندینگ آپ",
+                                    "fa": "خاتمه و تصفیه"
+                              },
+                              {
+                                    "en": "settlement",
+                                    "pron": "سِتِل‌مِنت",
+                                    "fa": "تسویه"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 15,
+            "en": "When a partnership is formed, a separate capital account is established for each partner and assets contributed by partners are credited to each partner’s capital account at their agreed fair market values.",
+            "pronunciation": "وِن اِ پارتنِرشیپ ایز فورمد، اِ سِپِرِیت کَپیتِل اَکاونت ایز اِستَبلِشت فور ایچ پارتنِر اَند اَسِتس کانتریبیوتِد بای پارتنِرز آر کِرِدیتِد تو ایچ پارتنِرز کَپیتِل اَکاونت اَت ذِر اَگرید فِر مارکِت وَلیوز.",
+            "translation": "هنگامی که مشارکت تشکیل می‌شود، برای هر شریک یک حساب سرمایه جداگانه ایجاد می‌شود و دارایی‌های آورده‌شده توسط شرکا به ارزش منصفانه بازارِ مورد توافق، به حساب سرمایه هر شریک بستانکار می‌شوند.",
+            "words": [
+                  {
+                        "en": "formed",
+                        "pron": "فورمد",
+                        "fa": "تشکیل‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "established",
+                                    "pron": "اِستَبلِشت",
+                                    "fa": "ایجادشده"
+                              },
+                              {
+                                    "en": "created",
+                                    "pron": "کری‌اِیتِد",
+                                    "fa": "به‌وجودآمده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "separate capital account",
+                        "pron": "سِپِرِیت کَپیتِل اَکاونت",
+                        "fa": "حساب سرمایه جداگانه",
+                        "synonyms": [
+                              {
+                                    "en": "individual equity account",
+                                    "pron": "ایندیویدجوال اِکوئیتی اَکاونت",
+                                    "fa": "حساب حقوق مالکانه فردی"
+                              },
+                              {
+                                    "en": "distinct capital ledger",
+                                    "pron": "دیستینکت کَپیتِل لِجِر",
+                                    "fa": "دفتر سرمایه مستقل"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "contributed",
+                        "pron": "کانتریبیوتِد",
+                        "fa": "آورده‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "provided",
+                                    "pron": "پرووایدِد",
+                                    "fa": "فراهم‌شده"
+                              },
+                              {
+                                    "en": "supplied",
+                                    "pron": "ساپلاید",
+                                    "fa": "تأمین‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "credited",
+                        "pron": "کِرِدیتِد",
+                        "fa": "بستانکارشده",
+                        "synonyms": [
+                              {
+                                    "en": "entered as credit",
+                                    "pron": "اِنتِرد اَز کِرِدیت",
+                                    "fa": "به‌عنوان بستانکار ثبت‌شده"
+                              },
+                              {
+                                    "en": "recorded on credit side",
+                                    "pron": "ریکوردِد آن کِرِدیت ساید",
+                                    "fa": "در سمت بستانکار ثبت‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "fair market values",
+                        "pron": "فِر مارکِت وَلیوز",
+                        "fa": "ارزش‌های منصفانه بازار",
+                        "synonyms": [
+                              {
+                                    "en": "current market prices",
+                                    "pron": "کارِنت مارکِت پرایسِز",
+                                    "fa": "قیمت‌های جاری بازار"
+                              },
+                              {
+                                    "en": "reasonable market worth",
+                                    "pron": "ریزِنِبِل مارکِت وِرث",
+                                    "fa": "ارزش متعارف بازار"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 16,
+            "en": "Profits and losses of a partnership are distributed to the individual partner’s capital account in accordance with the provisions contained in the articles of partnership.",
+            "pronunciation": "پرافیتس اَند لاسِز آو اِ پارتنِرشیپ آر دیستریبیوتِد تو دی ایندیویدجوال پارتنِرز کَپیتِل اَکاونت این اَکوردِنس وید دِ پروویژِنز کَنتِیند این دی آرتیکِلز آو پارتنِرشیپ.",
+            "translation": "سودها و زیان‌های مشارکت، مطابق مقررات مندرج در قرارداد مشارکت، به حساب سرمایه شریک مربوط تخصیص داده می‌شوند.",
+            "words": [
+                  {
+                        "en": "profits and losses",
+                        "pron": "پرافیتس اَند لاسِز",
+                        "fa": "سودها و زیان‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "gains and losses",
+                                    "pron": "گِینز اَند لاسِز",
+                                    "fa": "منافع و زیان‌ها"
+                              },
+                              {
+                                    "en": "earnings and deficits",
+                                    "pron": "اِرنینگز اَند دِفیسیتس",
+                                    "fa": "درآمدها و کسری‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distributed",
+                        "pron": "دیستریبیوتِد",
+                        "fa": "توزیع‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "allocated",
+                                    "pron": "اَلُکِیتِد",
+                                    "fa": "تخصیص‌یافته"
+                              },
+                              {
+                                    "en": "assigned",
+                                    "pron": "اَسایند",
+                                    "fa": "واگذارشده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "in accordance with",
+                        "pron": "این اَکوردِنس وید",
+                        "fa": "مطابق با",
+                        "synonyms": [
+                              {
+                                    "en": "according to",
+                                    "pron": "اَکوردینگ تو",
+                                    "fa": "بر اساس"
+                              },
+                              {
+                                    "en": "consistent with",
+                                    "pron": "کِنسیستِنت وید",
+                                    "fa": "همسو با"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "provisions",
+                        "pron": "پروویژِنز",
+                        "fa": "مقررات، مفاد",
+                        "synonyms": [
+                              {
+                                    "en": "terms",
+                                    "pron": "تِرمز",
+                                    "fa": "شرایط"
+                              },
+                              {
+                                    "en": "rules",
+                                    "pron": "رولز",
+                                    "fa": "قواعد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "articles of partnership",
+                        "pron": "آرتیکِلز آو پارتنِرشیپ",
+                        "fa": "قرارداد مشارکت",
+                        "synonyms": [
+                              {
+                                    "en": "partnership agreement",
+                                    "pron": "پارتنِرشیپ اَگریمِنت",
+                                    "fa": "توافق‌نامه مشارکت"
+                              },
+                              {
+                                    "en": "partnership contract",
+                                    "pron": "پارتنِرشیپ کانترَکت",
+                                    "fa": "قرارداد مشارکت"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 17,
+            "en": "Provisions for profit and loss distribution may be based on certain fixed ratios, capital balance relationships, or salary or interest equivalents.",
+            "pronunciation": "پروویژِنز فور پرافیت اَند لاس دیستریبیوشِن مِی بی بِیست آن سِرتِن فیکست رِیشیوز، کَپیتِل بَلِنس ریلیشِنشیپس، اُر سَلِری اُر اینتِرِست اِکوئیوِلِنتس.",
+            "translation": "مقررات تقسیم سود و زیان ممکن است بر نسبت‌های ثابت مشخص، روابط مانده سرمایه یا معادل‌های حقوق و بهره مبتنی باشند.",
+            "words": [
+                  {
+                        "en": "provisions",
+                        "pron": "پروویژِنز",
+                        "fa": "مقررات",
+                        "synonyms": [
+                              {
+                                    "en": "rules",
+                                    "pron": "رولز",
+                                    "fa": "قواعد"
+                              },
+                              {
+                                    "en": "conditions",
+                                    "pron": "کِندیشِنز",
+                                    "fa": "شرایط"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distribution",
+                        "pron": "دیستریبیوشِن",
+                        "fa": "توزیع",
+                        "synonyms": [
+                              {
+                                    "en": "allocation",
+                                    "pron": "اَلُکِیشِن",
+                                    "fa": "تخصیص"
+                              },
+                              {
+                                    "en": "division",
+                                    "pron": "دیویژِن",
+                                    "fa": "تقسیم"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "fixed ratios",
+                        "pron": "فیکست رِیشیوز",
+                        "fa": "نسبت‌های ثابت",
+                        "synonyms": [
+                              {
+                                    "en": "set proportions",
+                                    "pron": "سِت پروپورشِنز",
+                                    "fa": "سهم‌های تعیین‌شده"
+                              },
+                              {
+                                    "en": "predetermined rates",
+                                    "pron": "پریدیتِرمِند رِیتس",
+                                    "fa": "نرخ‌های ازپیش‌تعیین‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "capital balance",
+                        "pron": "کَپیتِل بَلِنس",
+                        "fa": "مانده سرمایه",
+                        "synonyms": [
+                              {
+                                    "en": "equity balance",
+                                    "pron": "اِکوئیتی بَلِنس",
+                                    "fa": "مانده حقوق مالکانه"
+                              },
+                              {
+                                    "en": "capital amount",
+                                    "pron": "کَپیتِل اَماونت",
+                                    "fa": "مبلغ سرمایه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "equivalents",
+                        "pron": "اِکوئیوِلِنتس",
+                        "fa": "معادل‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "counterparts",
+                                    "pron": "کاونتِرپارتس",
+                                    "fa": "همتاها"
+                              },
+                              {
+                                    "en": "equivalent amounts",
+                                    "pron": "اِکوئیوِلِنت اَماونتس",
+                                    "fa": "مبالغ معادل"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 18,
+            "en": "If no such provision exist, profits and losses are distributed equally.",
+            "pronunciation": "ایف نو ساچ پروویژِن اِگزیست، پرافیتس اَند لاسِز آر دیستریبیوتِد ایکوئِلی.",
+            "translation": "اگر چنین مقرره‌ای وجود نداشته باشد، سود و زیان به‌طور مساوی تقسیم می‌شوند.",
+            "words": [
+                  {
+                        "en": "provision",
+                        "pron": "پروویژِن",
+                        "fa": "مقرره",
+                        "synonyms": [
+                              {
+                                    "en": "rule",
+                                    "pron": "رول",
+                                    "fa": "قاعده"
+                              },
+                              {
+                                    "en": "condition",
+                                    "pron": "کِندیشِن",
+                                    "fa": "شرط"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "exist",
+                        "pron": "اِگزیست",
+                        "fa": "وجود داشتن",
+                        "synonyms": [
+                              {
+                                    "en": "occur",
+                                    "pron": "اِکِر",
+                                    "fa": "رخ دادن"
+                              },
+                              {
+                                    "en": "be present",
+                                    "pron": "بی پرِزِنت",
+                                    "fa": "موجود بودن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "equally",
+                        "pron": "ایکوئِلی",
+                        "fa": "به‌طور مساوی",
+                        "synonyms": [
+                              {
+                                    "en": "evenly",
+                                    "pron": "ایوِنلی",
+                                    "fa": "به‌طور برابر"
+                              },
+                              {
+                                    "en": "fairly",
+                                    "pron": "فِرلی",
+                                    "fa": "منصفانه"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 19,
+            "en": "Partnership dissolution occurs whenever there is a change in the number of individuals in the partnership, or a change in the profit and loss ratios occur.",
+            "pronunciation": "پارتنِرشیپ دیسولوشِن اَکِرز وِنِوِر ذِر ایز اِ چِینج این دِ نامبِر آو ایندیویدجوالز این دِ پارتنِرشیپ، اُر اِ چِینج این دِ پرافیت اَند لاس رِیشیوز اَکِر.",
+            "translation": "انحلال مشارکت هرگاه تعداد افراد مشارکت یا نسبت‌های تقسیم سود و زیان تغییر کند، رخ می‌دهد.",
+            "words": [
+                  {
+                        "en": "dissolution",
+                        "pron": "دیسولوشِن",
+                        "fa": "انحلال",
+                        "synonyms": [
+                              {
+                                    "en": "termination",
+                                    "pron": "تِرمینِیشِن",
+                                    "fa": "پایان"
+                              },
+                              {
+                                    "en": "breakup",
+                                    "pron": "بریک‌آپ",
+                                    "fa": "ازهم‌پاشیدن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "occurs",
+                        "pron": "اَکِرز",
+                        "fa": "رخ می‌دهد",
+                        "synonyms": [
+                              {
+                                    "en": "happens",
+                                    "pron": "هَپِنز",
+                                    "fa": "اتفاق می‌افتد"
+                              },
+                              {
+                                    "en": "takes place",
+                                    "pron": "تِیکس پِلِیس",
+                                    "fa": "روی می‌دهد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "change",
+                        "pron": "چِینج",
+                        "fa": "تغییر",
+                        "synonyms": [
+                              {
+                                    "en": "shift",
+                                    "pron": "شیفت",
+                                    "fa": "دگرگونی"
+                              },
+                              {
+                                    "en": "alteration",
+                                    "pron": "آلتِرِیشِن",
+                                    "fa": "تغییر"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "number",
+                        "pron": "نامبِر",
+                        "fa": "تعداد",
+                        "synonyms": [
+                              {
+                                    "en": "count",
+                                    "pron": "کاونت",
+                                    "fa": "شمار"
+                              },
+                              {
+                                    "en": "quantity",
+                                    "pron": "کوانتِتی",
+                                    "fa": "مقدار"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "ratios",
+                        "pron": "رِیشیوز",
+                        "fa": "نسبت‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "proportions",
+                                    "pron": "پروپورشِنز",
+                                    "fa": "تناسب‌ها"
+                              },
+                              {
+                                    "en": "rates",
+                                    "pron": "رِیتس",
+                                    "fa": "نرخ‌ها"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 20,
+            "en": "When partnership dissolution occurs, the business entity does not terminate but the legal relationship does.",
+            "pronunciation": "وِن پارتنِرشیپ دیسولوشِن اَکِرز، دِ بیزنِس اِنتیتی داز نات تِرمینِیت بات دِ لیگِل ریلیشِنشیپ داز.",
+            "translation": "هنگامی که انحلال مشارکت رخ می‌دهد، واحد تجاری پایان نمی‌یابد، اما رابطه حقوقی پایان می‌پذیرد.",
+            "words": [
+                  {
+                        "en": "business entity",
+                        "pron": "بیزنِس اِنتیتی",
+                        "fa": "واحد تجاری",
+                        "synonyms": [
+                              {
+                                    "en": "business organization",
+                                    "pron": "بیزنِس اورگِنایزِیشن",
+                                    "fa": "سازمان تجاری"
+                              },
+                              {
+                                    "en": "enterprise",
+                                    "pron": "اِنترپرایز",
+                                    "fa": "بنگاه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "terminate",
+                        "pron": "تِرمینِیت",
+                        "fa": "پایان یافتن",
+                        "synonyms": [
+                              {
+                                    "en": "end",
+                                    "pron": "اِند",
+                                    "fa": "تمام شدن"
+                              },
+                              {
+                                    "en": "cease",
+                                    "pron": "سیس",
+                                    "fa": "متوقف شدن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "legal relationship",
+                        "pron": "لیگِل ریلیشِنشیپ",
+                        "fa": "رابطه حقوقی",
+                        "synonyms": [
+                              {
+                                    "en": "legal connection",
+                                    "pron": "لیگِل کِنِکشِن",
+                                    "fa": "ارتباط حقوقی"
+                              },
+                              {
+                                    "en": "lawful relation",
+                                    "pron": "لافول ریلیشِن",
+                                    "fa": "رابطه قانونی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 21,
+            "en": "Admitting a new partner that requires mutual consent of the old partners, may be accomplished by the purchase of an interest of an old partner or by an investment of assets in the partnership by the new partner.",
+            "pronunciation": "اَدمیتینگ اِ نیو پارتنِر ذَت ریکوایِرز میوچوئِل کِنسِنت آو دی اُولد پارتنِرز، مِی بی اَکامپلیشت بای دِ پِرچِس آو اَن اینتِرِست آو اَن اُولد پارتنِر اُر بای اَن اینوِستمِنت آو اَسِتس این دِ پارتنِرشیپ بای دِ نیو پارتنِر.",
+            "translation": "پذیرش شریک جدید که به رضایت متقابل شرکای قبلی نیاز دارد، می‌تواند از طریق خرید سهم یکی از شرکای قدیمی یا سرمایه‌گذاری دارایی توسط شریک جدید در مشارکت انجام شود.",
+            "words": [
+                  {
+                        "en": "admitting",
+                        "pron": "اَدمیتینگ",
+                        "fa": "پذیرفتن",
+                        "synonyms": [
+                              {
+                                    "en": "accepting",
+                                    "pron": "اَکسِپتینگ",
+                                    "fa": "قبول کردن"
+                              },
+                              {
+                                    "en": "allowing to join",
+                                    "pron": "اَلاوینگ تو جوین",
+                                    "fa": "اجازه ورود دادن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "mutual consent",
+                        "pron": "میوچوئِل کِنسِنت",
+                        "fa": "رضایت متقابل",
+                        "synonyms": [
+                              {
+                                    "en": "joint approval",
+                                    "pron": "جوینت اَپرووِل",
+                                    "fa": "تأیید مشترک"
+                              },
+                              {
+                                    "en": "shared agreement",
+                                    "pron": "شِرد اَگریمِنت",
+                                    "fa": "توافق دوطرفه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "accomplished",
+                        "pron": "اَکامپلیشت",
+                        "fa": "انجام‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "achieved",
+                                    "pron": "اَچیوْد",
+                                    "fa": "محقق‌شده"
+                              },
+                              {
+                                    "en": "carried out",
+                                    "pron": "کَرید آوت",
+                                    "fa": "اجراشده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "purchase",
+                        "pron": "پِرچِس",
+                        "fa": "خرید",
+                        "synonyms": [
+                              {
+                                    "en": "acquisition",
+                                    "pron": "اَکوِزیشِن",
+                                    "fa": "تحصیل"
+                              },
+                              {
+                                    "en": "buying",
+                                    "pron": "بایینگ",
+                                    "fa": "خریدن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "investment",
+                        "pron": "اینوِستمِنت",
+                        "fa": "سرمایه‌گذاری",
+                        "synonyms": [
+                              {
+                                    "en": "capital contribution",
+                                    "pron": "کَپیتِل کانتریبیوشِن",
+                                    "fa": "آورده سرمایه"
+                              },
+                              {
+                                    "en": "asset contribution",
+                                    "pron": "اَسِت کانتریبیوشِن",
+                                    "fa": "آورده دارایی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 22,
+            "en": "In the purchase of an interest, the amount of consideration is not reflected on the partnership’s books whereas investment of assets is recorded as the assets of the partnership.",
+            "pronunciation": "این دِ پِرچِس آو اَن اینتِرِست، دی اَماونت آو کِنسیدِرِیشِن ایز نات ریفلِکتِد آن دِ پارتنِرشیپس بوکس وِرَز اینوِستمِنت آو اَسِتس ایز ریکوردِد اَز دی اَسِتس آو دِ پارتنِرشیپ.",
+            "translation": "در خرید سهم، مبلغ عوض معامله در دفاتر مشارکت منعکس نمی‌شود؛ درحالی‌که سرمایه‌گذاری دارایی‌ها به‌عنوان دارایی‌های مشارکت ثبت می‌شود.",
+            "words": [
+                  {
+                        "en": "amount",
+                        "pron": "اَماونت",
+                        "fa": "مبلغ",
+                        "synonyms": [
+                              {
+                                    "en": "sum",
+                                    "pron": "سام",
+                                    "fa": "مجموع"
+                              },
+                              {
+                                    "en": "quantity",
+                                    "pron": "کوانتِتی",
+                                    "fa": "مقدار"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "consideration",
+                        "pron": "کِنسیدِرِیشِن",
+                        "fa": "عوض معامله",
+                        "synonyms": [
+                              {
+                                    "en": "payment",
+                                    "pron": "پِیمِنت",
+                                    "fa": "پرداخت"
+                              },
+                              {
+                                    "en": "compensation",
+                                    "pron": "کامپِنْسِیشِن",
+                                    "fa": "عوض"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "reflected",
+                        "pron": "ریفلِکتِد",
+                        "fa": "منعکس‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "shown",
+                                    "pron": "شون",
+                                    "fa": "نشان‌داده‌شده"
+                              },
+                              {
+                                    "en": "recorded",
+                                    "pron": "ریکوردِد",
+                                    "fa": "ثبت‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "whereas",
+                        "pron": "وِرَز",
+                        "fa": "درحالی‌که",
+                        "synonyms": [
+                              {
+                                    "en": "while",
+                                    "pron": "وایل",
+                                    "fa": "درحالی‌که"
+                              },
+                              {
+                                    "en": "although",
+                                    "pron": "آلذو",
+                                    "fa": "اگرچه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "books",
+                        "pron": "بوکس",
+                        "fa": "دفاتر حسابداری",
+                        "synonyms": [
+                              {
+                                    "en": "records",
+                                    "pron": "رِکوردز",
+                                    "fa": "سوابق"
+                              },
+                              {
+                                    "en": "ledgers",
+                                    "pron": "لِجِرز",
+                                    "fa": "دفاتر کل"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 23,
+            "en": "In this case, the new partner receives a credit in his or her newly established capital account less than, equal to, or greater than the agreed fair values of contributed assets.",
+            "pronunciation": "این دیس کِیس، دِ نیو پارتنِر ریسِیوز اِ کِرِدیت این هیز اُر هِر نیولی اِستَبلِشت کَپیتِل اَکاونت لِس ذَن، ایکوئِل تو، اُر گِرِیتِر ذَن دی اَگرید فِر وَلیوز آو کانتریبیوتِد اَسِتس.",
+            "translation": "در این حالت، در حساب سرمایه تازه‌تأسیس شریک جدید، مبلغ بستانکارشده می‌تواند کمتر، برابر یا بیشتر از ارزش منصفانه مورد توافق دارایی‌های آورده‌شده باشد.",
+            "words": [
+                  {
+                        "en": "receives",
+                        "pron": "ریسِیوز",
+                        "fa": "دریافت می‌کند",
+                        "synonyms": [
+                              {
+                                    "en": "gets",
+                                    "pron": "گِتس",
+                                    "fa": "می‌گیرد"
+                              },
+                              {
+                                    "en": "obtains",
+                                    "pron": "اَبتِینز",
+                                    "fa": "به‌دست می‌آورد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "credit",
+                        "pron": "کِرِدیت",
+                        "fa": "بستانکار",
+                        "synonyms": [
+                              {
+                                    "en": "credit entry",
+                                    "pron": "کِرِدیت اِنتری",
+                                    "fa": "ثبت بستانکار"
+                              },
+                              {
+                                    "en": "credit balance",
+                                    "pron": "کِرِدیت بَلِنس",
+                                    "fa": "مانده بستانکار"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "newly established",
+                        "pron": "نیولی اِستَبلِشت",
+                        "fa": "تازه‌تأسیس",
+                        "synonyms": [
+                              {
+                                    "en": "recently created",
+                                    "pron": "ریسِنتلی کری‌اِیتِد",
+                                    "fa": "به‌تازگی ایجادشده"
+                              },
+                              {
+                                    "en": "newly formed",
+                                    "pron": "نیولی فورمد",
+                                    "fa": "تازه تشکیل‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "agreed",
+                        "pron": "اَگرید",
+                        "fa": "مورد توافق",
+                        "synonyms": [
+                              {
+                                    "en": "accepted",
+                                    "pron": "اَکسِپتِد",
+                                    "fa": "پذیرفته‌شده"
+                              },
+                              {
+                                    "en": "approved",
+                                    "pron": "اَپروود",
+                                    "fa": "تأییدشده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "contributed assets",
+                        "pron": "کانتریبیوتِد اَسِتس",
+                        "fa": "دارایی‌های آورده‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "provided assets",
+                                    "pron": "پرووایدِد اَسِتس",
+                                    "fa": "دارایی‌های تأمین‌شده"
+                              },
+                              {
+                                    "en": "invested property",
+                                    "pron": "اینوِستِد پراپِرتی",
+                                    "fa": "اموال سرمایه‌گذاری‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 24,
+            "en": "The difference is distributed to the old partners as either a bonus or goodwill.",
+            "pronunciation": "دِ دیفِرِنس ایز دیستریبیوتِد تو دی اُولد پارتنِرز اَز آیذِر اِ بونِس اُر گودویل.",
+            "translation": "این تفاوت به‌صورت پاداش یا سرقفلی میان شرکای قدیمی توزیع می‌شود.",
+            "words": [
+                  {
+                        "en": "difference",
+                        "pron": "دیفِرِنس",
+                        "fa": "تفاوت",
+                        "synonyms": [
+                              {
+                                    "en": "distinction",
+                                    "pron": "دیستینکشِن",
+                                    "fa": "تمایز"
+                              },
+                              {
+                                    "en": "gap",
+                                    "pron": "گَپ",
+                                    "fa": "فاصله"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distributed",
+                        "pron": "دیستریبیوتِد",
+                        "fa": "توزیع‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "allocated",
+                                    "pron": "اَلُکِیتِد",
+                                    "fa": "تخصیص‌یافته"
+                              },
+                              {
+                                    "en": "divided",
+                                    "pron": "دیوایدِد",
+                                    "fa": "تقسیم‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "bonus",
+                        "pron": "بونِس",
+                        "fa": "پاداش",
+                        "synonyms": [
+                              {
+                                    "en": "premium",
+                                    "pron": "پریمیِم",
+                                    "fa": "مبلغ اضافی"
+                              },
+                              {
+                                    "en": "reward",
+                                    "pron": "ریوارد",
+                                    "fa": "مزد، پاداش"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "goodwill",
+                        "pron": "گودویل",
+                        "fa": "سرقفلی",
+                        "synonyms": [
+                              {
+                                    "en": "business reputation",
+                                    "pron": "بیزنِس رِپیوتِیشِن",
+                                    "fa": "اعتبار تجاری"
+                              },
+                              {
+                                    "en": "commercial value",
+                                    "pron": "کامِرشِل وَلیو",
+                                    "fa": "ارزش تجاری"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 25,
+            "en": "Withdrawal of a partner typically calls for a revaluation of the partnership assets with a corresponding increase or decrease in the partners’ capital accounts.",
+            "pronunciation": "ویددراوِل آو اِ پارتنِر تیپیکِلی کالز فور اِ ری‌وَلیوِیشِن آو دِ پارتنِرشیپ اَسِتس وید اِ کورِسپاندینگ اینکریس اُر دی‌کریس این دِ پارتنِرز کَپیتِل اَکاونتس.",
+            "translation": "خروج یک شریک معمولاً مستلزم تجدید ارزیابی دارایی‌های مشارکت و افزایش یا کاهش متناظر در حساب‌های سرمایه شرکا است.",
+            "words": [
+                  {
+                        "en": "withdrawal",
+                        "pron": "ویددراوِل",
+                        "fa": "خروج، برداشت",
+                        "synonyms": [
+                              {
+                                    "en": "departure",
+                                    "pron": "دیپارچِر",
+                                    "fa": "ترک کردن"
+                              },
+                              {
+                                    "en": "leaving",
+                                    "pron": "لیوینگ",
+                                    "fa": "خارج شدن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "typically",
+                        "pron": "تیپیکِلی",
+                        "fa": "معمولاً",
+                        "synonyms": [
+                              {
+                                    "en": "usually",
+                                    "pron": "یوژوئِلی",
+                                    "fa": "غالباً"
+                              },
+                              {
+                                    "en": "generally",
+                                    "pron": "جِنِرِلی",
+                                    "fa": "به‌طور کلی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "revaluation",
+                        "pron": "ری‌وَلیوِیشِن",
+                        "fa": "تجدید ارزیابی",
+                        "synonyms": [
+                              {
+                                    "en": "reassessment",
+                                    "pron": "ری‌اَسِسمِنت",
+                                    "fa": "ارزیابی مجدد"
+                              },
+                              {
+                                    "en": "reevaluation",
+                                    "pron": "ری‌ایوَلیوِیشِن",
+                                    "fa": "ارزیابی دوباره"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "corresponding",
+                        "pron": "کورِسپاندینگ",
+                        "fa": "متناظر",
+                        "synonyms": [
+                              {
+                                    "en": "matching",
+                                    "pron": "مَچینگ",
+                                    "fa": "همسان"
+                              },
+                              {
+                                    "en": "equivalent",
+                                    "pron": "اِکوئیوِلِنت",
+                                    "fa": "معادل"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "increase or decrease",
+                        "pron": "اینکریس اُر دی‌کریس",
+                        "fa": "افزایش یا کاهش",
+                        "synonyms": [
+                              {
+                                    "en": "rise or fall",
+                                    "pron": "رایز اُر فال",
+                                    "fa": "بالا رفتن یا پایین آمدن"
+                              },
+                              {
+                                    "en": "growth or reduction",
+                                    "pron": "گروث اُر ریداکشِن",
+                                    "fa": "رشد یا کاهش"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 26,
+            "en": "The withdrawing partner is then given cash equal to the balance in his or her capital account.",
+            "pronunciation": "دِ ویددراوینگ پارتنِر ایز ذِن گیوِن کَش ایکوئِل تو دِ بَلِنس این هیز اُر هِر کَپیتِل اَکاونت.",
+            "translation": "سپس وجه نقدی برابر با مانده حساب سرمایه به شریک خارج‌شونده پرداخت می‌شود.",
+            "words": [
+                  {
+                        "en": "withdrawing partner",
+                        "pron": "ویددراوینگ پارتنِر",
+                        "fa": "شریک خارج‌شونده",
+                        "synonyms": [
+                              {
+                                    "en": "departing partner",
+                                    "pron": "دیپارْتینگ پارتنِر",
+                                    "fa": "شریک در حال خروج"
+                              },
+                              {
+                                    "en": "exiting partner",
+                                    "pron": "اِگزیتینگ پارتنِر",
+                                    "fa": "شریک خارج‌شونده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "given",
+                        "pron": "گیوِن",
+                        "fa": "داده‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "paid",
+                                    "pron": "پِید",
+                                    "fa": "پرداخت‌شده"
+                              },
+                              {
+                                    "en": "provided",
+                                    "pron": "پرووایدِد",
+                                    "fa": "تأمین‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "cash",
+                        "pron": "کَش",
+                        "fa": "وجه نقد",
+                        "synonyms": [
+                              {
+                                    "en": "money",
+                                    "pron": "مانی",
+                                    "fa": "پول"
+                              },
+                              {
+                                    "en": "funds",
+                                    "pron": "فاندز",
+                                    "fa": "وجوه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "balance",
+                        "pron": "بَلِنس",
+                        "fa": "مانده",
+                        "synonyms": [
+                              {
+                                    "en": "remainder",
+                                    "pron": "ریمِین‌دِر",
+                                    "fa": "باقی‌مانده"
+                              },
+                              {
+                                    "en": "account total",
+                                    "pron": "اَکاونت توتِل",
+                                    "fa": "جمع حساب"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 27,
+            "en": "In some cases, the partners may decide to change profit and loss ratios for some reasons.",
+            "pronunciation": "این سام کِیسِز، دِ پارتنِرز مِی دیساید تو چِینج پرافیت اَند لاس رِیشیوز فور سام ریزِنز.",
+            "translation": "در برخی موارد، شرکا ممکن است به دلایلی تصمیم بگیرند نسبت‌های تقسیم سود و زیان را تغییر دهند.",
+            "words": [
+                  {
+                        "en": "in some cases",
+                        "pron": "این سام کِیسِز",
+                        "fa": "در برخی موارد",
+                        "synonyms": [
+                              {
+                                    "en": "sometimes",
+                                    "pron": "سام‌تایمز",
+                                    "fa": "گاهی"
+                              },
+                              {
+                                    "en": "occasionally",
+                                    "pron": "اُکِیژِنِلی",
+                                    "fa": "گاه‌به‌گاه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "decide",
+                        "pron": "دیساید",
+                        "fa": "تصمیم گرفتن",
+                        "synonyms": [
+                              {
+                                    "en": "determine",
+                                    "pron": "دیتِرمین",
+                                    "fa": "تعیین کردن"
+                              },
+                              {
+                                    "en": "choose",
+                                    "pron": "چوز",
+                                    "fa": "انتخاب کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "change",
+                        "pron": "چِینج",
+                        "fa": "تغییر دادن",
+                        "synonyms": [
+                              {
+                                    "en": "modify",
+                                    "pron": "مادیفای",
+                                    "fa": "اصلاح کردن"
+                              },
+                              {
+                                    "en": "alter",
+                                    "pron": "آلتِر",
+                                    "fa": "دگرگون کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "ratios",
+                        "pron": "رِیشیوز",
+                        "fa": "نسبت‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "proportions",
+                                    "pron": "پروپورشِنز",
+                                    "fa": "تناسب‌ها"
+                              },
+                              {
+                                    "en": "shares",
+                                    "pron": "شِرز",
+                                    "fa": "سهم‌ها"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 28,
+            "en": "Whenever there is a change in the initial agreed ratio for distributing income, all assets and liabilities of the business must be revalued and the difference must be distributed to partners’ capital accounts.",
+            "pronunciation": "وِنِوِر ذِر ایز اِ چِینج این دی اینیشِل اَگرید رِیشیو فور دیستریبیوتینگ اینکام، آل اَسِتس اَند لایَبیلِتیز آو دِ بیزنِس ماست بی ری‌وَلیود اَند دِ دیفِرِنس ماست بی دیستریبیوتِد تو پارتنِرز کَپیتِل اَکاونتس.",
+            "translation": "هرگاه نسبت اولیه مورد توافق برای تقسیم درآمد تغییر کند، همه دارایی‌ها و بدهی‌های کسب‌وکار باید تجدید ارزیابی شوند و تفاوت باید به حساب‌های سرمایه شرکا تخصیص یابد.",
+            "words": [
+                  {
+                        "en": "initial",
+                        "pron": "اینیشِل",
+                        "fa": "اولیه",
+                        "synonyms": [
+                              {
+                                    "en": "first",
+                                    "pron": "فِرست",
+                                    "fa": "نخستین"
+                              },
+                              {
+                                    "en": "original",
+                                    "pron": "اوریجِنِل",
+                                    "fa": "اصلی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "agreed ratio",
+                        "pron": "اَگرید رِیشیو",
+                        "fa": "نسبت مورد توافق",
+                        "synonyms": [
+                              {
+                                    "en": "accepted proportion",
+                                    "pron": "اَکسِپتِد پروپورشِن",
+                                    "fa": "تناسب پذیرفته‌شده"
+                              },
+                              {
+                                    "en": "settled rate",
+                                    "pron": "سِتِلد رِیت",
+                                    "fa": "نرخ تعیین‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distributing",
+                        "pron": "دیستریبیوتینگ",
+                        "fa": "توزیع کردن",
+                        "synonyms": [
+                              {
+                                    "en": "allocating",
+                                    "pron": "اَلُکِیتینگ",
+                                    "fa": "تخصیص دادن"
+                              },
+                              {
+                                    "en": "dividing",
+                                    "pron": "دیوایدینگ",
+                                    "fa": "تقسیم کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "liabilities",
+                        "pron": "لایَبیلِتیز",
+                        "fa": "بدهی‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "debts",
+                                    "pron": "دِتس",
+                                    "fa": "دیون"
+                              },
+                              {
+                                    "en": "obligations",
+                                    "pron": "آبلیکِیشِنز",
+                                    "fa": "تعهدات"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "revalued",
+                        "pron": "ری‌وَلیود",
+                        "fa": "تجدید ارزیابی‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "reassessed",
+                                    "pron": "ری‌اَسِست",
+                                    "fa": "دوباره ارزیابی‌شده"
+                              },
+                              {
+                                    "en": "appraised again",
+                                    "pron": "اَپرِیزد اَگِین",
+                                    "fa": "مجدداً قیمت‌گذاری‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 29,
+            "en": "Afterward, partners continue the business assuming that the profit and losses of the operation will be distributed to partners based on new agreed ratios.",
+            "pronunciation": "اَفتِروِرد، پارتنِرز کِنتینیو دِ بیزنِس اَسومینگ ذَت دِ پرافیت اَند لاسِز آو دی آپِرِیشِن ویل بی دیستریبیوتِد تو پارتنِرز بِیست آن نیو اَگرید رِیشیوز.",
+            "translation": "پس از آن، شرکا فعالیت کسب‌وکار را ادامه می‌دهند و فرض می‌کنند سود و زیان عملیات بر اساس نسبت‌های توافق‌شده جدید میان آنان تقسیم خواهد شد.",
+            "words": [
+                  {
+                        "en": "afterward",
+                        "pron": "اَفتِروِرد",
+                        "fa": "پس از آن",
+                        "synonyms": [
+                              {
+                                    "en": "later",
+                                    "pron": "لِیتِر",
+                                    "fa": "بعداً"
+                              },
+                              {
+                                    "en": "subsequently",
+                                    "pron": "سابسِکوِنتلی",
+                                    "fa": "متعاقباً"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "continue",
+                        "pron": "کِنتینیو",
+                        "fa": "ادامه دادن",
+                        "synonyms": [
+                              {
+                                    "en": "carry on",
+                                    "pron": "کَری آن",
+                                    "fa": "ادامه دادن"
+                              },
+                              {
+                                    "en": "proceed",
+                                    "pron": "پروسید",
+                                    "fa": "پیش رفتن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "assuming",
+                        "pron": "اَسومینگ",
+                        "fa": "با فرض اینکه",
+                        "synonyms": [
+                              {
+                                    "en": "supposing",
+                                    "pron": "ساپوزینگ",
+                                    "fa": "با این فرض"
+                              },
+                              {
+                                    "en": "presuming",
+                                    "pron": "پریزومینگ",
+                                    "fa": "فرض کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "operation",
+                        "pron": "آپِرِیشِن",
+                        "fa": "عملیات",
+                        "synonyms": [
+                              {
+                                    "en": "activity",
+                                    "pron": "اَکتیوِتی",
+                                    "fa": "فعالیت"
+                              },
+                              {
+                                    "en": "business process",
+                                    "pron": "بیزنِس پراسِس",
+                                    "fa": "فرایند تجاری"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "based on",
+                        "pron": "بِیست آن",
+                        "fa": "بر اساس",
+                        "synonyms": [
+                              {
+                                    "en": "according to",
+                                    "pron": "اَکوردینگ تو",
+                                    "fa": "مطابق"
+                              },
+                              {
+                                    "en": "depending on",
+                                    "pron": "دیپِندینگ آن",
+                                    "fa": "بسته به"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 30,
+            "en": "When a partnership’s business activities are terminated, all the assets of the partnership must be sold and any gain or losses on the sale of assets are distributed to the individual partners in accordance with the profit-and-loss ratios.",
+            "pronunciation": "وِن اِ پارتنِرشیپس بیزنِس اَکتیوِتیز آر تِرمینِیتِد، آل دی اَسِتس آو دِ پارتنِرشیپ ماست بی سُولد اَند اَنی گِین اُر لاسِز آن دِ سِیل آو اَسِتس آر دیستریبیوتِد تو دی ایندیویدجوال پارتنِرز این اَکوردِنس وید دِ پرافیت اَند لاس رِیشیوز.",
+            "translation": "هنگامی که فعالیت‌های تجاری مشارکت خاتمه می‌یابد، تمام دارایی‌های آن باید فروخته شوند و هرگونه سود یا زیان حاصل از فروش دارایی‌ها مطابق نسبت‌های تقسیم سود و زیان میان شرکای فردی توزیع می‌شود.",
+            "words": [
+                  {
+                        "en": "terminated",
+                        "pron": "تِرمینِیتِد",
+                        "fa": "خاتمه‌یافته",
+                        "synonyms": [
+                              {
+                                    "en": "ended",
+                                    "pron": "اِندِد",
+                                    "fa": "پایان‌یافته"
+                              },
+                              {
+                                    "en": "ceased",
+                                    "pron": "سیست",
+                                    "fa": "متوقف‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "assets",
+                        "pron": "اَسِتس",
+                        "fa": "دارایی‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "property",
+                                    "pron": "پراپِرتی",
+                                    "fa": "اموال"
+                              },
+                              {
+                                    "en": "resources",
+                                    "pron": "ریسورسِز",
+                                    "fa": "منابع"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "sold",
+                        "pron": "سُولد",
+                        "fa": "فروخته‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "disposed of",
+                                    "pron": "دیسپوزد آو",
+                                    "fa": "واگذار‌شده"
+                              },
+                              {
+                                    "en": "traded",
+                                    "pron": "تِریدِد",
+                                    "fa": "معامله‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "gain or losses",
+                        "pron": "گِین اُر لاسِز",
+                        "fa": "سود یا زیان",
+                        "synonyms": [
+                              {
+                                    "en": "profits or deficits",
+                                    "pron": "پرافیتس اُر دِفیسیتس",
+                                    "fa": "سودها یا کسری‌ها"
+                              },
+                              {
+                                    "en": "benefits or losses",
+                                    "pron": "بِنِفیتس اُر لاسِز",
+                                    "fa": "منافع یا زیان‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "in accordance with",
+                        "pron": "این اَکوردِنس وید",
+                        "fa": "مطابق با",
+                        "synonyms": [
+                              {
+                                    "en": "according to",
+                                    "pron": "اَکوردینگ تو",
+                                    "fa": "بر اساس"
+                              },
+                              {
+                                    "en": "consistent with",
+                                    "pron": "کِنسیستِنت وید",
+                                    "fa": "همسو با"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 31,
+            "en": "All liabilities must be paid.",
+            "pronunciation": "آل لایَبیلِتیز ماست بی پِید.",
+            "translation": "تمام بدهی‌ها باید پرداخت شوند.",
+            "words": [
+                  {
+                        "en": "liabilities",
+                        "pron": "لایَبیلِتیز",
+                        "fa": "بدهی‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "debts",
+                                    "pron": "دِتس",
+                                    "fa": "دیون"
+                              },
+                              {
+                                    "en": "obligations",
+                                    "pron": "آبلیکِیشِنز",
+                                    "fa": "تعهدات"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "paid",
+                        "pron": "پِید",
+                        "fa": "پرداخت‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "settled",
+                                    "pron": "سِتِلد",
+                                    "fa": "تسویه‌شده"
+                              },
+                              {
+                                    "en": "discharged",
+                                    "pron": "دیسچارجْد",
+                                    "fa": "ایفا‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 32,
+            "en": "If there is a profit or loss on repayment of liabilities, it must be distributed to partners.",
+            "pronunciation": "ایف ذِر ایز اِ پرافیت اُر لاس آن ری‌پِیمِنت آو لایَبیلِتیز، ایت ماست بی دیستریبیوتِد تو پارتنِرز.",
+            "translation": "اگر در بازپرداخت بدهی‌ها سود یا زیانی ایجاد شود، باید میان شرکا توزیع شود.",
+            "words": [
+                  {
+                        "en": "repayment",
+                        "pron": "ری‌پِیمِنت",
+                        "fa": "بازپرداخت",
+                        "synonyms": [
+                              {
+                                    "en": "payment back",
+                                    "pron": "پِیمِنت بَک",
+                                    "fa": "پس‌دادن وجه"
+                              },
+                              {
+                                    "en": "reimbursement",
+                                    "pron": "ری‌ایمبِرس‌مِنت",
+                                    "fa": "جبران و بازپرداخت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "profit or loss",
+                        "pron": "پرافیت اُر لاس",
+                        "fa": "سود یا زیان",
+                        "synonyms": [
+                              {
+                                    "en": "gain or deficit",
+                                    "pron": "گِین اُر دِفیسیت",
+                                    "fa": "منفعت یا کسری"
+                              },
+                              {
+                                    "en": "net result",
+                                    "pron": "نِت ریزالت",
+                                    "fa": "نتیجه خالص"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distributed",
+                        "pron": "دیستریبیوتِد",
+                        "fa": "توزیع‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "allocated",
+                                    "pron": "اَلُکِیتِد",
+                                    "fa": "تخصیص‌یافته"
+                              },
+                              {
+                                    "en": "shared",
+                                    "pron": "شِرد",
+                                    "fa": "تقسیم‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 33,
+            "en": "The remaining cash is then distributed to partners equal to their capital accounts’ balances.",
+            "pronunciation": "دِ ریمِینینگ کَش ایز ذِن دیستریبیوتِد تو پارتنِرز ایکوئِل تو ذِر کَپیتِل اَکاونتس بَلِنسِز.",
+            "translation": "سپس وجه نقد باقی‌مانده به شرکا، به میزان مانده حساب‌های سرمایه آنان، توزیع می‌شود.",
+            "words": [
+                  {
+                        "en": "remaining",
+                        "pron": "ریمِینینگ",
+                        "fa": "باقی‌مانده",
+                        "synonyms": [
+                              {
+                                    "en": "leftover",
+                                    "pron": "لِفت‌اووِر",
+                                    "fa": "مانده"
+                              },
+                              {
+                                    "en": "residual",
+                                    "pron": "ریزیدجوال",
+                                    "fa": "باقیمانده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "cash",
+                        "pron": "کَش",
+                        "fa": "وجه نقد",
+                        "synonyms": [
+                              {
+                                    "en": "money",
+                                    "pron": "مانی",
+                                    "fa": "پول"
+                              },
+                              {
+                                    "en": "funds",
+                                    "pron": "فاندز",
+                                    "fa": "وجوه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "distributed",
+                        "pron": "دیستریبیوتِد",
+                        "fa": "توزیع‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "allocated",
+                                    "pron": "اَلُکِیتِد",
+                                    "fa": "تخصیص‌یافته"
+                              },
+                              {
+                                    "en": "divided",
+                                    "pron": "دیوایدِد",
+                                    "fa": "تقسیم‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "balances",
+                        "pron": "بَلِنسِز",
+                        "fa": "مانده‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "account totals",
+                                    "pron": "اَکاونت توتِلز",
+                                    "fa": "جمع حساب‌ها"
+                              },
+                              {
+                                    "en": "remaining amounts",
+                                    "pron": "ریمِینینگ اَماونتس",
+                                    "fa": "مبالغ باقی‌مانده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 34,
+            "en": "If the capital account of a partner ends with a debit balance due to deficit on the sale of assets, he or she must pay cash to the partnership, otherwise it must be absorbed by the other partners.",
+            "pronunciation": "ایف دِ کَپیتِل اَکاونت آو اِ پارتنِر اِندز وید اِ دِبیت بَلِنس دیو تو دِفیسیت آن دِ سِیل آو اَسِتس، هی اُر شی ماست پِی کَش تو دِ پارتنِرشیپ، آذِروایز ایت ماست بی اَبزوربد بای دی آذِر پارتنِرز.",
+            "translation": "اگر حساب سرمایه شریکی به دلیل کسری ناشی از فروش دارایی‌ها با مانده بدهکار پایان یابد، او باید وجه نقد به مشارکت بپردازد؛ در غیر این صورت، کسری باید توسط سایر شرکا جذب شود.",
+            "words": [
+                  {
+                        "en": "debit balance",
+                        "pron": "دِبیت بَلِنس",
+                        "fa": "مانده بدهکار",
+                        "synonyms": [
+                              {
+                                    "en": "debit amount",
+                                    "pron": "دِبیت اَماونت",
+                                    "fa": "مبلغ بدهکار"
+                              },
+                              {
+                                    "en": "negative balance",
+                                    "pron": "نِگِتیو بَلِنس",
+                                    "fa": "مانده منفی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "due to",
+                        "pron": "دیو تو",
+                        "fa": "به دلیل",
+                        "synonyms": [
+                              {
+                                    "en": "because of",
+                                    "pron": "بیکاز آو",
+                                    "fa": "به علت"
+                              },
+                              {
+                                    "en": "owing to",
+                                    "pron": "اوینگ تو",
+                                    "fa": "در اثر"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "deficit",
+                        "pron": "دِفیسیت",
+                        "fa": "کسری",
+                        "synonyms": [
+                              {
+                                    "en": "shortfall",
+                                    "pron": "شورت‌فال",
+                                    "fa": "کمبود"
+                              },
+                              {
+                                    "en": "loss",
+                                    "pron": "لاس",
+                                    "fa": "زیان"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "otherwise",
+                        "pron": "آذِروایز",
+                        "fa": "در غیر این صورت",
+                        "synonyms": [
+                              {
+                                    "en": "if not",
+                                    "pron": "ایف نات",
+                                    "fa": "اگر نه"
+                              },
+                              {
+                                    "en": "or else",
+                                    "pron": "اُر اِلْس",
+                                    "fa": "وگرنه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "absorbed",
+                        "pron": "اَبزوربد",
+                        "fa": "جذب‌شده، تقبل‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "taken up",
+                                    "pron": "تِیکِن آپ",
+                                    "fa": "برعهده‌گرفته‌شده"
+                              },
+                              {
+                                    "en": "borne",
+                                    "pron": "بورن",
+                                    "fa": "تحمل‌شده"
+                              }
+                        ]
+                  }
+            ]
+      }
+]
+  }
+];
+
 // ==================== داده‌های هفته چهارم: دارایی‌های نامشهود ====================
 const week4Raw = [
   {
@@ -5533,6 +8297,7 @@ window.addEventListener("DOMContentLoaded", () => {
     renderContent(week3Data, "week3ContentArea");
     renderContent(week4Data, "week4ContentArea");
     renderContent(week5Data, "week5ContentArea");
+    renderContent(week6Data, "week6ContentArea");
     if ('speechSynthesis' in window) {
         window.speechSynthesis.onvoiceschanged = () => {};
     }
