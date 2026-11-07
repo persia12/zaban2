@@ -8,16 +8,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap');
 
         :root {
-            --navy-deep: #080c16;
-            --navy-mid: #0f172a;
+            --navy-deep: #101a2a;
+            --navy-mid: #183044;
             --glass-bg: rgba(255, 255, 255, 0.08);
             --glass-card: rgba(255, 255, 255, 0.94);
             --glass-border: rgba(255, 255, 255, 0.22);
-            --pink-soft: #fbcfe8;
-            --pink-glow: rgba(244, 114, 182, 0.4);
-            --cyan-glow: rgba(56, 189, 248, 0.35);
-            --primary: #1e3a8a;
-            --primary-light: #2563eb;
+            --pink-soft: #ccfbf1;
+            --pink-glow: rgba(45, 212, 191, 0.35);
+            --cyan-glow: rgba(251, 191, 36, 0.28);
+            --primary: #134e4a;
+            --primary-light: #0f766e;
             --accent: #d97706;
             --emerald: #059669;
             --text-dark: #0f172a;
@@ -267,6 +267,7 @@
         .w3-card { border-right: 6px solid #10b981; }
         .w4-card { border-right: 6px solid #a855f7; }
         .w5-card { border-right: 6px solid #f59e0b; }
+        .w6-card { border-right: 6px solid #0ea5e9; }
 
         .card-info {
             text-align: right;
@@ -287,6 +288,7 @@
         .tag-w3 { background: linear-gradient(135deg, #059669, #047857); }
         .tag-w4 { background: linear-gradient(135deg, #9333ea, #6d28d9); }
         .tag-w5 { background: linear-gradient(135deg, #f59e0b, #b45309); }
+        .tag-w6 { background: linear-gradient(135deg, #0284c7, #1d4ed8); }
 
         .compact-week-card h3 {
             font-size: 14.5px;
@@ -638,6 +640,11 @@
         }
 
         #toast.show { opacity: 1; }
+
+        .w7-card { background: rgba(255, 255, 255, 0.95) !important; border: 1px solid rgba(255, 255, 255, 0.85) !important; border-right: 6px solid #0ea5e9 !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+        .tag-w7 { background: linear-gradient(135deg, #0284c7, #1d4ed8) !important; color: #fff !important; }
+        .compact-week-card { box-shadow: 0 10px 26px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.18); transition: transform .2s ease, box-shadow .2s ease; }
+        .compact-week-card:active { transform: scale(.985); }
     </style>
 </head>
 <body>
@@ -680,8 +687,6 @@
             </svg>
         </div>
 
-        <p class="sub-desc">آموزش تعاملی زبان تخصصی حسابداری با تلفظ صوتی، ترجمه دقیق و واژگان تخصصی</p>
-
         <div class="controls-bar">
             <div class="control-group">
                 <label for="accentSelect">لهجه:</label>
@@ -701,11 +706,6 @@
 
     <!-- ================= VIEW 1: HOME ================= -->
     <div id="view-home" class="view-pane active">
-        <div class="index-intro-card">
-            <h2>سرفصل‌های جامع هفتگی</h2>
-            <p>درس مورد نظر را برای شروع انتخاب فرمایید:</p>
-        </div>
-
         <div class="compact-weeks-container">
             <div class="compact-week-card w1-card" onclick="openWeek(1)">
                 <div class="card-info">
@@ -752,11 +752,20 @@
                 <button class="compact-week-btn">ورود ←</button>
             </div>
 
-            <div class="compact-week-card w5-card" onclick="openWeek(6)">
+            <div class="compact-week-card w6-card" onclick="openWeek(6)">
                 <div class="card-info">
-                    <span class="compact-week-tag tag-w5">هفته ۶</span>
+                    <span class="compact-week-tag tag-w6">هفته ۶</span>
                     <h3>مشارکت‌ها (Partnerships)</h3>
                     <div class="count-badge">۳۴ جمله آموزشی تخصصی</div>
+                </div>
+                <button class="compact-week-btn">ورود ←</button>
+            </div>
+
+            <div class="compact-week-card w7-card" onclick="openWeek(7)">
+                <div class="card-info">
+                    <span class="compact-week-tag tag-w7">هفته ۷</span>
+                    <h3>بدهی‌های بلندمدت (Long-term Liabilities)</h3>
+                    <div class="count-badge">۲۶ جمله آموزشی تخصصی</div>
                 </div>
                 <button class="compact-week-btn">ورود ←</button>
             </div>
@@ -836,9 +845,21 @@
         <div class="week-top-bar">
             <button class="back-home-btn" onclick="openHome()"><span>↩</span><span>فهرست</span></button>
             <div style="font-weight: 800; font-size: 13px; color: #f59e0b;">هفته ششم: مشارکت‌ها</div>
-            <button class="nav-switch-btn" onclick="openWeek(5)">← هفته ۵</button>
+            <div style="display:flex; gap:6px;">
+                <button class="nav-switch-btn" onclick="openWeek(5)">← هفته ۵</button>
+                <button class="nav-switch-btn" onclick="openWeek(7)">هفته ۷ →</button>
+            </div>
         </div>
         <div id="week6ContentArea"></div>
+    </div>
+
+    <div id="view-week7" class="view-pane">
+        <div class="week-top-bar">
+            <button class="back-home-btn" onclick="openHome()"><span>↩</span><span>فهرست</span></button>
+            <div style="font-weight: 800; font-size: 13px; color: #0f766e;">هفته هفتم: بدهی‌های بلندمدت</div>
+            <button class="nav-switch-btn" onclick="openWeek(6)">← هفته ۶</button>
+        </div>
+        <div id="week7ContentArea"></div>
     </div>
 </div>
 
@@ -8205,6 +8226,1957 @@ const week4Data = week4Raw.map(section => ({
     }))
 }));
 
+const week7Data = [
+  {
+    title: 'بخش ۱: بدهی‌های بلندمدت و اوراق قرضه',
+    badge: 'درس ۲۱ - صفحه‌های ۲۷۵ تا ۲۷۷',
+    sentences: [
+      {
+            "id": 1,
+            "en": "Business enterprises may raise funds as long-term financing in various ways.",
+            "pronunciation": "بیزنِس اِنتِرپرایزِز مِی رِیز فاندز اَز لانگ‌تِرم فاینَنسینگ اِن وِریِس وِیز.",
+            "translation": "مؤسسات تجاری می‌توانند از راه‌های گوناگون، منابع مالی را به‌عنوان تأمین مالی بلندمدت جذب کنند.",
+            "words": [
+                  {
+                        "en": "enterprises",
+                        "pron": "اِنتِرپرایزِز",
+                        "fa": "مؤسسات تجاری",
+                        "synonyms": [
+                              {
+                                    "en": "businesses",
+                                    "pron": "بیزنِسِز",
+                                    "fa": "کسب‌وکارها"
+                              },
+                              {
+                                    "en": "firms",
+                                    "pron": "فِرمز",
+                                    "fa": "شرکت‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "raise",
+                        "pron": "رِیز",
+                        "fa": "جذب کردن، فراهم کردن",
+                        "synonyms": [
+                              {
+                                    "en": "obtain",
+                                    "pron": "اَبتِین",
+                                    "fa": "به‌دست آوردن"
+                              },
+                              {
+                                    "en": "secure",
+                                    "pron": "سِکیور",
+                                    "fa": "تأمین کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "funds",
+                        "pron": "فاندز",
+                        "fa": "وجوه، منابع مالی",
+                        "synonyms": [
+                              {
+                                    "en": "money",
+                                    "pron": "مانی",
+                                    "fa": "پول"
+                              },
+                              {
+                                    "en": "capital",
+                                    "pron": "کَپیتِل",
+                                    "fa": "سرمایه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "various",
+                        "pron": "وِریِس",
+                        "fa": "گوناگون",
+                        "synonyms": [
+                              {
+                                    "en": "different",
+                                    "pron": "دیفِرِنت",
+                                    "fa": "متفاوت"
+                              },
+                              {
+                                    "en": "diverse",
+                                    "pron": "دایوِرس",
+                                    "fa": "متنوع"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 2,
+            "en": "They may sell capital stock or issue notes payable or bonds.",
+            "pronunciation": "ذِی مِی سِل کَپیتِل اِستاک اُر ایشو نوتس پِیِبِل اُر باندز.",
+            "translation": "آن‌ها ممکن است سهام سرمایه را بفروشند یا اسناد پرداختنی یا اوراق قرضه منتشر کنند.",
+            "words": [
+                  {
+                        "en": "sell",
+                        "pron": "سِل",
+                        "fa": "فروختن",
+                        "synonyms": [
+                              {
+                                    "en": "dispose of",
+                                    "pron": "دیسپوز آو",
+                                    "fa": "واگذار کردن"
+                              },
+                              {
+                                    "en": "market",
+                                    "pron": "مارکِت",
+                                    "fa": "به بازار عرضه کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "capital stock",
+                        "pron": "کَپیتِل اِستاک",
+                        "fa": "سهام سرمایه",
+                        "synonyms": [
+                              {
+                                    "en": "shares",
+                                    "pron": "شِرز",
+                                    "fa": "سهام"
+                              },
+                              {
+                                    "en": "equity stock",
+                                    "pron": "اِکوئیتی اِستاک",
+                                    "fa": "سهام مالکانه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "issue",
+                        "pron": "ایشو",
+                        "fa": "منتشر کردن",
+                        "synonyms": [
+                              {
+                                    "en": "publish",
+                                    "pron": "پابلیش",
+                                    "fa": "منتشر کردن"
+                              },
+                              {
+                                    "en": "release",
+                                    "pron": "ریلیس",
+                                    "fa": "عرضه کردن"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 3,
+            "en": "There are many factors that must be considered when different methods of financing are evaluated.",
+            "pronunciation": "ذِر آر مِنی فَکتِرز ذَت ماست بی کِنسیدِرد وِن دیفِرِنت مِثِدز آو فاینَنسینگ آر اِوَلیوِیتِد.",
+            "translation": "هنگام ارزیابی روش‌های مختلف تأمین مالی، عوامل زیادی باید در نظر گرفته شوند.",
+            "words": [
+                  {
+                        "en": "factors",
+                        "pron": "فَکتِرز",
+                        "fa": "عوامل",
+                        "synonyms": [
+                              {
+                                    "en": "elements",
+                                    "pron": "اِلِمِنتس",
+                                    "fa": "عناصر"
+                              },
+                              {
+                                    "en": "considerations",
+                                    "pron": "کِن‌سیدِرِیشِنز",
+                                    "fa": "ملاحظات"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "considered",
+                        "pron": "کِنسیدِرد",
+                        "fa": "در نظر گرفته‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "taken into account",
+                                    "pron": "تِیکِن اینتو اَکاونت",
+                                    "fa": "مدنظر قرارگرفته"
+                              },
+                              {
+                                    "en": "examined",
+                                    "pron": "اِگزامیند",
+                                    "fa": "بررسی‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "methods",
+                        "pron": "مِثِدز",
+                        "fa": "روش‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "ways",
+                                    "pron": "وِیز",
+                                    "fa": "راه‌ها"
+                              },
+                              {
+                                    "en": "approaches",
+                                    "pron": "اَپروچِز",
+                                    "fa": "رویکردها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "evaluated",
+                        "pron": "اِوَلیوِیتِد",
+                        "fa": "ارزیابی‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "assessed",
+                                    "pron": "اَسِست",
+                                    "fa": "سنجیده‌شده"
+                              },
+                              {
+                                    "en": "appraised",
+                                    "pron": "اَپرِیزد",
+                                    "fa": "ارزش‌گذاری‌شده"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 4,
+            "en": "One such a factor is the impact of financing method on the corporation’s earnings per common share.",
+            "pronunciation": "وان ساچ اَ فَکتِر ایز ذی ایمپَکت آو فاینَنسینگ مِثِد آن ذِ کورپِرِیشِنز اِرنینگز پِر کامِن شِر.",
+            "translation": "یکی از این عوامل، تأثیر روش تأمین مالی بر سود هر سهم عادی شرکت است.",
+            "words": [
+                  {
+                        "en": "factor",
+                        "pron": "فَکتِر",
+                        "fa": "عامل",
+                        "synonyms": [
+                              {
+                                    "en": "element",
+                                    "pron": "اِلِمِنت",
+                                    "fa": "عنصر"
+                              },
+                              {
+                                    "en": "consideration",
+                                    "pron": "کِن‌سیدِرِیشِن",
+                                    "fa": "ملاحظه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "impact",
+                        "pron": "ایمپَکت",
+                        "fa": "تأثیر",
+                        "synonyms": [
+                              {
+                                    "en": "effect",
+                                    "pron": "اِفِکت",
+                                    "fa": "اثر"
+                              },
+                              {
+                                    "en": "influence",
+                                    "pron": "اینفلوئِنس",
+                                    "fa": "نفوذ، تأثیر"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "earnings",
+                        "pron": "اِرنینگز",
+                        "fa": "سود، درآمد",
+                        "synonyms": [
+                              {
+                                    "en": "profits",
+                                    "pron": "پرافیتس",
+                                    "fa": "سودها"
+                              },
+                              {
+                                    "en": "income",
+                                    "pron": "اینکام",
+                                    "fa": "درآمد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "common share",
+                        "pron": "کامِن شِر",
+                        "fa": "سهم عادی",
+                        "synonyms": [
+                              {
+                                    "en": "ordinary share",
+                                    "pron": "اوردِنِری شِر",
+                                    "fa": "سهم معمولی"
+                              },
+                              {
+                                    "en": "common stock share",
+                                    "pron": "کامِن اِستاک شِر",
+                                    "fa": "سهم از سهام عادی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 5,
+            "en": "When funds are borrowed through the issuance of debt securities, for example, there is a definite commitment to pay periodic interest and to repay the principal at a stated future date.",
+            "pronunciation": "وِن فاندز آر باروْد ثرو ذی ایشوئِنس آو دِت سِکیوریتیز، فُر اِگزامپِل، ذِر ایز اَ دِفِنِت کِمیتْمِنت تو پِی پیریادیک اینتِرِست اَند تو ری‌پِی ذِ پرینسِپِل اَت اَ اِستِیتِد فیوچِر دِیت.",
+            "translation": "برای مثال، هنگامی که وجوه از طریق انتشار اوراق بدهی قرض گرفته می‌شوند، تعهد مشخصی برای پرداخت بهرهٔ دوره‌ای و بازپرداخت اصل مبلغ در تاریخ معین آینده وجود دارد.",
+            "words": [
+                  {
+                        "en": "borrowed",
+                        "pron": "باروْد",
+                        "fa": "قرض گرفته‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "loaned",
+                                    "pron": "لوند",
+                                    "fa": "وام‌داده‌شده"
+                              },
+                              {
+                                    "en": "obtained on credit",
+                                    "pron": "اَبتِیند آن کِرِدیت",
+                                    "fa": "دریافت‌شده به‌صورت اعتباری"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "issuance",
+                        "pron": "ایشوئِنس",
+                        "fa": "انتشار",
+                        "synonyms": [
+                              {
+                                    "en": "issue",
+                                    "pron": "ایشو",
+                                    "fa": "صدور"
+                              },
+                              {
+                                    "en": "release",
+                                    "pron": "ریلیس",
+                                    "fa": "عرضه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "commitment",
+                        "pron": "کِمیتْمِنت",
+                        "fa": "تعهد",
+                        "synonyms": [
+                              {
+                                    "en": "obligation",
+                                    "pron": "آبلیگِیشِن",
+                                    "fa": "الزام"
+                              },
+                              {
+                                    "en": "promise",
+                                    "pron": "پرامیس",
+                                    "fa": "وعده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "periodic interest",
+                        "pron": "پیریادیک اینتِرِست",
+                        "fa": "بهرهٔ دوره‌ای",
+                        "synonyms": [
+                              {
+                                    "en": "regular interest",
+                                    "pron": "رِگیولِر اینتِرِست",
+                                    "fa": "بهرهٔ منظم"
+                              },
+                              {
+                                    "en": "recurring interest",
+                                    "pron": "ریکِرینگ اینتِرِست",
+                                    "fa": "بهرهٔ تکرارشونده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "principal",
+                        "pron": "پرینسِپِل",
+                        "fa": "اصل مبلغ",
+                        "synonyms": [
+                              {
+                                    "en": "principal amount",
+                                    "pron": "پرینسِپِل اَمَونت",
+                                    "fa": "مبلغ اصل"
+                              },
+                              {
+                                    "en": "face amount",
+                                    "pron": "فِیس اَمَونت",
+                                    "fa": "مبلغ اسمی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 6,
+            "en": "Since interest must be paid when due, projected earnings must be sufficient to provide each owner with a greater return than was received prior to the borrowings.",
+            "pronunciation": "سینس اینتِرِست ماست بی پِید وِن دیو، پرِجِکتِد اِرنینگز ماست بی سَفیشِنت تو پروواید ایچ اونِر ویت اَ گِرِیتِر ریتِرن ذَن واز رِسیود پرایِر تو ذِ باروئینگز.",
+            "translation": "از آنجا که بهره باید در سررسید پرداخت شود، سود پیش‌بینی‌شده باید برای هر مالک بازدهی بیشتر از بازده پیش از استقراض فراهم کند.",
+            "words": [
+                  {
+                        "en": "due",
+                        "pron": "دیو",
+                        "fa": "سررسیدشده",
+                        "synonyms": [
+                              {
+                                    "en": "payable",
+                                    "pron": "پِیِبِل",
+                                    "fa": "قابل پرداخت"
+                              },
+                              {
+                                    "en": "matured",
+                                    "pron": "مَچورد",
+                                    "fa": "سررسیده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "projected",
+                        "pron": "پرِجِکتِد",
+                        "fa": "پیش‌بینی‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "estimated",
+                                    "pron": "اِستِمِیتِد",
+                                    "fa": "برآوردشده"
+                              },
+                              {
+                                    "en": "forecast",
+                                    "pron": "فورکَست",
+                                    "fa": "پیش‌بینی‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "sufficient",
+                        "pron": "سَفیشِنت",
+                        "fa": "کافی",
+                        "synonyms": [
+                              {
+                                    "en": "adequate",
+                                    "pron": "اَدِکوِت",
+                                    "fa": "بسنده"
+                              },
+                              {
+                                    "en": "enough",
+                                    "pron": "اِنَف",
+                                    "fa": "به‌اندازه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "return",
+                        "pron": "ریتِرن",
+                        "fa": "بازده",
+                        "synonyms": [
+                              {
+                                    "en": "yield",
+                                    "pron": "ییلد",
+                                    "fa": "بازده"
+                              },
+                              {
+                                    "en": "profit",
+                                    "pron": "پرافیت",
+                                    "fa": "سود"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 7,
+            "en": "If this is not the case, it may be more advantageous to obtain long-term financing by accepted additional owners.",
+            "pronunciation": "اِف ذیس ایز نات ذِ کِیس، اِت مِی بی مور اَدوَنتِیجِس تو اَبتِین لانگ‌تِرم فاینَنسینگ بای اَکسِپتینگ اَدیشِنِل اونِرز.",
+            "translation": "اگر چنین نباشد، ممکن است تأمین مالی بلندمدت از طریق پذیرفتن مالکان جدید، مزیت بیشتری داشته باشد.",
+            "words": [
+                  {
+                        "en": "advantageous",
+                        "pron": "اَدوَنتِیجِس",
+                        "fa": "سودمند، دارای مزیت",
+                        "synonyms": [
+                              {
+                                    "en": "beneficial",
+                                    "pron": "بِنِفیشِل",
+                                    "fa": "مفید"
+                              },
+                              {
+                                    "en": "favorable",
+                                    "pron": "فِیوِرِبِل",
+                                    "fa": "مطلوب"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "obtain",
+                        "pron": "اَبتِین",
+                        "fa": "به‌دست آوردن",
+                        "synonyms": [
+                              {
+                                    "en": "acquire",
+                                    "pron": "اَکوایِر",
+                                    "fa": "تحصیل کردن"
+                              },
+                              {
+                                    "en": "secure",
+                                    "pron": "سِکیور",
+                                    "fa": "تأمین کردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "additional",
+                        "pron": "اَدیشِنِل",
+                        "fa": "اضافی",
+                        "synonyms": [
+                              {
+                                    "en": "extra",
+                                    "pron": "اِکسترا",
+                                    "fa": "بیشتر"
+                              },
+                              {
+                                    "en": "extra",
+                                    "pron": "اِکسترا",
+                                    "fa": "مازاد"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 8,
+            "en": "The characteristics of most long-term debts are as follows: a) an obligation to transfer assets or services in the future, b) a transaction or event that has already occurred, c) an enforceable contract, and d) repayment extends beyond one year or the operating cycle, if longer.",
+            "pronunciation": "ذِ کَرَکتِریستیکس آو موست لانگ‌تِرم دِتس آر اَز فالوْز: اَ) اَن آبلیگِیشِن تو ترَنسفِر اَسِتس اُر سِرویسِز اِن ذِ فیوچِر، بی) اَ ترَنزَکشِن اُر ایوِنت ذَت هَز آلرِدی اَکِرد، سی) اَن اِنفورسِبِل کانترَکت، اَند دی) ری‌پِیمِنت اِکستِندز بی‌یاند وان ییر اُر ذی آپِرِیتینگ سایکِل، اِف لانگِر.",
+            "translation": "ویژگی‌های بیشتر بدهی‌های بلندمدت به این شرح است: الف) تعهد به انتقال دارایی‌ها یا خدمات در آینده؛ ب) معامله یا رویدادی که قبلاً رخ داده است؛ ج) قراردادی لازم‌الاجرا؛ و د) بازپرداختی که بیش از یک سال یا چرخهٔ عملیاتی، اگر طولانی‌تر باشد، ادامه یابد.",
+            "words": [
+                  {
+                        "en": "characteristics",
+                        "pron": "کَرَکتِریستیکس",
+                        "fa": "ویژگی‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "features",
+                                    "pron": "فیچِرز",
+                                    "fa": "خصوصیات"
+                              },
+                              {
+                                    "en": "traits",
+                                    "pron": "تِرِیتس",
+                                    "fa": "خصیصه‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "obligation",
+                        "pron": "آبلیگِیشِن",
+                        "fa": "تعهد",
+                        "synonyms": [
+                              {
+                                    "en": "duty",
+                                    "pron": "دیوتی",
+                                    "fa": "وظیفه"
+                              },
+                              {
+                                    "en": "commitment",
+                                    "pron": "کِمیتْمِنت",
+                                    "fa": "التزام"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "enforceable",
+                        "pron": "اِنفورسِبِل",
+                        "fa": "لازم‌الاجرا",
+                        "synonyms": [
+                              {
+                                    "en": "binding",
+                                    "pron": "بایندینگ",
+                                    "fa": "الزام‌آور"
+                              },
+                              {
+                                    "en": "valid",
+                                    "pron": "وَلید",
+                                    "fa": "معتبر"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "repayment",
+                        "pron": "ری‌پِیمِنت",
+                        "fa": "بازپرداخت",
+                        "synonyms": [
+                              {
+                                    "en": "payback",
+                                    "pron": "پِیبَک",
+                                    "fa": "پس‌دادن پول"
+                              },
+                              {
+                                    "en": "reimbursement",
+                                    "pron": "ری‌ایمبِرسْمِنت",
+                                    "fa": "بازپرداخت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "operating cycle",
+                        "pron": "آپِرِیتینگ سایکِل",
+                        "fa": "چرخهٔ عملیاتی",
+                        "synonyms": [
+                              {
+                                    "en": "business cycle",
+                                    "pron": "بیزنِس سایکِل",
+                                    "fa": "چرخهٔ کسب‌وکار"
+                              },
+                              {
+                                    "en": "operational period",
+                                    "pron": "آپِرِیشِنِل پیریِد",
+                                    "fa": "دورهٔ عملیاتی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 9,
+            "en": "A bond is a certificate promising to pay its holder 1) a specified sum of money, called the principal, at a stated date, called the maturity date, and 2) interest at a stated rate until the maturity date.",
+            "pronunciation": "اَ باند ایز اَ سِرتیفیکِت پرامیسینگ تو پِی اِتس هولدِر: وان) اَ اِسپِسِفاید سام آو مانی، کالد ذِ پرینسِپِل، اَت اَ اِستِیتِد دِیت، کالد ذِ مَچورِتی دِیت، اَند تو) اینتِرِست اَت اَ اِستِیتِد رِیت اَنتیل ذِ مَچورِتی دِیت.",
+            "translation": "اوراق قرضه گواهی‌ای است که وعده می‌دهد به دارندهٔ خود: ۱) مبلغ مشخصی پول، به نام اصل مبلغ، در تاریخ تعیین‌شده، به نام تاریخ سررسید؛ و ۲) بهره‌ای با نرخ تعیین‌شده تا تاریخ سررسید پرداخت کند.",
+            "words": [
+                  {
+                        "en": "certificate",
+                        "pron": "سِرتیفیکِت",
+                        "fa": "گواهی",
+                        "synonyms": [
+                              {
+                                    "en": "document",
+                                    "pron": "داکیومِنت",
+                                    "fa": "سند"
+                              },
+                              {
+                                    "en": "instrument",
+                                    "pron": "اینسترومِنت",
+                                    "fa": "ورقه، ابزار"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "specified",
+                        "pron": "اِسپِسِفاید",
+                        "fa": "مشخص‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "stated",
+                                    "pron": "اِستِیتِد",
+                                    "fa": "تعیین‌شده"
+                              },
+                              {
+                                    "en": "designated",
+                                    "pron": "دِزینگِیتِد",
+                                    "fa": "معین‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "principal",
+                        "pron": "پرینسِپِل",
+                        "fa": "اصل مبلغ",
+                        "synonyms": [
+                              {
+                                    "en": "principal amount",
+                                    "pron": "پرینسِپِل اَمَونت",
+                                    "fa": "مبلغ اصل"
+                              },
+                              {
+                                    "en": "face amount",
+                                    "pron": "فِیس اَمَونت",
+                                    "fa": "مبلغ اسمی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "maturity date",
+                        "pron": "مَچورِتی دِیت",
+                        "fa": "تاریخ سررسید",
+                        "synonyms": [
+                              {
+                                    "en": "due date",
+                                    "pron": "دیو دِیت",
+                                    "fa": "تاریخ سررسید"
+                              },
+                              {
+                                    "en": "expiration date",
+                                    "pron": "اِکسپِرِیشِن دِیت",
+                                    "fa": "تاریخ انقضا"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "stated rate",
+                        "pron": "اِستِیتِد رِیت",
+                        "fa": "نرخ تعیین‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "fixed rate",
+                                    "pron": "فیکست رِیت",
+                                    "fa": "نرخ ثابت"
+                              },
+                              {
+                                    "en": "specified rate",
+                                    "pron": "اِسپِسِفاید رِیت",
+                                    "fa": "نرخ مشخص"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 10,
+            "en": "The principal amount of each bond is called its face value and is usually a multiple of $1,000.",
+            "pronunciation": "ذِ پرینسِپِل اَمَونت آو ایچ باند ایز کالد اِتس فِیس وَلْیو اَند ایز یوژوئِلی اَ مالتیپِل آو وان ثاوزِند دالِرز.",
+            "translation": "مبلغ اصل هر ورقهٔ قرضه، ارزش اسمی آن نامیده می‌شود و معمولاً مضربی از هزار دلار است.",
+            "words": [
+                  {
+                        "en": "principal amount",
+                        "pron": "پرینسِپِل اَمَونت",
+                        "fa": "مبلغ اصل",
+                        "synonyms": [
+                              {
+                                    "en": "face amount",
+                                    "pron": "فِیس اَمَونت",
+                                    "fa": "مبلغ اسمی"
+                              },
+                              {
+                                    "en": "par value",
+                                    "pron": "پار وَلْیو",
+                                    "fa": "ارزش اسمی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "face value",
+                        "pron": "فِیس وَلْیو",
+                        "fa": "ارزش اسمی",
+                        "synonyms": [
+                              {
+                                    "en": "par value",
+                                    "pron": "پار وَلْیو",
+                                    "fa": "ارزش اسمی"
+                              },
+                              {
+                                    "en": "nominal value",
+                                    "pron": "نامینِل وَلْیو",
+                                    "fa": "ارزش صوری"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "usually",
+                        "pron": "یوژوئِلی",
+                        "fa": "معمولاً",
+                        "synonyms": [
+                              {
+                                    "en": "normally",
+                                    "pron": "نورمِلی",
+                                    "fa": "به‌طور معمول"
+                              },
+                              {
+                                    "en": "generally",
+                                    "pron": "جِنِرِلی",
+                                    "fa": "عموماً"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 11,
+            "en": "Different types of bond that may be issued by a corporation include registered and bearer bonds, coupon and zero-coupon bonds, term and serial bonds, secured and debenture bonds, convertible bonds, callable bonds, junk bonds, and sinking fund bonds.",
+            "pronunciation": "دیفِرِنت تایپس آو باند ذَت مِی بی ایشود بای اَ کورپِرِیشِن اینکلود رِجِستِرد اَند بِرِر باندز، کوپان اَند زیرو-کوپان باندز، تِرم اَند سیریِل باندز، سِکیورد اَند دِبِنچِر باندز، کِن‌وِرتِبِل باندز، کالِبِل باندز، جانک باندز، اَند سینکینگ فاند باندز.",
+            "translation": "انواع مختلف اوراق قرضه‌ای که ممکن است توسط یک شرکت منتشر شوند شامل اوراق بانام و در وجه حامل، کوپن‌دار و بدون کوپن، مدت‌دار و سریالی، وثیقه‌دار و بدون وثیقه، قابل تبدیل، قابل بازخرید، کم‌اعتبار و اوراق دارای صندوق بازپرداخت هستند.",
+            "words": [
+                  {
+                        "en": "issued",
+                        "pron": "ایشود",
+                        "fa": "منتشرشده",
+                        "synonyms": [
+                              {
+                                    "en": "released",
+                                    "pron": "ریلیست",
+                                    "fa": "عرضه‌شده"
+                              },
+                              {
+                                    "en": "offered",
+                                    "pron": "آفِرد",
+                                    "fa": "ارائه‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "registered",
+                        "pron": "رِجِستِرد",
+                        "fa": "بانام، ثبت‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "recorded",
+                                    "pron": "ریکوردِد",
+                                    "fa": "ثبت‌شده"
+                              },
+                              {
+                                    "en": "listed",
+                                    "pron": "لیستِد",
+                                    "fa": "در فهرست ثبت‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "bearer",
+                        "pron": "بِرِر",
+                        "fa": "در وجه حامل",
+                        "synonyms": [
+                              {
+                                    "en": "holder",
+                                    "pron": "هولدِر",
+                                    "fa": "دارنده"
+                              },
+                              {
+                                    "en": "owner",
+                                    "pron": "اونِر",
+                                    "fa": "مالک"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "convertible",
+                        "pron": "کِن‌وِرتِبِل",
+                        "fa": "قابل تبدیل",
+                        "synonyms": [
+                              {
+                                    "en": "exchangeable",
+                                    "pron": "اِکسچِینجِبِل",
+                                    "fa": "قابل معاوضه"
+                              },
+                              {
+                                    "en": "changeable",
+                                    "pron": "چِینجِبِل",
+                                    "fa": "تغییرپذیر"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "callable",
+                        "pron": "کالِبِل",
+                        "fa": "قابل بازخرید",
+                        "synonyms": [
+                              {
+                                    "en": "redeemable",
+                                    "pron": "ریدیمِبِل",
+                                    "fa": "قابل بازخرید"
+                              },
+                              {
+                                    "en": "recallable",
+                                    "pron": "ریکالِبِل",
+                                    "fa": "قابل فراخوانی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 12,
+            "en": "In an offering a bond issue to the public, a contract between the issuing corporation and trustee, called bond indenture or trust indenture, is prepared.",
+            "pronunciation": "اِن اَن آفِرینگ اَ باند ایشو تو ذِ پابلیک، اَ کانترَکت بِتوین ذی ایشوئینگ کورپِرِیشِن اَند تراستی، کالد باند اِن‌دِنچِر اُر تراست اِن‌دِنچِر، ایز پریپِرد.",
+            "translation": "هنگام عرضهٔ عمومی اوراق قرضه، قراردادی میان شرکت منتشرکننده و امین، که قرارداد اوراق قرضه یا قرارداد امانی نامیده می‌شود، تنظیم می‌گردد.",
+            "words": [
+                  {
+                        "en": "offering",
+                        "pron": "آفِرینگ",
+                        "fa": "عرضه",
+                        "synonyms": [
+                              {
+                                    "en": "presentation",
+                                    "pron": "پرِزِنتِیشِن",
+                                    "fa": "ارائه"
+                              },
+                              {
+                                    "en": "sale",
+                                    "pron": "سِیل",
+                                    "fa": "فروش"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "issuing",
+                        "pron": "ایشوئینگ",
+                        "fa": "منتشرکننده",
+                        "synonyms": [
+                              {
+                                    "en": "issuing",
+                                    "pron": "ایشوئینگ",
+                                    "fa": "صادرکننده"
+                              },
+                              {
+                                    "en": "providing",
+                                    "pron": "پرووایدینگ",
+                                    "fa": "فراهم‌کننده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "trustee",
+                        "pron": "تراستی",
+                        "fa": "امین، متولی",
+                        "synonyms": [
+                              {
+                                    "en": "administrator",
+                                    "pron": "اَدمینیستریتِر",
+                                    "fa": "مدیر، اداره‌کننده"
+                              },
+                              {
+                                    "en": "custodian",
+                                    "pron": "کاستودیِن",
+                                    "fa": "امین، نگهدارنده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "indenture",
+                        "pron": "اِن‌دِنچِر",
+                        "fa": "قرارداد رسمی",
+                        "synonyms": [
+                              {
+                                    "en": "agreement",
+                                    "pron": "اَگریمِنت",
+                                    "fa": "توافق‌نامه"
+                              },
+                              {
+                                    "en": "contract",
+                                    "pron": "کانترَکت",
+                                    "fa": "قرارداد"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 13,
+            "en": "The trustee, usually a large bank, acts as an agent for the bondholders and charges the issuer a fee for this service.",
+            "pronunciation": "ذِ تراستی، یوژوئِلی اَ لارج بَنک، اَکتس اَز اَن اِیجِنت فور ذِ باند‌هولدِرز اَند چارجِز ذی ایشوئِر اَ فی فور ذیس سِرویس.",
+            "translation": "امین، که معمولاً یک بانک بزرگ است، به‌عنوان نمایندهٔ دارندگان اوراق قرضه عمل می‌کند و بابت این خدمت از ناشر کارمزد می‌گیرد.",
+            "words": [
+                  {
+                        "en": "trustee",
+                        "pron": "تراستی",
+                        "fa": "امین، متولی",
+                        "synonyms": [
+                              {
+                                    "en": "administrator",
+                                    "pron": "اَدمینیستریتِر",
+                                    "fa": "مدیر، اداره‌کننده"
+                              },
+                              {
+                                    "en": "custodian",
+                                    "pron": "کاستودیِن",
+                                    "fa": "امین، نگهدارنده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "agent",
+                        "pron": "اِیجِنت",
+                        "fa": "نماینده",
+                        "synonyms": [
+                              {
+                                    "en": "representative",
+                                    "pron": "رِپرِزِنتِتیو",
+                                    "fa": "نماینده"
+                              },
+                              {
+                                    "en": "delegate",
+                                    "pron": "دِلِگِیت",
+                                    "fa": "مأمور"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "bondholders",
+                        "pron": "باند‌هولدِرز",
+                        "fa": "دارندگان اوراق قرضه",
+                        "synonyms": [
+                              {
+                                    "en": "investors",
+                                    "pron": "اینوِستِرز",
+                                    "fa": "سرمایه‌گذاران"
+                              },
+                              {
+                                    "en": "holders",
+                                    "pron": "هولدِرز",
+                                    "fa": "دارندگان"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "charges",
+                        "pron": "چارجِز",
+                        "fa": "دریافت می‌کند، مطالبه می‌کند",
+                        "synonyms": [
+                              {
+                                    "en": "bills",
+                                    "pron": "بیلز",
+                                    "fa": "صورتحساب می‌کند"
+                              },
+                              {
+                                    "en": "collects",
+                                    "pron": "کِلِکتس",
+                                    "fa": "وصول می‌کند"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 14,
+            "en": "In addition to this fee, the issuer also incurs printing, legal, and accounting costs in connection to the bond issue.",
+            "pronunciation": "اِن اَدیشِن تو ذیس فی، ذی ایشوئِر آلسو اِنکِرز پرینتینگ، لیگِل، اَند اَکاونتینگ کاستس اِن کِنِکشِن تو ذِ باند ایشو.",
+            "translation": "علاوه بر این کارمزد، ناشر هزینه‌های چاپ، حقوقی و حسابداری مرتبط با انتشار اوراق قرضه را نیز متحمل می‌شود.",
+            "words": [
+                  {
+                        "en": "in addition",
+                        "pron": "اِن اَدیشِن",
+                        "fa": "علاوه بر این",
+                        "synonyms": [
+                              {
+                                    "en": "besides",
+                                    "pron": "بِسایدز",
+                                    "fa": "گذشته از این"
+                              },
+                              {
+                                    "en": "moreover",
+                                    "pron": "موراوِر",
+                                    "fa": "علاوه بر آن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "issuer",
+                        "pron": "ایشوئِر",
+                        "fa": "ناشر",
+                        "synonyms": [
+                              {
+                                    "en": "borrower",
+                                    "pron": "باروئِر",
+                                    "fa": "وام‌گیرنده"
+                              },
+                              {
+                                    "en": "issuing company",
+                                    "pron": "ایشوئینگ کامپِنی",
+                                    "fa": "شرکت منتشرکننده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "incurs",
+                        "pron": "اِنکِرز",
+                        "fa": "متحمل می‌شود",
+                        "synonyms": [
+                              {
+                                    "en": "undergoes",
+                                    "pron": "اَندِرگوز",
+                                    "fa": "از سر می‌گذراند"
+                              },
+                              {
+                                    "en": "sustains",
+                                    "pron": "سِستِینز",
+                                    "fa": "تحمل می‌کند"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "in connection with",
+                        "pron": "اِن کِنِکشِن ویت",
+                        "fa": "در ارتباط با",
+                        "synonyms": [
+                              {
+                                    "en": "related to",
+                                    "pron": "ریلِیتِد تو",
+                                    "fa": "مرتبط با"
+                              },
+                              {
+                                    "en": "associated with",
+                                    "pron": "اَسوشیِیتِد ویت",
+                                    "fa": "وابسته به"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 15,
+            "en": "These bond issuance costs are recorded as a deferred charge, which is an asset analogous to prepaid expenses.",
+            "pronunciation": "ذیز باند ایشوئِنس کاستس آر ریکوردِد اَز اَ دیفِرد چارج، ویچ ایز اَن اَسِت اَنَلِگِس تو پری‌پِید اِکسپِنسِز.",
+            "translation": "این هزینه‌های انتشار اوراق قرضه به‌عنوان هزینهٔ انتقالی ثبت می‌شوند که دارایی‌ای مشابه هزینه‌های پیش‌پرداخت‌شده است.",
+            "words": [
+                  {
+                        "en": "issuance costs",
+                        "pron": "ایشوئِنس کاستس",
+                        "fa": "هزینه‌های انتشار",
+                        "synonyms": [
+                              {
+                                    "en": "issue expenses",
+                                    "pron": "ایشو اِکسپِنسِز",
+                                    "fa": "مخارج انتشار"
+                              },
+                              {
+                                    "en": "offering costs",
+                                    "pron": "آفِرینگ کاستس",
+                                    "fa": "هزینه‌های عرضه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "deferred charge",
+                        "pron": "دیفِرد چارج",
+                        "fa": "هزینهٔ انتقالی",
+                        "synonyms": [
+                              {
+                                    "en": "deferred cost",
+                                    "pron": "دیفِرد کاست",
+                                    "fa": "هزینهٔ انتقالی"
+                              },
+                              {
+                                    "en": "postponed expense",
+                                    "pron": "پوست‌پوند اِکسپِنس",
+                                    "fa": "هزینهٔ به‌تعویق‌افتاده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "analogous",
+                        "pron": "اَنَلِگِس",
+                        "fa": "مشابه",
+                        "synonyms": [
+                              {
+                                    "en": "similar",
+                                    "pron": "سیمیلِر",
+                                    "fa": "همانند"
+                              },
+                              {
+                                    "en": "comparable",
+                                    "pron": "کامپِرِبِل",
+                                    "fa": "قابل‌مقایسه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "prepaid expenses",
+                        "pron": "پری‌پِید اِکسپِنسِز",
+                        "fa": "هزینه‌های پیش‌پرداخت‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "advance payments",
+                                    "pron": "اَدوَنس پِیمِنتس",
+                                    "fa": "پرداخت‌های پیشاپیش"
+                              },
+                              {
+                                    "en": "prepayments",
+                                    "pron": "پری‌پِیمِنتس",
+                                    "fa": "پیش‌پرداخت‌ها"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 16,
+            "en": "The issuance costs are not subtracted from the bond liability on the balance sheet, nor are they combined with any bond discount or premium.",
+            "pronunciation": "ذی ایشوئِنس کاستس آر نات سابترَکتِد فرام ذِ باند لایَبیلِتی آن ذِ بَلِنس شیت، نور آر ذِی کِمبایند ویت اِنی باند دیسکاونت اُر پریمیِم.",
+            "translation": "هزینه‌های انتشار از بدهی اوراق قرضه در ترازنامه کسر نمی‌شوند و همچنین با هیچ‌گونه صرف یا کسر اوراق قرضه ترکیب نمی‌گردند.",
+            "words": [
+                  {
+                        "en": "subtracted",
+                        "pron": "سابترَکتِد",
+                        "fa": "کسرشده",
+                        "synonyms": [
+                              {
+                                    "en": "deducted",
+                                    "pron": "دیداکتِد",
+                                    "fa": "کم‌شده"
+                              },
+                              {
+                                    "en": "removed",
+                                    "pron": "ریموود",
+                                    "fa": "حذف‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "liability",
+                        "pron": "لایَبیلِتی",
+                        "fa": "بدهی",
+                        "synonyms": [
+                              {
+                                    "en": "debt",
+                                    "pron": "دِت",
+                                    "fa": "قرض، بدهی"
+                              },
+                              {
+                                    "en": "obligation",
+                                    "pron": "آبلیگِیشِن",
+                                    "fa": "تعهد"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "combined",
+                        "pron": "کِمبایند",
+                        "fa": "ترکیب‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "merged",
+                                    "pron": "مِرجْد",
+                                    "fa": "ادغام‌شده"
+                              },
+                              {
+                                    "en": "joined",
+                                    "pron": "جوینْد",
+                                    "fa": "متصل‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "discount or premium",
+                        "pron": "دیسکاونت اُر پریمیِم",
+                        "fa": "کسر یا صرف",
+                        "synonyms": [
+                              {
+                                    "en": "reduction or extra charge",
+                                    "pron": "ریدَکشِن اُر اِکسترا چارج",
+                                    "fa": "کاهش یا مبلغ اضافه"
+                              },
+                              {
+                                    "en": "below-par or above-par amount",
+                                    "pron": "بیلو پار اُر اَباو پار اَمَونت",
+                                    "fa": "مبلغ کمتر یا بیشتر از ارزش اسمی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 17,
+            "en": "A bond security may be sold at more than par, at par, or at less than par.",
+            "pronunciation": "اَ باند سِکیورِتی مِی بی سولد اَت مور ذَن پار، اَت پار، اُر اَت لِس ذَن پار.",
+            "translation": "یک ورقهٔ قرضه ممکن است به قیمتی بالاتر از ارزش اسمی، برابر با ارزش اسمی یا پایین‌تر از آن فروخته شود.",
+            "words": [
+                  {
+                        "en": "security",
+                        "pron": "سِکیورِتی",
+                        "fa": "ورقهٔ بهادار",
+                        "synonyms": [
+                              {
+                                    "en": "financial instrument",
+                                    "pron": "فاینَنشِل اینسترومِنت",
+                                    "fa": "ابزار مالی"
+                              },
+                              {
+                                    "en": "bond",
+                                    "pron": "باند",
+                                    "fa": "اوراق قرضه"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "sold",
+                        "pron": "سولد",
+                        "fa": "فروخته‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "marketed",
+                                    "pron": "مارکِتِد",
+                                    "fa": "عرضه‌شده"
+                              },
+                              {
+                                    "en": "disposed of",
+                                    "pron": "دیسپوزد آو",
+                                    "fa": "واگذارشده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "par",
+                        "pron": "پار",
+                        "fa": "ارزش اسمی",
+                        "synonyms": [
+                              {
+                                    "en": "face value",
+                                    "pron": "فِیس وَلْیو",
+                                    "fa": "ارزش اسمی"
+                              },
+                              {
+                                    "en": "nominal value",
+                                    "pron": "نامینِل وَلْیو",
+                                    "fa": "ارزش صوری"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 18,
+            "en": "Whenever bond rate is above the rate prevailing in the market, it may be sold more than par.",
+            "pronunciation": "وِنِوِر باند رِیت ایز اَباو ذِ رِیت پری‌وِیلینگ اِن ذِ مارکِت، اِت مِی بی سولد مور ذَن پار.",
+            "translation": "هرگاه نرخ اوراق قرضه از نرخ رایج در بازار بالاتر باشد، ممکن است به قیمتی بیش از ارزش اسمی فروخته شود.",
+            "words": [
+                  {
+                        "en": "whenever",
+                        "pron": "وِنِوِر",
+                        "fa": "هرگاه",
+                        "synonyms": [
+                              {
+                                    "en": "when",
+                                    "pron": "وِن",
+                                    "fa": "وقتی که"
+                              },
+                              {
+                                    "en": "each time",
+                                    "pron": "ایچ تایم",
+                                    "fa": "هر بار که"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "prevailing",
+                        "pron": "پری‌وِیلینگ",
+                        "fa": "رایج، حاکم",
+                        "synonyms": [
+                              {
+                                    "en": "current",
+                                    "pron": "کِرِنت",
+                                    "fa": "فعلی"
+                              },
+                              {
+                                    "en": "existing",
+                                    "pron": "اِگزیستینگ",
+                                    "fa": "موجود"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "market",
+                        "pron": "مارکِت",
+                        "fa": "بازار",
+                        "synonyms": [
+                              {
+                                    "en": "marketplace",
+                                    "pron": "مارکِت‌پِلِیس",
+                                    "fa": "بازار"
+                              },
+                              {
+                                    "en": "trading market",
+                                    "pron": "تِرِیدینگ مارکِت",
+                                    "fa": "بازار معاملات"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 19,
+            "en": "If the market rate is above the nominal rate of interest, it may be sold less than par.",
+            "pronunciation": "اِف ذِ مارکِت رِیت ایز اَباو ذِ نامینِل رِیت آو اینتِرِست، اِت مِی بی سولد لِس ذَن پار.",
+            "translation": "اگر نرخ بازار از نرخ اسمی بهره بیشتر باشد، ممکن است ورقهٔ قرضه کمتر از ارزش اسمی فروخته شود.",
+            "words": [
+                  {
+                        "en": "nominal",
+                        "pron": "نامینِل",
+                        "fa": "اسمی",
+                        "synonyms": [
+                              {
+                                    "en": "face",
+                                    "pron": "فِیس",
+                                    "fa": "اسمی"
+                              },
+                              {
+                                    "en": "stated",
+                                    "pron": "اِستِیتِد",
+                                    "fa": "اعلام‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "rate of interest",
+                        "pron": "رِیت آو اینتِرِست",
+                        "fa": "نرخ بهره",
+                        "synonyms": [
+                              {
+                                    "en": "interest rate",
+                                    "pron": "اینتِرِست رِیت",
+                                    "fa": "نرخ سود"
+                              },
+                              {
+                                    "en": "borrowing rate",
+                                    "pron": "باروئینگ رِیت",
+                                    "fa": "نرخ استقراض"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "less than",
+                        "pron": "لِس ذَن",
+                        "fa": "کمتر از",
+                        "synonyms": [
+                              {
+                                    "en": "below",
+                                    "pron": "بیلو",
+                                    "fa": "پایین‌تر از"
+                              },
+                              {
+                                    "en": "under",
+                                    "pron": "اَندِر",
+                                    "fa": "زیرِ"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 20,
+            "en": "In the first case, a premium must be recognized while in the second case a discount must be recognized.",
+            "pronunciation": "اِن ذِ فِرست کِیس، اَ پریمیِم ماست بی رِکِگنایزد، وایِل اِن ذِ سِکِند کِیس اَ دیسکاونت ماست بی رِکِگنایزد.",
+            "translation": "در حالت اول باید صرف شناسایی شود، درحالی‌که در حالت دوم باید کسر شناسایی گردد.",
+            "words": [
+                  {
+                        "en": "premium",
+                        "pron": "پریمیِم",
+                        "fa": "صرف",
+                        "synonyms": [
+                              {
+                                    "en": "extra amount",
+                                    "pron": "اِکسترا اَمَونت",
+                                    "fa": "مبلغ اضافه"
+                              },
+                              {
+                                    "en": "above-par amount",
+                                    "pron": "اَباو پار اَمَونت",
+                                    "fa": "مبلغ بالاتر از ارزش اسمی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "recognized",
+                        "pron": "رِکِگنایزد",
+                        "fa": "شناسایی‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "recorded",
+                                    "pron": "ریکوردِد",
+                                    "fa": "ثبت‌شده"
+                              },
+                              {
+                                    "en": "acknowledged",
+                                    "pron": "اَکنالجْد",
+                                    "fa": "به‌رسمیت‌شناخته‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "discount",
+                        "pron": "دیسکاونت",
+                        "fa": "کسر",
+                        "synonyms": [
+                              {
+                                    "en": "deduction",
+                                    "pron": "دیداکشِن",
+                                    "fa": "کاهش"
+                              },
+                              {
+                                    "en": "reduction",
+                                    "pron": "ریدَکشِن",
+                                    "fa": "کم‌شدن"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 21,
+            "en": "Bond premiums and discounts must be amortized to interest expense over the life of the bond using straight-line or effective-interest method.",
+            "pronunciation": "باند پریمیِمز اَند دیسکاونتس ماست بی اَمِرتایزد تو اینتِرِست اِکسپِنس اووِر ذِ لایف آو ذِ باند یوزینگ اِستریت‌لاین اُر اِفِکتیو-اینتِرِست مِثِد.",
+            "translation": "صرف و کسر اوراق قرضه باید طی عمر اوراق، با استفاده از روش خط مستقیم یا روش نرخ بهرهٔ مؤثر، به هزینهٔ بهره مستهلک شوند.",
+            "words": [
+                  {
+                        "en": "amortized",
+                        "pron": "اَمِرتایزد",
+                        "fa": "مستهلک‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "allocated over time",
+                                    "pron": "اَلِکِیتِد اووِر تایم",
+                                    "fa": "تخصیص‌یافته در طول زمان"
+                              },
+                              {
+                                    "en": "written off gradually",
+                                    "pron": "ریتِن آف گِرَجوئِلی",
+                                    "fa": "به‌تدریج مستهلک‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "interest expense",
+                        "pron": "اینتِرِست اِکسپِنس",
+                        "fa": "هزینهٔ بهره",
+                        "synonyms": [
+                              {
+                                    "en": "borrowing cost",
+                                    "pron": "باروئینگ کاست",
+                                    "fa": "هزینهٔ استقراض"
+                              },
+                              {
+                                    "en": "finance expense",
+                                    "pron": "فاینَنس اِکسپِنس",
+                                    "fa": "هزینهٔ تأمین مالی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "straight-line",
+                        "pron": "اِستریت‌لاین",
+                        "fa": "خط مستقیم",
+                        "synonyms": [
+                              {
+                                    "en": "equal-installment",
+                                    "pron": "ایکوئِل اینستالمِنت",
+                                    "fa": "اقساط مساوی"
+                              },
+                              {
+                                    "en": "linear",
+                                    "pron": "لینیِر",
+                                    "fa": "خطی"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "effective-interest",
+                        "pron": "اِفِکتیو اینتِرِست",
+                        "fa": "بهرهٔ مؤثر",
+                        "synonyms": [
+                              {
+                                    "en": "yield-based",
+                                    "pron": "ییلد بِیست",
+                                    "fa": "مبتنی بر بازده"
+                              },
+                              {
+                                    "en": "actual-rate",
+                                    "pron": "اَکچوئِل رِیت",
+                                    "fa": "نرخ واقعی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 22,
+            "en": "Extinguishment of a debt may occur before, at, or after maturity date.",
+            "pronunciation": "اِکستینگویشمِنت آو اَ دِت مِی اَکِر بیفور، اَت، اُر اَفتِر مَچورِتی دِیت.",
+            "translation": "تسویه و خاتمهٔ بدهی ممکن است پیش از تاریخ سررسید، در تاریخ سررسید یا پس از آن رخ دهد.",
+            "words": [
+                  {
+                        "en": "extinguishment",
+                        "pron": "اِکستینگویشمِنت",
+                        "fa": "خاتمه، تسویه",
+                        "synonyms": [
+                              {
+                                    "en": "settlement",
+                                    "pron": "سِتِلْمِنت",
+                                    "fa": "تسویه"
+                              },
+                              {
+                                    "en": "discharge",
+                                    "pron": "دیسچارج",
+                                    "fa": "بری‌الذمه شدن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "occur",
+                        "pron": "اَکِر",
+                        "fa": "رخ دادن",
+                        "synonyms": [
+                              {
+                                    "en": "happen",
+                                    "pron": "هَپِن",
+                                    "fa": "اتفاق افتادن"
+                              },
+                              {
+                                    "en": "take place",
+                                    "pron": "تِیک پِلِیس",
+                                    "fa": "روی دادن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "maturity date",
+                        "pron": "مَچورِتی دِیت",
+                        "fa": "تاریخ سررسید",
+                        "synonyms": [
+                              {
+                                    "en": "due date",
+                                    "pron": "دیو دِیت",
+                                    "fa": "تاریخ سررسید"
+                              },
+                              {
+                                    "en": "expiration date",
+                                    "pron": "اِکسپِرِیشِن دِیت",
+                                    "fa": "تاریخ انقضا"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 23,
+            "en": "It is the settlement of a debt, other than by the payment of the debt in conformity with its original term, by a) early acquisition of the debt securities, b) obtaining a release from making future payment on the debt, or c) by placing assets in an irrevocable trust to pay the debt.",
+            "pronunciation": "اِت ایز ذِ سِتِلْمِنت آو اَ دِت، آذِر ذَن بای ذِ پِیمِنت آو ذِ دِت اِن کِنفورمِتی ویت اِتس اریجِنِل تِرم، بای اَ) اِرلی اَکوِزیشِن آو ذِ دِت سِکیوریتیز، بی) اَبتِینینگ اَ ریلیس فرام مِیکینگ فیوچِر پِیمِنت آن ذِ دِت، اُر سی) بای پِلِیسینگ اَسِتس اِن اَن اِنرِوِکِبِل تراست تو پِی ذِ دِت.",
+            "translation": "این مفهوم، تسویهٔ بدهی به روشی غیر از پرداخت آن مطابق شرایط اولیه است؛ از طریق الف) تحصیل زودهنگام اوراق بدهی، ب) دریافت معافیت از پرداخت‌های آیندهٔ بدهی، یا ج) قرار دادن دارایی‌ها در یک صندوق امانی غیرقابل‌برگشت برای پرداخت بدهی.",
+            "words": [
+                  {
+                        "en": "settlement",
+                        "pron": "سِتِلْمِنت",
+                        "fa": "تسویه",
+                        "synonyms": [
+                              {
+                                    "en": "discharge",
+                                    "pron": "دیسچارج",
+                                    "fa": "تسویهٔ تعهد"
+                              },
+                              {
+                                    "en": "resolution",
+                                    "pron": "رِزِلوشِن",
+                                    "fa": "فیصله دادن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "in conformity with",
+                        "pron": "اِن کِنفورمِتی ویت",
+                        "fa": "مطابق با",
+                        "synonyms": [
+                              {
+                                    "en": "in accordance with",
+                                    "pron": "اِن اَکوردِنس ویت",
+                                    "fa": "طبقِ"
+                              },
+                              {
+                                    "en": "consistent with",
+                                    "pron": "کِنسیستِنت ویت",
+                                    "fa": "هماهنگ با"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "acquisition",
+                        "pron": "اَکوِزیشِن",
+                        "fa": "تحصیل، خرید",
+                        "synonyms": [
+                              {
+                                    "en": "purchase",
+                                    "pron": "پِرچِس",
+                                    "fa": "خرید"
+                              },
+                              {
+                                    "en": "obtaining",
+                                    "pron": "اَبتِینینگ",
+                                    "fa": "به‌دست‌آوردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "irrevocable trust",
+                        "pron": "اِنرِوِکِبِل تراست",
+                        "fa": "صندوق امانی غیرقابل‌برگشت",
+                        "synonyms": [
+                              {
+                                    "en": "irrevocable fund",
+                                    "pron": "اِنرِوِکِبِل فاند",
+                                    "fa": "صندوق غیرقابل‌برگشت"
+                              },
+                              {
+                                    "en": "fixed trust",
+                                    "pron": "فیکست تراست",
+                                    "fa": "امانت ثابت"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 24,
+            "en": "Extinguishment of debt must be accounted for by a) updating and removing from the accounts all amounts related to the debt, b) recording all considerations used to settle the debt, and c) recording ordinary and extraordinary gains and losses in conformity with GAAP.",
+            "pronunciation": "اِکستینگویشمِنت آو دِت ماست بی اَکاونتِد فور بای اَ) آپدِیتینگ اَند ریمووینگ فرام ذی اَکاونتس آل اَمَونتس ریلِیتِد تو ذِ دِت، بی) ریکوردینگ آل کِن‌سیدِرِیشِنز یوزد تو سِتِل ذِ دِت، اَند سی) ریکوردینگ اوردِنِری اَند اِکسترَاورْدِنِری گِینز اَند لاسِز اِن کِنفورمِتی ویت گَپ.",
+            "translation": "خاتمهٔ بدهی باید از طریق الف) به‌روزرسانی و حذف تمام مبالغ مرتبط با بدهی از حساب‌ها، ب) ثبت تمام مابه‌ازاهای استفاده‌شده برای تسویهٔ بدهی، و ج) ثبت سودها و زیان‌های عادی و غیرعادی مطابق اصول پذیرفته‌شدهٔ حسابداری، در دفاتر منعکس شود.",
+            "words": [
+                  {
+                        "en": "accounted for",
+                        "pron": "اَکاونتِد فور",
+                        "fa": "در حساب‌ها منظورشده",
+                        "synonyms": [
+                              {
+                                    "en": "recorded",
+                                    "pron": "ریکوردِد",
+                                    "fa": "ثبت‌شده"
+                              },
+                              {
+                                    "en": "reported",
+                                    "pron": "ریپورتِد",
+                                    "fa": "گزارش‌شده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "removing",
+                        "pron": "ریمووینگ",
+                        "fa": "حذف کردن",
+                        "synonyms": [
+                              {
+                                    "en": "eliminating",
+                                    "pron": "اِلیمینِیتینگ",
+                                    "fa": "از بین بردن"
+                              },
+                              {
+                                    "en": "taking out",
+                                    "pron": "تِیکینگ آوت",
+                                    "fa": "بیرون آوردن"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "considerations",
+                        "pron": "کِن‌سیدِرِیشِنز",
+                        "fa": "مابه‌ازاها، عوض‌ها",
+                        "synonyms": [
+                              {
+                                    "en": "compensation",
+                                    "pron": "کامپِن‌سِیشِن",
+                                    "fa": "عوض، جبران"
+                              },
+                              {
+                                    "en": "payment",
+                                    "pron": "پِیمِنت",
+                                    "fa": "پرداخت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "ordinary",
+                        "pron": "اوردِنِری",
+                        "fa": "عادی",
+                        "synonyms": [
+                              {
+                                    "en": "regular",
+                                    "pron": "رِگیولِر",
+                                    "fa": "معمولی"
+                              },
+                              {
+                                    "en": "normal",
+                                    "pron": "نورمِل",
+                                    "fa": "متعارف"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "extraordinary",
+                        "pron": "اِکسترَاورْدِنِری",
+                        "fa": "غیرعادی",
+                        "synonyms": [
+                              {
+                                    "en": "unusual",
+                                    "pron": "اَن‌یوژوئِل",
+                                    "fa": "نامعمول"
+                              },
+                              {
+                                    "en": "exceptional",
+                                    "pron": "اِکسِپشِنِل",
+                                    "fa": "استثنایی"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 25,
+            "en": "Troubled debt restructure occurs when a) the debtor cannot meet the required debt payments and b) the creditor makes a favorable concession to the debtor, such as reduced or deferred interest or principal payment.",
+            "pronunciation": "ترابِلد دِت ری‌اِسترَکچِر اَکِرز وِن اَ) ذِ دِتِر کانات میت ذِ ریکوایِرد دِت پِیمِنتس اَند بی) ذِ کِرِدیتِر مِیکس اَ فِیوِرِبِل کِن‌سِشِن تو ذِ دِتِر، ساچ اَز ریدوست اُر دیفِرد اینتِرِست اُر پرینسِپِل پِیمِنت.",
+            "translation": "تجدید ساختار بدهی مشکل‌دار زمانی رخ می‌دهد که الف) بدهکار نتواند پرداخت‌های الزامی بدهی را انجام دهد و ب) طلبکار امتیاز مساعدی به بدهکار بدهد؛ مانند کاهش یا به‌تعویق‌انداختن بهره یا پرداخت اصل بدهی.",
+            "words": [
+                  {
+                        "en": "troubled",
+                        "pron": "ترابِلد",
+                        "fa": "مشکل‌دار",
+                        "synonyms": [
+                              {
+                                    "en": "distressed",
+                                    "pron": "دیسترِست",
+                                    "fa": "دچار مشکل"
+                              },
+                              {
+                                    "en": "financially weak",
+                                    "pron": "فاینَنشِلی ویک",
+                                    "fa": "از نظر مالی ضعیف"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "debtor",
+                        "pron": "دِتِر",
+                        "fa": "بدهکار",
+                        "synonyms": [
+                              {
+                                    "en": "borrower",
+                                    "pron": "باروئِر",
+                                    "fa": "وام‌گیرنده"
+                              },
+                              {
+                                    "en": "obligor",
+                                    "pron": "آبلیگور",
+                                    "fa": "متعهد به پرداخت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "creditor",
+                        "pron": "کِرِدیتِر",
+                        "fa": "طلبکار",
+                        "synonyms": [
+                              {
+                                    "en": "lender",
+                                    "pron": "لِندِر",
+                                    "fa": "وام‌دهنده"
+                              },
+                              {
+                                    "en": "claimant",
+                                    "pron": "کِلِیمِنت",
+                                    "fa": "دارندهٔ طلب"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "concession",
+                        "pron": "کِن‌سِشِن",
+                        "fa": "امتیاز",
+                        "synonyms": [
+                              {
+                                    "en": "allowance",
+                                    "pron": "اَلاوِنس",
+                                    "fa": "تخفیف، امتیاز"
+                              },
+                              {
+                                    "en": "favor",
+                                    "pron": "فِیوِر",
+                                    "fa": "لطف، مساعدت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "deferred",
+                        "pron": "دیفِرد",
+                        "fa": "به‌تعویق‌افتاده",
+                        "synonyms": [
+                              {
+                                    "en": "postponed",
+                                    "pron": "پوست‌پوند",
+                                    "fa": "عقب‌انداخته‌شده"
+                              },
+                              {
+                                    "en": "delayed",
+                                    "pron": "دیلِید",
+                                    "fa": "با تأخیر"
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            "id": 26,
+            "en": "These concessions by the creditor to the debtor must be recorded to show a gain for the debtor and a loss to the creditor.",
+            "pronunciation": "ذیز کِن‌سِشِنز بای ذِ کِرِدیتِر تو ذِ دِتِر ماست بی ریکوردِد تو شو اَ گِین فور ذِ دِتِر اَند اَ لاس تو ذِ کِرِدیتِر.",
+            "translation": "این امتیازهایی که طلبکار به بدهکار می‌دهد باید به‌گونه‌ای ثبت شوند که سودی برای بدهکار و زیانی برای طلبکار نشان داده شود.",
+            "words": [
+                  {
+                        "en": "concessions",
+                        "pron": "کِن‌سِشِنز",
+                        "fa": "امتیازها",
+                        "synonyms": [
+                              {
+                                    "en": "allowances",
+                                    "pron": "اَلاوِنسِز",
+                                    "fa": "تخفیف‌ها"
+                              },
+                              {
+                                    "en": "favors",
+                                    "pron": "فِیوِرز",
+                                    "fa": "مساعدت‌ها"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "recorded",
+                        "pron": "ریکوردِد",
+                        "fa": "ثبت‌شده",
+                        "synonyms": [
+                              {
+                                    "en": "documented",
+                                    "pron": "داکیومِنتِد",
+                                    "fa": "مستندسازی‌شده"
+                              },
+                              {
+                                    "en": "entered",
+                                    "pron": "اِنتِرد",
+                                    "fa": "واردشده"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "gain",
+                        "pron": "گِین",
+                        "fa": "سود",
+                        "synonyms": [
+                              {
+                                    "en": "profit",
+                                    "pron": "پرافیت",
+                                    "fa": "سود"
+                              },
+                              {
+                                    "en": "benefit",
+                                    "pron": "بِنِفیت",
+                                    "fa": "منفعت"
+                              }
+                        ]
+                  },
+                  {
+                        "en": "loss",
+                        "pron": "لاس",
+                        "fa": "زیان",
+                        "synonyms": [
+                              {
+                                    "en": "deficit",
+                                    "pron": "دِفِسیت",
+                                    "fa": "کسری"
+                              },
+                              {
+                                    "en": "damage",
+                                    "pron": "دَمِج",
+                                    "fa": "ضرر"
+                              }
+                        ]
+                  }
+            ]
+      }
+]
+  }
+];
+
 function renderContent(data, containerId) {
     const container = document.getElementById(containerId);
     let html = "";
@@ -8298,6 +10270,7 @@ window.addEventListener("DOMContentLoaded", () => {
     renderContent(week4Data, "week4ContentArea");
     renderContent(week5Data, "week5ContentArea");
     renderContent(week6Data, "week6ContentArea");
+    renderContent(week7Data, "week7ContentArea");
     if ('speechSynthesis' in window) {
         window.speechSynthesis.onvoiceschanged = () => {};
     }
